@@ -72,7 +72,7 @@ svg{flex-shrink:0}
 .redes.color a:hover{background:none;color:var(--turq)}
 /* franja superior: Fundación, Boletín y aliados en casillas iguales (pedido del doctor: "armonizando los tamaños
    y ojalá dejando espacio para otros"). Un aliado nuevo es una casilla más; la fila se reparte sola. */
-.alianzas{--w:196px;--h:86px;display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap;padding:14px 16px;background:#F4F6FA;border-bottom:4px solid var(--azul)}
+.alianzas{--w:min(196px,calc((100vw - 120px)/7));--h:min(86px,calc(var(--w)*.44));display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap;padding:14px 16px;background:#F4F6FA;border-bottom:4px solid var(--azul)}
 .alianzas a,.alianzas>.partner-static{width:var(--w);height:var(--h);flex-shrink:0;display:flex;align-items:center;justify-content:center;background:#fff;border:1px solid var(--linea);border-radius:8px;padding:6px;perspective:700px;overflow:hidden;transition:.2s}
 .alianzas a:hover{border-color:var(--azul-rey);box-shadow:0 4px 14px rgba(42,82,196,.15)}
 .alianzas a.pro{padding:0;border:0}
@@ -83,7 +83,7 @@ svg{flex-shrink:0}
 .alianzas .cara{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;backface-visibility:hidden;-webkit-backface-visibility:hidden}
 .alianzas .cara.b{transform:rotateY(180deg)}
 .alianzas .sep,.alianzas .et{display:none}
-@media (max-width:1300px){.alianzas{--w:168px;--h:74px}}
+
 @media (max-width:1060px){.alianzas{--w:150px;--h:66px}}
 @media (max-width:760px){.alianzas{--w:47%;--h:62px;gap:8px;padding:10px 8px}}
 .rebrand .giro{transform:rotateY(180deg)}
@@ -290,13 +290,18 @@ svg{flex-shrink:0}
 .inst .pq span{display:block;font-size:.7rem;font-weight:900;letter-spacing:.12em;text-transform:uppercase;color:var(--oro);margin-bottom:2px}
 .inst .ir{margin-top:auto;padding-top:14px;font-weight:800;font-size:.9rem;color:#fff}
 .inst:not(.partner-static):hover .ir{color:var(--oro)}
-.otras{display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin-top:28px}
-.otras .et{font-size:.7rem;font-weight:900;letter-spacing:.12em;text-transform:uppercase;opacity:.85;margin-right:4px}
-.otras a{background:#fff;border-radius:6px;padding:6px 10px;perspective:600px}
-.otras .giro{display:block;position:relative;height:34px;min-width:70px;transform-style:preserve-3d;transition:transform .65s}
-.otras .cara{display:flex;align-items:center;justify-content:center;height:34px;backface-visibility:hidden;-webkit-backface-visibility:hidden}
+.otras{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:16px;margin-top:28px}
+.otras .et{grid-column:1/-1;font-size:.7rem;font-weight:900;letter-spacing:.12em;text-transform:uppercase;opacity:.85}
+.otras a{display:flex;flex-direction:column;gap:8px;color:#fff;text-decoration:none;perspective:600px}
+.otras .lg{background:#fff;border-radius:8px;height:86px;display:grid;place-items:center;padding:10px}
+.otras .giro{display:block;position:relative;height:60px;width:100%;transform-style:preserve-3d;transition:transform .65s}
+.otras .cara{display:flex;align-items:center;justify-content:center;height:60px;backface-visibility:hidden;-webkit-backface-visibility:hidden}
 .otras .cara.b{position:absolute;inset:0;transform:rotateY(180deg)}
-.otras .cara img{max-height:34px;width:auto}
+.otras .cara img{max-height:60px;max-width:100%;width:auto}
+.otras .nm{font-weight:800;font-size:.9rem;line-height:1.25}
+.inst .il.doble{display:flex;align-items:center;justify-content:center;gap:18px}
+.inst .il.doble .giro{width:80px;flex-shrink:0}
+.inst .il.doble .sad{max-height:62px;max-width:55%;width:auto;border-radius:4px}
 
 /* ---------- herramientas ---------- */
 .herr{padding:76px 0 30px}
@@ -440,7 +445,7 @@ body.menu-on{overflow:hidden}
 </div>
 
 <header class="cab">
-  <div class="alianzas flipz"><a class="pro" href="https://www.observamed.org/" target="_blank" rel="noopener" title="Fundación Observamed STAR"><img src="img/logo-fundacion.jpg" alt="Observamed · Observatorio del Medicamento · Fundación Observamed STAR · Samay Tatiana Andia Rey"/></a><a class="pro" href="boletines/index.html" title="Boletín BisCoM"><img src="img/logo-biscom.jpg" alt="Boletín Informática y Salud · Boletín BisCoM y del Consumidor de Medicamentos"/></a><span class="sep"></span><span class="et">En alianza con</span><a href="https://www.colmedcundibogota.com/boletin-salud-al-dia-no-36/" target="_blank" rel="noopener" title="Boletín Salud al Día · Colegio Médico de Cundinamarca y Bogotá"><img src="img/salud-al-dia.jpg" alt="Boletín Salud al Día · Colegio Médico de Cundinamarca y Bogotá"/></a><a href="https://fundacionelmonitordelasalud.org/" target="_blank" rel="noopener" title="Fundación El Monitor de la Salud"><span class="giro"><span class="cara a"><img src="img/monitor.png" alt="Fundación El Monitor de la Salud"/></span><span class="cara b"><img src="img/rebrand/monitor.svg" alt="Fundación El Monitor de la Salud — propuesta"/></span></span></a><span class="partner-static" title="ASMEDAS"><span class="giro"><span class="cara a"><img src="img/asmedas-limpio.jpg" alt="ASMEDAS"/></span><span class="cara b"><img src="img/rebrand/asmedas.svg" alt="ASMEDAS — propuesta"/></span></span></span><a href="https://x.com/vcacelapss" target="_blank" rel="noopener" title="Veeduría Ciudadana VCACELAPSS"><span class="giro"><span class="cara a"><img src="img/vcacelapss.jpg" alt="Veeduría Ciudadana VCACELAPSS"/></span><span class="cara b"><img src="img/rebrand/vcacelapss.svg" alt="Veeduría Ciudadana VCACELAPSS — propuesta"/></span></span></a></div>
+  <div class="alianzas flipz"><a class="pro" href="https://www.observamed.org/" target="_blank" rel="noopener" title="Fundación Observamed STAR"><img src="img/logo-fundacion.jpg" alt="Observamed · Observatorio del Medicamento · Fundación Observamed STAR · Samay Tatiana Andia Rey"/></a><a class="pro" href="boletines/index.html" title="Boletín BisCoM"><img src="img/logo-biscom.jpg" alt="Boletín Informática y Salud · Boletín BisCoM y del Consumidor de Medicamentos"/></a><span class="sep"></span><span class="et">En alianza con</span><a href="https://www.colmedcundibogota.com/boletin-salud-al-dia-no-36/" target="_blank" rel="noopener" title="Boletín Salud al Día · Colegio Médico de Cundinamarca y Bogotá"><img src="img/salud-al-dia.jpg" alt="Boletín Salud al Día · Colegio Médico de Cundinamarca y Bogotá"/></a><a href="https://www.colmedcundibogota.com/boletin-salud-al-dia-no-36/" target="_blank" rel="noopener" title="Colegio Médico de Cundinamarca y Bogotá"><span class="giro"><span class="cara a"><img src="img/cmcb.png" alt="Colegio Médico de Cundinamarca y Bogotá"/></span><span class="cara b"><img src="img/rebrand/cmcb.svg" alt="Colegio Médico de Cundinamarca y Bogotá — propuesta"/></span></span></a><a href="https://fundacionelmonitordelasalud.org/" target="_blank" rel="noopener" title="Fundación El Monitor de la Salud"><span class="giro"><span class="cara a"><img src="img/monitor.png" alt="Fundación El Monitor de la Salud"/></span><span class="cara b"><img src="img/rebrand/monitor.svg" alt="Fundación El Monitor de la Salud — propuesta"/></span></span></a><span class="partner-static" title="ASMEDAS"><span class="giro"><span class="cara a"><img src="img/asmedas-limpio.jpg" alt="ASMEDAS"/></span><span class="cara b"><img src="img/rebrand/asmedas.svg" alt="ASMEDAS — propuesta"/></span></span></span><a href="https://x.com/vcacelapss" target="_blank" rel="noopener" title="Veeduría Ciudadana VCACELAPSS"><span class="giro"><span class="cara a"><img src="img/vcacelapss.jpg" alt="Veeduría Ciudadana VCACELAPSS"/></span><span class="cara b"><img src="img/rebrand/vcacelapss.svg" alt="Veeduría Ciudadana VCACELAPSS — propuesta"/></span></span></a></div>
   <div class="w">
     <div class="cab-top">
       <button class="hamb" type="button" onclick="menu(true)" aria-label="Abrir menú"><i><b></b><b></b><b></b></i>Menú</button>
@@ -458,6 +463,7 @@ body.menu-on{overflow:hidden}
     <div class="w">
       <a href="boletines/index.html">Boletines</a>
       <a href="boletin-22.html">Informes especiales</a>
+      <a href="sentencia.html" style="color:#8B1E3F">La sentencia</a>
       <a href="buscador.html">Buscador de precios</a>
       <a href="sistema.html">Sistema VMI-CFN</a>
       <a href="#podcast">Podcast</a>
@@ -473,6 +479,7 @@ body.menu-on{overflow:hidden}
 
 <main>
 <div class="w">
+  <a class="sen-cinta" href="sentencia.html" style="display:flex;flex-wrap:wrap;align-items:center;gap:8px 14px;margin:14px 0 0;padding:12px 16px;border-radius:8px;background:linear-gradient(120deg,#4A0E22,#8B1E3F);color:#fff;text-decoration:none"><b style="background:#F4BC3F;color:#4A0E22;font-size:12px;letter-spacing:.08em;padding:3px 8px;border-radius:4px">SEGUIMIENTO JUDICIAL</b><span style="font-weight:800">La sentencia del Consejo de Estado sobre precios de medicamentos: qué ordena y cómo avanza</span><span style="margin-left:auto;font-weight:800;color:#F4BC3F">Ver →</span></a>
   <div class="tick"><span class="tl">ÚLTIMOS BOLETINES</span><div class="pista"><div class="cinta"><a href="boletines/biscom38de2026-14a20sep26.html">De la Circular 22/2026 a un listado de la CNPMyDM con errores multimillonarios</a><a href="boletines/biscom36de2026-31ago06sep26.html">Plan de choque de MinSalud: el seguimiento llega al día 30</a><a href="boletines/biscom35de2026-24a30ago26.html">Precios bajo revisión y soberanía farmacéutica por construir</a><a href="boletines/biscom32de2026-03a09ago26.html">Circular 22/2026: los precios máximos de venta del régimen de control directo</a><a href="boletines/biscom31de2026-27jul02ago26.html">Anticuerpos monoclonales: una de las venas abiertas que explican la crisis</a><a href="boletines/biscom29de2026-13a19jul26.html">Ley 2386 y CONPES 4170: la hoja de ruta de la soberanía farmacéutica</a><a href="boletines/biscom25de2026-15a21jun26.html">Circular 22/2026: se actualiza el precio máximo de venta de los medicamentos regulados</a><a href="boletines/biscom24de2026-08a14jun26.html">Circular 21 de 2026: las nuevas reglas para reportar precios a SISMED</a><a href="boletines/biscom38de2026-14a20sep26.html">De la Circular 22/2026 a un listado de la CNPMyDM con errores multimillonarios</a><a href="boletines/biscom36de2026-31ago06sep26.html">Plan de choque de MinSalud: el seguimiento llega al día 30</a><a href="boletines/biscom35de2026-24a30ago26.html">Precios bajo revisión y soberanía farmacéutica por construir</a><a href="boletines/biscom32de2026-03a09ago26.html">Circular 22/2026: los precios máximos de venta del régimen de control directo</a><a href="boletines/biscom31de2026-27jul02ago26.html">Anticuerpos monoclonales: una de las venas abiertas que explican la crisis</a><a href="boletines/biscom29de2026-13a19jul26.html">Ley 2386 y CONPES 4170: la hoja de ruta de la soberanía farmacéutica</a><a href="boletines/biscom25de2026-15a21jun26.html">Circular 22/2026: se actualiza el precio máximo de venta de los medicamentos regulados</a><a href="boletines/biscom24de2026-08a14jun26.html">Circular 21 de 2026: las nuevas reglas para reportar precios a SISMED</a></div></div></div>
 
   <section class="prin" id="boletines">
@@ -543,8 +550,8 @@ body.menu-on{overflow:hidden}
         <a class="b-cir" href="boletines/index.html">Ver publicaciones</a>
       </div>
       <div>
-        <div class="insts flipz"><a class="inst" data-partner="aliado" href="https://www.colmedcundibogota.com/boletin-salud-al-dia-no-36/" target="_blank" rel="noopener"><div class="il cuad"><span class="giro"><span class="cara a"><img src="img/cmcb.png" alt="Colegio Médico de Cundinamarca y Bogotá"/></span><span class="cara b"><img src="img/rebrand/cmcb.svg" alt="Colegio Médico de Cundinamarca y Bogotá — propuesta"/></span></span></div><b>Colegio Médico de Cundinamarca y Bogotá</b><p>Agremiación de los médicos de Bogotá y Cundinamarca. Mantiene informado al gremio sobre lo que pasa en el sector salud y defiende el ejercicio de la medicina.</p><p class="pq"><span>Por qué importa</span>Que el gremio médico de la región acompañe este observatorio le da respaldo profesional a lo que aquí se publica.</p><span class="ir">Visitar sitio →</span></a><a class="inst" data-partner="aliado" href="https://fundacionelmonitordelasalud.org/" target="_blank" rel="noopener"><div class="il"><span class="giro"><span class="cara a"><img src="img/monitor.png" alt="Fundación El Monitor de la Salud"/></span><span class="cara b"><img src="img/rebrand/monitor.svg" alt="Fundación El Monitor de la Salud — propuesta"/></span></span></div><b>Fundación El Monitor de la Salud</b><p>Fundación dedicada al periodismo en salud y a la divulgación del conocimiento. Su lema: «informar con rigor para transformar con conocimiento».</p><p class="pq"><span>Por qué importa</span>Lleva los hallazgos del observatorio a más lectores, con el mismo rigor.</p><span class="ir">Visitar sitio →</span></a><div class="inst partner-static" data-partner="asmedas"><div class="il"><span class="giro"><span class="cara a"><img src="img/asmedas-limpio.jpg" alt="ASMEDAS"/></span><span class="cara b"><img src="img/rebrand/asmedas.svg" alt="ASMEDAS — propuesta"/></span></span></div><b>ASMEDAS</b><p>Asociación Médica Sindical Colombiana: la organización sindical que agrupa y representa a los médicos del país.</p><p class="pq"><span>Por qué importa</span>Suma la voz de los médicos que viven a diario las consecuencias de los precios y del desabastecimiento.</p></div><a class="inst" data-partner="aliado" href="https://x.com/vcacelapss" target="_blank" rel="noopener"><div class="il"><span class="giro"><span class="cara a"><img src="img/vcacelapss.jpg" alt="Veeduría Ciudadana VCACELAPSS"/></span><span class="cara b"><img src="img/rebrand/vcacelapss.svg" alt="Veeduría Ciudadana VCACELAPSS — propuesta"/></span></span></div><b>Veeduría Ciudadana VCACELAPSS</b><p>Veeduría ciudadana en salud: control social de la sociedad civil sobre cómo se gestionan los recursos públicos del sistema.</p><p class="pq"><span>Por qué importa</span>La transparencia en precios necesita ojos ciudadanos, no solo técnicos.</p><span class="ir">Visitar sitio →</span></a></div>
-        <div class="otras flipz"><span class="et">También nos acompañan</span><a href="https://www.med-informatica.net/ASOPASIME/Inicio.htm" target="_blank" rel="noopener" title="ASOPASIME"><span class="giro"><span class="cara a"><img src="img/asopasime.jpg" alt="ASOPASIME"/></span><span class="cara b"><img src="img/rebrand/asopasime.svg" alt="ASOPASIME — propuesta"/></span></span></a><a href="https://www.med-informatica.net/COMAPRE/Inicio.htm" target="_blank" rel="noopener" title="COMAPRE"><span class="giro"><span class="cara a"><img src="img/comapre.jpg" alt="COMAPRE"/></span><span class="cara b"><img src="img/rebrand/comapre.svg" alt="COMAPRE — propuesta"/></span></span></a><a href="https://www.somosveedoresensalud.org/" target="_blank" rel="noopener" title="CVCS — Veeduría Ciudadana y Cooperación en Salud"><span class="giro"><span class="cara a"><img src="img/cvcs.jpg" alt="CVCS — Veeduría Ciudadana y Cooperación en Salud"/></span><span class="cara b"><img src="img/rebrand/cvcs.svg" alt="CVCS — Veeduría Ciudadana y Cooperación en Salud — propuesta"/></span></span></a><a href="https://colhemofilicos.org.co/" target="_blank" rel="noopener" title="Colhemofílicos"><span class="giro"><span class="cara a"><img src="img/colhemofilicos.jpg" alt="Colhemofílicos"/></span><span class="cara b"><img src="img/rebrand/colhemofilicos.svg" alt="Colhemofílicos — propuesta"/></span></span></a></div>
+        <div class="insts flipz"><a class="inst" data-partner="aliado" href="https://www.colmedcundibogota.com/boletin-salud-al-dia-no-36/" target="_blank" rel="noopener"><div class="il cuad doble"><span class="giro"><span class="cara a"><img src="img/cmcb.png" alt="Colegio Médico de Cundinamarca y Bogotá"/></span><span class="cara b"><img src="img/rebrand/cmcb.svg" alt="Colegio Médico de Cundinamarca y Bogotá — propuesta"/></span></span><img class="sad" src="img/salud-al-dia.jpg" alt="Boletín Salud al Día"/></div><b>Colegio Médico de Cundinamarca y Bogotá</b><p>Agremiación de los médicos de Bogotá y Cundinamarca. Mantiene informado al gremio sobre lo que pasa en el sector salud y defiende el ejercicio de la medicina.</p><p class="pq"><span>Por qué importa</span>Que el gremio médico de la región acompañe este observatorio le da respaldo profesional a lo que aquí se publica.</p><span class="ir">Visitar sitio →</span></a><a class="inst" data-partner="aliado" href="https://fundacionelmonitordelasalud.org/" target="_blank" rel="noopener"><div class="il"><span class="giro"><span class="cara a"><img src="img/monitor.png" alt="Fundación El Monitor de la Salud"/></span><span class="cara b"><img src="img/rebrand/monitor.svg" alt="Fundación El Monitor de la Salud — propuesta"/></span></span></div><b>Fundación El Monitor de la Salud</b><p>Fundación dedicada al periodismo en salud y a la divulgación del conocimiento. Su lema: «informar con rigor para transformar con conocimiento».</p><p class="pq"><span>Por qué importa</span>Lleva los hallazgos del observatorio a más lectores, con el mismo rigor.</p><span class="ir">Visitar sitio →</span></a><div class="inst partner-static" data-partner="asmedas"><div class="il"><span class="giro"><span class="cara a"><img src="img/asmedas-limpio.jpg" alt="ASMEDAS"/></span><span class="cara b"><img src="img/rebrand/asmedas.svg" alt="ASMEDAS — propuesta"/></span></span></div><b>ASMEDAS</b><p>Asociación Médica Sindical Colombiana: la organización sindical que agrupa y representa a los médicos del país.</p><p class="pq"><span>Por qué importa</span>Suma la voz de los médicos que viven a diario las consecuencias de los precios y del desabastecimiento.</p></div><a class="inst" data-partner="aliado" href="https://x.com/vcacelapss" target="_blank" rel="noopener"><div class="il"><span class="giro"><span class="cara a"><img src="img/vcacelapss.jpg" alt="Veeduría Ciudadana VCACELAPSS"/></span><span class="cara b"><img src="img/rebrand/vcacelapss.svg" alt="Veeduría Ciudadana VCACELAPSS — propuesta"/></span></span></div><b>Veeduría Ciudadana VCACELAPSS</b><p>Veeduría ciudadana en salud: control social de la sociedad civil sobre cómo se gestionan los recursos públicos del sistema.</p><p class="pq"><span>Por qué importa</span>La transparencia en precios necesita ojos ciudadanos, no solo técnicos.</p><span class="ir">Visitar sitio →</span></a></div>
+        <div class="otras flipz"><span class="et">También nos acompañan</span><a href="https://www.med-informatica.net/ASOPASIME/Inicio.htm" target="_blank" rel="noopener" title="ASOPASIME"><span class="lg"><span class="giro"><span class="cara a"><img src="img/asopasime.jpg" alt="ASOPASIME"/></span><span class="cara b"><img src="img/rebrand/asopasime.svg" alt="ASOPASIME — propuesta"/></span></span></span><span class="nm">ASOPASIME</span></a><a href="https://www.med-informatica.net/COMAPRE/Inicio.htm" target="_blank" rel="noopener" title="COMAPRE"><span class="lg"><span class="giro"><span class="cara a"><img src="img/comapre.jpg" alt="COMAPRE"/></span><span class="cara b"><img src="img/rebrand/comapre.svg" alt="COMAPRE — propuesta"/></span></span></span><span class="nm">COMAPRE</span></a><a href="https://www.somosveedoresensalud.org/" target="_blank" rel="noopener" title="CVCS — Veeduría Ciudadana y Cooperación en Salud"><span class="lg"><span class="giro"><span class="cara a"><img src="img/cvcs.jpg" alt="CVCS — Veeduría Ciudadana y Cooperación en Salud"/></span><span class="cara b"><img src="img/rebrand/cvcs.svg" alt="CVCS — Veeduría Ciudadana y Cooperación en Salud — propuesta"/></span></span></span><span class="nm">CVCS — Veeduría Ciudadana y Cooperación en Salud</span></a><a href="https://colhemofilicos.org.co/" target="_blank" rel="noopener" title="Colhemofílicos"><span class="lg"><span class="giro"><span class="cara a"><img src="img/colhemofilicos.jpg" alt="Colhemofílicos"/></span><span class="cara b"><img src="img/rebrand/colhemofilicos.svg" alt="Colhemofílicos — propuesta"/></span></span></span><span class="nm">Colhemofílicos</span></a></div>
       </div>
     </div>
   </div>
@@ -609,6 +616,7 @@ body.menu-on{overflow:hidden}
   <div class="busca"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5L21 21"/></svg><input type="search" placeholder="Buscar boletines…" aria-label="Buscar"/><div class="res"></div></div>
   <a class="cj" href="boletines/index.html">Boletines BisCoM</a>
   <a class="cj" href="boletin-22.html">Informes especiales</a>
+  <a class="cj" href="sentencia.html" style="color:#8B1E3F">La sentencia del Consejo de Estado</a>
   <a class="cj" href="buscador.html">Buscador de precios</a>
   <a class="cj" href="#podcast" onclick="menu(false)">Podcast</a>
   <a class="cj" href="#videos" onclick="menu(false)">Videos</a>
@@ -723,5 +731,40 @@ function aplicarLogos(on,animar){
   document.querySelectorAll('.flip-b').forEach(function(b){b.classList.toggle('on',on);});}
 try{if(localStorage.getItem('cdl_rebrand')==='1')aplicarLogos(true,false);}catch(e){}
 </script>
+<!--REVISTA-->
+<style>
+.rev-velo{position:fixed;inset:0;background:rgba(17,24,39,.55);display:none;align-items:center;justify-content:center;z-index:9999;padding:16px}
+.rev-velo.abierta{display:flex}
+.rev-caja{background:#fff;border-radius:14px;max-width:420px;width:100%;overflow:hidden;box-shadow:0 20px 50px rgba(0,0,0,.3);font-family:inherit}
+.rev-cab{background:linear-gradient(160deg,#1E3A8A,#2A52C4 60%,#00A3C4);color:#fff;padding:18px 20px}
+.rev-cab small{display:block;letter-spacing:.08em;text-transform:uppercase;font-size:11px;opacity:.85}
+.rev-cab b{display:block;font-size:22px;line-height:1.15;margin-top:4px}
+.rev-cuerpo{padding:16px 20px 20px;color:#374151;font-size:14px;line-height:1.5}
+.rev-cuerpo ul{margin:8px 0 14px 18px;padding:0}
+.rev-btns{display:flex;gap:8px;flex-wrap:wrap}
+.rev-btns a,.rev-btns button{flex:1;min-width:130px;text-align:center;border-radius:8px;padding:10px 12px;font-weight:700;font-size:14px;cursor:pointer;text-decoration:none;border:0}
+.rev-btns a{background:#2A52C4;color:#fff}
+.rev-btns button{background:#F3F4F6;color:#374151}
+.rev-abrir{position:fixed;left:14px;bottom:14px;z-index:9998;background:#1E3A8A;color:#fff;border:0;border-radius:999px;padding:10px 14px;font-weight:700;font-size:13px;box-shadow:0 6px 18px rgba(0,0,0,.2);cursor:pointer}
+</style>
+<button class="rev-abrir" type="button" onclick="document.getElementById('rev-velo').classList.add('abierta')">Revista de la semana</button>
+<div class="rev-velo" id="rev-velo" role="dialog" aria-modal="true" aria-labelledby="rev-titulo">
+  <div class="rev-caja">
+    <div class="rev-cab"><small>Nueva edición · revista semanal</small><b id="rev-titulo">Semana del 19 de octubre de 2026</b></div>
+    <div class="rev-cuerpo">Descargue en PDF todo lo nuevo de esta semana:<ul><li>Un combinado de dos pastillas con precio de recobro cuatro veces mayor</li><li>Dolutegravir: el precio regulado queda muy por encima del real</li><li>Medicamentos de alto costo que entraron al país sin control de precio</li><li>Techos o Presupuestos Máximos: las advertencias que nadie escuchó</li><li>y 3 notas más</li></ul>
+      <div class="rev-btns"><a href="revista/revista-2026-10-19.pdf" download>Descargar PDF</a><button type="button" id="rev-cerrar">Ahora no</button></div>
+      <p style="margin:12px 0 0;font-size:12px"><a href="revista/index.html" style="color:#2A52C4">Ver todas las ediciones</a></p>
+    </div>
+  </div>
+</div>
+<script>
+(function(){var k="revista-vista-2026-10-19",v=document.getElementById("rev-velo");
+function cerrar(){v.classList.remove("abierta");try{localStorage.setItem(k,"1")}catch(e){}}
+document.getElementById("rev-cerrar").onclick=cerrar;v.onclick=function(e){if(e.target===v)cerrar()};
+document.addEventListener("keydown",function(e){if(e.key==="Escape")cerrar()});
+var visto=false;try{visto=localStorage.getItem(k)==="1"}catch(e){}
+if(!visto)setTimeout(function(){v.classList.add("abierta")},1500);})();
+</script>
+<!--/REVISTA-->
 </body>
 </html>
