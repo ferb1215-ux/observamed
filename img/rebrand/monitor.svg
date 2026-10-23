@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 250 64" role="img" aria-label="Monitor de la Salud">
+<defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+<stop offset="0" stop-color="#3B7AE0"/><stop offset="1" stop-color="#00A3C4"/></linearGradient></defs>
+<rect x="4" y="8" width="48" height="48" rx="13" fill="url(#g)"/>
+<g transform="translate(13,17) scale(1.25)" fill="none" stroke="#fff" stroke-width="1.8"
+   stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="2.8" width="6" height="11" rx="3"/><path d="M5.5 11.2a6.5 6.5 0 0 0 13 0"/><path d="M12 17.7V21M8.8 21h6.4"/></g>
+<text x="64" y="31" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica Neue,Arial,sans-serif"
+  font-size="15.5" font-weight="800" letter-spacing="-0.4" fill="#111827">Monitor de la Salud</text>
+<text x="64.5" y="47" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica Neue,Arial,sans-serif"
+  font-size="9.2" font-weight="700" letter-spacing="0.4" fill="#6B7280">Fundación</text>
+</svg>

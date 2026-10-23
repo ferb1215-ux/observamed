@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="es"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Boletines BisCoM — Observamed STAR</title><meta name="robots" content="noindex, nofollow"/>
+<link rel="icon" href="../img/favicon.svg" type="image/svg+xml"/>
+<style>
+:root{--azul:#2A52C4;--turq:#00A3C4;--verde:#2BB695;--tinta:#0B1220;--texto:#111827;--medio:#374151;--suave:#6B7280;--linea:#E4E7EC}
+*{box-sizing:border-box}body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;color:var(--texto);background:#fff;line-height:1.5}a{color:inherit;text-decoration:none}img{display:block;max-width:100%}button,input,select{font:inherit}button{cursor:pointer}
+.archive-mast{border-bottom:4px solid var(--azul)}.archive-mast-inner{max-width:1280px;margin:auto;padding:20px 28px;display:flex;gap:24px;align-items:center;justify-content:space-between}.archive-mast img{height:58px;width:auto}.archive-mast nav{display:flex;flex-wrap:wrap;gap:12px 22px;font-size:.88rem;font-weight:700}.archive-mast a:hover{color:var(--azul)}
+.archive-main{max-width:1280px;margin:0 auto;padding:38px 28px 70px}.archive-heading{padding-bottom:24px;border-bottom:1px solid var(--linea)}.archive-heading h1{font-size:2.4rem;line-height:1.15;letter-spacing:0;margin:0 0 10px}.archive-heading p{margin:0;color:var(--medio)}
+.archive-feature{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:36px;align-items:center;padding:32px 0;border-bottom:1px solid var(--linea)}.archive-feature>*{min-width:0}.feature-image{width:100%;height:auto;object-fit:contain;border:1px solid var(--linea)}.post-image>a{display:block}.cover-expand{display:block;margin:8px 0 0 auto;padding:6px 10px;background:#fff;border:1px solid var(--linea);border-radius:4px;font-size:.76rem;font-weight:700;color:var(--azul);max-width:100%}.cover-expand:hover,.cover-expand:focus-visible{border-color:var(--azul);outline:2px solid var(--azul)}
+.archive-kicker{font-size:.78rem;font-weight:800;color:var(--azul);margin:0 0 12px}.archive-feature h2{font-family:Georgia,serif;font-size:1.8rem;line-height:1.2;margin:10px 0 14px;letter-spacing:0}.archive-feature p{color:var(--medio);font-size:.95rem;margin:10px 0}.archive-feature .read-edition{display:inline-flex;gap:14px;font-weight:800;color:var(--azul);margin-top:10px}.archive-feature .feature-meta{font-size:.82rem;font-weight:650;color:var(--medio)}
+.archive-tools{display:flex;align-items:end;justify-content:space-between;gap:24px;margin:34px 0 24px}.archive-tools h2{font-size:1.45rem;margin:0 0 4px}.archive-tools p{font-size:.82rem;margin:0;color:var(--medio)}.archive-controls{display:flex;gap:14px;align-items:end;flex-wrap:wrap}.archive-controls label{display:grid;gap:5px;font-size:.74rem;font-weight:700;color:var(--medio)}.archive-controls input,.archive-controls select{height:40px;background:#fff;border:1px solid #CCD6E2;border-radius:4px;padding:8px 10px;color:var(--texto);max-width:100%;min-width:0}.archive-controls input{width:250px}.archive-controls input:focus,.archive-controls select:focus{outline:2px solid var(--azul);outline-offset:1px}.archive-empty{padding:32px 0;color:var(--medio)}
+.archive-footer{background:#F5F7FA;border-top:1px solid var(--linea);padding:24px 28px}.archive-footer-inner{max-width:1224px;margin:auto;display:flex;gap:24px;justify-content:space-between;align-items:center;flex-wrap:wrap;font-size:.82rem;color:var(--medio)}.archive-footer-logos{display:flex;gap:20px;align-items:center}.archive-footer-logos img{max-height:38px;width:auto}.archive-footer a:hover{color:var(--azul)}
+@media(max-width:1060px){.archive-mast-inner{align-items:start;flex-wrap:wrap}.archive-mast nav{padding-top:6px}.archive-tools{align-items:start;flex-direction:column}.archive-controls{width:100%}.archive-controls label:first-child{flex:1}.archive-controls input{width:100%}}
+@media(max-width:760px){.archive-main{padding:28px 16px 50px}.archive-mast-inner{padding:16px;gap:14px}.archive-mast img{height:46px}.archive-mast nav{font-size:.8rem;gap:10px 18px}.archive-heading h1{font-size:1.85rem}.archive-feature{grid-template-columns:minmax(0,1fr);gap:20px;padding:24px 0}.archive-feature h2{font-size:1.5rem}.archive-controls{display:grid;grid-template-columns:minmax(0,1fr)}.archive-controls input,.archive-controls select{width:100%}.archive-footer{padding:22px 16px}}
+
+.catalogue-year{margin-top:30px}
+.catalogue-year-heading{display:flex;align-items:baseline;gap:18px;padding-bottom:12px;border-bottom:2px solid var(--linea)}
+.catalogue-year-heading h3{font-size:1.5rem;font-weight:900;line-height:1.2;letter-spacing:0}
+.catalogue-year-heading>span{font-size:.82rem;color:var(--suave);font-weight:600}
+.catalogue-row{--topic:var(--azul);display:grid;grid-template-columns:80px minmax(0,1fr) 150px 20px;gap:22px;align-items:center;padding:20px 18px;border-bottom:1px solid var(--linea);border-left:4px solid var(--topic);color:var(--texto);background:#fff;text-decoration:none;transition:background .18s}
+.catalogue-row.t-precios{--topic:#2A52C4}.catalogue-row.t-sismed{--topic:#00869F}.catalogue-row.t-diabetes{--topic:#7C3AED}.catalogue-row.t-soberania{--topic:#0F8A6A}.catalogue-row.t-venas{--topic:#C2410C}
+.catalogue-row:hover,.catalogue-row:focus-visible{background:#EDF3FC;outline:2px solid var(--topic);outline-offset:-2px}
+.catalogue-number{color:var(--topic);display:grid;gap:2px;align-content:start}
+.catalogue-number small{font-size:.72rem;font-weight:800}.catalogue-number b{font-size:1.85rem;font-weight:900;line-height:1;letter-spacing:0;font-variant-numeric:tabular-nums}
+.catalogue-copy{display:grid;gap:6px;min-width:0}
+.catalogue-topic{color:var(--topic);font-size:.74rem;font-weight:800}
+.catalogue-copy strong{font-size:1rem;line-height:1.35;font-weight:750;overflow-wrap:anywhere}
+.catalogue-meta{display:flex;gap:6px 16px;flex-wrap:wrap;font-size:.78rem;line-height:1.4;color:var(--medio)}
+.catalogue-data{font-size:.8rem;line-height:1.45;font-weight:600;color:var(--medio)}
+.catalogue-arrow{font-size:1.25rem;color:var(--topic)}
+.catalogue-summary{display:flex;gap:6px 24px;flex-wrap:wrap;margin:12px 0 0;font-size:.88rem;color:var(--medio)}
+.catalogue-summary strong{color:var(--tinta)}
+[hidden]{display:none!important}
+@media(max-width:760px){.catalogue-row{grid-template-columns:48px minmax(0,1fr) 16px;gap:12px;padding:16px 10px}.catalogue-number b{font-size:1.5rem}.catalogue-copy strong{font-size:.94rem}.catalogue-data{grid-column:2;grid-row:2}.catalogue-arrow{grid-column:3;grid-row:1}.catalogue-year-heading{gap:12px}}
+
+.image-peek{position:fixed;z-index:90;pointer-events:none;padding:10px;border:1px solid #CCD6E2;border-radius:6px;background:#fff;box-shadow:0 12px 40px rgba(11,18,32,.24);opacity:0;transition:opacity .12s}
+.image-peek.on{opacity:1}
+.image-peek img{display:block;width:100%;height:100%;object-fit:contain}
+.image-modal{width:calc(100% - 32px);max-width:1800px;height:calc(100dvh - 32px);max-height:none;margin:auto;padding:0;border:0;border-radius:8px;background:#fff;color:var(--tinta)}
+.image-modal::backdrop{background:rgba(11,18,32,.88)}
+.image-toolbar{height:56px;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:10px 14px;border-bottom:1px solid var(--linea)}
+.image-toolbar h2{min-width:0;font-size:1rem;line-height:1.2;font-weight:900;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin:0}
+.image-toolbar button{width:36px;height:36px;flex-shrink:0;border:1px solid var(--linea);background:#fff;color:var(--tinta);display:grid;place-items:center;border-radius:4px;font-size:1.5rem;cursor:pointer}
+.image-toolbar button:hover{color:var(--azul);border-color:var(--azul)}
+.image-toolbar svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.image-stage{height:calc(100% - 56px);overflow:auto;display:grid;place-items:start center;background:#F8FAFC;padding:18px}
+.image-stage img{max-width:100%;height:auto;display:block}
+@media(prefers-reduced-motion:reduce){.image-peek,.catalogue-row{transition:none}}
+</style><style id="franja-css">
+.franja{--w:min(196px,calc((100vw - 120px)/7));--h:min(86px,calc(var(--w)*.44));display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap;padding:14px 16px;background:#F4F6FA;border-bottom:4px solid #2A52C4}
+.franja>a,.franja>span{width:var(--w);height:var(--h);flex-shrink:0;display:flex;align-items:center;justify-content:center;background:#fff;border:1px solid #E5E7EB;border-radius:8px;padding:6px;box-sizing:border-box;overflow:hidden;transition:.2s}
+.franja>a:hover{border-color:#2A52C4;box-shadow:0 4px 14px rgba(42,82,196,.15)}
+.franja>a.pro{padding:0;border:0;background:transparent}
+.franja>a.pro img{max-width:100%;max-height:100%;object-fit:contain;border-radius:6px;box-shadow:0 2px 10px rgba(11,18,32,.15)}
+.franja img{max-width:100%;max-height:calc(var(--h) - 12px);width:auto;height:auto;display:block;object-fit:contain}
+@media (max-width:1060px){.franja{--w:150px;--h:66px}}
+@media (max-width:760px){.franja{--w:47%;--h:62px;gap:8px;padding:10px 8px}}
+</style>
+</head><body>
+<!--FRANJA--><div class="franja"><a class="pro" href="https://www.observamed.org/" target="_blank" rel="noopener" title="Fundación Observamed STAR"><img src="../img/logo-fundacion.jpg" alt="Observamed · Observatorio del Medicamento · Fundación Observamed STAR"/></a><a class="pro" href="index.html" title="Boletín BisCoM"><img src="../img/logo-biscom.jpg" alt="Boletín Informática y Salud · Boletín BisCoM y del Consumidor de Medicamentos"/></a><a href="https://www.colmedcundibogota.com/boletin-salud-al-dia-no-36/" target="_blank" rel="noopener" title="Boletín Salud al Día · Colegio Médico de Cundinamarca y Bogotá"><img src="../img/salud-al-dia.jpg" alt="Boletín Salud al Día · Colegio Médico de Cundinamarca y Bogotá"/></a><!--CMCB--><a href="https://www.colmedcundibogota.com/" target="_blank" rel="noopener" title="Colegio Médico de Cundinamarca y Bogotá"><img src="../img/cmcb.png" alt="Colegio Médico de Cundinamarca y Bogotá"/></a><!--/CMCB--><a href="https://fundacionelmonitordelasalud.org/" target="_blank" rel="noopener" title="Fundación El Monitor de la Salud"><img src="../img/monitor.png" alt="Fundación El Monitor de la Salud"/></a><span title="ASMEDAS · Asociación Médica Sindical Colombiana"><img src="../img/asmedas-limpio.jpg" alt="ASMEDAS · Asociación Médica Sindical Colombiana"/></span><a href="https://x.com/vcacelapss" target="_blank" rel="noopener" title="Veeduría Ciudadana VCACELAPSS"><img src="../img/vcacelapss.jpg" alt="Veeduría Ciudadana VCACELAPSS"/></a></div><!--/FRANJA-->
+<header class="archive-mast"><div class="archive-mast-inner"><a href="../index.html"><img src="../img/marca.svg" alt="Observamed STAR"/></a>
+<nav aria-label="Navegación principal"><a href="../index.html">Inicio</a><a href="../buscador.html">Buscar medicamentos</a><a href="../glosario.html">Glosario</a></nav></div></header>
+<main class="archive-main"><div class="archive-heading"><h1>Boletines BisCoM</h1><p>Observatorio del Medicamento · Dr. Óscar Andía</p><p class="catalogue-summary"><span><strong>17</strong> publicaciones</span><span><strong>15</strong> ediciones numeradas</span><span><strong>13</strong> publicaciones con tablas</span><span><strong>203</strong> tablas · <strong>1.819</strong> filas de datos</span></p></div>
+<section class="archive-feature" aria-labelledby="feature-title"><div class="post-image"><a href="biscom38de2026-14a20sep26.html" aria-label="Abrir boletín: De la Circular 22/2026 a un listado de la CNPMyDM con errores multimillonarios"><img class="feature-image" src="img/portadas/biscom38de2026-14a20sep26.webp" alt="Infografía: De la Circular 22/2026 a un listado de la CNPMyDM con errores multimillonarios"/></a><button class="cover-expand" type="button" data-image="img/portadas/biscom38de2026-14a20sep26.webp" data-title="De la Circular 22/2026 a un listado de la CNPMyDM con errores multimillonarios" aria-label="Ampliar imagen: De la Circular 22/2026 a un listado de la CNPMyDM con errores multimillonarios" title="Ampliar imagen">Ampliar imagen</button></div><div><p class="archive-kicker">Última publicación · BisCoM 38 de 2026</p>
+<span class="catalogue-topic">Precios regulados</span><h2 id="feature-title"><a href="biscom38de2026-14a20sep26.html">De la Circular 22/2026 a un listado de la CNPMyDM con errores multimillonarios</a></h2>
+<p>Una revisión del listado de precios regulados: identificadores incompletos, muestras médicas con precio y valores que requieren verificación.</p><p class="feature-meta">14 al 20 de septiembre de 2026 · 9 tablas · 261 filas</p>
+<a class="read-edition" href="biscom38de2026-14a20sep26.html">Leer el boletín <span aria-hidden="true">→</span></a></div></section>
+<section aria-labelledby="archive-title"><div class="archive-tools"><div><h2 id="archive-title">Archivo completo</h2><p id="archive-count" aria-live="polite">17 publicaciones</p></div>
+<div class="archive-controls"><label for="archive-search">Buscar en el archivo<input id="archive-search" type="search" placeholder="Título, tema o número"/></label>
+<label for="archive-kind">Publicación<select id="archive-kind"><option value="">Todas las publicaciones</option><option value="boletin">Boletines</option><option value="especial">Informes especiales</option></select></label></div></div>
+<section class="catalogue-year" aria-labelledby="year-2026"><div class="catalogue-year-heading"><h3 id="year-2026">2026</h3><span>13 publicaciones</span></div><div class="catalogue-rows">
+<a class="catalogue-row t-precios" href="biscom38de2026-14a20sep26.html" data-kind="boletin" data-edition="biscom38de2026-14a20sep26"><span class="catalogue-number"><small>BisCoM</small><b>38</b></span><span class="catalogue-copy"><span class="catalogue-topic">Precios regulados</span><strong>De la Circular 22/2026 a un listado de la CNPMyDM con errores multimillonarios</strong><span class="catalogue-meta"><time>14 al 20 de septiembre de 2026</time><span>Edición con tablas</span></span></span><span class="catalogue-data">9 tablas · 261 filas</span><span class="catalogue-arrow" aria-hidden="true">→</span></a>
+<a class="catalogue-row t-venas" href="biscom36de2026-31ago06sep26.html" data-kind="boletin" data-edition="biscom36de2026-31ago06sep26"><span class="catalogue-number"><small>BisCoM</small><b>36</b></span><span class="catalogue-copy"><span class="catalogue-topic">Venas abiertas</span><strong>Plan de choque de MinSalud: el seguimiento llega al día 30</strong><span class="catalogue-meta"><time>31 de agosto al 6 de septiembre de 2026</time><span>Síntesis editorial</span></span></span><span class="catalogue-data">Síntesis editorial</span><span class="catalogue-arrow" aria-hidden="true">→</span></a>
+<a class="catalogue-row t-soberania" href="biscom35de2026-24a30ago26.html" data-kind="boletin" data-edition="biscom35de2026-24a30ago26"><span class="catalogue-number"><small>BisCoM</small><b>35</b></span><span class="catalogue-copy"><span class="catalogue-topic">Soberanía farmacéutica</span><strong>Precios bajo revisión y soberanía farmacéutica por construir</strong><span class="catalogue-meta"><time>24 al 30 de agosto de 2026</time><span>Síntesis editorial</span></span></span><span class="catalogue-data">Síntesis editorial</span><span class="catalogue-arrow" aria-hidden="true">→</span></a>
+<a class="catalogue-row t-precios" href="biscom32de2026-03a09ago26.html" data-kind="boletin" data-edition="biscom32de2026-03a09ago26"><span class="catalogue-number"><small>BisCoM</small><b>32</b></span><span class="catalogue-copy"><span class="catalogue-topic">Precios regulados</span><strong>Circular 22/2026: los precios máximos de venta del régimen de control directo</strong><span class="catalogue-meta"><time>3 al 9 de agosto de 2026</time><span>Edición con tablas</span></span></span><span class="catalogue-data">15 tablas · 74 filas</span><span class="catalogue-arrow" aria-hidden="true">→</span></a>
+<a class="catalogue-row t-venas" href="biscom31de2026-27jul02ago26.html" data-kind="boletin" data-edition="biscom31de2026-27jul02ago26"><span class="catalogue-number"><small>BisCoM</small><b>31</b></span><span class="catalogue-copy"><span class="catalogue-topic">Venas abiertas</span><strong>Anticuerpos monoclonales: una de las venas abiertas que explican la crisis</strong><span class="catalogue-meta"><time>27 de julio al 2 de agosto de 2026</time><span>Edición con tablas</span></span></span><span class="catalogue-data">7 tablas · 31 filas</span><span class="catalogue-arrow" aria-hidden="true">→</span></a>
+<a class="catalogue-row t-soberania" href="biscom29de2026-13a19jul26.html" data-kind="boletin" data-edition="biscom29de2026-13a19jul26"><span class="catalogue-number"><small>BisCoM</small><b>29</b></span><span class="catalogue-copy"><span class="catalogue-topic">Soberanía farmacéutica</span><strong>Ley 2386 y CONPES 4170: la hoja de ruta de la soberanía farmacéutica</strong><span class="catalogue-meta"><time>13 al 19 de julio de 2026</time><span>Edición con tablas</span></span></span><span class="catalogue-data">17 tablas · 135 filas</span><span class="catalogue-arrow" aria-hidden="true">→</span></a>
+<a class="catalogue-row t-precios" href="biscom25de2026-15a21jun26.html" data-kind="boletin" data-edition="biscom25de2026-15a21jun26"><span class="catalogue-number"><small>BisCoM</small><b>25</b></span><span class="catalogue-copy"><span class="catalogue-topic">Precios regulados</span><strong>Circular 22/2026: se actualiza el precio máximo de venta de los medicamentos regulados</strong><span class="catalogue-meta"><time>15 al 21 de junio de 2026</time><span>Edición con tablas</span></span></span><span class="catalogue-data">16 tablas · 96 filas</span><span class="catalogue-arrow" aria-hidden="true">→</span></a>
+<a class="catalogue-row t-sismed" href="biscom24de2026-08a14jun26.html" data-kind="boletin" data-edition="biscom24de2026-08a14jun26"><span class="catalogue-number"><small>BisCoM</small><b>24</b></span><span class="catalogue-copy"><span class="catalogue-topic">SISMED</span><strong>Circular 21 de 2026: las nuevas reglas para reportar precios a SISMED</strong><span class="catalogue-meta"><time>8 al 14 de junio de 2026</time><span>Edición con tablas</span></span></span><span class="catalogue-data">17 tablas · 102 filas</span><span class="catalogue-arrow" aria-hidden="true">→</span></a>
+<a class="catalogue-row t-diabetes" href="biscom23de2026-01a07jun26.html" data-kind="boletin" data-edition="biscom23de2026-01a07jun26"><span class="catalogue-number"><small>BisCoM</small><b>23</b></span><span class="catalogue-copy"><span class="catalogue-topic">Antidiabéticos</span><strong>Antidiabéticos y antiobesidad: resultados en salud pobres o discutibles</strong><span class="catalogue-meta"><time>1 al 7 de junio de 2026</time><span>Edición con tablas</span></span></span><span class="catalogue-data">5 tablas · 52 filas</span><span class="catalogue-arrow" aria-hidden="true">→</span></a>
+<a class="catalogue-row t-diabetes" href="biscom22de2026-25a31may26.html" data-kind="boletin" data-edition="biscom22de2026-25a31may26"><span class="catalogue-number"><small>BisCoM</small><b>22</b></span><span class="catalogue-copy"><span class="catalogue-topic">Antidiabéticos</span><strong>Antidiabéticos y antiobesidad: gastos multimillonarios y sin control</strong><span class="catalogue-meta"><time>25 al 31 de mayo de 2026</time><span>Edición con tablas</span></span></span><span class="catalogue-data">62 tablas · 502 filas</span><span class="catalogue-arrow" aria-hidden="true">→</span></a>
+<a class="catalogue-row t-diabetes" href="../boletin-22.html" data-kind="especial" data-edition="biscom22de2026"><span class="catalogue-number"><small>BisCoM</small><b>22</b></span><span class="catalogue-copy"><span class="catalogue-topic">Antidiabéticos</span><strong>$9,6 billones en antidiabéticos: las ventas que no cuadran</strong><span class="catalogue-meta"><time>2026</time><span>Informe especial</span></span></span><span class="catalogue-data">Informe especial</span><span class="catalogue-arrow" aria-hidden="true">→</span></a>
+<a class="catalogue-row t-soberania" href="biscom21de2026-18a24may26.html" data-kind="boletin" data-edition="biscom21de2026-18a24may26"><span class="catalogue-number"><small>BisCoM</small><b>21</b></span><span class="catalogue-copy"><span class="catalogue-topic">Soberanía farmacéutica</span><strong>Ley 2386 y CONPES 4170: las tablas de la soberanía farmacéutica</strong><span class="catalogue-meta"><time>18 al 24 de mayo de 2026</time><span>Edición con tablas</span></span></span><span class="catalogue-data">16 tablas · 119 filas</span><span class="catalogue-arrow" aria-hidden="true">→</span></a>
+<a class="catalogue-row t-soberania" href="../boletin.html" data-kind="boletin" data-edition="biscom21de2026"><span class="catalogue-number"><small>BisCoM</small><b>21</b></span><span class="catalogue-copy"><span class="catalogue-topic">Soberanía farmacéutica</span><strong>Soberanía farmacéutica: buen diagnóstico, implementación a medias</strong><span class="catalogue-meta"><time>18 al 24 de mayo de 2026</time><span>Síntesis editorial</span></span></span><span class="catalogue-data">Síntesis editorial</span><span class="catalogue-arrow" aria-hidden="true">→</span></a>
+</div></section>
+<section class="catalogue-year" aria-labelledby="year-2025"><div class="catalogue-year-heading"><h3 id="year-2025">2025</h3><span>4 publicaciones</span></div><div class="catalogue-rows">
+<a class="catalogue-row t-venas" href="biscom35de2025-25a31ago25.html" data-kind="boletin" data-edition="biscom35de2025-25a31ago25"><span class="catalogue-number"><small>BisCoM</small><b>35</b></span><span class="catalogue-copy"><span class="catalogue-topic">Venas abiertas</span><strong>Desabastecimiento de medicamentos: lo estructural y lo coyuntural de la crisis</strong><span class="catalogue-meta"><time>25 al 31 de agosto de 2025</time><span>Edición con tablas</span></span></span><span class="catalogue-data">10 tablas · 110 filas</span><span class="catalogue-arrow" aria-hidden="true">→</span></a>
+<a class="catalogue-row t-diabetes" href="biscom24de2025-09a15jun25.html" data-kind="boletin" data-edition="biscom24de2025-09a15jun25"><span class="catalogue-number"><small>BisCoM</small><b>24</b></span><span class="catalogue-copy"><span class="catalogue-topic">Antidiabéticos</span><strong>Antidiabéticos y adelgazantes: del éxito terapéutico al desastre económico</strong><span class="catalogue-meta"><time>9 al 15 de junio de 2025</time><span>Edición con tablas</span></span></span><span class="catalogue-data">10 tablas · 110 filas</span><span class="catalogue-arrow" aria-hidden="true">→</span></a>
+<a class="catalogue-row t-venas" href="biscom23de2025-02a08jun25.html" data-kind="boletin" data-edition="biscom23de2025-02a08jun25"><span class="catalogue-number"><small>BisCoM</small><b>23</b></span><span class="catalogue-copy"><span class="catalogue-topic">Venas abiertas</span><strong>Anticuerpos monoclonales: los más vendidos según SISMED, 2015 a 2024</strong><span class="catalogue-meta"><time>2 al 8 de junio de 2025</time><span>Edición con tablas</span></span></span><span class="catalogue-data">6 tablas · 66 filas</span><span class="catalogue-arrow" aria-hidden="true">→</span></a>
+<a class="catalogue-row t-sismed" href="biscom22de2025-26may01jun25.html" data-kind="boletin" data-edition="biscom22de2025-26may01jun25"><span class="catalogue-number"><small>BisCoM</small><b>22</b></span><span class="catalogue-copy"><span class="catalogue-topic">SISMED</span><strong>Ventas y precios reportados a SISMED en 2024: ¿se evidencia la crisis?</strong><span class="catalogue-meta"><time>26 de mayo al 1 de junio de 2025</time><span>Edición con tablas</span></span></span><span class="catalogue-data">13 tablas · 161 filas</span><span class="catalogue-arrow" aria-hidden="true">→</span></a>
+</div></section><p class="archive-empty" id="archive-empty" hidden>No hay publicaciones que coincidan.</p></section></main>
+<footer class="archive-footer"><div class="archive-footer-inner"><span>Observamed STAR · Boletín Informática y Salud</span><div class="archive-footer-logos">
+<a href="https://www.colmedcundibogota.com/boletin-salud-al-dia-no-36/" target="_blank" rel="noopener"><img src="../img/cmcb.png" alt="Colegio Médico de Cundinamarca y Bogotá"/></a>
+<a href="https://fundacionelmonitordelasalud.org/" target="_blank" rel="noopener"><img src="../img/monitor.png" alt="Fundación El Monitor de la Salud"/></a></div><a href="../index.html">Volver a Inicio →</a></div></footer>
+
+<div class="image-peek" id="image-peek" hidden aria-hidden="true"><img alt=""/></div>
+<dialog class="image-modal" id="image-modal" aria-labelledby="image-title">
+<div class="image-toolbar"><h2 id="image-title">Imagen</h2>
+<button type="button" id="image-close" aria-label="Cerrar imagen" title="Cerrar">×</button></div>
+<div class="image-stage"><img id="image-full" alt=""/></div></dialog>
+<script>
+(function(){
+ var dialog=document.getElementById('image-modal'),image=document.getElementById('image-full');
+ var peek=document.getElementById('image-peek');
+ if(!dialog||!image||!peek)return;
+ var preview=peek.querySelector('img'),opener=null,previousOverflow='',active=null,skipFocus=false;
+ function hidePreview(){active=null;peek.hidden=true;peek.classList.remove('on');preview.removeAttribute('src');}
+ function placePreview(){
+  if(!active)return;
+  var rect=active.getBoundingClientRect(),topLimit=96,pad=22;
+  var maxHeight=innerHeight-topLimit-16,maxWidth=Math.min(760,innerWidth-32);
+  if(maxHeight<120||maxWidth<120){hidePreview();return;}
+  var ratio=(preview.naturalWidth&&preview.naturalHeight)?preview.naturalWidth/preview.naturalHeight:16/9;
+  var width=Math.min(maxWidth,(maxHeight-pad)*ratio+pad),height=(width-pad)/ratio+pad;
+  var left=Math.max(16,Math.min(innerWidth-width-16,rect.left+(rect.width-width)/2));
+  var top=Math.max(topLimit,Math.min(innerHeight-height-16,rect.top+(rect.height-height)/2));
+  peek.style.width=width+'px';peek.style.height=height+'px';peek.style.left=left+'px';peek.style.top=top+'px';
+ }
+ function showPreview(media){
+  if(dialog.open)return;
+  var button=media.querySelector('.cover-expand');if(!button)return;
+  active=media;preview.src=button.dataset.image;peek.hidden=false;placePreview();
+  if(active)peek.classList.add('on');
+ }
+ preview.addEventListener('load',placePreview);
+ document.querySelectorAll('.post-image').forEach(function(media){
+  media.addEventListener('pointerenter',function(e){if(e.pointerType==='mouse'&&matchMedia('(hover:hover) and (pointer:fine)').matches)showPreview(media);});
+  media.addEventListener('pointerleave',hidePreview);
+  media.addEventListener('focusin',function(){if(skipFocus){skipFocus=false;return;}if(matchMedia('(hover:hover) and (pointer:fine)').matches)showPreview(media);});
+  media.addEventListener('focusout',function(e){if(!media.contains(e.relatedTarget))hidePreview();});
+ });
+ document.querySelectorAll('.cover-expand').forEach(function(button){button.addEventListener('click',function(){
+  hidePreview();opener=button;image.src=button.dataset.image;image.alt=button.dataset.title;
+  document.getElementById('image-title').textContent=button.dataset.title;
+  previousOverflow=document.body.style.overflow;dialog.showModal();document.body.style.overflow='hidden';
+ });});
+ document.getElementById('image-close').addEventListener('click',function(){dialog.close();});
+ dialog.addEventListener('click',function(e){if(e.target===dialog)dialog.close();});
+ dialog.addEventListener('close',function(){document.body.style.overflow=previousOverflow;image.removeAttribute('src');if(opener){skipFocus=true;opener.focus();skipFocus=false;}});
+ addEventListener('keydown',function(e){if(e.key==='Escape'){hidePreview();if(dialog.open){e.preventDefault();dialog.close();}}});
+ addEventListener('scroll',hidePreview,{passive:true});addEventListener('resize',hidePreview);
+})();
+</script><script>
+(function(){
+ var search=document.getElementById('archive-search'),kind=document.getElementById('archive-kind'),count=document.getElementById('archive-count');
+ function normalize(s){return s.toLocaleLowerCase('es').normalize('NFD').replace(/[\u0300-\u036f]/g,'');}
+ function filter(){
+  var terms=normalize(search.value.trim()).split(/\s+/).filter(Boolean),total=0;
+  document.querySelectorAll('.catalogue-year').forEach(function(group){
+   var visible=0;group.querySelectorAll('.catalogue-row').forEach(function(row){
+    var text=normalize(row.textContent);row.hidden=!!kind.value&&kind.value!==row.dataset.kind;
+    row.hidden=row.hidden||!terms.every(function(term){return text.indexOf(term)!==-1;});if(!row.hidden){visible++;total++;}
+   });group.hidden=!visible;group.querySelector('.catalogue-year-heading>span').textContent=visible+(visible===1?' publicación':' publicaciones');
+  });count.textContent=total+(total===1?' publicación':' publicaciones');document.getElementById('archive-empty').hidden=!!total;
+ }
+ search.addEventListener('input',filter);kind.addEventListener('change',filter);
+ if(location.hash==='#especial'||location.hash==='#boletin')kind.value=location.hash.slice(1);filter();
+})();
+</script></body></html>

@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-label="Soberania farmaceutica en Colombia">
+<defs>
+  <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#E8F8F3"/>
+    <stop offset=".62" stop-color="#fff"/>
+    <stop offset="1" stop-color="#E8F8F3"/>
+  </linearGradient>
+  <pattern id="grid" width="44" height="44" patternUnits="userSpaceOnUse">
+    <path d="M44 0H0V44" fill="none" stroke="#075B48" stroke-opacity=".07" stroke-width="2"/>
+  </pattern>
+</defs>
+<rect width="1200" height="675" fill="url(#g)"/>
+<rect width="1200" height="675" fill="url(#grid)"/>
+<rect x="0" y="0" width="1200" height="74" fill="#075B48"/>
+<text x="64" y="46" font-size="25" font-weight="900" fill="#fff">BisCoM 21 de 2026</text>
+<text x="1136" y="46" text-anchor="end" font-size="18" font-weight="800" fill="#DDEBFF">18 al 24 de mayo de 2026</text>
+<rect x="64" y="112" width="476" height="54" rx="27" fill="#2BB695" opacity=".13"/>
+<text x="91" y="147" font-size="22" font-weight="900" fill="#075B48">Observamed STAR</text>
+<text x="64" y="232" font-size="54" font-weight="900" fill="#101827">Soberania farmaceutica</text>
+<text x="64" y="292" font-size="54" font-weight="900" fill="#101827">en Colombia</text>
+<text x="66" y="405" font-size="28" font-weight="750" fill="#374151">Ley 2386, CONPES 4170 y el reto de</text>
+<text x="66" y="441" font-size="28" font-weight="750" fill="#374151">producir medicamentos esenciales</text>
+<rect x="64" y="500" width="270" height="54" rx="27" fill="#fff" stroke="#2BB695" stroke-width="2"/><text x="88" y="535" font-size="22" font-weight="900" fill="#075B48">70% importados</text><rect x="352" y="500" width="270" height="54" rx="27" fill="#fff" stroke="#2BB695" stroke-width="2"/><text x="376" y="535" font-size="22" font-weight="900" fill="#075B48">$1,37 billones</text><rect x="640" y="500" width="190" height="54" rx="27" fill="#fff" stroke="#2BB695" stroke-width="2"/><text x="664" y="535" font-size="22" font-weight="900" fill="#075B48">2026-2035</text>
+
+<g transform="translate(615 150)">
+  <rect x="60" y="168" width="410" height="120" rx="16" fill="#fff" stroke="#075B48" stroke-width="4"/>
+  <rect x="100" y="102" width="82" height="66" rx="14" fill="#F4BC3F" opacity=".45" stroke="#075B48" stroke-width="4"/>
+  <rect x="224" y="70" width="118" height="98" rx="14" fill="#2BB695" opacity=".25" stroke="#075B48" stroke-width="4"/>
+  <rect x="382" y="120" width="70" height="48" rx="12" fill="#F4BC3F" opacity=".55" stroke="#075B48" stroke-width="4"/>
+  <path d="M88 168V92l42 36 42-36v76M244 70V28l38 30 38-30v42M405 120V82l30 24 30-24v86" fill="none" stroke="#075B48" stroke-width="4" stroke-linejoin="round"/>
+  <path d="M120 222h290M120 252h210" stroke="#075B48" stroke-width="12" stroke-linecap="round" opacity=".22"/>
+  <circle cx="95" cy="330" r="22" fill="#F4BC3F"/><circle cx="265" cy="330" r="22" fill="#2BB695"/><circle cx="435" cy="330" r="22" fill="#F4BC3F"/>
+  <path d="M117 330h126M287 330h126" stroke="#075B48" stroke-width="7" stroke-linecap="round"/>
+</g>
+<path d="M64 606h1015" stroke="#075B48" stroke-opacity=".18" stroke-width="2"/>
+<text x="64" y="638" font-size="18" font-weight="800" fill="#5D6B7B">Boletin BisCoM convertido a tablas e imagenes legibles</text>
+<text x="1136" y="638" text-anchor="end" font-size="18" font-weight="900" fill="#075B48">Observatorio del Medicamento</text>
+</svg>

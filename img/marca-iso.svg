@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" role="img" aria-label="Observamed STAR">
+  <defs>
+    <linearGradient id="oz" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#3B7AE0"/><stop offset="1" stop-color="#00A3C4"/>
+    </linearGradient>
+  </defs>
+  <path d="M4 24c5.6-8.7 13-13 20-13s14.4 4.3 20 13c-5.6 8.7-13 13-20 13S9.6 32.7 4 24z"
+        fill="none" stroke="url(#oz)" stroke-width="3.2" stroke-linejoin="round"/>
+  <path d="M24 13.6l2.7 6.9 6.9 2.7-6.9 2.7-2.7 6.9-2.7-6.9-6.9-2.7 6.9-2.7z" fill="url(#oz)"/>
+</svg>

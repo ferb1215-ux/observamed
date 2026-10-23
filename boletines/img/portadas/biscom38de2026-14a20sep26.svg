@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-label="Errores multimillonarios en precios">
+<defs>
+  <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#DFF1FF"/>
+    <stop offset=".62" stop-color="#fff"/>
+    <stop offset="1" stop-color="#DFF1FF"/>
+  </linearGradient>
+  <pattern id="grid" width="44" height="44" patternUnits="userSpaceOnUse">
+    <path d="M44 0H0V44" fill="none" stroke="#103A72" stroke-opacity=".07" stroke-width="2"/>
+  </pattern>
+</defs>
+<rect width="1200" height="675" fill="url(#g)"/>
+<rect width="1200" height="675" fill="url(#grid)"/>
+<rect x="0" y="0" width="1200" height="74" fill="#103A72"/>
+<text x="64" y="46" font-size="25" font-weight="900" fill="#fff">BisCoM 38 de 2026</text>
+<text x="1136" y="46" text-anchor="end" font-size="18" font-weight="800" fill="#DDEBFF">14 al 20 de septiembre de 2026</text>
+<rect x="64" y="112" width="476" height="54" rx="27" fill="#2A72C4" opacity=".13"/>
+<text x="91" y="147" font-size="22" font-weight="900" fill="#103A72">Observamed STAR</text>
+<text x="64" y="232" font-size="54" font-weight="900" fill="#101827">Errores</text>
+<text x="64" y="292" font-size="54" font-weight="900" fill="#101827">multimillonarios en</text>
+<text x="64" y="352" font-size="54" font-weight="900" fill="#101827">precios</text>
+<text x="66" y="405" font-size="28" font-weight="750" fill="#374151">CUMs, muestras medicas y transacciones</text>
+<text x="66" y="441" font-size="28" font-weight="750" fill="#374151">con precio regulado</text>
+<rect x="64" y="500" width="185" height="54" rx="27" fill="#fff" stroke="#2A72C4" stroke-width="2"/><text x="88" y="535" font-size="22" font-weight="900" fill="#103A72">9 tablas</text><rect x="267" y="500" width="300" height="54" rx="27" fill="#fff" stroke="#2A72C4" stroke-width="2"/><text x="291" y="535" font-size="22" font-weight="900" fill="#103A72">119 precios &gt; $100 millones</text><rect x="585" y="500" width="300" height="54" rx="27" fill="#fff" stroke="#2A72C4" stroke-width="2"/><text x="609" y="535" font-size="22" font-weight="900" fill="#103A72">33 muestras medicas</text>
+
+<g transform="translate(660 185)">
+  <rect x="0" y="0" width="370" height="270" rx="28" fill="#fff" stroke="#103A72" stroke-width="4"/>
+  <rect x="28" y="35" width="314" height="36" rx="18" fill="#2A72C4" opacity=".16"/>
+  <rect x="28" y="95" width="314" height="34" rx="17" fill="#F7B731" opacity=".28"/>
+  <rect x="28" y="155" width="314" height="34" rx="17" fill="#2A72C4" opacity=".16"/>
+  <path d="M55 228h245" stroke="#103A72" stroke-width="9" stroke-linecap="round"/>
+  <path d="M55 228h125" stroke="#F7B731" stroke-width="9" stroke-linecap="round"/>
+  <path d="M295 120l34 58h-68z" fill="#F7B731" stroke="#103A72" stroke-width="4"/>
+  <text x="286" y="162" font-size="42" font-weight="900" fill="#103A72">!</text>
+</g>
+<path d="M64 606h1015" stroke="#103A72" stroke-opacity=".18" stroke-width="2"/>
+<text x="64" y="638" font-size="18" font-weight="800" fill="#5D6B7B">Boletin BisCoM convertido a tablas e imagenes legibles</text>
+<text x="1136" y="638" text-anchor="end" font-size="18" font-weight="900" fill="#103A72">Observatorio del Medicamento</text>
+</svg>

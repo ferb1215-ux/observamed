@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-label="Circular 21: nuevo reporte SISMED">
+<defs>
+  <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#E2F8FC"/>
+    <stop offset=".62" stop-color="#fff"/>
+    <stop offset="1" stop-color="#E2F8FC"/>
+  </linearGradient>
+  <pattern id="grid" width="44" height="44" patternUnits="userSpaceOnUse">
+    <path d="M44 0H0V44" fill="none" stroke="#075E6E" stroke-opacity=".07" stroke-width="2"/>
+  </pattern>
+</defs>
+<rect width="1200" height="675" fill="url(#g)"/>
+<rect width="1200" height="675" fill="url(#grid)"/>
+<rect x="0" y="0" width="1200" height="74" fill="#075E6E"/>
+<text x="64" y="46" font-size="25" font-weight="900" fill="#fff">BisCoM 24 de 2026</text>
+<text x="1136" y="46" text-anchor="end" font-size="18" font-weight="800" fill="#DDEBFF">8 al 14 de junio de 2026</text>
+<rect x="64" y="112" width="476" height="54" rx="27" fill="#00A3C4" opacity=".13"/>
+<text x="91" y="147" font-size="22" font-weight="900" fill="#075E6E">Observamed STAR</text>
+<text x="64" y="232" font-size="54" font-weight="900" fill="#101827">Circular 21: nuevo</text>
+<text x="64" y="292" font-size="54" font-weight="900" fill="#101827">reporte SISMED</text>
+<text x="66" y="405" font-size="28" font-weight="750" fill="#374151">Unidad minima, actores, archivos planos</text>
+<text x="66" y="441" font-size="28" font-weight="750" fill="#374151">y trazabilidad de precios</text>
+<rect x="64" y="500" width="190" height="54" rx="27" fill="#fff" stroke="#00A3C4" stroke-width="2"/><text x="88" y="535" font-size="22" font-weight="900" fill="#075E6E">17 tablas</text><rect x="272" y="500" width="185" height="54" rx="27" fill="#fff" stroke="#00A3C4" stroke-width="2"/><text x="296" y="535" font-size="22" font-weight="900" fill="#075E6E">UMD</text><rect x="475" y="500" width="286" height="54" rx="27" fill="#fff" stroke="#00A3C4" stroke-width="2"/><text x="499" y="535" font-size="22" font-weight="900" fill="#075E6E">reporte tecnico</text>
+
+<g transform="translate(650 170)">
+  <ellipse cx="190" cy="45" rx="150" ry="42" fill="#fff" stroke="#075E6E" stroke-width="4"/>
+  <path d="M40 45v205c0 23 67 42 150 42s150-19 150-42V45" fill="#fff" stroke="#075E6E" stroke-width="4"/>
+  <ellipse cx="190" cy="250" rx="150" ry="42" fill="#00A3C4" opacity=".13" stroke="#075E6E" stroke-width="4"/>
+  <path d="M72 112h236M72 174h236" stroke="#075E6E" stroke-width="3" opacity=".35"/>
+  <circle cx="84" cy="112" r="14" fill="#F4BC3F"/>
+  <circle cx="296" cy="174" r="14" fill="#F4BC3F"/>
+  <path d="M-10 145h-105m105 0-28-24m28 24-28 24M390 145h105m-105 0 28-24m-28 24 28 24" stroke="#00A3C4" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+<path d="M64 606h1015" stroke="#075E6E" stroke-opacity=".18" stroke-width="2"/>
+<text x="64" y="638" font-size="18" font-weight="800" fill="#5D6B7B">Boletin BisCoM convertido a tablas e imagenes legibles</text>
+<text x="1136" y="638" text-anchor="end" font-size="18" font-weight="900" fill="#075E6E">Observatorio del Medicamento</text>
+</svg>

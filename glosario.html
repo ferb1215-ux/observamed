@@ -1,0 +1,535 @@
+<!DOCTYPE html><html lang="es"><head><meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Glosario — Entender las palabras del Observatorio del Medicamento</title>
+<meta name="description" content="Qué significan CUM, PreMaxRef, PRA, SISMED, CNPMyDM y los demás términos que aparecen en los boletines del Observatorio del Medicamento."/>
+<meta name="robots" content="noindex, nofollow"/>
+<link rel="icon" href="img/favicon.svg" type="image/svg+xml"/>
+<style>
+:root{--azul-oscuro:#2A52C4;--azul-rey:#3B7AE0;--turquesa:#00A3C4;--gris-medio:#E4E7EC;
+--gris-borde:#DDE2EA;--text-dark:#111827;--text-med:#374151;--text-light:#6B7280}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;background:#F7FAFF;
+color:var(--text-dark);line-height:1.7}
+nav{display:flex;align-items:center;justify-content:space-between;padding:14px 24px;background:#fff;
+border-bottom:1px solid var(--gris-medio);position:sticky;top:0;z-index:20}
+nav img{height:44px} nav a{color:var(--text-med);text-decoration:none;font-weight:700;font-size:.9rem}
+header{padding:44px 22px 10px;text-align:center;
+background:radial-gradient(800px 380px at 50% -20%,rgba(0,163,196,.10),transparent 62%),#F7FAFF}
+.k{display:inline-flex;align-items:center;gap:9px;font-size:.72rem;font-weight:900;letter-spacing:.14em;
+text-transform:uppercase;color:var(--azul-oscuro);margin-bottom:12px}
+.k::before{content:'';width:22px;height:3px;border-radius:2px;background:linear-gradient(90deg,var(--azul-rey),var(--turquesa))}
+h1{font-size:clamp(1.8rem,4.2vw,2.7rem);font-weight:900;letter-spacing:-1.2px;margin-bottom:10px}
+header p{color:var(--text-med);max-width:620px;margin:0 auto;font-size:1.03rem}
+main{max-width:1080px;margin:0 auto;padding:26px 22px 70px}
+.buscar{position:sticky;top:73px;z-index:15;background:#F7FAFF;padding:14px 0 10px}
+#q{width:100%;border:2px solid var(--gris-borde);border-radius:14px;padding:13px 16px;font-size:1rem;
+font-family:inherit;outline:0;background:#fff;transition:border-color .2s,box-shadow .2s}
+#q:focus{border-color:var(--azul-rey);box-shadow:0 0 0 4px rgba(59,122,224,.13)}
+.chips{display:flex;gap:7px;flex-wrap:wrap;margin-top:10px}
+.ch{display:inline-flex;align-items:center;gap:7px;border:1.5px solid var(--gris-borde);background:#fff;
+color:var(--text-med);font-family:inherit;font-size:.82rem;font-weight:800;padding:7px 14px;
+border-radius:99px;cursor:pointer;transition:all .18s}
+.ch i{width:8px;height:8px;border-radius:99px}
+.ch:hover{border-color:var(--azul-rey)}
+.ch.on{background:var(--text-dark);border-color:var(--text-dark);color:#fff}
+.ch.on i{background:#fff!important}
+.rejilla{display:grid;grid-template-columns:repeat(auto-fill,minmax(310px,1fr));gap:15px;margin-top:8px}
+.term{background:#fff;border:1px solid var(--gris-medio);border-radius:18px;padding:20px 22px;
+box-shadow:0 2px 12px rgba(42,82,196,.06);transition:transform .2s,box-shadow .2s}
+.term:hover{transform:translateY(-3px);box-shadow:0 8px 26px rgba(42,82,196,.12)}
+.cab{display:flex;align-items:center;gap:10px;margin-bottom:10px;flex-wrap:wrap}
+.sig{color:#fff;font-weight:900;font-size:.82rem;letter-spacing:.02em;padding:5px 13px;border-radius:99px}
+.grp{font-size:.64rem;font-weight:900;letter-spacing:.11em;text-transform:uppercase}
+.term h3{font-size:1.02rem;font-weight:800;letter-spacing:-.3px;line-height:1.3;margin-bottom:8px}
+.que{color:var(--text-med);font-size:.93rem;text-align:justify;hyphens:auto;margin-bottom:12px}
+.por{background:#F7FAFF;border-left:3px solid var(--azul-rey);border-radius:0 10px 10px 0;
+padding:10px 14px;font-size:.88rem;color:var(--text-med);text-align:justify;hyphens:auto}
+.por b{color:var(--azul-oscuro)}
+.alias{margin-top:10px;font-size:.8rem;color:var(--text-light)}
+.alias b{color:var(--text-med)}
+#vacio{display:none;text-align:center;color:var(--text-light);padding:40px 0}
+footer{text-align:center;color:var(--text-light);font-size:.8rem;padding:26px;border-top:1px solid var(--gris-medio)}
+
+/* ============ MÓVIL: quitar saturación de la entrada ============ */
+@media(max-width:760px){
+  /* fuera las barras que duplican lo que ya está más abajo */
+  .vers,.tira{display:none !important}
+  .indice{display:none !important}
+  /* barra superior compacta */
+  nav{padding:10px 14px}
+  .logo-nav{height:36px}
+  .btn{padding:9px 15px;font-size:.8rem}
+  .btn-flip-mini span{display:none}
+  /* hero más respirado */
+  header.port,header.hero{padding:26px 16px 22px}
+  .masthead{gap:6px;margin-bottom:14px}
+  .tag{font-size:.66rem;padding:4px 9px}
+  .masthead .tag:nth-child(n+3){display:none}
+  h1{font-size:clamp(1.55rem,7.2vw,2rem);letter-spacing:-.8px;margin-bottom:12px}
+  .entradilla,.bajada{font-size:.98rem}
+  .chip-oferta{font-size:.76rem;padding:6px 13px}
+  .eyebrow{font-size:.64rem;letter-spacing:.1em}
+  /* sellos y demo, más abajo y más chicos */
+  .sellos{gap:16px;margin-top:20px;padding-top:16px}
+  .sellos .sv{font-size:.84rem} .sellos .sb{font-size:.62rem}
+  .demo-flot{display:none}
+  .demo{transform:none}
+  /* secciones y tarjetas */
+  section{padding:32px 0}
+  .wrap,.ancho{padding:0 16px}
+  h2{font-size:clamp(1.25rem,5.6vw,1.6rem)}
+  .sub{font-size:.93rem}
+  .card,.cifra,.norma,.tarj{padding:16px 18px}
+  .cifras{gap:9px}
+  /* pies y muros */
+  .muro{grid-template-columns:1fr 1fr;gap:9px}
+  .lg{min-height:74px;padding:10px}
+  .lg img{max-height:44px}
+  .pie{gap:20px}
+}
+@media(max-width:420px){
+  .muro{grid-template-columns:1fr}
+  .cifras{grid-template-columns:1fr}
+  h1{font-size:1.5rem}
+}
+
+/* ---------- encabezamiento institucional: los tres logos ---------- */
+.marca-nav{display:flex;align-items:center;gap:15px;flex-shrink:0;min-width:0}
+.sep-nav{width:1px;height:34px;background:#e3e8ef;flex-shrink:0}
+.coed{display:flex;align-items:center;gap:13px;min-width:0}
+.coed-t{font-size:0.52rem;letter-spacing:0.12em;text-transform:uppercase;color:#7b8794;
+  font-weight:700;line-height:1.35;max-width:52px;flex-shrink:0}
+.coed-l{display:flex;align-items:center;gap:14px;min-width:0}
+.coed-l a{display:block;flex-shrink:0;perspective:600px}
+.coed-l .giro{display:block;position:relative;height:34px;transform-style:preserve-3d;
+  transition:transform .55s cubic-bezier(.4,0,.2,1)}
+.coed-l .cara{display:flex;align-items:center;height:34px;backface-visibility:hidden}
+.coed-l .cara.b{position:absolute;inset:0;transform:rotateY(180deg)}
+.coed-l .cara img{max-height:34px;width:auto;display:block}
+.coed-l.rebrand .giro{transform:rotateY(180deg)}
+.coed-l a:hover{opacity:.78}
+@media(max-width:1180px){.coed-t{display:none}}
+@media(max-width:860px){
+  .marca-nav{gap:10px}.coed{gap:9px}.coed-l{gap:10px}
+  .sep-nav{height:26px}
+  .coed-l .giro,.coed-l .cara{height:26px}.coed-l .cara img{max-height:26px}
+}
+@media(max-width:400px){.coed-l{gap:8px}.coed-l .giro,.coed-l .cara{height:23px}.coed-l .cara img{max-height:23px}}
+
+.coed-l a.sello-c .giro,.coed-l a.sello-c .cara{height:44px}
+.coed-l a.sello-c .cara img{max-height:44px}
+@media(max-width:860px){.coed-l a.sello-c .giro,.coed-l a.sello-c .cara{height:34px}
+  .coed-l a.sello-c .cara img{max-height:34px}}
+@media(max-width:400px){.coed-l a.sello-c .giro,.coed-l a.sello-c .cara{height:30px}
+  .coed-l a.sello-c .cara img{max-height:30px}}
+.trio a.sello-c img{max-height:44px}
+@media(max-width:520px){.trio a.sello-c img{max-height:33px}}
+
+/* --- cortes recalculados tras sumar los logos del Colegio y el Monitor --- */
+@media(max-width:1460px){
+  .sello{display:none !important}
+  .coed-t{display:none}
+  .nav-links{gap:14px}
+}
+@media(max-width:1430px){
+  .nav-links{gap:12px;font-size:0.82rem}
+}
+@media(max-width:1320px){
+  .nav-links a.sec{display:none}
+  .nav-links{gap:14px;font-size:0.85rem}
+}
+@media(max-width:1060px){
+  .nav-links a:not(.btn){display:none}
+  .nav-links{gap:14px;font-size:0.88rem}
+}
+@media(max-width:620px){
+  nav{gap:8px;padding:9px 11px}
+  .logo-nav{height:30px}
+  .marca-nav{gap:8px}
+  .coed-l{gap:8px}
+  .sep-nav{height:22px}
+  .coed-l .giro,.coed-l .cara{height:22px}
+  .coed-l .cara img{max-height:22px}
+  .coed-l a.sello-c .giro,.coed-l a.sello-c .cara{height:28px}
+  .coed-l a.sello-c .cara img{max-height:28px}
+  .nav-links{gap:8px}
+  .nav-links .btn{font-size:0.74rem;padding:8px 13px}
+}
+
+@media(max-width:380px){.nav-links{gap:5px}.coed-l{gap:6px}
+  .nav-links .btn{font-size:0.7rem;padding:7px 11px}
+  .logo-nav{height:27px}}
+
+@media(max-width:392px){.nav-links{gap:4px}.coed-l{gap:5px}
+  .nav-links .btn{font-size:0.62rem;padding:6px 8px}
+  .logo-nav{height:24px}nav{padding:8px 7px;gap:5px}
+  .sep-nav{height:19px}
+  .coed-l .giro,.coed-l .cara{height:18px}
+  .coed-l .cara img{max-height:18px}
+  .coed-l a.sello-c .giro,.coed-l a.sello-c .cara{height:24px}
+  .coed-l a.sello-c .cara img{max-height:24px}}
+
+.sello .s{white-space:nowrap}
+
+/* ---------- menú de hamburguesa (celular) ---------- */
+.ham{display:none;flex-direction:column;justify-content:center;gap:4px;width:40px;height:38px;
+  padding:0 9px;border:1.5px solid var(--gris-medio);background:#fff;border-radius:11px;
+  cursor:pointer;flex-shrink:0;transition:border-color .18s}
+.ham span{display:block;height:2px;width:100%;background:var(--text-dark);border-radius:2px;
+  transition:transform .25s,opacity .2s}
+.ham[aria-expanded="true"]{border-color:var(--azul-rey)}
+.ham[aria-expanded="true"] span:nth-child(1){transform:translateY(6px) rotate(45deg)}
+.ham[aria-expanded="true"] span:nth-child(2){opacity:0}
+.ham[aria-expanded="true"] span:nth-child(3){transform:translateY(-6px) rotate(-45deg)}
+.mmenu{display:none;position:absolute;left:0;right:0;top:100%;background:#fff;
+  border-bottom:1px solid var(--gris-medio);box-shadow:0 14px 34px rgba(20,45,90,.13);
+  padding:8px 14px 14px;z-index:70}
+.mmenu.abierto{display:block}
+.mmenu a{display:flex;align-items:center;justify-content:space-between;padding:13px 4px;
+  font-weight:800;font-size:1rem;color:var(--text-dark);border-bottom:1px solid #eef2f8}
+.mmenu a:last-of-type{border-bottom:none}
+.mmenu a:hover,.mmenu a:active{color:var(--azul-rey);text-decoration:none}
+.mmenu a small{font-size:.72rem;font-weight:700;color:var(--text-light)}
+.mmenu .cta{margin-top:11px;background:var(--azul-rey);color:#fff !important;justify-content:center;
+  border-radius:980px;padding:14px;border:none}
+.mmenu .flip{margin-top:9px;justify-content:center;border:1.5px solid var(--gris-medio);
+  border-radius:980px;padding:12px;font-size:.88rem;color:var(--text-med)}
+@media(max-width:1060px){
+  .ham{display:flex}
+  nav{position:sticky}
+  .nav-links .btn-flip-mini{display:none}
+  .nav-links .btn{display:none}
+  .nav-bol{display:none}
+}
+/* con el menú recogido sobra espacio: logos aliados más grandes */
+@media(max-width:1060px){
+  .coed-l{gap:13px}
+  .coed-l .giro,.coed-l .cara{height:32px}
+  .coed-l .cara img{max-height:32px}
+  .coed-l a.sello-c .giro,.coed-l a.sello-c .cara{height:42px}
+  .coed-l a.sello-c .cara img{max-height:42px}
+  .sep-nav{height:32px}
+  .logo-nav,.marca-nav>a:first-child img{height:38px;width:auto;max-width:none}
+}
+@media(max-width:520px){
+  .coed-l{gap:11px}
+  .coed-l .giro,.coed-l .cara{height:28px}
+  .coed-l .cara img{max-height:28px}
+  .coed-l a.sello-c .giro,.coed-l a.sello-c .cara{height:37px}
+  .coed-l a.sello-c .cara img{max-height:37px}
+  .sep-nav{height:28px}
+  .logo-nav,.marca-nav>a:first-child img{height:32px;width:auto;max-width:none}
+  nav{padding:9px 12px;gap:9px}
+}
+@media(max-width:390px){
+  .coed-l{gap:9px}
+  .coed-l .giro,.coed-l .cara{height:25px}
+  .coed-l .cara img{max-height:25px}
+  .coed-l a.sello-c .giro,.coed-l a.sello-c .cara{height:33px}
+  .coed-l a.sello-c .cara img{max-height:33px}
+  .logo-nav,.marca-nav>a:first-child img{height:28px;width:auto;max-width:none}
+  .ham{width:37px;height:35px}
+}
+
+@media(max-width:374px){
+  nav{padding:8px 8px;gap:6px}
+  .marca-nav{gap:6px}
+  .coed-l{gap:7px}
+  .logo-nav,.marca-nav>a:first-child img{height:25px;width:auto;max-width:none}
+  .coed-l .giro,.coed-l .cara{height:22px}
+  .coed-l .cara img{max-height:22px}
+  .coed-l a.sello-c .giro,.coed-l a.sello-c .cara{height:29px}
+  .coed-l a.sello-c .cara img{max-height:29px}
+  .ham{width:34px;height:33px}
+}
+
+/* ---------- banda de alianzas (debajo de la barra) ---------- */
+.alianzas{display:flex;align-items:center;justify-content:center;gap:26px;flex-wrap:wrap;
+  background:#F6F9FD;border-bottom:1px solid var(--gris-medio);padding:12px 18px;row-gap:12px}
+.alianzas .et{font-size:.6rem;font-weight:800;letter-spacing:.13em;text-transform:uppercase;
+  color:var(--text-light);flex-shrink:0}
+.alianzas a,.alianzas>.partner-static{display:block;flex-shrink:0;perspective:700px}
+.alianzas .giro{display:block;position:relative;height:44px;transform-style:preserve-3d;
+  transition:transform .55s cubic-bezier(.4,0,.2,1)}
+.alianzas .cara{display:flex;align-items:center;height:44px;backface-visibility:hidden}
+.alianzas .cara.b{position:absolute;inset:0;transform:rotateY(180deg)}
+.alianzas .cara img{max-height:44px;width:auto;display:block}
+.alianzas a.cuad .giro,.alianzas a.cuad .cara{height:52px}
+.alianzas a.cuad .cara img{max-height:52px}
+.alianzas.rebrand .giro{transform:rotateY(180deg)}
+.alianzas a:hover{opacity:.8}
+@media(max-width:900px){
+  .alianzas{gap:18px;padding:10px 14px}
+  .alianzas .giro,.alianzas .cara{height:34px}
+  .alianzas .cara img{max-height:34px}
+  .alianzas a.cuad .giro,.alianzas a.cuad .cara{height:40px}
+  .alianzas a.cuad .cara img{max-height:40px}
+}
+@media(max-width:620px){
+  /* en celular se parten en dos filas, pero se leen */
+  .alianzas{gap:20px 22px;padding:11px 12px}
+  .alianzas .et{width:100%;text-align:center;margin-bottom:-4px}
+  .alianzas .giro,.alianzas .cara{height:36px}
+  .alianzas .cara img{max-height:36px}
+  .alianzas a.cuad .giro,.alianzas a.cuad .cara{height:44px}
+  .alianzas a.cuad .cara img{max-height:44px}
+}
+@media(max-width:380px){
+  .alianzas{gap:16px 18px}
+  .alianzas .giro,.alianzas .cara{height:30px}
+  .alianzas .cara img{max-height:30px}
+  .alianzas a.cuad .giro,.alianzas a.cuad .cara{height:37px}
+  .alianzas a.cuad .cara img{max-height:37px}
+}
+/* franja superior nueva (6 oct 2026) */
+.alianzas.aliad{--linea:#E4E7EC;--azul:#2A52C4;--azul-rey:#3B7AE0}
+.alianzas.aliad{--w:min(196px,calc((100vw - 120px)/7));--h:min(86px,calc(var(--w)*.44));display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap;padding:14px 16px;background:#F4F6FA;border-bottom:4px solid var(--azul)}
+.alianzas.aliad a,.alianzas.aliad>.partner-static{width:var(--w);height:var(--h);flex-shrink:0;display:flex;align-items:center;justify-content:center;background:#fff;border:1px solid var(--linea);border-radius:8px;padding:6px;perspective:700px;overflow:hidden;transition:.2s}
+.alianzas.aliad a:hover{border-color:var(--azul-rey);box-shadow:0 4px 14px rgba(42,82,196,.15)}
+.alianzas.aliad a.pro{padding:0;border:0}
+.alianzas.aliad a.pro{background:transparent}
+.alianzas.aliad a.pro img{max-width:100%;max-height:100%;object-fit:contain;border-radius:6px;box-shadow:0 2px 10px rgba(11,18,32,.15)}
+.alianzas.aliad img{max-width:100%;max-height:calc(var(--h) - 12px);width:auto;height:auto;display:block;object-fit:contain}
+.alianzas.aliad .giro{display:block;position:relative;width:100%;height:100%;transform-style:preserve-3d;transition:transform .65s cubic-bezier(.16,1,.3,1)}
+.alianzas.aliad .cara{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;backface-visibility:hidden;-webkit-backface-visibility:hidden}
+.alianzas.aliad .cara.b{transform:rotateY(180deg)}
+.alianzas.aliad .sep,.alianzas.aliad .et{display:none}
+@media (max-width:1300px){.alianzas.aliad{--w:168px;--h:74px}}
+@media (max-width:1060px){.alianzas.aliad{--w:150px;--h:66px}}
+@media (max-width:760px){.alianzas.aliad{--w:47%;--h:62px;gap:8px;padding:10px 8px}}
+.alianzas.aliad.rebrand .giro{transform:rotateY(180deg)}
+.partner-static{cursor:default}
+</style></head><body>
+<nav><div class="marca-nav">
+      <a href="index.html"><img src="img/marca.svg" alt="Observamed STAR"/></a>
+    </div>
+<a href="boletines/index.html">Boletín de la Salud →</a>
+<button class="ham" type="button" aria-label="Menú" aria-expanded="false" aria-controls="mmenu" onclick="menuMovil()"><span></span><span></span><span></span></button>
+
+<div class="mmenu" id="mmenu"><a href="sistema.html">El sistema<small>Sistema VMI-CFN</small></a><a href="buscador.html">Buscador<small>Precios por medicamento</small></a><a href="boletines/index.html">Boletines<small>15 ediciones · 203 tablas</small></a><a href="boletines/index.html#especial">Informes especiales<small>Análisis a fondo</small></a><a href="glosario.html" style="color:var(--azul-rey)">Glosario<small>25 términos del boletín</small></a><a class="cta" href="https://mivademecum.info/" target="_blank" rel="noopener">Ingreso a Plataforma</a></div>
+</nav>
+<div class="alianzas aliad"><a class="pro" href="https://www.observamed.org/" target="_blank" rel="noopener" title="Fundación Observamed STAR"><img src="img/logo-fundacion.jpg" alt="Observamed · Observatorio del Medicamento · Fundación Observamed STAR · Samay Tatiana Andia Rey"/></a><a class="pro" href="boletines/index.html" title="Boletín BisCoM"><img src="img/logo-biscom.jpg" alt="Boletín Informática y Salud · Boletín BisCoM y del Consumidor de Medicamentos"/></a><span class="sep"></span><span class="et">En alianza con</span><a href="https://www.colmedcundibogota.com/boletin-salud-al-dia-no-36/" target="_blank" rel="noopener" title="Boletín Salud al Día · Colegio Médico de Cundinamarca y Bogotá"><img src="img/salud-al-dia.jpg" alt="Boletín Salud al Día · Colegio Médico de Cundinamarca y Bogotá"/></a><!--CMCB--><a href="https://www.colmedcundibogota.com/" target="_blank" rel="noopener" title="Colegio Médico de Cundinamarca y Bogotá"><img src="img/cmcb.png" alt="Colegio Médico de Cundinamarca y Bogotá"/></a><!--/CMCB--><a href="https://fundacionelmonitordelasalud.org/" target="_blank" rel="noopener" title="Fundación El Monitor de la Salud"><span class="giro"><span class="cara a"><img src="img/monitor.png" alt="Fundación El Monitor de la Salud"/></span><span class="cara b"><img src="img/rebrand/monitor.svg" alt="Fundación El Monitor de la Salud — propuesta"/></span></span></a><span title="ASMEDAS" class="partner-static"><span class="giro"><span class="cara a"><img src="img/asmedas.jpg" alt="ASMEDAS"/></span><span class="cara b"><img src="img/rebrand/asmedas.svg" alt="ASMEDAS — propuesta"/></span></span></span><a href="https://x.com/vcacelapss" target="_blank" rel="noopener" title="Veeduría Ciudadana VCACELAPSS"><span class="giro"><span class="cara a"><img src="img/vcacelapss.jpg" alt="Veeduría Ciudadana VCACELAPSS"/></span><span class="cara b"><img src="img/rebrand/vcacelapss.svg" alt="Veeduría Ciudadana VCACELAPSS — propuesta"/></span></span></a></div>
+<header>
+  <div class="k">Glosario</div>
+  <h1>Las palabras del observatorio,<br/>explicadas</h1>
+  <p>Los boletines usan términos técnicos que no todo el mundo tiene por qué conocer.
+  Aquí están los 25, con lo que significan y por qué importan.</p>
+</header>
+<main>
+  <div class="buscar">
+    <input id="q" type="search" placeholder="Buscar un término: CUM, precio, SISMED, genérico…"/>
+    <div class="chips"><button class="ch on" data-g="">Todos</button><button class="ch" data-g="Los precios"><i style="background:#2A52C4"></i>Los precios</button><button class="ch" data-g="Los códigos"><i style="background:#0E7490"></i>Los códigos</button><button class="ch" data-g="Las entidades"><i style="background:#B45309"></i>Las entidades</button><button class="ch" data-g="Del observatorio"><i style="background:#6D28D9"></i>Del observatorio</button><button class="ch" data-g="Los medicamentos"><i style="background:#047857"></i>Los medicamentos</button></div>
+  </div>
+  <div class="rejilla" id="lista"><article class="term" data-g="Los precios" data-b="premaxref precio maximo de referencia el techo que fija el estado: lo maximo que se puede cobrar por esa presentacion exacta de un medicamento. es la columna central de las tablas del doctor. cuando ese techo esta mal calculado, queda legalizado un sobreprecio. pmv  precio maximo de venta">
+  <div class="cab"><span class="sig" style="background:#2A52C4">PreMaxRef</span>
+    <span class="grp" style="color:#2A52C4">Los precios</span></div>
+  <h3>Precio Máximo de Referencia</h3>
+  <p class="que">El techo que fija el Estado: lo máximo que se puede cobrar por esa presentación exacta de un medicamento.</p>
+  <div class="por"><b>Por qué importa.</b> Es la columna central de las tablas del doctor. Cuando ese techo está mal calculado, queda legalizado un sobreprecio.</div>
+  <div class="alias">También aparece como: <b>PMV · Precio Máximo de Venta</b></div>
+</article><article class="term" data-g="Los precios" data-b="margen ips margen para la institucion prestadora el porcentaje adicional que puede cobrar la clinica o el hospital que entrega el medicamento. en las tablas es exactamente 3,50% en los medicamentos caros y 7,00% en los baratos. sirve para comprobar que una cifra esta bien leida. ">
+  <div class="cab"><span class="sig" style="background:#2A52C4">Margen IPS</span>
+    <span class="grp" style="color:#2A52C4">Los precios</span></div>
+  <h3>Margen para la institución prestadora</h3>
+  <p class="que">El porcentaje adicional que puede cobrar la clínica o el hospital que entrega el medicamento.</p>
+  <div class="por"><b>Por qué importa.</b> En las tablas es exactamente 3,50% en los medicamentos caros y 7,00% en los baratos. Sirve para comprobar que una cifra está bien leída.</div>
+  
+</article><article class="term" data-g="Los precios" data-b="pra precio regulado aplicable el precio final autorizado: el maximo de referencia mas el margen de la institucion. es lo que realmente se termina pagando. siempre debe ser premaxref + margen ips. ">
+  <div class="cab"><span class="sig" style="background:#2A52C4">PRA</span>
+    <span class="grp" style="color:#2A52C4">Los precios</span></div>
+  <h3>Precio Regulado Aplicable</h3>
+  <p class="que">El precio final autorizado: el máximo de referencia más el margen de la institución.</p>
+  <div class="por"><b>Por qué importa.</b> Es lo que realmente se termina pagando. Siempre debe ser PreMaxRef + Margen IPS.</div>
+  
+</article><article class="term" data-g="Los precios" data-b="ppps precio promedio de la presentacion en sismed lo que el laboratorio realmente vendio, en promedio: el total facturado dividido por las unidades vendidas. si su entidad compra, debe pedir descuentos sobre este valor. es el precio real, no el de lista. ">
+  <div class="cab"><span class="sig" style="background:#2A52C4">PPPS</span>
+    <span class="grp" style="color:#2A52C4">Los precios</span></div>
+  <h3>Precio Promedio de la Presentación en SISMED</h3>
+  <p class="que">Lo que el laboratorio realmente vendió, en promedio: el total facturado dividido por las unidades vendidas.</p>
+  <div class="por"><b>Por qué importa.</b> Si su entidad compra, debe pedir descuentos sobre este valor. Es el precio real, no el de lista.</div>
+  
+</article><article class="term" data-g="Los precios" data-b="pppefi precio publico promedio encuestado en farmacias de internet lo que cuesta el medicamento en la drogueria, segun encuesta directa. es exclusivo del sistema vmi-cfn. ponerlo al lado del ppps muestra el recorrido completo del precio. ">
+  <div class="cab"><span class="sig" style="background:#2A52C4">PPPEFI</span>
+    <span class="grp" style="color:#2A52C4">Los precios</span></div>
+  <h3>Precio Público Promedio Encuestado en Farmacias de Internet</h3>
+  <p class="que">Lo que cuesta el medicamento en la droguería, según encuesta directa.</p>
+  <div class="por"><b>Por qué importa.</b> Es exclusivo del Sistema VMI-CFN. Ponerlo al lado del PPPS muestra el recorrido completo del precio.</div>
+  
+</article><article class="term" data-g="Los códigos" data-b="cum codigo unico de medicamento el numero de cedula que el invima le asigna a cada medicamento: marca, concentracion, presentacion y laboratorio exactos. dos cajas con el mismo nombre pero distinto tamano tienen cum distinto. por eso el precio se verifica por cum y no por nombre. cum of  cumo">
+  <div class="cab"><span class="sig" style="background:#0E7490">CUM</span>
+    <span class="grp" style="color:#0E7490">Los códigos</span></div>
+  <h3>Código Único de Medicamento</h3>
+  <p class="que">El número de cédula que el INVIMA le asigna a cada medicamento: marca, concentración, presentación y laboratorio exactos.</p>
+  <div class="por"><b>Por qué importa.</b> Dos cajas con el mismo nombre pero distinto tamaño tienen CUM distinto. Por eso el precio se verifica por CUM y no por nombre.</div>
+  <div class="alias">También aparece como: <b>CUM Of · CUMO</b></div>
+</article><article class="term" data-g="Los códigos" data-b="atc clasificacion anatomica, terapeutica y quimica el sistema de la organizacion mundial de la salud que agrupa medicamentos por para que sirven y como actuan. permite mirar una familia entera de una vez. atc4-a10b, por ejemplo, son todos los antidiabeticos no insulinicos. atc4  atc-5">
+  <div class="cab"><span class="sig" style="background:#0E7490">ATC</span>
+    <span class="grp" style="color:#0E7490">Los códigos</span></div>
+  <h3>Clasificación Anatómica, Terapéutica y Química</h3>
+  <p class="que">El sistema de la Organización Mundial de la Salud que agrupa medicamentos por para qué sirven y cómo actúan.</p>
+  <div class="por"><b>Por qué importa.</b> Permite mirar una familia entera de una vez. ATC4-A10B, por ejemplo, son todos los antidiabéticos no insulínicos.</div>
+  <div class="alias">También aparece como: <b>ATC4 · ATC-5</b></div>
+</article><article class="term" data-g="Los códigos" data-b="armi archivo de reserva med-informatica la copia que el observatorio guarda de cada documento oficial en el momento de publicarse. si una entidad cambia o retira un archivo de su pagina, el observatorio conserva la version original. armi">
+  <div class="cab"><span class="sig" style="background:#0E7490">ARMI</span>
+    <span class="grp" style="color:#0E7490">Los códigos</span></div>
+  <h3>Archivo de Reserva Med-Informática</h3>
+  <p class="que">La copia que el observatorio guarda de cada documento oficial en el momento de publicarse.</p>
+  <div class="por"><b>Por qué importa.</b> Si una entidad cambia o retira un archivo de su página, el observatorio conserva la versión original.</div>
+  <div class="alias">También aparece como: <b>ARmi</b></div>
+</article><article class="term" data-g="Las entidades" data-b="cnpmydm comision nacional de precios de medicamentos y dispositivos medicos el organismo del estado que decide cuanto es lo maximo que puede costar un medicamento en colombia. sus circulares son las que el observatorio audita: cuando la comision se equivoca, el error se vuelve ley. ">
+  <div class="cab"><span class="sig" style="background:#B45309">CNPMyDM</span>
+    <span class="grp" style="color:#B45309">Las entidades</span></div>
+  <h3>Comisión Nacional de Precios de Medicamentos y Dispositivos Médicos</h3>
+  <p class="que">El organismo del Estado que decide cuánto es lo máximo que puede costar un medicamento en Colombia.</p>
+  <div class="por"><b>Por qué importa.</b> Sus circulares son las que el observatorio audita: cuando la Comisión se equivoca, el error se vuelve ley.</div>
+  
+</article><article class="term" data-g="Las entidades" data-b="invima instituto nacional de vigilancia de medicamentos y alimentos la autoridad que autoriza que medicamentos pueden venderse en el pais y vigila su calidad. asigna los cum y los registros sanitarios. sin su aval, un producto no puede circular legalmente. ">
+  <div class="cab"><span class="sig" style="background:#B45309">INVIMA</span>
+    <span class="grp" style="color:#B45309">Las entidades</span></div>
+  <h3>Instituto Nacional de Vigilancia de Medicamentos y Alimentos</h3>
+  <p class="que">La autoridad que autoriza qué medicamentos pueden venderse en el país y vigila su calidad.</p>
+  <div class="por"><b>Por qué importa.</b> Asigna los CUM y los registros sanitarios. Sin su aval, un producto no puede circular legalmente.</div>
+  
+</article><article class="term" data-g="Las entidades" data-b="sismed sistema de informacion de precios de medicamentos la base de datos publica donde los laboratorios estan obligados por ley a reportar cuanto y a que precio venden. es la fuente de casi todas las cifras del observatorio. su calidad depende de que alguien la revise. ">
+  <div class="cab"><span class="sig" style="background:#B45309">SISMED</span>
+    <span class="grp" style="color:#B45309">Las entidades</span></div>
+  <h3>Sistema de Información de Precios de Medicamentos</h3>
+  <p class="que">La base de datos pública donde los laboratorios están obligados por ley a reportar cuánto y a qué precio venden.</p>
+  <div class="por"><b>Por qué importa.</b> Es la fuente de casi todas las cifras del observatorio. Su calidad depende de que alguien la revise.</div>
+  
+</article><article class="term" data-g="Las entidades" data-b="ips institucion prestadora de servicios de salud clinicas, hospitales y centros medicos: quienes atienden al paciente y le entregan el medicamento. es a quien se le reconoce el margen adicional sobre el precio maximo de referencia. ">
+  <div class="cab"><span class="sig" style="background:#B45309">IPS</span>
+    <span class="grp" style="color:#B45309">Las entidades</span></div>
+  <h3>Institución Prestadora de Servicios de Salud</h3>
+  <p class="que">Clínicas, hospitales y centros médicos: quienes atienden al paciente y le entregan el medicamento.</p>
+  <div class="por"><b>Por qué importa.</b> Es a quien se le reconoce el margen adicional sobre el precio máximo de referencia.</div>
+  
+</article><article class="term" data-g="Las entidades" data-b="eps entidad promotora de salud la aseguradora que administra los recursos de salud de sus afiliados y contrata a las ips. es el comprador grande de medicamentos. su capacidad de negociar precios define buena parte del gasto. ">
+  <div class="cab"><span class="sig" style="background:#B45309">EPS</span>
+    <span class="grp" style="color:#B45309">Las entidades</span></div>
+  <h3>Entidad Promotora de Salud</h3>
+  <p class="que">La aseguradora que administra los recursos de salud de sus afiliados y contrata a las IPS.</p>
+  <div class="por"><b>Por qué importa.</b> Es el comprador grande de medicamentos. Su capacidad de negociar precios define buena parte del gasto.</div>
+  
+</article><article class="term" data-g="Las entidades" data-b="mipres plataforma de prescripcion el sistema donde el medico debe registrar las formulas de medicamentos que no estan en el plan de beneficios. cruzar mipres con sismed revela si se esta vendiendo mas de lo que se esta formulando. ">
+  <div class="cab"><span class="sig" style="background:#B45309">MiPres</span>
+    <span class="grp" style="color:#B45309">Las entidades</span></div>
+  <h3>Plataforma de prescripción</h3>
+  <p class="que">El sistema donde el médico debe registrar las fórmulas de medicamentos que no están en el plan de beneficios.</p>
+  <div class="por"><b>Por qué importa.</b> Cruzar MiPres con SISMED revela si se está vendiendo más de lo que se está formulando.</div>
+  
+</article><article class="term" data-g="Del observatorio" data-b="vmi-cfn vademecum med-informatica y catalogo farmaceutico nacional la base de datos del observatorio: informacion farmacologica, regulatoria y economica de los medicamentos disponibles en colombia. es el unico sistema que junta en una pantalla lo que reporta el laboratorio, lo que regula el estado y lo que cobra la farmacia. ">
+  <div class="cab"><span class="sig" style="background:#6D28D9">VMI-CFN</span>
+    <span class="grp" style="color:#6D28D9">Del observatorio</span></div>
+  <h3>Vademécum Med-Informática y Catálogo Farmacéutico Nacional</h3>
+  <p class="que">La base de datos del observatorio: información farmacológica, regulatoria y económica de los medicamentos disponibles en Colombia.</p>
+  <div class="por"><b>Por qué importa.</b> Es el único sistema que junta en una pantalla lo que reporta el laboratorio, lo que regula el Estado y lo que cobra la farmacia.</div>
+  
+</article><article class="term" data-g="Del observatorio" data-b="biscom boletin informatica y salud y del consumidor de medicamentos la publicacion semanal del observatorio, con issn desde 1991. cada edicion lleva un numero y la semana que cubre. es el archivo donde vive toda esta investigacion. bis">
+  <div class="cab"><span class="sig" style="background:#6D28D9">BisCoM</span>
+    <span class="grp" style="color:#6D28D9">Del observatorio</span></div>
+  <h3>Boletín Informática y Salud y del Consumidor de Medicamentos</h3>
+  <p class="que">La publicación semanal del observatorio, con ISSN desde 1991.</p>
+  <div class="por"><b>Por qué importa.</b> Cada edición lleva un número y la semana que cubre. Es el archivo donde vive toda esta investigación.</div>
+  <div class="alias">También aparece como: <b>BIS</b></div>
+</article><article class="term" data-g="Del observatorio" data-b="sitdis sistema integrado transaccional y distribuido de informacion en salud el sistema de informacion que el observatorio propone para cruzar todos los datos del sector. es su tesis central: sin datos que se puedan cruzar entre si, no hay control posible del gasto. ">
+  <div class="cab"><span class="sig" style="background:#6D28D9">SITDIS</span>
+    <span class="grp" style="color:#6D28D9">Del observatorio</span></div>
+  <h3>Sistema Integrado Transaccional y Distribuido de Información en Salud</h3>
+  <p class="que">El sistema de información que el observatorio propone para cruzar todos los datos del sector.</p>
+  <div class="por"><b>Por qué importa.</b> Es su tesis central: sin datos que se puedan cruzar entre sí, no hay control posible del gasto.</div>
+  
+</article><article class="term" data-g="Del observatorio" data-b="aspeec analisis, sintesis, proyeccion, ejecucion, evaluacion y correctivos la metodologia de las investigaciones especiales del observatorio. no se queda en el diagnostico: propone correctivos y luego evalua si se aplicaron. ">
+  <div class="cab"><span class="sig" style="background:#6D28D9">ASPEEC</span>
+    <span class="grp" style="color:#6D28D9">Del observatorio</span></div>
+  <h3>Análisis, Síntesis, Proyección, Ejecución, Evaluación y Correctivos</h3>
+  <p class="que">La metodología de las investigaciones especiales del observatorio.</p>
+  <div class="por"><b>Por qué importa.</b> No se queda en el diagnóstico: propone correctivos y luego evalúa si se aplicaron.</div>
+  
+</article><article class="term" data-g="Del observatorio" data-b="app-i analisis de precios primarios por internet la version del sistema vmi-cfn que compara el precio del laboratorio con el de la farmacia. gratis el primer mes. es la herramienta de la operacion transparencia farmaceutica, abierta a profesionales de la salud. ">
+  <div class="cab"><span class="sig" style="background:#6D28D9">APP-I</span>
+    <span class="grp" style="color:#6D28D9">Del observatorio</span></div>
+  <h3>Análisis de Precios Primarios por Internet</h3>
+  <p class="que">La versión del sistema VMI-CFN que compara el precio del laboratorio con el de la farmacia. Gratis el primer mes.</p>
+  <div class="por"><b>Por qué importa.</b> Es la herramienta de la Operación Transparencia Farmacéutica, abierta a profesionales de la salud.</div>
+  
+</article><article class="term" data-g="Los medicamentos" data-b="marca pionera el original el laboratorio que desarrollo la molecula y la lanzo primero al mercado. suele ser la mas cara aun cuando la patente ya vencio y existen alternativas identicas. ">
+  <div class="cab"><span class="sig" style="background:#047857">Marca pionera</span>
+    <span class="grp" style="color:#047857">Los medicamentos</span></div>
+  <h3>El original</h3>
+  <p class="que">El laboratorio que desarrolló la molécula y la lanzó primero al mercado.</p>
+  <div class="por"><b>Por qué importa.</b> Suele ser la más cara aun cuando la patente ya venció y existen alternativas idénticas.</div>
+  
+</article><article class="term" data-g="Los medicamentos" data-b="generico genuino el mismo medicamento sin marca se vende con el nombre del principio activo y cumple los mismos requisitos de calidad del invima. misma molecula, misma dosis, hasta cuatro veces menos precio. esa diferencia es el hallazgo central del observatorio. marca competidora">
+  <div class="cab"><span class="sig" style="background:#047857">Genérico genuino</span>
+    <span class="grp" style="color:#047857">Los medicamentos</span></div>
+  <h3>El mismo medicamento sin marca</h3>
+  <p class="que">Se vende con el nombre del principio activo y cumple los mismos requisitos de calidad del INVIMA.</p>
+  <div class="por"><b>Por qué importa.</b> Misma molécula, misma dosis, hasta cuatro veces menos precio. Esa diferencia es el hallazgo central del observatorio.</div>
+  <div class="alias">También aparece como: <b>Marca competidora</b></div>
+</article><article class="term" data-g="Los medicamentos" data-b="muestra medica producto sin valor comercial el medicamento que el laboratorio entrega gratis al medico para que lo conozca. por definicion no se vende. el observatorio encontro 33 de ellas con precio regulado asignado, algunas millonarias. si no tienen valor comercial, no deberian tener techo de precio. ">
+  <div class="cab"><span class="sig" style="background:#047857">Muestra médica</span>
+    <span class="grp" style="color:#047857">Los medicamentos</span></div>
+  <h3>Producto sin valor comercial</h3>
+  <p class="que">El medicamento que el laboratorio entrega gratis al médico para que lo conozca. Por definición no se vende.</p>
+  <div class="por"><b>Por qué importa.</b> El observatorio encontró 33 de ellas con precio regulado asignado, algunas millonarias. Si no tienen valor comercial, no deberían tener techo de precio.</div>
+  
+</article><article class="term" data-g="Los medicamentos" data-b="glp-1 agonistas del peptido similar al glucagon tipo 1 familia de medicamentos para diabetes tipo 2 que tambien reducen el peso. incluye semaglutida y liraglutida. movieron 2,9 billones de pesos en colombia entre 2016 y 2025. glutidas">
+  <div class="cab"><span class="sig" style="background:#047857">GLP-1</span>
+    <span class="grp" style="color:#047857">Los medicamentos</span></div>
+  <h3>Agonistas del péptido similar al glucagón tipo 1</h3>
+  <p class="que">Familia de medicamentos para diabetes tipo 2 que también reducen el peso. Incluye semaglutida y liraglutida.</p>
+  <div class="por"><b>Por qué importa.</b> Movieron 2,9 billones de pesos en Colombia entre 2016 y 2025.</div>
+  <div class="alias">También aparece como: <b>Glutidas</b></div>
+</article><article class="term" data-g="Los medicamentos" data-b="sglt2 inhibidores del cotransportador de sodio-glucosa tipo 2 antidiabeticos que hacen eliminar azucar por la orina. dapagliflozina, empagliflozina. es el grupo que mas dinero movio: 3,6 billones de pesos en diez anos. gliflozinas">
+  <div class="cab"><span class="sig" style="background:#047857">SGLT2</span>
+    <span class="grp" style="color:#047857">Los medicamentos</span></div>
+  <h3>Inhibidores del cotransportador de sodio-glucosa tipo 2</h3>
+  <p class="que">Antidiabéticos que hacen eliminar azúcar por la orina. Dapagliflozina, empagliflozina.</p>
+  <div class="por"><b>Por qué importa.</b> Es el grupo que más dinero movió: 3,6 billones de pesos en diez años.</div>
+  <div class="alias">También aparece como: <b>Gliflozinas</b></div>
+</article><article class="term" data-g="Los medicamentos" data-b="dpp-4 inhibidores de la dipeptidil peptidasa 4 otra familia de antidiabeticos orales. sitagliptina, linagliptina. 1,3 billones de pesos en el periodo analizado. gliptinas">
+  <div class="cab"><span class="sig" style="background:#047857">DPP-4</span>
+    <span class="grp" style="color:#047857">Los medicamentos</span></div>
+  <h3>Inhibidores de la dipeptidil peptidasa 4</h3>
+  <p class="que">Otra familia de antidiabéticos orales. Sitagliptina, linagliptina.</p>
+  <div class="por"><b>Por qué importa.</b> 1,3 billones de pesos en el período analizado.</div>
+  <div class="alias">También aparece como: <b>Gliptinas</b></div>
+</article></div>
+  <p id="vacio">Ningún término coincide con la búsqueda.</p>
+</main>
+<footer>Fundación Observamed STAR · Observatorio del Medicamento «Samay Tatiana Andia Rey»</footer>
+<script>
+(function(){
+  var q=document.getElementById('q'), chips=[].slice.call(document.querySelectorAll('.ch')),
+      terms=[].slice.call(document.querySelectorAll('.term')), grupo='';
+  function aplica(){
+    var t=(q.value||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase(), v=0;
+    terms.forEach(function(el){
+      var ok=(!grupo||el.dataset.g===grupo)&&(!t||el.dataset.b.indexOf(t)>-1);
+      el.style.display=ok?'':'none'; if(ok)v++;
+    });
+    document.getElementById('vacio').style.display=v?'none':'block';
+  }
+  q.addEventListener('input',aplica);
+  chips.forEach(function(c){c.addEventListener('click',function(){
+    chips.forEach(function(x){x.classList.remove('on')}); c.classList.add('on');
+    grupo=c.dataset.g; aplica();
+  })});
+})();
+</script>
+<script>
+function menuMovil(){
+  var b=document.querySelector('.ham'), m=document.getElementById('mmenu');
+  if(!b||!m) return;
+  var ab=m.classList.toggle('abierto');
+  b.setAttribute('aria-expanded', ab?'true':'false');
+}
+document.addEventListener('click',function(e){
+  var m=document.getElementById('mmenu'), b=document.querySelector('.ham');
+  if(!m||!b||!m.classList.contains('abierto')) return;
+  if(!m.contains(e.target) && !b.contains(e.target)){
+    m.classList.remove('abierto'); b.setAttribute('aria-expanded','false');
+  }
+});
+</script></body></html>

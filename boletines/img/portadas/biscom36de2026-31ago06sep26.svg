@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-label="30 dias de MinSalud">
+<defs>
+  <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#FFF2E8"/>
+    <stop offset=".62" stop-color="#fff"/>
+    <stop offset="1" stop-color="#FFF2E8"/>
+  </linearGradient>
+  <pattern id="grid" width="44" height="44" patternUnits="userSpaceOnUse">
+    <path d="M44 0H0V44" fill="none" stroke="#7C2D12" stroke-opacity=".07" stroke-width="2"/>
+  </pattern>
+</defs>
+<rect width="1200" height="675" fill="url(#g)"/>
+<rect width="1200" height="675" fill="url(#grid)"/>
+<rect x="0" y="0" width="1200" height="74" fill="#7C2D12"/>
+<text x="64" y="46" font-size="25" font-weight="900" fill="#fff">BisCoM 36 de 2026</text>
+<text x="1136" y="46" text-anchor="end" font-size="18" font-weight="800" fill="#DDEBFF">31 de agosto al 6 de septiembre de 2026</text>
+<rect x="64" y="112" width="476" height="54" rx="27" fill="#EA580C" opacity=".13"/>
+<text x="91" y="147" font-size="22" font-weight="900" fill="#7C2D12">Observamed STAR</text>
+<text x="64" y="232" font-size="54" font-weight="900" fill="#101827">30 dias de MinSalud</text>
+<text x="66" y="405" font-size="28" font-weight="750" fill="#374151">Seguimiento defensor de la salud y</text>
+<text x="66" y="441" font-size="28" font-weight="750" fill="#374151">pacientes</text>
+<rect x="64" y="500" width="222" height="54" rx="27" fill="#fff" stroke="#EA580C" stroke-width="2"/><text x="88" y="535" font-size="22" font-weight="900" fill="#7C2D12">seguimiento</text><rect x="304" y="500" width="190" height="54" rx="27" fill="#fff" stroke="#EA580C" stroke-width="2"/><text x="328" y="535" font-size="22" font-weight="900" fill="#7C2D12">pacientes</text><rect x="512" y="500" width="286" height="54" rx="27" fill="#fff" stroke="#EA580C" stroke-width="2"/><text x="536" y="535" font-size="22" font-weight="900" fill="#7C2D12">gestion publica</text>
+
+<g transform="translate(650 155)">
+  <path d="M190 8c92 0 166 74 166 166s-74 166-166 166S24 266 24 174 98 8 190 8z" fill="#fff" stroke="#7C2D12" stroke-width="5"/>
+  <path d="M190 58v232M74 174h232" stroke="#EA580C" stroke-width="34" stroke-linecap="round"/>
+  <path d="M34 322c95-76 208-76 313 0" fill="none" stroke="#3B7AE0" stroke-width="17" stroke-linecap="round"/>
+  <path d="M390 62h100M390 112h150M390 162h118M390 212h138" stroke="#7C2D12" stroke-width="10" stroke-linecap="round" opacity=".55"/>
+</g>
+<path d="M64 606h1015" stroke="#7C2D12" stroke-opacity=".18" stroke-width="2"/>
+<text x="64" y="638" font-size="18" font-weight="800" fill="#5D6B7B">Boletin BisCoM convertido a tablas e imagenes legibles</text>
+<text x="1136" y="638" text-anchor="end" font-size="18" font-weight="900" fill="#7C2D12">Observatorio del Medicamento</text>
+</svg>

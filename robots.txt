@@ -1,0 +1,5 @@
+# PROTOTIPO de la Fundación Observamed STAR.
+# Contiene precios de EJEMPLO (inventados) sobre medicamentos.
+# Por eso NO debe ser indexado hasta que tenga datos reales.
+User-agent: *
+Disallow: /

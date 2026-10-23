@@ -1,0 +1,343 @@
+<!DOCTYPE html><html lang="es"><head><meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Diapositiva 6 de 13 — &quot;Estrategia 1: El despliegue de la infraestructura física&quot; — Observamed STAR</title>
+<meta name="robots" content="noindex, nofollow"/>
+<link rel="icon" href="../img/favicon.svg" type="image/svg+xml"/>
+<style>
+:root{--azul-oscuro:#2A52C4;--azul-rey:#3B7AE0;--turquesa:#00A3C4;--gris-medio:#E4E7EC;
+--text-dark:#111827;--text-med:#374151;--text-light:#6B7280;--rojo:#DC2626;--ambar:#B45309;--verde:#047857}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;background:#F7FAFF;
+color:var(--text-dark);line-height:1.7}
+nav{display:flex;align-items:center;justify-content:space-between;padding:14px 24px;background:#fff;
+border-bottom:1px solid var(--gris-medio);position:sticky;top:0;z-index:20}
+nav img{height:44px} nav a{color:var(--text-med);text-decoration:none;font-weight:700;font-size:.9rem}
+main{max-width:1120px;margin:0 auto;padding:34px 22px 70px}
+.volver{display:inline-flex;align-items:center;gap:8px;background:#fff;border:1.5px solid var(--gris-medio);
+border-radius:99px;padding:8px 18px 8px 14px;text-decoration:none;color:var(--text-med);
+font-weight:800;font-size:.86rem;margin-bottom:16px;transition:all .2s;
+box-shadow:0 2px 8px rgba(42,82,196,.06)}
+.volver:hover{border-color:var(--azul-rey);color:var(--azul-oscuro);transform:translateX(-3px);
+box-shadow:0 4px 14px rgba(42,82,196,.14)}
+.volver svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:2.2;
+stroke-linecap:round;stroke-linejoin:round}
+.mig{font-size:.76rem;font-weight:800;letter-spacing:.09em;text-transform:uppercase;color:var(--azul-rey);margin-bottom:12px}
+.mig a{color:var(--azul-rey);text-decoration:none}
+h1{font-size:clamp(1.5rem,3.4vw,2.15rem);font-weight:900;letter-spacing:-.9px;line-height:1.2;margin-bottom:10px}
+.autor{color:var(--text-light);font-size:.87rem;font-weight:600;padding-bottom:18px;
+border-bottom:1px solid var(--gris-medio);margin-bottom:24px}
+.lead{font-size:1.05rem;color:var(--text-dark);text-align:justify;hyphens:auto;margin-bottom:24px}
+.demuestra{background:#fff;border:1px solid var(--gris-medio);border-left:5px solid var(--azul-rey);
+border-radius:16px;padding:20px 24px;margin-bottom:20px;box-shadow:0 4px 18px rgba(42,82,196,.07)}
+.demuestra .dt{font-size:.68rem;font-weight:900;letter-spacing:.12em;text-transform:uppercase;
+color:var(--azul-oscuro);margin-bottom:8px}
+.demuestra p{color:var(--text-med);text-align:justify;hyphens:auto}
+.graf{margin:18px 0 20px}
+.graf img{width:100%;border-radius:14px;border:1px solid var(--gris-medio);
+box-shadow:0 4px 18px rgba(42,82,196,.10);display:block}
+.caja{background:#fff;border:1px solid var(--gris-medio);border-radius:16px;overflow:hidden;
+box-shadow:0 4px 20px rgba(42,82,196,.08)}
+.cab{padding:14px 18px;border-bottom:1px solid var(--gris-medio);display:flex;gap:12px;align-items:center;
+flex-wrap:wrap;background:linear-gradient(180deg,#FAFCFF,#fff)}
+.cab b{font-size:.93rem} .cab span{font-size:.78rem;color:var(--text-light);font-weight:600}
+.cuenta{background:#EFF6FF;color:var(--azul-oscuro);border-radius:99px;padding:3px 11px;font-weight:800}
+.val{border-radius:99px;padding:3px 11px;font-weight:800;font-size:.75rem}
+.val.ok{background:#ECFDF5;color:var(--verde)} .val.alerta{background:#FFFBEB;color:var(--ambar)}
+.buscaT{padding:12px 18px;border-bottom:1px solid var(--gris-medio)}
+.buscaT input{width:100%;border:2px solid #DDE2EA;border-radius:11px;padding:10px 14px;
+font-size:.93rem;font-family:inherit;outline:0}
+.buscaT input:focus{border-color:var(--azul-rey);box-shadow:0 0 0 4px rgba(59,122,224,.12)}
+.scroll{overflow-x:auto;max-height:700px}
+table{width:100%;border-collapse:collapse;font-size:.82rem;min-width:780px}
+th{background:#0E7490;color:#fff;font-size:.65rem;font-weight:900;letter-spacing:.07em;text-transform:uppercase;
+padding:10px 12px;text-align:left;position:sticky;top:0;z-index:2}
+th.n{text-align:right}
+td{padding:8px 12px;border-bottom:1px solid #F2F4F7;vertical-align:top;color:var(--text-med)}
+td.num{text-align:right;white-space:nowrap;font-variant-numeric:tabular-nums;color:var(--text-dark);font-weight:600}
+tr:hover td{background:#F7FAFF}
+tr.dudosa td{background:#FFFBEB}
+tr.dudosa td:first-child::before{content:'⚠ ';color:var(--ambar)}
+.navT{display:flex;gap:12px;justify-content:space-between;margin-top:26px;flex-wrap:wrap}
+.navT a{flex:1;min-width:230px;background:#fff;border:1px solid var(--gris-medio);border-radius:14px;
+padding:14px 18px;text-decoration:none;transition:all .2s}
+.navT a:hover{border-color:var(--azul-rey);transform:translateY(-2px);box-shadow:0 8px 22px rgba(42,82,196,.12)}
+.navT small{display:block;font-size:.68rem;font-weight:900;letter-spacing:.1em;text-transform:uppercase;
+color:var(--text-light);margin-bottom:4px}
+.navT b{color:var(--text-dark);font-size:.9rem;font-weight:800;line-height:1.35}
+.navT .sig{text-align:right}
+footer{text-align:center;color:var(--text-light);font-size:.78rem;padding:26px;border-top:1px solid var(--gris-medio)}
+footer p{max-width:640px;margin:0 auto 8px;line-height:1.6}
+/* índice de la edición */
+.tarjT{display:block;background:#fff;border:1px solid var(--gris-medio);border-radius:18px;padding:20px 24px;
+margin-bottom:14px;text-decoration:none;box-shadow:0 2px 12px rgba(42,82,196,.06);transition:all .2s}
+.tarjT:hover{transform:translateY(-3px);box-shadow:0 10px 28px rgba(42,82,196,.13);border-color:var(--azul-rey)}
+.tarjT .n{font-size:.68rem;font-weight:900;letter-spacing:.11em;text-transform:uppercase;color:var(--azul-rey);margin-bottom:6px}
+.tarjT h3{font-size:1.05rem;font-weight:800;color:var(--text-dark);line-height:1.35;margin-bottom:8px}
+.tarjT p{font-size:.88rem;color:var(--text-med);margin-bottom:10px;text-align:justify;hyphens:auto}
+.tarjT .meta{display:flex;gap:8px;flex-wrap:wrap;font-size:.76rem;font-weight:800}
+.tarjT .meta span{background:#EFF6FF;color:var(--azul-oscuro);border-radius:99px;padding:3px 11px}
+.tarjT .meta .aler{background:#FFFBEB;color:var(--ambar)}
+
+/* --- encabezamiento institucional: Observamed + Colegio Médico + Monitor --- */
+.marca-nav{display:flex;align-items:center;gap:15px;flex-shrink:0;min-width:0}
+.sep-nav{width:1px;height:34px;background:#e3e8ef;flex-shrink:0}
+.coed{display:flex;align-items:center;gap:13px;min-width:0}
+.coed-t{font-size:0.52rem;letter-spacing:0.12em;text-transform:uppercase;color:#7b8794;font-weight:700;line-height:1.35;max-width:52px;flex-shrink:0}
+.coed-l{display:flex;align-items:center;gap:14px;min-width:0}
+.coed-l a{display:block;flex-shrink:0;perspective:600px}
+.coed-l .giro{display:block;position:relative;height:34px;transform-style:preserve-3d;transition:transform .55s cubic-bezier(.4,0,.2,1)}
+.coed-l .cara{display:flex;align-items:center;height:34px;backface-visibility:hidden}
+.coed-l .cara.b{position:absolute;inset:0;transform:rotateY(180deg)}
+.coed-l .cara img{max-height:34px;width:auto;display:block}
+.coed-l.rebrand .giro{transform:rotateY(180deg)}
+.coed-l a:hover{opacity:.78}
+.coed-l a.sello-c .giro,.coed-l a.sello-c .cara{height:44px}
+.coed-l a.sello-c .cara img{max-height:44px}
+.nav-bol{display:flex;gap:20px;align-items:center}
+@media(max-width:1180px){.coed-t{display:none}}
+@media(max-width:620px){
+  nav{gap:8px;padding:9px 11px}.nav-bol{gap:11px}nav a{font-size:0.8rem}
+}
+@media(max-width:520px){
+  nav a{font-size:0.66rem;white-space:nowrap}
+  .nav-bol{gap:7px}.marca-nav{gap:7px}.coed-l{gap:6px}.sep-nav{height:20px}
+  .coed-l .giro,.coed-l .cara{height:19px}.coed-l .cara img{max-height:19px}
+  .coed-l a.sello-c .giro,.coed-l a.sello-c .cara{height:25px}
+  .coed-l a.sello-c .cara img{max-height:25px}
+  .marca-nav>a:first-child img{height:26px;width:auto;max-width:none}
+}
+@media(max-width:400px){
+  nav{padding:8px 8px;gap:6px}nav a{font-size:0.6rem}.nav-bol{gap:6px}
+  .marca-nav>a:first-child img{height:22px;width:auto;max-width:none}
+}
+
+
+/* ---------- menú de hamburguesa (celular) ---------- */
+.ham{display:none;flex-direction:column;justify-content:center;gap:4px;width:40px;height:38px;
+  padding:0 9px;border:1.5px solid var(--gris-medio);background:#fff;border-radius:11px;
+  cursor:pointer;flex-shrink:0;transition:border-color .18s}
+.ham span{display:block;height:2px;width:100%;background:var(--text-dark);border-radius:2px;
+  transition:transform .25s,opacity .2s}
+.ham[aria-expanded="true"]{border-color:var(--azul-rey)}
+.ham[aria-expanded="true"] span:nth-child(1){transform:translateY(6px) rotate(45deg)}
+.ham[aria-expanded="true"] span:nth-child(2){opacity:0}
+.ham[aria-expanded="true"] span:nth-child(3){transform:translateY(-6px) rotate(-45deg)}
+.mmenu{display:none;position:absolute;left:0;right:0;top:100%;background:#fff;
+  border-bottom:1px solid var(--gris-medio);box-shadow:0 14px 34px rgba(20,45,90,.13);
+  padding:8px 14px 14px;z-index:70}
+.mmenu.abierto{display:block}
+.mmenu a{display:flex;align-items:center;justify-content:space-between;padding:13px 4px;
+  font-weight:800;font-size:1rem;color:var(--text-dark);border-bottom:1px solid #eef2f8;
+  text-decoration:none}
+.mmenu a:last-of-type{border-bottom:none}
+.mmenu a:hover{color:var(--azul-rey);text-decoration:none}
+.mmenu a small{font-size:.72rem;font-weight:700;color:var(--text-light)}
+.mmenu .cta{margin-top:11px;background:var(--azul-rey);color:#fff !important;
+  justify-content:center;border-radius:980px;padding:14px;border:none}
+@media(max-width:1060px){
+  .ham{display:flex}
+  .nav-bol{display:none}
+  .coed-l{gap:13px}
+  .coed-l .giro,.coed-l .cara{height:32px}
+  .coed-l .cara img{max-height:32px}
+  .coed-l a.sello-c .giro,.coed-l a.sello-c .cara{height:42px}
+  .coed-l a.sello-c .cara img{max-height:42px}
+  .sep-nav{height:32px}
+  .marca-nav>a:first-child img{height:38px;width:auto;max-width:none}
+}
+@media(max-width:520px){
+  .coed-l{gap:11px}
+  .coed-l .giro,.coed-l .cara{height:28px}
+  .coed-l .cara img{max-height:28px}
+  .coed-l a.sello-c .giro,.coed-l a.sello-c .cara{height:37px}
+  .coed-l a.sello-c .cara img{max-height:37px}
+  .sep-nav{height:28px}
+  .marca-nav>a:first-child img{height:32px;width:auto;max-width:none}
+  nav{padding:9px 12px;gap:9px}
+}
+@media(max-width:390px){
+  .coed-l{gap:9px}
+  .coed-l .giro,.coed-l .cara{height:25px}
+  .coed-l .cara img{max-height:25px}
+  .coed-l a.sello-c .giro,.coed-l a.sello-c .cara{height:33px}
+  .coed-l a.sello-c .cara img{max-height:33px}
+  .marca-nav>a:first-child img{height:28px;width:auto;max-width:none}
+  .ham{width:37px;height:35px}
+}
+/* ---------- lista de boletines ---------- */
+.k{font-size:.72rem;font-weight:900;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--azul-rey);margin-bottom:10px}
+h2{font-size:1.24rem;font-weight:900;letter-spacing:-.4px;line-height:1.3;margin:0 0 14px;
+  color:var(--text-dark)}
+
+/* panel de cifras */
+.panel{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:#dde5f0;
+  border:1px solid #dde5f0;border-radius:16px;overflow:hidden;margin:26px 0 22px}
+.panel .p{background:#fff;padding:16px 14px;text-align:center}
+.panel .p b{display:block;font-size:1.55rem;font-weight:900;letter-spacing:-1px;
+  color:var(--azul-oscuro);line-height:1.1}
+.panel .p span{display:block;font-size:.62rem;font-weight:800;letter-spacing:.07em;
+  text-transform:uppercase;color:var(--text-light);margin-top:4px}
+.panel .p:last-child b{color:#b4690e}
+
+.filtros{display:flex;gap:9px;flex-wrap:wrap;margin:0 0 24px}
+.filtros button{font-family:inherit;font-weight:800;font-size:.82rem;padding:9px 18px;
+  border-radius:980px;border:1.5px solid var(--gris-medio);background:#fff;color:var(--text-med);
+  cursor:pointer;transition:all .18s}
+.filtros button:hover{border-color:var(--azul-rey);color:var(--azul-oscuro)}
+.filtros button.on{background:var(--azul-rey);border-color:var(--azul-rey);color:#fff}
+
+/* rejilla y separador de año */
+.rejilla{display:grid;grid-template-columns:repeat(auto-fill,minmax(330px,1fr));gap:15px}
+.anio{grid-column:1/-1;display:flex;align-items:center;gap:13px;margin:16px 0 2px}
+.anio b{font-size:1.5rem;font-weight:900;letter-spacing:-1px;color:var(--text-dark)}
+.anio i{flex:1;height:1px;background:var(--gris-medio)}
+.anio span{font-size:.66rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;
+  color:var(--text-light)}
+
+/* tarjeta */
+.ed{display:flex;flex-direction:column;background:#fff;border:1px solid var(--gris-medio);
+  border-radius:18px;padding:20px 21px 17px;text-decoration:none;
+  transition:border-color .18s,box-shadow .18s,transform .18s}
+.ed:hover{border-color:var(--azul-rey);box-shadow:0 10px 30px rgba(20,45,90,.10);
+  transform:translateY(-3px);text-decoration:none}
+.ed.dest{grid-column:1/-1;border-color:#bcd2f5;background:
+  linear-gradient(180deg,#f7faff 0%,#fff 58%)}
+.ed.dest h2{font-size:1.6rem}
+.et{display:flex;align-items:center;flex-wrap:wrap;gap:8px;margin-bottom:9px}
+.et .eb{font-size:.7rem;font-weight:900;letter-spacing:.11em;text-transform:uppercase;
+  color:var(--azul-rey)}
+.et .fe{font-size:.7rem;font-weight:700;color:var(--text-light);margin-left:auto}
+.tipo{font-size:.58rem;font-weight:900;letter-spacing:.09em;text-transform:uppercase;
+  padding:3px 9px;border-radius:980px}
+.tipo.boletin{background:#e8f0fe;color:#1b3fa8}
+.tipo.especial{background:#fdf0e3;color:#a35b09}
+
+.cifras{display:flex;gap:9px;flex-wrap:wrap;margin-bottom:13px}
+.cifras .c{background:#f4f7fc;border-radius:11px;padding:9px 13px;min-width:74px}
+.cifras .c b{display:block;font-size:1.12rem;font-weight:900;color:var(--azul-oscuro);
+  letter-spacing:-.5px;line-height:1.1}
+.cifras .c span{display:block;font-size:.55rem;font-weight:800;letter-spacing:.06em;
+  text-transform:uppercase;color:var(--text-light);margin-top:2px}
+.cifras .c.aler{background:#fdf3e4}
+.cifras .c.aler b{color:#b4690e}
+.cifras .c.ok{background:#eaf7ee}
+.cifras .c.ok b{color:#1d7a3c}
+
+.dentro{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin-bottom:14px}
+.dentro .dl{font-size:.55rem;font-weight:900;letter-spacing:.09em;text-transform:uppercase;
+  color:var(--text-light);margin-right:2px}
+.dentro .dt{font-size:.72rem;font-weight:600;color:var(--text-med);background:#fff;
+  border:1px solid var(--gris-medio);border-radius:980px;padding:4px 10px;
+  max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.ed .ver{margin-top:auto;font-size:.8rem;font-weight:800;color:var(--azul-rey)}
+.vacio{text-align:center;color:var(--text-light);padding:40px 0;font-weight:700;display:none}
+
+/* permitir que la rejilla encoja por debajo del contenido */
+.rejilla>*{min-width:0}
+.ed,.et,.cifras,.dentro{min-width:0;max-width:100%}
+.dentro .dt{flex:0 1 auto;min-width:0}
+.et .eb,.et .fe{min-width:0}
+.anio{min-width:0}
+@media(max-width:900px){.panel{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:620px){
+  .rejilla{grid-template-columns:1fr;gap:12px}
+  .ed{padding:17px 16px 15px}.ed.dest h2{font-size:1.28rem}
+  .et .fe{margin-left:0;width:100%}
+  .panel .p b{font-size:1.3rem}
+  .anio b{font-size:1.25rem}
+}
+
+/* ---------- banda de alianzas (debajo de la barra) ---------- */
+.alianzas{display:flex;align-items:center;justify-content:center;gap:26px;flex-wrap:wrap;
+  background:#F6F9FD;border-bottom:1px solid var(--gris-medio);padding:12px 18px;row-gap:12px}
+.alianzas .et{font-size:.6rem;font-weight:800;letter-spacing:.13em;text-transform:uppercase;
+  color:var(--text-light);flex-shrink:0}
+.alianzas a,.alianzas>.partner-static{display:block;flex-shrink:0;perspective:700px}
+.alianzas .giro{display:block;position:relative;height:44px;transform-style:preserve-3d;
+  transition:transform .55s cubic-bezier(.4,0,.2,1)}
+.alianzas .cara{display:flex;align-items:center;height:44px;backface-visibility:hidden}
+.alianzas .cara.b{position:absolute;inset:0;transform:rotateY(180deg)}
+.alianzas .cara img{max-height:44px;width:auto;display:block}
+.alianzas a.cuad .giro,.alianzas a.cuad .cara{height:52px}
+.alianzas a.cuad .cara img{max-height:52px}
+.alianzas.rebrand .giro{transform:rotateY(180deg)}
+.alianzas a:hover{opacity:.8}
+@media(max-width:900px){
+  .alianzas{gap:18px;padding:10px 14px}
+  .alianzas .giro,.alianzas .cara{height:34px}
+  .alianzas .cara img{max-height:34px}
+  .alianzas a.cuad .giro,.alianzas a.cuad .cara{height:40px}
+  .alianzas a.cuad .cara img{max-height:40px}
+}
+@media(max-width:620px){
+  /* en celular se parten en dos filas, pero se leen */
+  .alianzas{gap:20px 22px;padding:11px 12px}
+  .alianzas .et{width:100%;text-align:center;margin-bottom:-4px}
+  .alianzas .giro,.alianzas .cara{height:36px}
+  .alianzas .cara img{max-height:36px}
+  .alianzas a.cuad .giro,.alianzas a.cuad .cara{height:44px}
+  .alianzas a.cuad .cara img{max-height:44px}
+}
+@media(max-width:380px){
+  .alianzas{gap:16px 18px}
+  .alianzas .giro,.alianzas .cara{height:30px}
+  .alianzas .cara img{max-height:30px}
+  .alianzas a.cuad .giro,.alianzas a.cuad .cara{height:37px}
+  .alianzas a.cuad .cara img{max-height:37px}
+}
+.partner-static{cursor:default}
+</style><script>function menuMovil(){var b=document.querySelector(".ham"),m=document.getElementById("mmenu");if(!b||!m)return;var a=m.classList.toggle("abierto");b.setAttribute("aria-expanded",a?"true":"false");}document.addEventListener("click",function(e){var m=document.getElementById("mmenu"),b=document.querySelector(".ham");if(!m||!b||!m.classList.contains("abierto"))return;if(!m.contains(e.target)&&!b.contains(e.target)){m.classList.remove("abierto");b.setAttribute("aria-expanded","false");}});</script><style id="franja-css">
+.franja{--w:min(196px,calc((100vw - 120px)/7));--h:min(86px,calc(var(--w)*.44));display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap;padding:14px 16px;background:#F4F6FA;border-bottom:4px solid #2A52C4}
+.franja>a,.franja>span{width:var(--w);height:var(--h);flex-shrink:0;display:flex;align-items:center;justify-content:center;background:#fff;border:1px solid #E5E7EB;border-radius:8px;padding:6px;box-sizing:border-box;overflow:hidden;transition:.2s}
+.franja>a:hover{border-color:#2A52C4;box-shadow:0 4px 14px rgba(42,82,196,.15)}
+.franja>a.pro{padding:0;border:0;background:transparent}
+.franja>a.pro img{max-width:100%;max-height:100%;object-fit:contain;border-radius:6px;box-shadow:0 2px 10px rgba(11,18,32,.15)}
+.franja img{max-width:100%;max-height:calc(var(--h) - 12px);width:auto;height:auto;display:block;object-fit:contain}
+@media (max-width:1060px){.franja{--w:150px;--h:66px}}
+@media (max-width:760px){.franja{--w:47%;--h:62px;gap:8px;padding:10px 8px}}
+</style>
+</head><body>
+
+<!--FRANJA--><div class="franja"><a class="pro" href="https://www.observamed.org/" target="_blank" rel="noopener" title="Fundación Observamed STAR"><img src="../img/logo-fundacion.jpg" alt="Observamed · Observatorio del Medicamento · Fundación Observamed STAR"/></a><a class="pro" href="index.html" title="Boletín BisCoM"><img src="../img/logo-biscom.jpg" alt="Boletín Informática y Salud · Boletín BisCoM y del Consumidor de Medicamentos"/></a><a href="https://www.colmedcundibogota.com/boletin-salud-al-dia-no-36/" target="_blank" rel="noopener" title="Boletín Salud al Día · Colegio Médico de Cundinamarca y Bogotá"><img src="../img/salud-al-dia.jpg" alt="Boletín Salud al Día · Colegio Médico de Cundinamarca y Bogotá"/></a><!--CMCB--><a href="https://www.colmedcundibogota.com/" target="_blank" rel="noopener" title="Colegio Médico de Cundinamarca y Bogotá"><img src="../img/cmcb.png" alt="Colegio Médico de Cundinamarca y Bogotá"/></a><!--/CMCB--><a href="https://fundacionelmonitordelasalud.org/" target="_blank" rel="noopener" title="Fundación El Monitor de la Salud"><img src="../img/monitor.png" alt="Fundación El Monitor de la Salud"/></a><span title="ASMEDAS · Asociación Médica Sindical Colombiana"><img src="../img/asmedas-limpio.jpg" alt="ASMEDAS · Asociación Médica Sindical Colombiana"/></span><a href="https://x.com/vcacelapss" target="_blank" rel="noopener" title="Veeduría Ciudadana VCACELAPSS"><img src="../img/vcacelapss.jpg" alt="Veeduría Ciudadana VCACELAPSS"/></a></div><!--/FRANJA-->
+<nav><div class="marca-nav">
+  <a href="../index.html"><img src="../img/marca.svg" alt="Observamed STAR"/></a>
+    </div>
+<span class="nav-bol"><a href="biscom29de2026-13a19jul26.html">← La edición</a><a href="../glosario.html">Glosario →</a></span>
+<button class="ham" type="button" aria-label="Menú" aria-expanded="false" aria-controls="mmenu" onclick="menuMovil()"><span></span><span></span><span></span></button>
+<div class="mmenu" id="mmenu">
+<a href="../sistema.html">El sistema<small>Sistema VMI-CFN</small></a>
+<a href="../buscador.html">Buscador<small>Precios por medicamento</small></a>
+<a href="index.html">Boletines<small>Todas las ediciones</small></a>
+<a href="index.html#especial">Informes especiales<small>Análisis a fondo</small></a>
+<a href="../glosario.html">Glosario<small>25 términos del boletín</small></a>
+<a class="cta" href="https://mivademecum.info/" target="_blank" rel="noopener">Ingreso a Plataforma</a>
+</div></nav>
+<main>
+<a class="volver" href="biscom29de2026-13a19jul26.html"><svg viewBox="0 0 24 24"><path d="M19 12H5"/><path d="M12 19l-7-7 7-7"/></svg>Volver a las 17 tablas de esta edición</a>
+<div class="mig">Tabla 9 de 17</div>
+<h1>Diapositiva 6 de 13 — &quot;Estrategia 1: El despliegue de la infraestructura física&quot;</h1>
+<div class="autor">Análisis del Dr. Óscar Iván Andía Salazar · Observatorio del Medicamento</div>
+<div class="demuestra"><div class="dt">Qué demuestra esta tabla</div><p>Aquí el plan deja de ser política y se vuelve obra, y lo valioso de la lámina es que enumera en qué se gasta realmente la plata de una planta farmacéutica: áreas blancas o cleanrooms, sistemas HVAC, agua para inyectables (WFI) y equipos de llenado aséptico. Son cuatro renglones técnicos que la opinión pública nunca discute y que son exactamente donde estos proyectos se caen, porque una planta sin HVAC calificado no obtiene certificación y no produce un solo vial. El doctor subraya el cuarto punto —calificación y validación con protocolos DQ, IQ, OQ y PQ— porque es el que separa un edificio de una fábrica autorizada: se puede construir todo y quedarse sin certificar. Y no es casual que el segundo renglón de mayor gasto en la Diapositiva 10 sea precisamente la interventoría: el propio CONPES sabe que el riesgo mayor de esta estrategia no es técnico sino de ejecución contractual.</p></div>
+
+<div class="caja">
+  <div class="cab"><b>Diapositiva 6 de 13 — &quot;Estrategia 1: El despliegue de la infraestructura física&quot;</b><span>Corte isométrico de una planta farmacéutica con cuatro llamadas numeradas. Vigencia: aplica a las cuatro instituciones de la red nacional listadas en la Diapositiva 7, sobre el horizonte 2026-2035. La lámina exige cumplimiento estricto de estándares BPM (Buenas Prácticas de Manufactura) y BPL (Buenas Prácticas de Laboratorio), y certificación Invima e internacional.</span>
+    <span class="cuenta">6 filas</span></div>
+  <div class="buscaT"><input id="bt" type="search" placeholder="Buscar en esta tabla: un medicamento, un laboratorio, un CUM…"/></div>
+  <div class="scroll"><table><thead><tr><th class="">Componente</th><th class="">Contenido</th></tr></thead><tbody><tr class=""><td class="">Título</td><td class="">Estrategia 1: El despliegue de la infraestructura física</td></tr><tr class=""><td class="">Enunciado</td><td class="">La creación de una red nacional de capacidades productivas mediante el fortalecimiento físico, técnico y operativo, garantizando el cumplimiento estricto de estándares BPM y BPL.</td></tr><tr class=""><td class="">1. Construcción y Adecuación</td><td class="">Financiación de obras físicas y adecuación de áreas blancas (cleanrooms) en entidades públicas o mixtas.</td></tr><tr class=""><td class="">2. Dotación Especializada</td><td class="">Adquisición de sistemas críticos (HVAC, WFI) y equipos de formulación y llenado aséptico (fill-and-finish).</td></tr><tr class=""><td class="">3. Interventoría Integral</td><td class="">Auditoría técnica, administrativa, financiera, ambiental y legal permanente.</td></tr><tr class=""><td class="">4. Calificación y Validación</td><td class="">Implementación de sistemas de gestión de calidad (DQ, IQ, OQ, PQ) para certificación Invima e internacional.</td></tr></tbody></table></div>
+</div>
+<div class="navT"><a href="biscom29de2026-13a19jul26-8.html"><small>Anterior</small><b>Diapositiva 5 de 13 — &quot;La prescripción dual: Un ecosistema productivo </b></a><a class="sig" href="biscom29de2026-13a19jul26-10.html"><small>Siguiente</small><b>Diapositiva 7 de 13 — &quot;Nodos estratégicos: La red nacional de manufact</b></a></div><script>
+(function(){var q=document.getElementById('bt');if(!q)return;
+var fs=[].slice.call(document.querySelectorAll('tbody tr'));
+q.addEventListener('input',function(){
+  var t=q.value.normalize('NFD').replace(/[̀-ͯ]/g,'').toLowerCase();
+  fs.forEach(function(r){
+    var x=r.textContent.normalize('NFD').replace(/[̀-ͯ]/g,'').toLowerCase();
+    r.style.display=(!t||x.indexOf(t)>-1)?'':'none';});
+});})();
+</script></main>
+<footer><p>Datos de la Comisión Nacional de Precios de Medicamentos y Dispositivos Médicos,
+sistematizados y analizados por el Observatorio del Medicamento. Las filas marcadas con ⚠
+requieren verificación.</p>
+Fundación Observamed STAR · Observatorio del Medicamento «Samay Tatiana Andia Rey»</footer>
+</body></html>
