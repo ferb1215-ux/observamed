@@ -444,15 +444,15 @@ document.addEventListener('click',function(e){
 <button class="rev-abrir" type="button" onclick="document.getElementById('rev-velo').classList.add('abierta')">Revista de la semana</button>
 <div class="rev-velo" id="rev-velo" role="dialog" aria-modal="true" aria-labelledby="rev-titulo">
   <div class="rev-caja">
-    <div class="rev-cab"><small>Nueva edición · revista semanal</small><b id="rev-titulo">Semana del 19 de octubre de 2026</b></div>
-    <div class="rev-cuerpo">Descargue en PDF todo lo nuevo de esta semana:<ul><li>Un combinado de dos pastillas con precio de recobro cuatro veces mayor</li><li>Dolutegravir: el precio regulado queda muy por encima del real</li><li>Medicamentos de alto costo que entraron al país sin control de precio</li><li>Techos o Presupuestos Máximos: las advertencias que nadie escuchó</li><li>y 3 notas más</li></ul>
-      <div class="rev-btns"><a href="revista/revista-2026-10-19.pdf" download>Descargar PDF</a><button type="button" id="rev-cerrar">Ahora no</button></div>
+    <div class="rev-cab"><small>Nueva edición · revista semanal</small><b id="rev-titulo">Semana del 26 de octubre de 2026</b></div>
+    <div class="rev-cuerpo">Descargue en PDF todo lo nuevo de esta semana:<ul><li>MinSalud abre la puerta a una licencia obligatoria para el dolutegravir</li><li>Las DIP anteriores no lograron licencias obligatorias, y GSK peleará esta</li><li>Alerta: SISMED muestra ventas imposibles de dolutegravir</li><li>El precio máximo regulado del dolutegravir no controla nada</li><li>y 3 notas más</li></ul>
+      <div class="rev-btns"><a href="revista/revista-2026-10-26.pdf" download>Descargar PDF</a><button type="button" id="rev-cerrar">Ahora no</button></div>
       <p style="margin:12px 0 0;font-size:12px"><a href="revista/index.html" style="color:#2A52C4">Ver todas las ediciones</a></p>
     </div>
   </div>
 </div>
 <script>
-(function(){var k="revista-vista-2026-10-19",v=document.getElementById("rev-velo");
+(function(){var k="revista-vista-2026-10-26",v=document.getElementById("rev-velo");
 function cerrar(){v.classList.remove("abierta");try{localStorage.setItem(k,"1")}catch(e){}}
 document.getElementById("rev-cerrar").onclick=cerrar;v.onclick=function(e){if(e.target===v)cerrar()};
 document.addEventListener("keydown",function(e){if(e.key==="Escape")cerrar()});

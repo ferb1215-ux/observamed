@@ -299,6 +299,8 @@ footer{text-align:center;color:var(--text-light);font-size:.8rem;padding:26px;bo
 @media (max-width:760px){.alianzas.aliad{--w:47%;--h:62px;gap:8px;padding:10px 8px}}
 .alianzas.aliad.rebrand .giro{transform:rotateY(180deg)}
 .partner-static{cursor:default}
+.term:target{outline:3px solid #F4BC3F;outline-offset:3px;box-shadow:0 10px 30px rgba(42,82,196,.22)}
+.term{scroll-margin-top:190px}
 </style></head><body>
 <nav><div class="marca-nav">
       <a href="index.html"><img src="img/marca.svg" alt="Observamed STAR"/></a>
@@ -313,188 +315,531 @@ footer{text-align:center;color:var(--text-light);font-size:.8rem;padding:26px;bo
   <div class="k">Glosario</div>
   <h1>Las palabras del observatorio,<br/>explicadas</h1>
   <p>Los boletines usan términos técnicos que no todo el mundo tiene por qué conocer.
-  Aquí están los 25, con lo que significan y por qué importan.</p>
+  Aquí están los 74, con lo que significan y por qué importan.</p>
 </header>
 <main>
   <div class="buscar">
     <input id="q" type="search" placeholder="Buscar un término: CUM, precio, SISMED, genérico…"/>
-    <div class="chips"><button class="ch on" data-g="">Todos</button><button class="ch" data-g="Los precios"><i style="background:#2A52C4"></i>Los precios</button><button class="ch" data-g="Los códigos"><i style="background:#0E7490"></i>Los códigos</button><button class="ch" data-g="Las entidades"><i style="background:#B45309"></i>Las entidades</button><button class="ch" data-g="Del observatorio"><i style="background:#6D28D9"></i>Del observatorio</button><button class="ch" data-g="Los medicamentos"><i style="background:#047857"></i>Los medicamentos</button></div>
+    <div class="chips"><button class="ch on" data-g="">Todos</button><button class="ch" data-g="Los precios"><i style="background:#2A52C4"></i>Los precios</button><button class="ch" data-g="Los códigos"><i style="background:#0E7490"></i>Los códigos</button><button class="ch" data-g="Las entidades"><i style="background:#B45309"></i>Las entidades</button><button class="ch" data-g="Del observatorio"><i style="background:#6D28D9"></i>Del observatorio</button><button class="ch" data-g="Los medicamentos"><i style="background:#047857"></i>Los medicamentos</button><button class="ch" data-g="Leyes y trámites"><i style="background:#8B1E3F"></i>Leyes y trámites</button><button class="ch" data-g="Empresas y marcas"><i style="background:#6D28D9"></i>Empresas y marcas</button><button class="ch" data-g="Salud y tratamientos"><i style="background:#0F766E"></i>Salud y tratamientos</button></div>
   </div>
-  <div class="rejilla" id="lista"><article class="term" data-g="Los precios" data-b="premaxref precio maximo de referencia el techo que fija el estado: lo maximo que se puede cobrar por esa presentacion exacta de un medicamento. es la columna central de las tablas del doctor. cuando ese techo esta mal calculado, queda legalizado un sobreprecio. pmv  precio maximo de venta">
+  <div class="rejilla" id="lista"><article class="term" id="t-premaxref" data-g="Los precios" data-b="premaxref precio maximo de referencia el techo que fija el estado: lo maximo que se puede cobrar por esa presentacion exacta de un medicamento. es la columna central de las tablas del doctor. cuando ese techo esta mal calculado, queda legalizado un sobreprecio. pmv  precio maximo de venta">
   <div class="cab"><span class="sig" style="background:#2A52C4">PreMaxRef</span>
     <span class="grp" style="color:#2A52C4">Los precios</span></div>
   <h3>Precio Máximo de Referencia</h3>
   <p class="que">El techo que fija el Estado: lo máximo que se puede cobrar por esa presentación exacta de un medicamento.</p>
   <div class="por"><b>Por qué importa.</b> Es la columna central de las tablas del doctor. Cuando ese techo está mal calculado, queda legalizado un sobreprecio.</div>
   <div class="alias">También aparece como: <b>PMV · Precio Máximo de Venta</b></div>
-</article><article class="term" data-g="Los precios" data-b="margen ips margen para la institucion prestadora el porcentaje adicional que puede cobrar la clinica o el hospital que entrega el medicamento. en las tablas es exactamente 3,50% en los medicamentos caros y 7,00% en los baratos. sirve para comprobar que una cifra esta bien leida. ">
+</article><article class="term" id="t-margen-ips" data-g="Los precios" data-b="margen ips margen para la institucion prestadora el porcentaje adicional que puede cobrar la clinica o el hospital que entrega el medicamento. en las tablas es exactamente 3,50% en los medicamentos caros y 7,00% en los baratos. sirve para comprobar que una cifra esta bien leida. ">
   <div class="cab"><span class="sig" style="background:#2A52C4">Margen IPS</span>
     <span class="grp" style="color:#2A52C4">Los precios</span></div>
   <h3>Margen para la institución prestadora</h3>
   <p class="que">El porcentaje adicional que puede cobrar la clínica o el hospital que entrega el medicamento.</p>
   <div class="por"><b>Por qué importa.</b> En las tablas es exactamente 3,50% en los medicamentos caros y 7,00% en los baratos. Sirve para comprobar que una cifra está bien leída.</div>
   
-</article><article class="term" data-g="Los precios" data-b="pra precio regulado aplicable el precio final autorizado: el maximo de referencia mas el margen de la institucion. es lo que realmente se termina pagando. siempre debe ser premaxref + margen ips. ">
+</article><article class="term" id="t-pra" data-g="Los precios" data-b="pra precio regulado aplicable el precio final autorizado: el maximo de referencia mas el margen de la institucion. es lo que realmente se termina pagando. siempre debe ser premaxref + margen ips. ">
   <div class="cab"><span class="sig" style="background:#2A52C4">PRA</span>
     <span class="grp" style="color:#2A52C4">Los precios</span></div>
   <h3>Precio Regulado Aplicable</h3>
   <p class="que">El precio final autorizado: el máximo de referencia más el margen de la institución.</p>
   <div class="por"><b>Por qué importa.</b> Es lo que realmente se termina pagando. Siempre debe ser PreMaxRef + Margen IPS.</div>
   
-</article><article class="term" data-g="Los precios" data-b="ppps precio promedio de la presentacion en sismed lo que el laboratorio realmente vendio, en promedio: el total facturado dividido por las unidades vendidas. si su entidad compra, debe pedir descuentos sobre este valor. es el precio real, no el de lista. ">
+</article><article class="term" id="t-ppps" data-g="Los precios" data-b="ppps precio promedio de la presentacion en sismed lo que el laboratorio realmente vendio, en promedio: el total facturado dividido por las unidades vendidas. si su entidad compra, debe pedir descuentos sobre este valor. es el precio real, no el de lista. ">
   <div class="cab"><span class="sig" style="background:#2A52C4">PPPS</span>
     <span class="grp" style="color:#2A52C4">Los precios</span></div>
   <h3>Precio Promedio de la Presentación en SISMED</h3>
   <p class="que">Lo que el laboratorio realmente vendió, en promedio: el total facturado dividido por las unidades vendidas.</p>
   <div class="por"><b>Por qué importa.</b> Si su entidad compra, debe pedir descuentos sobre este valor. Es el precio real, no el de lista.</div>
   
-</article><article class="term" data-g="Los precios" data-b="pppefi precio publico promedio encuestado en farmacias de internet lo que cuesta el medicamento en la drogueria, segun encuesta directa. es exclusivo del sistema vmi-cfn. ponerlo al lado del ppps muestra el recorrido completo del precio. ">
+</article><article class="term" id="t-pppefi" data-g="Los precios" data-b="pppefi precio publico promedio encuestado en farmacias de internet lo que cuesta el medicamento en la drogueria, segun encuesta directa. es exclusivo del sistema vmi-cfn. ponerlo al lado del ppps muestra el recorrido completo del precio. ">
   <div class="cab"><span class="sig" style="background:#2A52C4">PPPEFI</span>
     <span class="grp" style="color:#2A52C4">Los precios</span></div>
   <h3>Precio Público Promedio Encuestado en Farmacias de Internet</h3>
   <p class="que">Lo que cuesta el medicamento en la droguería, según encuesta directa.</p>
   <div class="por"><b>Por qué importa.</b> Es exclusivo del Sistema VMI-CFN. Ponerlo al lado del PPPS muestra el recorrido completo del precio.</div>
   
-</article><article class="term" data-g="Los códigos" data-b="cum codigo unico de medicamento el numero de cedula que el invima le asigna a cada medicamento: marca, concentracion, presentacion y laboratorio exactos. dos cajas con el mismo nombre pero distinto tamano tienen cum distinto. por eso el precio se verifica por cum y no por nombre. cum of  cumo">
+</article><article class="term" id="t-cum" data-g="Los códigos" data-b="cum codigo unico de medicamento el numero de cedula que el invima le asigna a cada medicamento: marca, concentracion, presentacion y laboratorio exactos. dos cajas con el mismo nombre pero distinto tamano tienen cum distinto. por eso el precio se verifica por cum y no por nombre. cum of  cumo">
   <div class="cab"><span class="sig" style="background:#0E7490">CUM</span>
     <span class="grp" style="color:#0E7490">Los códigos</span></div>
   <h3>Código Único de Medicamento</h3>
   <p class="que">El número de cédula que el INVIMA le asigna a cada medicamento: marca, concentración, presentación y laboratorio exactos.</p>
   <div class="por"><b>Por qué importa.</b> Dos cajas con el mismo nombre pero distinto tamaño tienen CUM distinto. Por eso el precio se verifica por CUM y no por nombre.</div>
   <div class="alias">También aparece como: <b>CUM Of · CUMO</b></div>
-</article><article class="term" data-g="Los códigos" data-b="atc clasificacion anatomica, terapeutica y quimica el sistema de la organizacion mundial de la salud que agrupa medicamentos por para que sirven y como actuan. permite mirar una familia entera de una vez. atc4-a10b, por ejemplo, son todos los antidiabeticos no insulinicos. atc4  atc-5">
+</article><article class="term" id="t-atc" data-g="Los códigos" data-b="atc clasificacion anatomica, terapeutica y quimica el sistema de la organizacion mundial de la salud que agrupa medicamentos por para que sirven y como actuan. permite mirar una familia entera de una vez. atc4-a10b, por ejemplo, son todos los antidiabeticos no insulinicos. atc4  atc-5">
   <div class="cab"><span class="sig" style="background:#0E7490">ATC</span>
     <span class="grp" style="color:#0E7490">Los códigos</span></div>
   <h3>Clasificación Anatómica, Terapéutica y Química</h3>
   <p class="que">El sistema de la Organización Mundial de la Salud que agrupa medicamentos por para qué sirven y cómo actúan.</p>
   <div class="por"><b>Por qué importa.</b> Permite mirar una familia entera de una vez. ATC4-A10B, por ejemplo, son todos los antidiabéticos no insulínicos.</div>
   <div class="alias">También aparece como: <b>ATC4 · ATC-5</b></div>
-</article><article class="term" data-g="Los códigos" data-b="armi archivo de reserva med-informatica la copia que el observatorio guarda de cada documento oficial en el momento de publicarse. si una entidad cambia o retira un archivo de su pagina, el observatorio conserva la version original. armi">
+</article><article class="term" id="t-armi" data-g="Los códigos" data-b="armi archivo de reserva med-informatica la copia que el observatorio guarda de cada documento oficial en el momento de publicarse. si una entidad cambia o retira un archivo de su pagina, el observatorio conserva la version original. armi">
   <div class="cab"><span class="sig" style="background:#0E7490">ARMI</span>
     <span class="grp" style="color:#0E7490">Los códigos</span></div>
   <h3>Archivo de Reserva Med-Informática</h3>
   <p class="que">La copia que el observatorio guarda de cada documento oficial en el momento de publicarse.</p>
   <div class="por"><b>Por qué importa.</b> Si una entidad cambia o retira un archivo de su página, el observatorio conserva la versión original.</div>
   <div class="alias">También aparece como: <b>ARmi</b></div>
-</article><article class="term" data-g="Las entidades" data-b="cnpmydm comision nacional de precios de medicamentos y dispositivos medicos el organismo del estado que decide cuanto es lo maximo que puede costar un medicamento en colombia. sus circulares son las que el observatorio audita: cuando la comision se equivoca, el error se vuelve ley. ">
+</article><article class="term" id="t-cnpmydm" data-g="Las entidades" data-b="cnpmydm comision nacional de precios de medicamentos y dispositivos medicos el organismo del estado que decide cuanto es lo maximo que puede costar un medicamento en colombia. sus circulares son las que el observatorio audita: cuando la comision se equivoca, el error se vuelve ley. ">
   <div class="cab"><span class="sig" style="background:#B45309">CNPMyDM</span>
     <span class="grp" style="color:#B45309">Las entidades</span></div>
   <h3>Comisión Nacional de Precios de Medicamentos y Dispositivos Médicos</h3>
   <p class="que">El organismo del Estado que decide cuánto es lo máximo que puede costar un medicamento en Colombia.</p>
   <div class="por"><b>Por qué importa.</b> Sus circulares son las que el observatorio audita: cuando la Comisión se equivoca, el error se vuelve ley.</div>
   
-</article><article class="term" data-g="Las entidades" data-b="invima instituto nacional de vigilancia de medicamentos y alimentos la autoridad que autoriza que medicamentos pueden venderse en el pais y vigila su calidad. asigna los cum y los registros sanitarios. sin su aval, un producto no puede circular legalmente. ">
+</article><article class="term" id="t-invima" data-g="Las entidades" data-b="invima instituto nacional de vigilancia de medicamentos y alimentos la autoridad que autoriza que medicamentos pueden venderse en el pais y vigila su calidad. asigna los cum y los registros sanitarios. sin su aval, un producto no puede circular legalmente. ">
   <div class="cab"><span class="sig" style="background:#B45309">INVIMA</span>
     <span class="grp" style="color:#B45309">Las entidades</span></div>
   <h3>Instituto Nacional de Vigilancia de Medicamentos y Alimentos</h3>
   <p class="que">La autoridad que autoriza qué medicamentos pueden venderse en el país y vigila su calidad.</p>
   <div class="por"><b>Por qué importa.</b> Asigna los CUM y los registros sanitarios. Sin su aval, un producto no puede circular legalmente.</div>
   
-</article><article class="term" data-g="Las entidades" data-b="sismed sistema de informacion de precios de medicamentos la base de datos publica donde los laboratorios estan obligados por ley a reportar cuanto y a que precio venden. es la fuente de casi todas las cifras del observatorio. su calidad depende de que alguien la revise. ">
+</article><article class="term" id="t-sismed" data-g="Las entidades" data-b="sismed sistema de informacion de precios de medicamentos la base de datos publica donde los laboratorios estan obligados por ley a reportar cuanto y a que precio venden. es la fuente de casi todas las cifras del observatorio. su calidad depende de que alguien la revise. ">
   <div class="cab"><span class="sig" style="background:#B45309">SISMED</span>
     <span class="grp" style="color:#B45309">Las entidades</span></div>
   <h3>Sistema de Información de Precios de Medicamentos</h3>
   <p class="que">La base de datos pública donde los laboratorios están obligados por ley a reportar cuánto y a qué precio venden.</p>
   <div class="por"><b>Por qué importa.</b> Es la fuente de casi todas las cifras del observatorio. Su calidad depende de que alguien la revise.</div>
   
-</article><article class="term" data-g="Las entidades" data-b="ips institucion prestadora de servicios de salud clinicas, hospitales y centros medicos: quienes atienden al paciente y le entregan el medicamento. es a quien se le reconoce el margen adicional sobre el precio maximo de referencia. ">
+</article><article class="term" id="t-ips" data-g="Las entidades" data-b="ips institucion prestadora de servicios de salud clinicas, hospitales y centros medicos: quienes atienden al paciente y le entregan el medicamento. es a quien se le reconoce el margen adicional sobre el precio maximo de referencia. ">
   <div class="cab"><span class="sig" style="background:#B45309">IPS</span>
     <span class="grp" style="color:#B45309">Las entidades</span></div>
   <h3>Institución Prestadora de Servicios de Salud</h3>
   <p class="que">Clínicas, hospitales y centros médicos: quienes atienden al paciente y le entregan el medicamento.</p>
   <div class="por"><b>Por qué importa.</b> Es a quien se le reconoce el margen adicional sobre el precio máximo de referencia.</div>
   
-</article><article class="term" data-g="Las entidades" data-b="eps entidad promotora de salud la aseguradora que administra los recursos de salud de sus afiliados y contrata a las ips. es el comprador grande de medicamentos. su capacidad de negociar precios define buena parte del gasto. ">
+</article><article class="term" id="t-eps" data-g="Las entidades" data-b="eps entidad promotora de salud la aseguradora que administra los recursos de salud de sus afiliados y contrata a las ips. es el comprador grande de medicamentos. su capacidad de negociar precios define buena parte del gasto. ">
   <div class="cab"><span class="sig" style="background:#B45309">EPS</span>
     <span class="grp" style="color:#B45309">Las entidades</span></div>
   <h3>Entidad Promotora de Salud</h3>
   <p class="que">La aseguradora que administra los recursos de salud de sus afiliados y contrata a las IPS.</p>
   <div class="por"><b>Por qué importa.</b> Es el comprador grande de medicamentos. Su capacidad de negociar precios define buena parte del gasto.</div>
   
-</article><article class="term" data-g="Las entidades" data-b="mipres plataforma de prescripcion el sistema donde el medico debe registrar las formulas de medicamentos que no estan en el plan de beneficios. cruzar mipres con sismed revela si se esta vendiendo mas de lo que se esta formulando. ">
+</article><article class="term" id="t-mipres" data-g="Las entidades" data-b="mipres plataforma de prescripcion el sistema donde el medico debe registrar las formulas de medicamentos que no estan en el plan de beneficios. cruzar mipres con sismed revela si se esta vendiendo mas de lo que se esta formulando. ">
   <div class="cab"><span class="sig" style="background:#B45309">MiPres</span>
     <span class="grp" style="color:#B45309">Las entidades</span></div>
   <h3>Plataforma de prescripción</h3>
   <p class="que">El sistema donde el médico debe registrar las fórmulas de medicamentos que no están en el plan de beneficios.</p>
   <div class="por"><b>Por qué importa.</b> Cruzar MiPres con SISMED revela si se está vendiendo más de lo que se está formulando.</div>
   
-</article><article class="term" data-g="Del observatorio" data-b="vmi-cfn vademecum med-informatica y catalogo farmaceutico nacional la base de datos del observatorio: informacion farmacologica, regulatoria y economica de los medicamentos disponibles en colombia. es el unico sistema que junta en una pantalla lo que reporta el laboratorio, lo que regula el estado y lo que cobra la farmacia. ">
+</article><article class="term" id="t-adres" data-g="Las entidades" data-b="adres administradora de los recursos del sistema general de seguridad social en salud la entidad del estado que maneja la plata de la salud: recibe los recursos y les paga a las eps, a las clinicas y a los proveedores. por sus manos pasan los recobros, los presupuestos maximos y el giro directo. el doctor le reclama que publique los datos de lo que paga. ">
+  <div class="cab"><span class="sig" style="background:#B45309">ADRES</span>
+    <span class="grp" style="color:#B45309">Las entidades</span></div>
+  <h3>Administradora de los Recursos del Sistema General de Seguridad Social en Salud</h3>
+  <p class="que">La entidad del Estado que maneja la plata de la salud: recibe los recursos y les paga a las EPS, a las clínicas y a los proveedores.</p>
+  <div class="por"><b>Por qué importa.</b> Por sus manos pasan los recobros, los presupuestos máximos y el giro directo. El doctor le reclama que publique los datos de lo que paga.</div>
+  
+</article><article class="term" id="t-minsalud" data-g="Las entidades" data-b="minsalud ministerio de salud y proteccion social el ministerio que dirige la politica de salud del pais y expide las resoluciones sobre medicamentos y precios. es quien abre tramites como la declaratoria de interes publico y responde por los sistemas de informacion sismed y mipres. ministerio de salud">
+  <div class="cab"><span class="sig" style="background:#B45309">MinSalud</span>
+    <span class="grp" style="color:#B45309">Las entidades</span></div>
+  <h3>Ministerio de Salud y Protección Social</h3>
+  <p class="que">El ministerio que dirige la política de salud del país y expide las resoluciones sobre medicamentos y precios.</p>
+  <div class="por"><b>Por qué importa.</b> Es quien abre trámites como la declaratoria de interés público y responde por los sistemas de información SISMED y MiPres.</div>
+  <div class="alias">También aparece como: <b>Ministerio de Salud</b></div>
+</article><article class="term" id="t-upc" data-g="Las entidades" data-b="upc unidad de pago por capitacion la suma fija que el sistema le paga cada ano a la eps por cada afiliado, para cubrir lo que esta en el plan de beneficios. lo que no alcanza a cubrir la upc se paga aparte (recobros o presupuestos maximos), y ahi se han ido grandes sumas. ">
+  <div class="cab"><span class="sig" style="background:#B45309">UPC</span>
+    <span class="grp" style="color:#B45309">Las entidades</span></div>
+  <h3>Unidad de Pago por Capitación</h3>
+  <p class="que">La suma fija que el sistema le paga cada año a la EPS por cada afiliado, para cubrir lo que está en el plan de beneficios.</p>
+  <div class="por"><b>Por qué importa.</b> Lo que no alcanza a cubrir la UPC se paga aparte (recobros o presupuestos máximos), y ahí se han ido grandes sumas.</div>
+  
+</article><article class="term" id="t-iets" data-g="Las entidades" data-b="iets instituto de evaluacion tecnologica en salud instituto que evalua si un medicamento o tratamiento nuevo funciona mejor que lo que ya existe y cuanto vale la pena pagar por el. la ley 1753 de 2015 queria que su evaluacion sirviera para fijar el precio de los medicamentos nuevos desde que entran al pais. ">
+  <div class="cab"><span class="sig" style="background:#B45309">IETS</span>
+    <span class="grp" style="color:#B45309">Las entidades</span></div>
+  <h3>Instituto de Evaluación Tecnológica en Salud</h3>
+  <p class="que">Instituto que evalúa si un medicamento o tratamiento nuevo funciona mejor que lo que ya existe y cuánto vale la pena pagar por él.</p>
+  <div class="por"><b>Por qué importa.</b> La Ley 1753 de 2015 quería que su evaluación sirviera para fijar el precio de los medicamentos nuevos desde que entran al país.</div>
+  
+</article><article class="term" id="t-otic" data-g="Las entidades" data-b="otic oficina de tecnologia de la informacion y la comunicacion la oficina del ministerio de salud encargada de los sistemas de informacion, entre ellos sismed. el doctor senala que no valida ni analiza los reportes, y por eso sismed muestra cifras imposibles. ">
+  <div class="cab"><span class="sig" style="background:#B45309">OTIC</span>
+    <span class="grp" style="color:#B45309">Las entidades</span></div>
+  <h3>Oficina de Tecnología de la Información y la Comunicación</h3>
+  <p class="que">La oficina del Ministerio de Salud encargada de los sistemas de información, entre ellos SISMED.</p>
+  <div class="por"><b>Por qué importa.</b> El doctor señala que no valida ni analiza los reportes, y por eso SISMED muestra cifras imposibles.</div>
+  
+</article><article class="term" id="t-afidro" data-g="Las entidades" data-b="afidro asociacion de laboratorios farmaceuticos de investigacion y desarrollo el gremio que agrupa a las farmaceuticas multinacionales en colombia. en 2018 le pidio al nuevo gobierno frenar varias regulaciones de precios, y el doctor documenta que esas peticiones se cumplieron. ">
+  <div class="cab"><span class="sig" style="background:#B45309">AFIDRO</span>
+    <span class="grp" style="color:#B45309">Las entidades</span></div>
+  <h3>Asociación de Laboratorios Farmacéuticos de Investigación y Desarrollo</h3>
+  <p class="que">El gremio que agrupa a las farmacéuticas multinacionales en Colombia.</p>
+  <div class="por"><b>Por qué importa.</b> En 2018 le pidió al nuevo Gobierno frenar varias regulaciones de precios, y el doctor documenta que esas peticiones se cumplieron.</div>
+  
+</article><article class="term" id="t-cvcs" data-g="Las entidades" data-b="cvcs comite de veeduria y cooperacion en salud organizacion de la sociedad civil que vigila el sistema de salud y le exige cuentas al gobierno. en 2023 le pidio al ministro de salud corregir las fallas de los sistemas de informacion documentadas por el observatorio. ">
+  <div class="cab"><span class="sig" style="background:#B45309">CVCS</span>
+    <span class="grp" style="color:#B45309">Las entidades</span></div>
+  <h3>Comité de Veeduría y Cooperación en Salud</h3>
+  <p class="que">Organización de la sociedad civil que vigila el sistema de salud y le exige cuentas al Gobierno.</p>
+  <div class="por"><b>Por qué importa.</b> En 2023 le pidió al ministro de Salud corregir las fallas de los sistemas de información documentadas por el Observatorio.</div>
+  
+</article><article class="term" id="t-oms" data-g="Las entidades" data-b="oms organizacion mundial de la salud la agencia de las naciones unidas para la salud. publica guias de tratamiento y la lista de medicamentos esenciales. sus recomendaciones sirven de referencia: por ejemplo, el dolutegravir es su tratamiento preferido para el vih. ops/oms">
+  <div class="cab"><span class="sig" style="background:#B45309">OMS</span>
+    <span class="grp" style="color:#B45309">Las entidades</span></div>
+  <h3>Organización Mundial de la Salud</h3>
+  <p class="que">La agencia de las Naciones Unidas para la salud. Publica guías de tratamiento y la Lista de Medicamentos Esenciales.</p>
+  <div class="por"><b>Por qué importa.</b> Sus recomendaciones sirven de referencia: por ejemplo, el dolutegravir es su tratamiento preferido para el VIH.</div>
+  <div class="alias">También aparece como: <b>OPS/OMS</b></div>
+</article><article class="term" id="t-sic" data-g="Las entidades" data-b="sic superintendencia de industria y comercio la entidad que vigila la competencia entre empresas y protege al consumidor; tambien maneja las patentes. freno en 2018 la circular que iba a fijar precios de entrada a los medicamentos nuevos. ">
+  <div class="cab"><span class="sig" style="background:#B45309">SIC</span>
+    <span class="grp" style="color:#B45309">Las entidades</span></div>
+  <h3>Superintendencia de Industria y Comercio</h3>
+  <p class="que">La entidad que vigila la competencia entre empresas y protege al consumidor; también maneja las patentes.</p>
+  <div class="por"><b>Por qué importa.</b> Frenó en 2018 la circular que iba a fijar precios de entrada a los medicamentos nuevos.</div>
+  
+</article><article class="term" id="t-consejo-de-estado" data-g="Las entidades" data-b="consejo de estado consejo de estado el tribunal mas alto para los casos contra el estado: revisa si los decretos y resoluciones del gobierno se ajustan a la ley. suspendio el decreto 710 de 2018 y en 2026 dicto la sentencia sobre la politica de precios de medicamentos que sigue el observatorio. ">
+  <div class="cab"><span class="sig" style="background:#B45309">Consejo de Estado</span>
+    <span class="grp" style="color:#B45309">Las entidades</span></div>
+  <h3>Consejo de Estado</h3>
+  <p class="que">El tribunal más alto para los casos contra el Estado: revisa si los decretos y resoluciones del Gobierno se ajustan a la ley.</p>
+  <div class="por"><b>Por qué importa.</b> Suspendió el Decreto 710 de 2018 y en 2026 dictó la sentencia sobre la política de precios de medicamentos que sigue el Observatorio.</div>
+  
+</article><article class="term" id="t-cuenta-de-alto-costo" data-g="Las entidades" data-b="cuenta de alto costo cuenta de alto costo organismo tecnico del sistema de salud que hace seguimiento a las enfermedades mas costosas, como el vih, el cancer y la enfermedad renal. deberia tener datos de los pacientes con vih, pero el doctor senala que no publica la informacion sobre el dolutegravir. cac">
+  <div class="cab"><span class="sig" style="background:#B45309">Cuenta de Alto Costo</span>
+    <span class="grp" style="color:#B45309">Las entidades</span></div>
+  <h3>Cuenta de Alto Costo</h3>
+  <p class="que">Organismo técnico del sistema de salud que hace seguimiento a las enfermedades más costosas, como el VIH, el cáncer y la enfermedad renal.</p>
+  <div class="por"><b>Por qué importa.</b> Debería tener datos de los pacientes con VIH, pero el doctor señala que no publica la información sobre el dolutegravir.</div>
+  <div class="alias">También aparece como: <b>CAC</b></div>
+</article><article class="term" id="t-vmi-cfn" data-g="Del observatorio" data-b="vmi-cfn vademecum med-informatica y catalogo farmaceutico nacional la base de datos del observatorio: informacion farmacologica, regulatoria y economica de los medicamentos disponibles en colombia. es el unico sistema que junta en una pantalla lo que reporta el laboratorio, lo que regula el estado y lo que cobra la farmacia. ">
   <div class="cab"><span class="sig" style="background:#6D28D9">VMI-CFN</span>
     <span class="grp" style="color:#6D28D9">Del observatorio</span></div>
   <h3>Vademécum Med-Informática y Catálogo Farmacéutico Nacional</h3>
   <p class="que">La base de datos del observatorio: información farmacológica, regulatoria y económica de los medicamentos disponibles en Colombia.</p>
   <div class="por"><b>Por qué importa.</b> Es el único sistema que junta en una pantalla lo que reporta el laboratorio, lo que regula el Estado y lo que cobra la farmacia.</div>
   
-</article><article class="term" data-g="Del observatorio" data-b="biscom boletin informatica y salud y del consumidor de medicamentos la publicacion semanal del observatorio, con issn desde 1991. cada edicion lleva un numero y la semana que cubre. es el archivo donde vive toda esta investigacion. bis">
+</article><article class="term" id="t-biscom" data-g="Del observatorio" data-b="biscom boletin informatica y salud y del consumidor de medicamentos la publicacion semanal del observatorio, con issn desde 1991. cada edicion lleva un numero y la semana que cubre. es el archivo donde vive toda esta investigacion. bis">
   <div class="cab"><span class="sig" style="background:#6D28D9">BisCoM</span>
     <span class="grp" style="color:#6D28D9">Del observatorio</span></div>
   <h3>Boletín Informática y Salud y del Consumidor de Medicamentos</h3>
   <p class="que">La publicación semanal del observatorio, con ISSN desde 1991.</p>
   <div class="por"><b>Por qué importa.</b> Cada edición lleva un número y la semana que cubre. Es el archivo donde vive toda esta investigación.</div>
   <div class="alias">También aparece como: <b>BIS</b></div>
-</article><article class="term" data-g="Del observatorio" data-b="sitdis sistema integrado transaccional y distribuido de informacion en salud el sistema de informacion que el observatorio propone para cruzar todos los datos del sector. es su tesis central: sin datos que se puedan cruzar entre si, no hay control posible del gasto. ">
+</article><article class="term" id="t-sitdis" data-g="Del observatorio" data-b="sitdis sistema integrado transaccional y distribuido de informacion en salud el sistema de informacion que el observatorio propone para cruzar todos los datos del sector. es su tesis central: sin datos que se puedan cruzar entre si, no hay control posible del gasto. ">
   <div class="cab"><span class="sig" style="background:#6D28D9">SITDIS</span>
     <span class="grp" style="color:#6D28D9">Del observatorio</span></div>
   <h3>Sistema Integrado Transaccional y Distribuido de Información en Salud</h3>
   <p class="que">El sistema de información que el observatorio propone para cruzar todos los datos del sector.</p>
   <div class="por"><b>Por qué importa.</b> Es su tesis central: sin datos que se puedan cruzar entre sí, no hay control posible del gasto.</div>
   
-</article><article class="term" data-g="Del observatorio" data-b="aspeec analisis, sintesis, proyeccion, ejecucion, evaluacion y correctivos la metodologia de las investigaciones especiales del observatorio. no se queda en el diagnostico: propone correctivos y luego evalua si se aplicaron. ">
+</article><article class="term" id="t-aspeec" data-g="Del observatorio" data-b="aspeec analisis, sintesis, proyeccion, ejecucion, evaluacion y correctivos la metodologia de las investigaciones especiales del observatorio. no se queda en el diagnostico: propone correctivos y luego evalua si se aplicaron. ">
   <div class="cab"><span class="sig" style="background:#6D28D9">ASPEEC</span>
     <span class="grp" style="color:#6D28D9">Del observatorio</span></div>
   <h3>Análisis, Síntesis, Proyección, Ejecución, Evaluación y Correctivos</h3>
   <p class="que">La metodología de las investigaciones especiales del observatorio.</p>
   <div class="por"><b>Por qué importa.</b> No se queda en el diagnóstico: propone correctivos y luego evalúa si se aplicaron.</div>
   
-</article><article class="term" data-g="Del observatorio" data-b="app-i analisis de precios primarios por internet la version del sistema vmi-cfn que compara el precio del laboratorio con el de la farmacia. gratis el primer mes. es la herramienta de la operacion transparencia farmaceutica, abierta a profesionales de la salud. ">
+</article><article class="term" id="t-app-i" data-g="Del observatorio" data-b="app-i analisis de precios primarios por internet la version del sistema vmi-cfn que compara el precio del laboratorio con el de la farmacia. gratis el primer mes. es la herramienta de la operacion transparencia farmaceutica, abierta a profesionales de la salud. ">
   <div class="cab"><span class="sig" style="background:#6D28D9">APP-I</span>
     <span class="grp" style="color:#6D28D9">Del observatorio</span></div>
   <h3>Análisis de Precios Primarios por Internet</h3>
   <p class="que">La versión del sistema VMI-CFN que compara el precio del laboratorio con el de la farmacia. Gratis el primer mes.</p>
   <div class="por"><b>Por qué importa.</b> Es la herramienta de la Operación Transparencia Farmacéutica, abierta a profesionales de la salud.</div>
   
-</article><article class="term" data-g="Los medicamentos" data-b="marca pionera el original el laboratorio que desarrollo la molecula y la lanzo primero al mercado. suele ser la mas cara aun cuando la patente ya vencio y existen alternativas identicas. ">
+</article><article class="term" id="t-observatorio-del-medicamento" data-g="Del observatorio" data-b="observatorio del medicamento observatorio del medicamento de la federacion medica colombiana es un grupo de la federacion medica colombiana, el gremio que reune a organizaciones de medicos del pais. estudia y publica informacion sobre medicamentos, sus precios y su uso en colombia. sus analisis documentaron las inconsistencias en los datos de ventas, precios y recetas de dolutegravir que recoge la carta enviada al ministro. federacion medica colombiana">
+  <div class="cab"><span class="sig" style="background:#6D28D9">Observatorio del Medicamento</span>
+    <span class="grp" style="color:#6D28D9">Del observatorio</span></div>
+  <h3>Observatorio del Medicamento de la Federación Médica Colombiana</h3>
+  <p class="que">Es un grupo de la Federación Médica Colombiana, el gremio que reúne a organizaciones de médicos del país. Estudia y publica información sobre medicamentos, sus precios y su uso en Colombia.</p>
+  <div class="por"><b>Por qué importa.</b> Sus análisis documentaron las inconsistencias en los datos de ventas, precios y recetas de dolutegravir que recoge la carta enviada al ministro.</div>
+  <div class="alias">También aparece como: <b>Federación Médica Colombiana</b></div>
+</article><article class="term" id="t-marca-pionera" data-g="Los medicamentos" data-b="marca pionera el original el laboratorio que desarrollo la molecula y la lanzo primero al mercado. suele ser la mas cara aun cuando la patente ya vencio y existen alternativas identicas. ">
   <div class="cab"><span class="sig" style="background:#047857">Marca pionera</span>
     <span class="grp" style="color:#047857">Los medicamentos</span></div>
   <h3>El original</h3>
   <p class="que">El laboratorio que desarrolló la molécula y la lanzó primero al mercado.</p>
   <div class="por"><b>Por qué importa.</b> Suele ser la más cara aun cuando la patente ya venció y existen alternativas idénticas.</div>
   
-</article><article class="term" data-g="Los medicamentos" data-b="generico genuino el mismo medicamento sin marca se vende con el nombre del principio activo y cumple los mismos requisitos de calidad del invima. misma molecula, misma dosis, hasta cuatro veces menos precio. esa diferencia es el hallazgo central del observatorio. marca competidora">
+</article><article class="term" id="t-generico-genuino" data-g="Los medicamentos" data-b="generico genuino el mismo medicamento sin marca se vende con el nombre del principio activo y cumple los mismos requisitos de calidad del invima. misma molecula, misma dosis, hasta cuatro veces menos precio. esa diferencia es el hallazgo central del observatorio. marca competidora">
   <div class="cab"><span class="sig" style="background:#047857">Genérico genuino</span>
     <span class="grp" style="color:#047857">Los medicamentos</span></div>
   <h3>El mismo medicamento sin marca</h3>
   <p class="que">Se vende con el nombre del principio activo y cumple los mismos requisitos de calidad del INVIMA.</p>
   <div class="por"><b>Por qué importa.</b> Misma molécula, misma dosis, hasta cuatro veces menos precio. Esa diferencia es el hallazgo central del observatorio.</div>
   <div class="alias">También aparece como: <b>Marca competidora</b></div>
-</article><article class="term" data-g="Los medicamentos" data-b="muestra medica producto sin valor comercial el medicamento que el laboratorio entrega gratis al medico para que lo conozca. por definicion no se vende. el observatorio encontro 33 de ellas con precio regulado asignado, algunas millonarias. si no tienen valor comercial, no deberian tener techo de precio. ">
+</article><article class="term" id="t-muestra-medica" data-g="Los medicamentos" data-b="muestra medica producto sin valor comercial el medicamento que el laboratorio entrega gratis al medico para que lo conozca. por definicion no se vende. el observatorio encontro 33 de ellas con precio regulado asignado, algunas millonarias. si no tienen valor comercial, no deberian tener techo de precio. ">
   <div class="cab"><span class="sig" style="background:#047857">Muestra médica</span>
     <span class="grp" style="color:#047857">Los medicamentos</span></div>
   <h3>Producto sin valor comercial</h3>
   <p class="que">El medicamento que el laboratorio entrega gratis al médico para que lo conozca. Por definición no se vende.</p>
   <div class="por"><b>Por qué importa.</b> El observatorio encontró 33 de ellas con precio regulado asignado, algunas millonarias. Si no tienen valor comercial, no deberían tener techo de precio.</div>
   
-</article><article class="term" data-g="Los medicamentos" data-b="glp-1 agonistas del peptido similar al glucagon tipo 1 familia de medicamentos para diabetes tipo 2 que tambien reducen el peso. incluye semaglutida y liraglutida. movieron 2,9 billones de pesos en colombia entre 2016 y 2025. glutidas">
+</article><article class="term" id="t-glp-1" data-g="Los medicamentos" data-b="glp-1 agonistas del peptido similar al glucagon tipo 1 familia de medicamentos para diabetes tipo 2 que tambien reducen el peso. incluye semaglutida y liraglutida. movieron 2,9 billones de pesos en colombia entre 2016 y 2025. glutidas">
   <div class="cab"><span class="sig" style="background:#047857">GLP-1</span>
     <span class="grp" style="color:#047857">Los medicamentos</span></div>
   <h3>Agonistas del péptido similar al glucagón tipo 1</h3>
   <p class="que">Familia de medicamentos para diabetes tipo 2 que también reducen el peso. Incluye semaglutida y liraglutida.</p>
   <div class="por"><b>Por qué importa.</b> Movieron 2,9 billones de pesos en Colombia entre 2016 y 2025.</div>
   <div class="alias">También aparece como: <b>Glutidas</b></div>
-</article><article class="term" data-g="Los medicamentos" data-b="sglt2 inhibidores del cotransportador de sodio-glucosa tipo 2 antidiabeticos que hacen eliminar azucar por la orina. dapagliflozina, empagliflozina. es el grupo que mas dinero movio: 3,6 billones de pesos en diez anos. gliflozinas">
+</article><article class="term" id="t-sglt2" data-g="Los medicamentos" data-b="sglt2 inhibidores del cotransportador de sodio-glucosa tipo 2 antidiabeticos que hacen eliminar azucar por la orina. dapagliflozina, empagliflozina. es el grupo que mas dinero movio: 3,6 billones de pesos en diez anos. gliflozinas">
   <div class="cab"><span class="sig" style="background:#047857">SGLT2</span>
     <span class="grp" style="color:#047857">Los medicamentos</span></div>
   <h3>Inhibidores del cotransportador de sodio-glucosa tipo 2</h3>
   <p class="que">Antidiabéticos que hacen eliminar azúcar por la orina. Dapagliflozina, empagliflozina.</p>
   <div class="por"><b>Por qué importa.</b> Es el grupo que más dinero movió: 3,6 billones de pesos en diez años.</div>
   <div class="alias">También aparece como: <b>Gliflozinas</b></div>
-</article><article class="term" data-g="Los medicamentos" data-b="dpp-4 inhibidores de la dipeptidil peptidasa 4 otra familia de antidiabeticos orales. sitagliptina, linagliptina. 1,3 billones de pesos en el periodo analizado. gliptinas">
+</article><article class="term" id="t-dpp-4" data-g="Los medicamentos" data-b="dpp-4 inhibidores de la dipeptidil peptidasa 4 otra familia de antidiabeticos orales. sitagliptina, linagliptina. 1,3 billones de pesos en el periodo analizado. gliptinas">
   <div class="cab"><span class="sig" style="background:#047857">DPP-4</span>
     <span class="grp" style="color:#047857">Los medicamentos</span></div>
   <h3>Inhibidores de la dipeptidil peptidasa 4</h3>
   <p class="que">Otra familia de antidiabéticos orales. Sitagliptina, linagliptina.</p>
   <div class="por"><b>Por qué importa.</b> 1,3 billones de pesos en el período analizado.</div>
   <div class="alias">También aparece como: <b>Gliptinas</b></div>
+</article><article class="term" id="t-dip" data-g="Leyes y trámites" data-b="dip declaratoria de interes publico decision del ministerio de salud que declara que el acceso a un medicamento es de interes publico, normalmente porque es muy caro o escaso. es el primer paso para una licencia obligatoria o para bajar su precio. el dolutegravir esta en ese tramite desde 2023. declaratoria de interes publico">
+  <div class="cab"><span class="sig" style="background:#8B1E3F">DIP</span>
+    <span class="grp" style="color:#8B1E3F">Leyes y trámites</span></div>
+  <h3>Declaratoria de Interés Público</h3>
+  <p class="que">Decisión del Ministerio de Salud que declara que el acceso a un medicamento es de interés público, normalmente porque es muy caro o escaso.</p>
+  <div class="por"><b>Por qué importa.</b> Es el primer paso para una licencia obligatoria o para bajar su precio. El dolutegravir está en ese trámite desde 2023.</div>
+  <div class="alias">También aparece como: <b>declaratoria de interés público</b></div>
+</article><article class="term" id="t-licencia-obligatoria" data-g="Leyes y trámites" data-b="licencia obligatoria licencia obligatoria permiso que da el estado para que otros fabriquen o importen un medicamento patentado sin autorizacion del dueno de la patente, a cambio de una regalia. abre la puerta a versiones mucho mas baratas. en colombia se ha intentado varias veces sin lograrlo. ">
+  <div class="cab"><span class="sig" style="background:#8B1E3F">Licencia obligatoria</span>
+    <span class="grp" style="color:#8B1E3F">Leyes y trámites</span></div>
+  <h3>Licencia obligatoria</h3>
+  <p class="que">Permiso que da el Estado para que otros fabriquen o importen un medicamento patentado sin autorización del dueño de la patente, a cambio de una regalía.</p>
+  <div class="por"><b>Por qué importa.</b> Abre la puerta a versiones mucho más baratas. En Colombia se ha intentado varias veces sin lograrlo.</div>
+  
+</article><article class="term" id="t-licencia-voluntaria" data-g="Leyes y trámites" data-b="licencia voluntaria licencia voluntaria acuerdo en el que la farmaceutica duena de la patente deja que otros fabriquen versiones genericas, casi siempre solo para ciertos paises. viiv healthcare la firmo para el dolutegravir en otros paises, pero colombia no esta incluida. ">
+  <div class="cab"><span class="sig" style="background:#8B1E3F">Licencia voluntaria</span>
+    <span class="grp" style="color:#8B1E3F">Leyes y trámites</span></div>
+  <h3>Licencia voluntaria</h3>
+  <p class="que">Acuerdo en el que la farmacéutica dueña de la patente deja que otros fabriquen versiones genéricas, casi siempre solo para ciertos países.</p>
+  <div class="por"><b>Por qué importa.</b> ViiV Healthcare la firmó para el dolutegravir en otros países, pero Colombia no está incluida.</div>
+  
+</article><article class="term" id="t-patente" data-g="Leyes y trámites" data-b="patente patente derecho exclusivo que tiene una empresa sobre un invento, por lo general durante 20 anos: mientras dure, nadie mas puede vender el mismo medicamento. cuando la patente vence pueden entrar genericos y el precio deberia bajar. ">
+  <div class="cab"><span class="sig" style="background:#8B1E3F">Patente</span>
+    <span class="grp" style="color:#8B1E3F">Leyes y trámites</span></div>
+  <h3>Patente</h3>
+  <p class="que">Derecho exclusivo que tiene una empresa sobre un invento, por lo general durante 20 años: mientras dure, nadie más puede vender el mismo medicamento.</p>
+  <div class="por"><b>Por qué importa.</b> Cuando la patente vence pueden entrar genéricos y el precio debería bajar.</div>
+  
+</article><article class="term" id="t-recobro" data-g="Leyes y trámites" data-b="recobro recobro lo que la eps le cobra al estado (hoy a la adres) por medicamentos o servicios que no estaban cubiertos por la upc. por los recobros se pagaron precios exorbitantes; el doctor dice que no deben usarse para calcular topes. recobros">
+  <div class="cab"><span class="sig" style="background:#8B1E3F">Recobro</span>
+    <span class="grp" style="color:#8B1E3F">Leyes y trámites</span></div>
+  <h3>Recobro</h3>
+  <p class="que">Lo que la EPS le cobra al Estado (hoy a la ADRES) por medicamentos o servicios que no estaban cubiertos por la UPC.</p>
+  <div class="por"><b>Por qué importa.</b> Por los recobros se pagaron precios exorbitantes; el doctor dice que no deben usarse para calcular topes.</div>
+  <div class="alias">También aparece como: <b>recobros</b></div>
+</article><article class="term" id="t-vmr" data-g="Leyes y trámites" data-b="vmr valores maximos de recobro los topes que fijaba el ministerio de salud para lo que las eps podian recobrarle al estado por cada medicamento. algunos quedaron muy por encima del precio real, como el combinado de irbesartan y amlodipino. ">
+  <div class="cab"><span class="sig" style="background:#8B1E3F">VMR</span>
+    <span class="grp" style="color:#8B1E3F">Leyes y trámites</span></div>
+  <h3>Valores Máximos de Recobro</h3>
+  <p class="que">Los topes que fijaba el Ministerio de Salud para lo que las EPS podían recobrarle al Estado por cada medicamento.</p>
+  <div class="por"><b>Por qué importa.</b> Algunos quedaron muy por encima del precio real, como el combinado de irbesartán y amlodipino.</div>
+  
+</article><article class="term" id="t-presupuestos-maximos" data-g="Leyes y trámites" data-b="presupuestos maximos presupuestos maximos (techos) una suma que la adres le gira por adelantado cada ano a cada eps para cubrir lo que no paga la upc; la eps asume el riesgo si no le alcanza. los creo la ley 1955 de 2019. el doctor advirtio que serian inviables y que con ellos se perdio el rastro de muchas recetas. techos">
+  <div class="cab"><span class="sig" style="background:#8B1E3F">Presupuestos Máximos</span>
+    <span class="grp" style="color:#8B1E3F">Leyes y trámites</span></div>
+  <h3>Presupuestos Máximos (techos)</h3>
+  <p class="que">Una suma que la ADRES le gira por adelantado cada año a cada EPS para cubrir lo que no paga la UPC; la EPS asume el riesgo si no le alcanza.</p>
+  <div class="por"><b>Por qué importa.</b> Los creó la Ley 1955 de 2019. El doctor advirtió que serían inviables y que con ellos se perdió el rastro de muchas recetas.</div>
+  <div class="alias">También aparece como: <b>techos</b></div>
+</article><article class="term" id="t-plan-de-beneficios" data-g="Leyes y trámites" data-b="plan de beneficios plan de beneficios en salud (pbs) la lista de servicios y medicamentos que la eps tiene que darle a sus afiliados con la plata de la upc. si un medicamento esta en el plan, la farmaceutica suele usarlo como argumento para decir que no hace falta bajar su precio. pbs">
+  <div class="cab"><span class="sig" style="background:#8B1E3F">Plan de Beneficios</span>
+    <span class="grp" style="color:#8B1E3F">Leyes y trámites</span></div>
+  <h3>Plan de Beneficios en Salud (PBS)</h3>
+  <p class="que">La lista de servicios y medicamentos que la EPS tiene que darle a sus afiliados con la plata de la UPC.</p>
+  <div class="por"><b>Por qué importa.</b> Si un medicamento está en el plan, la farmacéutica suele usarlo como argumento para decir que no hace falta bajar su precio.</div>
+  <div class="alias">También aparece como: <b>PBS</b></div>
+</article><article class="term" id="t-nopbs" data-g="Leyes y trámites" data-b="nopbs servicios no incluidos en el plan de beneficios los medicamentos y servicios que no estan en el plan de beneficios y se pagan aparte, por recobro o con presupuestos maximos. son los que mas han crecido en gasto. el doctor advierte que los techos podian crear un nuevo grupo &quot;nonopbs&quot; sin quien lo pague. nonopbs">
+  <div class="cab"><span class="sig" style="background:#8B1E3F">NoPBS</span>
+    <span class="grp" style="color:#8B1E3F">Leyes y trámites</span></div>
+  <h3>Servicios no incluidos en el Plan de Beneficios</h3>
+  <p class="que">Los medicamentos y servicios que no están en el plan de beneficios y se pagan aparte, por recobro o con presupuestos máximos.</p>
+  <div class="por"><b>Por qué importa.</b> Son los que más han crecido en gasto. El doctor advierte que los techos podían crear un nuevo grupo &quot;NoNoPBS&quot; sin quién lo pague.</div>
+  <div class="alias">También aparece como: <b>NoNoPBS</b></div>
+</article><article class="term" id="t-glosa" data-g="Leyes y trámites" data-b="glosa glosa (y glosa transversal) una objecion a una factura o cuenta de cobro en salud: lo glosado no se paga hasta aclararlo. la &quot;glosa transversal&quot; de 2019 fue un mecanismo para pagar como deuda publica recobros pendientes. con ella se reconocieron cientos de miles de millones como deuda publica. glosa transversal">
+  <div class="cab"><span class="sig" style="background:#8B1E3F">Glosa</span>
+    <span class="grp" style="color:#8B1E3F">Leyes y trámites</span></div>
+  <h3>Glosa (y Glosa Transversal)</h3>
+  <p class="que">Una objeción a una factura o cuenta de cobro en salud: lo glosado no se paga hasta aclararlo. La &quot;Glosa Transversal&quot; de 2019 fue un mecanismo para pagar como deuda pública recobros pendientes.</p>
+  <div class="por"><b>Por qué importa.</b> Con ella se reconocieron cientos de miles de millones como deuda pública.</div>
+  <div class="alias">También aparece como: <b>Glosa Transversal</b></div>
+</article><article class="term" id="t-giro-directo" data-g="Leyes y trámites" data-b="giro directo giro directo (y giro previo) cuando la adres le paga directamente a la clinica o al proveedor, sin que la plata pase por la eps. busca que el dinero llegue a quien presta el servicio; su nuevo mecanismo de reporte arranca en 2027. giro previo">
+  <div class="cab"><span class="sig" style="background:#8B1E3F">Giro directo</span>
+    <span class="grp" style="color:#8B1E3F">Leyes y trámites</span></div>
+  <h3>Giro directo (y giro previo)</h3>
+  <p class="que">Cuando la ADRES le paga directamente a la clínica o al proveedor, sin que la plata pase por la EPS.</p>
+  <div class="por"><b>Por qué importa.</b> Busca que el dinero llegue a quien presta el servicio; su nuevo mecanismo de reporte arranca en 2027.</div>
+  <div class="alias">También aparece como: <b>giro previo</b></div>
+</article><article class="term" id="t-pnd" data-g="Leyes y trámites" data-b="pnd plan nacional de desarrollo la ley con el programa de cada gobierno para sus cuatro anos; suele traer articulos sobre salud y medicamentos. la ley 1753 de 2015 y la ley 1955 de 2019 son planes de desarrollo que cambiaron la regulacion de medicamentos. ">
+  <div class="cab"><span class="sig" style="background:#8B1E3F">PND</span>
+    <span class="grp" style="color:#8B1E3F">Leyes y trámites</span></div>
+  <h3>Plan Nacional de Desarrollo</h3>
+  <p class="que">La ley con el programa de cada gobierno para sus cuatro años; suele traer artículos sobre salud y medicamentos.</p>
+  <div class="por"><b>Por qué importa.</b> La Ley 1753 de 2015 y la Ley 1955 de 2019 son planes de desarrollo que cambiaron la regulación de medicamentos.</div>
+  
+</article><article class="term" id="t-registro-sanitario" data-g="Leyes y trámites" data-b="registro sanitario registro sanitario el permiso del invima para fabricar, importar y vender un medicamento en colombia. la ley 1753 de 2015 queria evaluar el valor terapeutico durante ese registro, pero un decreto lo separo. ">
+  <div class="cab"><span class="sig" style="background:#8B1E3F">Registro sanitario</span>
+    <span class="grp" style="color:#8B1E3F">Leyes y trámites</span></div>
+  <h3>Registro sanitario</h3>
+  <p class="que">El permiso del INVIMA para fabricar, importar y vender un medicamento en Colombia.</p>
+  <div class="por"><b>Por qué importa.</b> La Ley 1753 de 2015 quería evaluar el valor terapéutico durante ese registro, pero un decreto lo separó.</div>
+  
+</article><article class="term" id="t-valor-terapeutico" data-g="Leyes y trámites" data-b="valor terapeutico valor terapeutico cuanto mejora de verdad un medicamento nuevo la salud de los pacientes frente a los tratamientos que ya existen. fijar el precio segun el valor terapeutico evita pagar fortunas por medicamentos que no son mejores. ">
+  <div class="cab"><span class="sig" style="background:#8B1E3F">Valor terapéutico</span>
+    <span class="grp" style="color:#8B1E3F">Leyes y trámites</span></div>
+  <h3>Valor terapéutico</h3>
+  <p class="que">Cuánto mejora de verdad un medicamento nuevo la salud de los pacientes frente a los tratamientos que ya existen.</p>
+  <div class="por"><b>Por qué importa.</b> Fijar el precio según el valor terapéutico evita pagar fortunas por medicamentos que no son mejores.</div>
+  
+</article><article class="term" id="t-exequible" data-g="Leyes y trámites" data-b="exequible exequible cuando la corte constitucional decide que una ley si esta de acuerdo con la constitucion y sigue vigente. la corte declaro exequible el articulo 72 sobre precios por valor terapeutico, pero aun asi no se aplico. ">
+  <div class="cab"><span class="sig" style="background:#8B1E3F">Exequible</span>
+    <span class="grp" style="color:#8B1E3F">Leyes y trámites</span></div>
+  <h3>Exequible</h3>
+  <p class="que">Cuando la Corte Constitucional decide que una ley sí está de acuerdo con la Constitución y sigue vigente.</p>
+  <div class="por"><b>Por qué importa.</b> La Corte declaró exequible el Artículo 72 sobre precios por valor terapéutico, pero aun así no se aplicó.</div>
+  
+</article><article class="term" id="t-gsk" data-g="Empresas y marcas" data-b="gsk glaxosmithkline farmaceutica multinacional britanica. sus medicamentos para el vih los maneja a traves de viiv healthcare. vende el dolutegravir en colombia (tivicay, triumeq, dovato) y el doctor anticipa que se opondra a la licencia obligatoria. ">
+  <div class="cab"><span class="sig" style="background:#6D28D9">GSK</span>
+    <span class="grp" style="color:#6D28D9">Empresas y marcas</span></div>
+  <h3>GlaxoSmithKline</h3>
+  <p class="que">Farmacéutica multinacional británica. Sus medicamentos para el VIH los maneja a través de ViiV Healthcare.</p>
+  <div class="por"><b>Por qué importa.</b> Vende el dolutegravir en Colombia (TIVICAY, TRIUMEQ, DOVATO) y el doctor anticipa que se opondrá a la licencia obligatoria.</div>
+  
+</article><article class="term" id="t-viiv-healthcare" data-g="Empresas y marcas" data-b="viiv healthcare viiv healthcare compania especializada en medicamentos para el vih, de la que gsk es la duena mayoritaria. es la titular del dolutegravir y firmo una licencia voluntaria para otros paises, no para colombia. ">
+  <div class="cab"><span class="sig" style="background:#6D28D9">ViiV Healthcare</span>
+    <span class="grp" style="color:#6D28D9">Empresas y marcas</span></div>
+  <h3>ViiV Healthcare</h3>
+  <p class="que">Compañía especializada en medicamentos para el VIH, de la que GSK es la dueña mayoritaria.</p>
+  <div class="por"><b>Por qué importa.</b> Es la titular del dolutegravir y firmó una licencia voluntaria para otros países, no para Colombia.</div>
+  
+</article><article class="term" id="t-mpp" data-g="Empresas y marcas" data-b="mpp medicines patent pool organizacion respaldada por las naciones unidas que negocia con las farmaceuticas licencias voluntarias para que se fabriquen genericos baratos en paises de ingresos bajos y medios. gracias a ella hay dolutegravir generico en muchos paises, pero colombia quedo por fuera. ">
+  <div class="cab"><span class="sig" style="background:#6D28D9">MPP</span>
+    <span class="grp" style="color:#6D28D9">Empresas y marcas</span></div>
+  <h3>Medicines Patent Pool</h3>
+  <p class="que">Organización respaldada por las Naciones Unidas que negocia con las farmacéuticas licencias voluntarias para que se fabriquen genéricos baratos en países de ingresos bajos y medios.</p>
+  <div class="por"><b>Por qué importa.</b> Gracias a ella hay dolutegravir genérico en muchos países, pero Colombia quedó por fuera.</div>
+  
+</article><article class="term" id="t-tivicay" data-g="Empresas y marcas" data-b="tivicay tivicay (dolutegravir) nombre comercial del dolutegravir de 50 mg, un medicamento para el vih. es el producto numero uno de gsk en colombia por valor vendido, y su precio regulado casi cuadruplica el que reporta el laboratorio. ">
+  <div class="cab"><span class="sig" style="background:#6D28D9">TIVICAY</span>
+    <span class="grp" style="color:#6D28D9">Empresas y marcas</span></div>
+  <h3>TIVICAY (dolutegravir)</h3>
+  <p class="que">Nombre comercial del dolutegravir de 50 mg, un medicamento para el VIH.</p>
+  <div class="por"><b>Por qué importa.</b> Es el producto número uno de GSK en Colombia por valor vendido, y su precio regulado casi cuadruplica el que reporta el laboratorio.</div>
+  
+</article><article class="term" id="t-triumeq" data-g="Empresas y marcas" data-b="triumeq triumeq (dolutegravir + abacavir + lamivudina) nombre comercial de una pastilla que combina tres medicamentos para el vih, uno de ellos el dolutegravir. su precio regulado quedo muy por encima de lo que reporta el laboratorio y de lo que cuesta en farmacias. ">
+  <div class="cab"><span class="sig" style="background:#6D28D9">TRIUMEQ</span>
+    <span class="grp" style="color:#6D28D9">Empresas y marcas</span></div>
+  <h3>TRIUMEQ (dolutegravir + abacavir + lamivudina)</h3>
+  <p class="que">Nombre comercial de una pastilla que combina tres medicamentos para el VIH, uno de ellos el dolutegravir.</p>
+  <div class="por"><b>Por qué importa.</b> Su precio regulado quedó muy por encima de lo que reporta el laboratorio y de lo que cuesta en farmacias.</div>
+  
+</article><article class="term" id="t-dovato" data-g="Empresas y marcas" data-b="dovato dovato (dolutegravir + lamivudina) nombre comercial de una pastilla que combina dos medicamentos para el vih. entro sin precio regulado. ">
+  <div class="cab"><span class="sig" style="background:#6D28D9">DOVATO</span>
+    <span class="grp" style="color:#6D28D9">Empresas y marcas</span></div>
+  <h3>DOVATO (dolutegravir + lamivudina)</h3>
+  <p class="que">Nombre comercial de una pastilla que combina dos medicamentos para el VIH.</p>
+  <div class="por"><b>Por qué importa.</b> Entró sin precio regulado.</div>
+  
+</article><article class="term" id="t-kaletra" data-g="Empresas y marcas" data-b="kaletra kaletra (lopinavir + ritonavir) nombre comercial de un medicamento combinado para el vih. para el se pidio una declaratoria de interes publico y fue negada: es el antecedente que pesa sobre el caso del dolutegravir. ">
+  <div class="cab"><span class="sig" style="background:#6D28D9">KALETRA</span>
+    <span class="grp" style="color:#6D28D9">Empresas y marcas</span></div>
+  <h3>KALETRA (lopinavir + ritonavir)</h3>
+  <p class="que">Nombre comercial de un medicamento combinado para el VIH.</p>
+  <div class="por"><b>Por qué importa.</b> Para él se pidió una declaratoria de interés público y fue negada: es el antecedente que pesa sobre el caso del dolutegravir.</div>
+  
+</article><article class="term" id="t-glivec" data-g="Empresas y marcas" data-b="glivec glivec (imatinib) nombre comercial del imatinib, un medicamento para un tipo de leucemia (leucemia mieloide cronica). fue el primer caso de declaratoria de interes publico en colombia: no hubo licencia obligatoria, pero si se le bajo el precio. ">
+  <div class="cab"><span class="sig" style="background:#6D28D9">GLIVEC</span>
+    <span class="grp" style="color:#6D28D9">Empresas y marcas</span></div>
+  <h3>GLIVEC (imatinib)</h3>
+  <p class="que">Nombre comercial del imatinib, un medicamento para un tipo de leucemia (leucemia mieloide crónica).</p>
+  <div class="por"><b>Por qué importa.</b> Fue el primer caso de declaratoria de interés público en Colombia: no hubo licencia obligatoria, pero sí se le bajó el precio.</div>
+  
+</article><article class="term" id="t-isentress" data-g="Empresas y marcas" data-b="isentress isentress (raltegravir) nombre comercial del raltegravir, otro medicamento para el vih. su precio maximo triplica lo que reporta el laboratorio: el problema no es solo de un fabricante. ">
+  <div class="cab"><span class="sig" style="background:#6D28D9">ISENTRESS</span>
+    <span class="grp" style="color:#6D28D9">Empresas y marcas</span></div>
+  <h3>ISENTRESS (raltegravir)</h3>
+  <p class="que">Nombre comercial del raltegravir, otro medicamento para el VIH.</p>
+  <div class="por"><b>Por qué importa.</b> Su precio máximo triplica lo que reporta el laboratorio: el problema no es solo de un fabricante.</div>
+  
+</article><article class="term" id="t-vih" data-g="Salud y tratamientos" data-b="vih virus de la inmunodeficiencia humana el virus que ataca las defensas del cuerpo. sin tratamiento puede llevar al sida; con tratamiento diario, la persona puede vivir muchos anos. el tratamiento es de por vida, asi que el precio de los antirretrovirales pesa mucho en el gasto del pais. sida, sida">
+  <div class="cab"><span class="sig" style="background:#0F766E">VIH</span>
+    <span class="grp" style="color:#0F766E">Salud y tratamientos</span></div>
+  <h3>Virus de la Inmunodeficiencia Humana</h3>
+  <p class="que">El virus que ataca las defensas del cuerpo. Sin tratamiento puede llevar al sida; con tratamiento diario, la persona puede vivir muchos años.</p>
+  <div class="por"><b>Por qué importa.</b> El tratamiento es de por vida, así que el precio de los antirretrovirales pesa mucho en el gasto del país.</div>
+  <div class="alias">También aparece como: <b>SIDA, sida</b></div>
+</article><article class="term" id="t-antirretroviral" data-g="Salud y tratamientos" data-b="antirretroviral antirretroviral medicamento que frena el vih dentro del cuerpo. se toma todos los dias y casi siempre combinado con otros. es un gasto permanente del sistema; por eso su precio importa tanto. antirretrovirales">
+  <div class="cab"><span class="sig" style="background:#0F766E">Antirretroviral</span>
+    <span class="grp" style="color:#0F766E">Salud y tratamientos</span></div>
+  <h3>Antirretroviral</h3>
+  <p class="que">Medicamento que frena el VIH dentro del cuerpo. Se toma todos los días y casi siempre combinado con otros.</p>
+  <div class="por"><b>Por qué importa.</b> Es un gasto permanente del sistema; por eso su precio importa tanto.</div>
+  <div class="alias">También aparece como: <b>antirretrovirales</b></div>
+</article><article class="term" id="t-dolutegravir" data-g="Salud y tratamientos" data-b="dolutegravir dolutegravir un antirretroviral moderno para el vih, recomendado por la oms como tratamiento preferido desde 2019. entre 2013 y 2022 sumo mas de 287.000 millones de pesos en ventas en colombia, y esta en tramite de declaratoria de interes publico. dtg">
+  <div class="cab"><span class="sig" style="background:#0F766E">Dolutegravir</span>
+    <span class="grp" style="color:#0F766E">Salud y tratamientos</span></div>
+  <h3>Dolutegravir</h3>
+  <p class="que">Un antirretroviral moderno para el VIH, recomendado por la OMS como tratamiento preferido desde 2019.</p>
+  <div class="por"><b>Por qué importa.</b> Entre 2013 y 2022 sumó más de 287.000 millones de pesos en ventas en Colombia, y está en trámite de declaratoria de interés público.</div>
+  <div class="alias">También aparece como: <b>DTG</b></div>
+</article><article class="term" id="t-mabs" data-g="Salud y tratamientos" data-b="mabs anticuerpos monoclonales medicamentos biologicos fabricados en laboratorio que se pegan a un blanco especifico, por ejemplo una celula del cancer. sus nombres terminan en &quot;-mab&quot;, como pembrolizumab. son de los medicamentos mas caros: cuatro de ellos para el cancer gastaron unos 3,2 billones de pesos en diez anos. mabs, anticuerpos monoclonales">
+  <div class="cab"><span class="sig" style="background:#0F766E">MABs</span>
+    <span class="grp" style="color:#0F766E">Salud y tratamientos</span></div>
+  <h3>Anticuerpos monoclonales</h3>
+  <p class="que">Medicamentos biológicos fabricados en laboratorio que se pegan a un blanco específico, por ejemplo una célula del cáncer. Sus nombres terminan en &quot;-mab&quot;, como pembrolizumab.</p>
+  <div class="por"><b>Por qué importa.</b> Son de los medicamentos más caros: cuatro de ellos para el cáncer gastaron unos 3,2 billones de pesos en diez años.</div>
+  <div class="alias">También aparece como: <b>MABS, anticuerpos monoclonales</b></div>
+</article><article class="term" id="t-biotecnologicos" data-g="Salud y tratamientos" data-b="biotecnologicos medicamentos biotecnologicos (biologicos) medicamentos producidos con celulas vivas, como las vacunas o los anticuerpos monoclonales. son mas complejos y costosos que una pastilla comun. las reglas para que entren sus versiones mas baratas (biosimilares) han sido muy discutidas en colombia. biologicos">
+  <div class="cab"><span class="sig" style="background:#0F766E">Biotecnológicos</span>
+    <span class="grp" style="color:#0F766E">Salud y tratamientos</span></div>
+  <h3>Medicamentos biotecnológicos (biológicos)</h3>
+  <p class="que">Medicamentos producidos con células vivas, como las vacunas o los anticuerpos monoclonales. Son más complejos y costosos que una pastilla común.</p>
+  <div class="por"><b>Por qué importa.</b> Las reglas para que entren sus versiones más baratas (biosimilares) han sido muy discutidas en Colombia.</div>
+  <div class="alias">También aparece como: <b>biológicos</b></div>
+</article><article class="term" id="t-alto-costo" data-g="Salud y tratamientos" data-b="alto costo medicamentos de alto costo tratamientos que cuestan millones de pesos por paciente, como los del cancer, las enfermedades raras o la hemofilia. pocos pacientes pueden consumir una parte enorme del presupuesto si su precio no se regula al entrar. ">
+  <div class="cab"><span class="sig" style="background:#0F766E">Alto costo</span>
+    <span class="grp" style="color:#0F766E">Salud y tratamientos</span></div>
+  <h3>Medicamentos de alto costo</h3>
+  <p class="que">Tratamientos que cuestan millones de pesos por paciente, como los del cáncer, las enfermedades raras o la hemofilia.</p>
+  <div class="por"><b>Por qué importa.</b> Pocos pacientes pueden consumir una parte enorme del presupuesto si su precio no se regula al entrar.</div>
+  
+</article><article class="term" id="t-hepatitis-c" data-g="Salud y tratamientos" data-b="hepatitis c hepatitis c infeccion del higado por un virus. hoy se cura con antivirales nuevos, pero esos medicamentos fueron muy caros. colombia tramito una declaratoria de interes publico para bajar el precio de esos antivirales. ">
+  <div class="cab"><span class="sig" style="background:#0F766E">Hepatitis C</span>
+    <span class="grp" style="color:#0F766E">Salud y tratamientos</span></div>
+  <h3>Hepatitis C</h3>
+  <p class="que">Infección del hígado por un virus. Hoy se cura con antivirales nuevos, pero esos medicamentos fueron muy caros.</p>
+  <div class="por"><b>Por qué importa.</b> Colombia tramitó una declaratoria de interés público para bajar el precio de esos antivirales.</div>
+  
+</article><article class="term" id="t-principio-activo" data-g="Salud y tratamientos" data-b="principio activo principio activo la sustancia del medicamento que produce el efecto; el resto de la pastilla son ingredientes de relleno. varias marcas pueden tener el mismo principio activo. comparar por principio activo permite ver cuanto cobra cada marca por lo mismo. principios activos">
+  <div class="cab"><span class="sig" style="background:#0F766E">Principio activo</span>
+    <span class="grp" style="color:#0F766E">Salud y tratamientos</span></div>
+  <h3>Principio activo</h3>
+  <p class="que">La sustancia del medicamento que produce el efecto; el resto de la pastilla son ingredientes de relleno. Varias marcas pueden tener el mismo principio activo.</p>
+  <div class="por"><b>Por qué importa.</b> Comparar por principio activo permite ver cuánto cobra cada marca por lo mismo.</div>
+  <div class="alias">También aparece como: <b>principios activos</b></div>
+</article><article class="term" id="t-b24x" data-g="Salud y tratamientos" data-b="b24x codigo b24x el codigo de la clasificacion internacional de enfermedades para &quot;enfermedad por vih sin otra especificacion&quot;. casi todas las recetas de dolutegravir en mipres usan ese codigo generico, lo que dice poco del paciente. ">
+  <div class="cab"><span class="sig" style="background:#0F766E">B24X</span>
+    <span class="grp" style="color:#0F766E">Salud y tratamientos</span></div>
+  <h3>Código B24X</h3>
+  <p class="que">El código de la clasificación internacional de enfermedades para &quot;enfermedad por VIH sin otra especificación&quot;.</p>
+  <div class="por"><b>Por qué importa.</b> Casi todas las recetas de dolutegravir en MiPres usan ese código genérico, lo que dice poco del paciente.</div>
+  
+</article><article class="term" id="t-transacciones-primarias-y-secundarias" data-g="Salud y tratamientos" data-b="transacciones primarias y secundarias ventas primarias, secundarias y finales (sismed) en sismed, las primarias son las ventas del laboratorio; las secundarias, las de los intermediarios (mayoristas y distribuidores) a farmacias e instituciones; y las finales, las que llegan al paciente. si las secundarias superan por mucho a las primarias, los intermediarios estarian vendiendo mas de lo que compraron: senal de datos errados. ">
+  <div class="cab"><span class="sig" style="background:#0F766E">Transacciones primarias y secundarias</span>
+    <span class="grp" style="color:#0F766E">Salud y tratamientos</span></div>
+  <h3>Ventas primarias, secundarias y finales (SISMED)</h3>
+  <p class="que">En SISMED, las primarias son las ventas del laboratorio; las secundarias, las de los intermediarios (mayoristas y distribuidores) a farmacias e instituciones; y las finales, las que llegan al paciente.</p>
+  <div class="por"><b>Por qué importa.</b> Si las secundarias superan por mucho a las primarias, los intermediarios estarían vendiendo más de lo que compraron: señal de datos errados.</div>
+  
+</article><article class="term" id="t-microdatos" data-g="Salud y tratamientos" data-b="microdatos microdatos los datos registro por registro (cada pago, cada receta), no solo los totales. sin ellos nadie puede verificar a quien y por que paga la adres. ">
+  <div class="cab"><span class="sig" style="background:#0F766E">Microdatos</span>
+    <span class="grp" style="color:#0F766E">Salud y tratamientos</span></div>
+  <h3>Microdatos</h3>
+  <p class="que">Los datos registro por registro (cada pago, cada receta), no solo los totales.</p>
+  <div class="por"><b>Por qué importa.</b> Sin ellos nadie puede verificar a quién y por qué paga la ADRES.</div>
+  
+</article><article class="term" id="t-trazabilidad" data-g="Salud y tratamientos" data-b="trazabilidad trazabilidad poder seguir el recorrido de un medicamento o de una receta paso a paso, desde quien lo receta hasta quien lo recibe. con los presupuestos maximos se perdio el rastro de muchas recetas de dolutegravir. ">
+  <div class="cab"><span class="sig" style="background:#0F766E">Trazabilidad</span>
+    <span class="grp" style="color:#0F766E">Salud y tratamientos</span></div>
+  <h3>Trazabilidad</h3>
+  <p class="que">Poder seguir el recorrido de un medicamento o de una receta paso a paso, desde quien lo receta hasta quien lo recibe.</p>
+  <div class="por"><b>Por qué importa.</b> Con los presupuestos máximos se perdió el rastro de muchas recetas de dolutegravir.</div>
+  
+</article><article class="term" id="t-veeduria-ciudadana" data-g="Salud y tratamientos" data-b="veeduria ciudadana veeduria ciudadana grupo de ciudadanos organizados que vigila como se usan los recursos publicos y le exige cuentas al estado. una veeduria llevo al ministro de salud las fallas de informacion que documenta el observatorio. ">
+  <div class="cab"><span class="sig" style="background:#0F766E">Veeduría ciudadana</span>
+    <span class="grp" style="color:#0F766E">Salud y tratamientos</span></div>
+  <h3>Veeduría ciudadana</h3>
+  <p class="que">Grupo de ciudadanos organizados que vigila cómo se usan los recursos públicos y le exige cuentas al Estado.</p>
+  <div class="por"><b>Por qué importa.</b> Una veeduría llevó al ministro de Salud las fallas de información que documenta el Observatorio.</div>
+  
 </article></div>
   <p id="vacio">Ningún término coincide con la búsqueda.</p>
 </main>
