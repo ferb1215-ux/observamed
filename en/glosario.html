@@ -1,0 +1,1029 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Glossary — Understanding the Language of the Medicines Observatory</title>
+<meta name="description" content="What CUM, PreMaxRef, PRA, SISMED, CNPMyDM and the other terms that appear in the Medicines Observatory bulletins mean."/>
+<meta name="robots" content="noindex, nofollow"/>
+<link rel="icon" href="../img/favicon.svg" type="image/svg+xml"/>
+<style>
+:root{--azul-oscuro:#2A52C4;--azul-rey:#3B7AE0;--turquesa:#00A3C4;--gris-medio:#E4E7EC;
+--gris-borde:#DDE2EA;--text-dark:#111827;--text-med:#374151;--text-light:#6B7280}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;background:#F7FAFF;
+color:var(--text-dark);line-height:1.7}
+nav{display:flex;align-items:center;justify-content:space-between;padding:14px 24px;background:#fff;
+border-bottom:1px solid var(--gris-medio);position:sticky;top:0;z-index:20}
+nav img{height:44px} nav a{color:var(--text-med);text-decoration:none;font-weight:700;font-size:.9rem}
+header{padding:44px 22px 10px;text-align:center;
+background:radial-gradient(800px 380px at 50% -20%,rgba(0,163,196,.10),transparent 62%),#F7FAFF}
+.k{display:inline-flex;align-items:center;gap:9px;font-size:.72rem;font-weight:900;letter-spacing:.14em;
+text-transform:uppercase;color:var(--azul-oscuro);margin-bottom:12px}
+.k::before{content:'';width:22px;height:3px;border-radius:2px;background:linear-gradient(90deg,var(--azul-rey),var(--turquesa))}
+h1{font-size:clamp(1.8rem,4.2vw,2.7rem);font-weight:900;letter-spacing:-1.2px;margin-bottom:10px}
+header p{color:var(--text-med);max-width:620px;margin:0 auto;font-size:1.03rem}
+main{max-width:1080px;margin:0 auto;padding:26px 22px 70px}
+.buscar{position:sticky;top:73px;z-index:15;background:#F7FAFF;padding:14px 0 10px}
+#q{width:100%;border:2px solid var(--gris-borde);border-radius:14px;padding:13px 16px;font-size:1rem;
+font-family:inherit;outline:0;background:#fff;transition:border-color .2s,box-shadow .2s}
+#q:focus{border-color:var(--azul-rey);box-shadow:0 0 0 4px rgba(59,122,224,.13)}
+.chips{display:flex;gap:7px;flex-wrap:wrap;margin-top:10px}
+.ch{display:inline-flex;align-items:center;gap:7px;border:1.5px solid var(--gris-borde);background:#fff;
+color:var(--text-med);font-family:inherit;font-size:.82rem;font-weight:800;padding:7px 14px;
+border-radius:99px;cursor:pointer;transition:all .18s}
+.ch i{width:8px;height:8px;border-radius:99px}
+.ch:hover{border-color:var(--azul-rey)}
+.ch.on{background:var(--text-dark);border-color:var(--text-dark);color:#fff}
+.ch.on i{background:#fff!important}
+.rejilla{display:grid;grid-template-columns:repeat(auto-fill,minmax(310px,1fr));gap:15px;margin-top:8px}
+.term{background:#fff;border:1px solid var(--gris-medio);border-radius:18px;padding:20px 22px;
+box-shadow:0 2px 12px rgba(42,82,196,.06);transition:transform .2s,box-shadow .2s}
+.term:hover{transform:translateY(-3px);box-shadow:0 8px 26px rgba(42,82,196,.12)}
+.cab{display:flex;align-items:center;gap:10px;margin-bottom:10px;flex-wrap:wrap}
+.sig{color:#fff;font-weight:900;font-size:.82rem;letter-spacing:.02em;padding:5px 13px;border-radius:99px}
+.grp{font-size:.64rem;font-weight:900;letter-spacing:.11em;text-transform:uppercase}
+.term h3{font-size:1.02rem;font-weight:800;letter-spacing:-.3px;line-height:1.3;margin-bottom:8px}
+.que{color:var(--text-med);font-size:.93rem;text-align:justify;hyphens:auto;margin-bottom:12px}
+.por{background:#F7FAFF;border-left:3px solid var(--azul-rey);border-radius:0 10px 10px 0;
+padding:10px 14px;font-size:.88rem;color:var(--text-med);text-align:justify;hyphens:auto}
+.por b{color:var(--azul-oscuro)}
+.alias{margin-top:10px;font-size:.8rem;color:var(--text-light)}
+.alias b{color:var(--text-med)}
+#vacio{display:none;text-align:center;color:var(--text-light);padding:40px 0}
+footer{text-align:center;color:var(--text-light);font-size:.8rem;padding:26px;border-top:1px solid var(--gris-medio)}
+
+/* ============ MÓVIL: quitar saturación de la entrada ============ */
+@media(max-width:760px){
+  /* fuera las barras que duplican lo que ya está más abajo */
+  .vers,.tira{display:none !important}
+  .indice{display:none !important}
+  /* barra superior compacta */
+  nav{padding:10px 14px}
+  .logo-nav{height:36px}
+  .btn{padding:9px 15px;font-size:.8rem}
+  .btn-flip-mini span{display:none}
+  /* hero más respirado */
+  header.port,header.hero{padding:26px 16px 22px}
+  .masthead{gap:6px;margin-bottom:14px}
+  .tag{font-size:.66rem;padding:4px 9px}
+  .masthead .tag:nth-child(n+3){display:none}
+  h1{font-size:clamp(1.55rem,7.2vw,2rem);letter-spacing:-.8px;margin-bottom:12px}
+  .entradilla,.bajada{font-size:.98rem}
+  .chip-oferta{font-size:.76rem;padding:6px 13px}
+  .eyebrow{font-size:.64rem;letter-spacing:.1em}
+  /* sellos y demo, más abajo y más chicos */
+  .sellos{gap:16px;margin-top:20px;padding-top:16px}
+  .sellos .sv{font-size:.84rem} .sellos .sb{font-size:.62rem}
+  .demo-flot{display:none}
+  .demo{transform:none}
+  /* secciones y tarjetas */
+  section{padding:32px 0}
+  .wrap,.ancho{padding:0 16px}
+  h2{font-size:clamp(1.25rem,5.6vw,1.6rem)}
+  .sub{font-size:.93rem}
+  .card,.cifra,.norma,.tarj{padding:16px 18px}
+  .cifras{gap:9px}
+  /* pies y muros */
+  .muro{grid-template-columns:1fr 1fr;gap:9px}
+  .lg{min-height:74px;padding:10px}
+  .lg img{max-height:44px}
+  .pie{gap:20px}
+}
+@media(max-width:420px){
+  .muro{grid-template-columns:1fr}
+  .cifras{grid-template-columns:1fr}
+  h1{font-size:1.5rem}
+}
+
+/* ---------- encabezamiento institucional: los tres logos ---------- */
+.marca-nav{display:flex;align-items:center;gap:15px;flex-shrink:0;min-width:0}
+.sep-nav{width:1px;height:34px;background:#e3e8ef;flex-shrink:0}
+.coed{display:flex;align-items:center;gap:13px;min-width:0}
+.coed-t{font-size:0.52rem;letter-spacing:0.12em;text-transform:uppercase;color:#7b8794;
+  font-weight:700;line-height:1.35;max-width:52px;flex-shrink:0}
+.coed-l{display:flex;align-items:center;gap:14px;min-width:0}
+.coed-l a{display:block;flex-shrink:0;perspective:600px}
+.coed-l .giro{display:block;position:relative;height:34px;transform-style:preserve-3d;
+  transition:transform .55s cubic-bezier(.4,0,.2,1)}
+.coed-l .cara{display:flex;align-items:center;height:34px;backface-visibility:hidden}
+.coed-l .cara.b{position:absolute;inset:0;transform:rotateY(180deg)}
+.coed-l .cara img{max-height:34px;width:auto;display:block}
+.coed-l.rebrand .giro{transform:rotateY(180deg)}
+.coed-l a:hover{opacity:.78}
+@media(max-width:1180px){.coed-t{display:none}}
+@media(max-width:860px){
+  .marca-nav{gap:10px}.coed{gap:9px}.coed-l{gap:10px}
+  .sep-nav{height:26px}
+  .coed-l .giro,.coed-l .cara{height:26px}.coed-l .cara img{max-height:26px}
+}
+@media(max-width:400px){.coed-l{gap:8px}.coed-l .giro,.coed-l .cara{height:23px}.coed-l .cara img{max-height:23px}}
+
+.coed-l a.sello-c .giro,.coed-l a.sello-c .cara{height:44px}
+.coed-l a.sello-c .cara img{max-height:44px}
+@media(max-width:860px){.coed-l a.sello-c .giro,.coed-l a.sello-c .cara{height:34px}
+  .coed-l a.sello-c .cara img{max-height:34px}}
+@media(max-width:400px){.coed-l a.sello-c .giro,.coed-l a.sello-c .cara{height:30px}
+  .coed-l a.sello-c .cara img{max-height:30px}}
+.trio a.sello-c img{max-height:44px}
+@media(max-width:520px){.trio a.sello-c img{max-height:33px}}
+
+/* --- cortes recalculados tras sumar los logos del Colegio y el Monitor --- */
+@media(max-width:1460px){
+  .sello{display:none !important}
+  .coed-t{display:none}
+  .nav-links{gap:14px}
+}
+@media(max-width:1430px){
+  .nav-links{gap:12px;font-size:0.82rem}
+}
+@media(max-width:1320px){
+  .nav-links a.sec{display:none}
+  .nav-links{gap:14px;font-size:0.85rem}
+}
+@media(max-width:1060px){
+  .nav-links a:not(.btn){display:none}
+  .nav-links{gap:14px;font-size:0.88rem}
+}
+@media(max-width:620px){
+  nav{gap:8px;padding:9px 11px}
+  .logo-nav{height:30px}
+  .marca-nav{gap:8px}
+  .coed-l{gap:8px}
+  .sep-nav{height:22px}
+  .coed-l .giro,.coed-l .cara{height:22px}
+  .coed-l .cara img{max-height:22px}
+  .coed-l a.sello-c .giro,.coed-l a.sello-c .cara{height:28px}
+  .coed-l a.sello-c .cara img{max-height:28px}
+  .nav-links{gap:8px}
+  .nav-links .btn{font-size:0.74rem;padding:8px 13px}
+}
+
+@media(max-width:380px){.nav-links{gap:5px}.coed-l{gap:6px}
+  .nav-links .btn{font-size:0.7rem;padding:7px 11px}
+  .logo-nav{height:27px}}
+
+@media(max-width:392px){.nav-links{gap:4px}.coed-l{gap:5px}
+  .nav-links .btn{font-size:0.62rem;padding:6px 8px}
+  .logo-nav{height:24px}nav{padding:8px 7px;gap:5px}
+  .sep-nav{height:19px}
+  .coed-l .giro,.coed-l .cara{height:18px}
+  .coed-l .cara img{max-height:18px}
+  .coed-l a.sello-c .giro,.coed-l a.sello-c .cara{height:24px}
+  .coed-l a.sello-c .cara img{max-height:24px}}
+
+.sello .s{white-space:nowrap}
+
+/* ---------- menú de hamburguesa (celular) ---------- */
+.ham{display:none;flex-direction:column;justify-content:center;gap:4px;width:40px;height:38px;
+  padding:0 9px;border:1.5px solid var(--gris-medio);background:#fff;border-radius:11px;
+  cursor:pointer;flex-shrink:0;transition:border-color .18s}
+.ham span{display:block;height:2px;width:100%;background:var(--text-dark);border-radius:2px;
+  transition:transform .25s,opacity .2s}
+.ham[aria-expanded="true"]{border-color:var(--azul-rey)}
+.ham[aria-expanded="true"] span:nth-child(1){transform:translateY(6px) rotate(45deg)}
+.ham[aria-expanded="true"] span:nth-child(2){opacity:0}
+.ham[aria-expanded="true"] span:nth-child(3){transform:translateY(-6px) rotate(-45deg)}
+.mmenu{display:none;position:absolute;left:0;right:0;top:100%;background:#fff;
+  border-bottom:1px solid var(--gris-medio);box-shadow:0 14px 34px rgba(20,45,90,.13);
+  padding:8px 14px 14px;z-index:70}
+.mmenu.abierto{display:block}
+.mmenu a{display:flex;align-items:center;justify-content:space-between;padding:13px 4px;
+  font-weight:800;font-size:1rem;color:var(--text-dark);border-bottom:1px solid #eef2f8}
+.mmenu a:last-of-type{border-bottom:none}
+.mmenu a:hover,.mmenu a:active{color:var(--azul-rey);text-decoration:none}
+.mmenu a small{font-size:.72rem;font-weight:700;color:var(--text-light)}
+.mmenu .cta{margin-top:11px;background:var(--azul-rey);color:#fff !important;justify-content:center;
+  border-radius:980px;padding:14px;border:none}
+.mmenu .flip{margin-top:9px;justify-content:center;border:1.5px solid var(--gris-medio);
+  border-radius:980px;padding:12px;font-size:.88rem;color:var(--text-med)}
+@media(max-width:1060px){
+  .ham{display:flex}
+  nav{position:sticky}
+  .nav-links .btn-flip-mini{display:none}
+  .nav-links .btn{display:none}
+  .nav-bol{display:none}
+}
+/* con el menú recogido sobra espacio: logos aliados más grandes */
+@media(max-width:1060px){
+  .coed-l{gap:13px}
+  .coed-l .giro,.coed-l .cara{height:32px}
+  .coed-l .cara img{max-height:32px}
+  .coed-l a.sello-c .giro,.coed-l a.sello-c .cara{height:42px}
+  .coed-l a.sello-c .cara img{max-height:42px}
+  .sep-nav{height:32px}
+  .logo-nav,.marca-nav>a:first-child img{height:38px;width:auto;max-width:none}
+}
+@media(max-width:520px){
+  .coed-l{gap:11px}
+  .coed-l .giro,.coed-l .cara{height:28px}
+  .coed-l .cara img{max-height:28px}
+  .coed-l a.sello-c .giro,.coed-l a.sello-c .cara{height:37px}
+  .coed-l a.sello-c .cara img{max-height:37px}
+  .sep-nav{height:28px}
+  .logo-nav,.marca-nav>a:first-child img{height:32px;width:auto;max-width:none}
+  nav{padding:9px 12px;gap:9px}
+}
+@media(max-width:390px){
+  .coed-l{gap:9px}
+  .coed-l .giro,.coed-l .cara{height:25px}
+  .coed-l .cara img{max-height:25px}
+  .coed-l a.sello-c .giro,.coed-l a.sello-c .cara{height:33px}
+  .coed-l a.sello-c .cara img{max-height:33px}
+  .logo-nav,.marca-nav>a:first-child img{height:28px;width:auto;max-width:none}
+  .ham{width:37px;height:35px}
+}
+
+@media(max-width:374px){
+  nav{padding:8px 8px;gap:6px}
+  .marca-nav{gap:6px}
+  .coed-l{gap:7px}
+  .logo-nav,.marca-nav>a:first-child img{height:25px;width:auto;max-width:none}
+  .coed-l .giro,.coed-l .cara{height:22px}
+  .coed-l .cara img{max-height:22px}
+  .coed-l a.sello-c .giro,.coed-l a.sello-c .cara{height:29px}
+  .coed-l a.sello-c .cara img{max-height:29px}
+  .ham{width:34px;height:33px}
+}
+
+/* ---------- banda de alianzas (debajo de la barra) ---------- */
+.alianzas{display:flex;align-items:center;justify-content:center;gap:26px;flex-wrap:wrap;
+  background:#F6F9FD;border-bottom:1px solid var(--gris-medio);padding:12px 18px;row-gap:12px}
+.alianzas .et{font-size:.6rem;font-weight:800;letter-spacing:.13em;text-transform:uppercase;
+  color:var(--text-light);flex-shrink:0}
+.alianzas a,.alianzas>.partner-static{display:block;flex-shrink:0;perspective:700px}
+.alianzas .giro{display:block;position:relative;height:44px;transform-style:preserve-3d;
+  transition:transform .55s cubic-bezier(.4,0,.2,1)}
+.alianzas .cara{display:flex;align-items:center;height:44px;backface-visibility:hidden}
+.alianzas .cara.b{position:absolute;inset:0;transform:rotateY(180deg)}
+.alianzas .cara img{max-height:44px;width:auto;display:block}
+.alianzas a.cuad .giro,.alianzas a.cuad .cara{height:52px}
+.alianzas a.cuad .cara img{max-height:52px}
+.alianzas.rebrand .giro{transform:rotateY(180deg)}
+.alianzas a:hover{opacity:.8}
+@media(max-width:900px){
+  .alianzas{gap:18px;padding:10px 14px}
+  .alianzas .giro,.alianzas .cara{height:34px}
+  .alianzas .cara img{max-height:34px}
+  .alianzas a.cuad .giro,.alianzas a.cuad .cara{height:40px}
+  .alianzas a.cuad .cara img{max-height:40px}
+}
+@media(max-width:620px){
+  /* en celular se parten en dos filas, pero se leen */
+  .alianzas{gap:20px 22px;padding:11px 12px}
+  .alianzas .et{width:100%;text-align:center;margin-bottom:-4px}
+  .alianzas .giro,.alianzas .cara{height:36px}
+  .alianzas .cara img{max-height:36px}
+  .alianzas a.cuad .giro,.alianzas a.cuad .cara{height:44px}
+  .alianzas a.cuad .cara img{max-height:44px}
+}
+@media(max-width:380px){
+  .alianzas{gap:16px 18px}
+  .alianzas .giro,.alianzas .cara{height:30px}
+  .alianzas .cara img{max-height:30px}
+  .alianzas a.cuad .giro,.alianzas a.cuad .cara{height:37px}
+  .alianzas a.cuad .cara img{max-height:37px}
+}
+/* franja superior nueva (6 oct 2026) */
+.alianzas.aliad{--linea:#E4E7EC;--azul:#2A52C4;--azul-rey:#3B7AE0}
+.alianzas.aliad{--w:min(196px,calc((100vw - 120px)/7));--h:min(86px,calc(var(--w)*.44));display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap;padding:14px 16px;background:#F4F6FA;border-bottom:4px solid var(--azul)}
+.alianzas.aliad a,.alianzas.aliad>.partner-static{width:var(--w);height:var(--h);flex-shrink:0;display:flex;align-items:center;justify-content:center;background:#fff;border:1px solid var(--linea);border-radius:8px;padding:6px;perspective:700px;overflow:hidden;transition:.2s}
+.alianzas.aliad a:hover{border-color:var(--azul-rey);box-shadow:0 4px 14px rgba(42,82,196,.15)}
+.alianzas.aliad a.pro{padding:0;border:0}
+.alianzas.aliad a.pro{background:transparent}
+.alianzas.aliad a.pro img{max-width:100%;max-height:100%;object-fit:contain;border-radius:6px;box-shadow:0 2px 10px rgba(11,18,32,.15)}
+.alianzas.aliad img{max-width:100%;max-height:calc(var(--h) - 12px);width:auto;height:auto;display:block;object-fit:contain}
+.alianzas.aliad .giro{display:block;position:relative;width:100%;height:100%;transform-style:preserve-3d;transition:transform .65s cubic-bezier(.16,1,.3,1)}
+.alianzas.aliad .cara{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;backface-visibility:hidden;-webkit-backface-visibility:hidden}
+.alianzas.aliad .cara.b{transform:rotateY(180deg)}
+.alianzas.aliad .sep,.alianzas.aliad .et{display:none}
+@media (max-width:1300px){.alianzas.aliad{--w:168px;--h:74px}}
+@media (max-width:1060px){.alianzas.aliad{--w:150px;--h:66px}}
+@media (max-width:760px){.alianzas.aliad{--w:47%;--h:62px;gap:8px;padding:10px 8px}}
+.alianzas.aliad.rebrand .giro{transform:rotateY(180deg)}
+.partner-static{cursor:default}
+.term:target{outline:3px solid #F4BC3F;outline-offset:3px;box-shadow:0 10px 30px rgba(42,82,196,.22)}
+.term{scroll-margin-top:190px}
+</style><!--IDIOMA-HEAD--><link rel="alternate" hreflang="es" href="https://jazzy-malasada-956fbc.netlify.app/glosario.html"/><link rel="alternate" hreflang="en" href="https://jazzy-malasada-956fbc.netlify.app/en/glosario.html"/><link rel="alternate" hreflang="x-default" href="https://jazzy-malasada-956fbc.netlify.app/glosario.html"/><!--/IDIOMA-HEAD-->
+</head><body>
+<nav><div class="marca-nav">
+      <a href="index.html"><img src="../img/marca.svg" alt="Observamed STAR"/></a>
+    </div>
+<a href="boletines/index.html">Health Bulletin →</a>
+<button class="ham" type="button" aria-label="Menu" aria-expanded="false" aria-controls="mmenu" onclick="menuMovil()"><span></span><span></span><span></span></button>
+
+<div class="mmenu" id="mmenu"><a href="sistema.html">The system<small>VMI-CFN System</small></a><a href="buscador.html">Search tool<small>Prices by medicine</small></a><a href="boletines/index.html">Newsletters<small>15 editions · 203 tables</small></a><a href="boletines/index.html#especial">Special reports<small>In-depth analysis</small></a><a href="glosario.html" style="color:var(--azul-rey)">Glossary<small>25 bulletin terms</small></a><a class="cta" href="https://mivademecum.info/" target="_blank" rel="noopener">Platform login</a></div>
+</nav>
+<div class="alianzas aliad"><a class="pro" href="https://www.observamed.org/" target="_blank" rel="noopener" title="Fundación Observamed STAR"><img src="../img/logo-fundacion.jpg" alt="Observamed · Medicines Observatory · Fundación Observamed STAR · Samay Tatiana Andia Rey"/></a><a class="pro" href="boletines/index.html" title="BisCoM Newsletter"><img src="../img/logo-biscom.jpg" alt="Health Informatics Newsletter · BisCoM Newsletter and Medicine Consumer Newsletter"/></a><span class="sep"></span><span class="et">In partnership with</span><a href="https://www.colmedcundibogota.com/boletin-salud-al-dia-no-36/" target="_blank" rel="noopener" title="Salud al Día Newsletter · Colegio Médico de Cundinamarca y Bogotá"><img src="../img/salud-al-dia-banner.jpg" alt="Salud al Día Newsletter No. 36 · Colegio Médico de Cundinamarca y Bogotá · Federación Médica Colombiana"/></a><a href="https://fundacionelmonitordelasalud.org/" target="_blank" rel="noopener" title="Fundación El Monitor de la Salud"><span class="giro"><span class="cara a"><img src="../img/monitor.png" alt="Fundación El Monitor de la Salud"/></span><span class="cara b"><img src="../img/rebrand/monitor.svg" alt="Fundación El Monitor de la Salud — proposal"/></span></span></a><span title="ASMEDAS" class="partner-static"><span class="giro"><span class="cara a"><img src="../img/asmedas.jpg" alt="ASMEDAS"/></span><span class="cara b"><img src="../img/rebrand/asmedas.svg" alt="ASMEDAS — proposal"/></span></span></span><a href="https://x.com/vcacelapss" target="_blank" rel="noopener" title="Citizen Oversight Group VCACELAPSS"><span class="giro"><span class="cara a"><img src="../img/vcacelapss.jpg" alt="Citizen Oversight Group VCACELAPSS"/></span><span class="cara b"><img src="../img/rebrand/vcacelapss.svg" alt="Citizen Oversight Group VCACELAPSS — proposal"/></span></span></a></div>
+<header>
+  <div class="k">Glossary</div>
+  <h1>The observatory's words,<br/>explained</h1>
+  <p>The bulletins use technical terms that not everyone is expected to know.
+  Here are all 95, with what they mean and why they matter.</p>
+</header>
+<main>
+  <div class="buscar">
+    <input id="q" type="search" placeholder="Search for a term: CUM, price, SISMED, generic…"/>
+    <div class="chips"><button class="ch on" data-g="">All</button><button class="ch" data-g="Los precios"><i style="background:#2A52C4"></i>The prices</button><button class="ch" data-g="Los códigos"><i style="background:#0E7490"></i>The codes</button><button class="ch" data-g="Las entidades"><i style="background:#B45309"></i>The entities</button><button class="ch" data-g="Del observatorio"><i style="background:#6D28D9"></i>From the observatory</button><button class="ch" data-g="Los medicamentos"><i style="background:#047857"></i>The medicines</button><button class="ch" data-g="Leyes y trámites"><i style="background:#8B1E3F"></i>Laws and procedures</button><button class="ch" data-g="Empresas y marcas"><i style="background:#6D28D9"></i>Companies and brands</button><button class="ch" data-g="Salud y tratamientos"><i style="background:#0F766E"></i>Health and treatments</button></div>
+  </div>
+  <div class="rejilla" id="lista"><article class="term" id="t-premaxref" data-g="Los precios" data-b="premaxref precio maximo de referencia el techo que fija el estado: lo maximo que se puede cobrar por esa presentacion exacta de un medicamento. es la columna central de las tablas del doctor. cuando ese techo esta mal calculado, queda legalizado un sobreprecio. pmv  precio maximo de venta">
+  <div class="cab"><span class="sig" style="background:#2A52C4">PreMaxRef</span>
+    <span class="grp" style="color:#2A52C4">The prices</span></div>
+  <h3>Maximum Reference Price</h3>
+  <p class="que">The ceiling set by the State: the most that can be charged for that exact presentation of a medicine.</p>
+  <div class="por"><b>Why it matters.</b> It is the central column of the doctor's tables. When that ceiling is miscalculated, an overcharge becomes legalized.</div>
+  <div class="alias">Also appears as: <b>PMV · Maximum Sale Price</b></div>
+</article><article class="term" id="t-margen-ips" data-g="Los precios" data-b="margen ips margen para la institucion prestadora el porcentaje adicional que puede cobrar la clinica o el hospital que entrega el medicamento. en las tablas es exactamente 3,50% en los medicamentos caros y 7,00% en los baratos. sirve para comprobar que una cifra esta bien leida. ">
+  <div class="cab"><span class="sig" style="background:#2A52C4">IPS margin</span>
+    <span class="grp" style="color:#2A52C4">The prices</span></div>
+  <h3>Margin for the healthcare provider institution</h3>
+  <p class="que">The additional percentage that the clinic or hospital dispensing the medicine may charge.</p>
+  <div class="por"><b>Why it matters.</b> In the tables it is exactly 3.50% for expensive medicines and 7.00% for cheap ones. This is useful for checking that a figure has been read correctly.</div>
+  
+</article><article class="term" id="t-pra" data-g="Los precios" data-b="pra precio regulado aplicable el precio final autorizado: el maximo de referencia mas el margen de la institucion. es lo que realmente se termina pagando. siempre debe ser premaxref + margen ips. ">
+  <div class="cab"><span class="sig" style="background:#2A52C4">PRA</span>
+    <span class="grp" style="color:#2A52C4">The prices</span></div>
+  <h3>Applicable Regulated Price</h3>
+  <p class="que">The final authorized price: the maximum reference price plus the institution's margin.</p>
+  <div class="por"><b>Why it matters.</b> It is what is actually paid in the end. It must always be PreMaxRef + Margen IPS.</div>
+  
+</article><article class="term" id="t-ppps" data-g="Los precios" data-b="ppps precio promedio de la presentacion en sismed lo que el laboratorio realmente vendio, en promedio: el total facturado dividido por las unidades vendidas. si su entidad compra, debe pedir descuentos sobre este valor. es el precio real, no el de lista. ">
+  <div class="cab"><span class="sig" style="background:#2A52C4">PPPS</span>
+    <span class="grp" style="color:#2A52C4">The prices</span></div>
+  <h3>Average Price of the Presentation in SISMED</h3>
+  <p class="que">What the laboratory actually sold, on average: the total invoiced divided by the units sold.</p>
+  <div class="por"><b>Why it matters.</b> If your entity buys, it should ask for discounts on this value. It is the real price, not the list price.</div>
+  
+</article><article class="term" id="t-pppefi" data-g="Los precios" data-b="pppefi precio publico promedio encuestado en farmacias de internet lo que cuesta el medicamento en la drogueria, segun encuesta directa. es exclusivo del sistema vmi-cfn. ponerlo al lado del ppps muestra el recorrido completo del precio. ">
+  <div class="cab"><span class="sig" style="background:#2A52C4">PPPEFI</span>
+    <span class="grp" style="color:#2A52C4">The prices</span></div>
+  <h3>Average Retail Price Surveyed in Online Pharmacies</h3>
+  <p class="que">What the medicine costs at the pharmacy, according to a direct survey.</p>
+  <div class="por"><b>Why it matters.</b> It is exclusive to the VMI-CFN System. Placing it next to the PPPS shows the complete journey of the price.</div>
+  
+</article><article class="term" id="t-malla-de-validacion" data-g="Los precios" data-b="malla de validacion malla de validacion filtro automatico de un sistema de informacion que debe detectar y rechazar datos imposibles o erroneos. si falla, sismed acepta reportes de precios con errores. ">
+  <div class="cab"><span class="sig" style="background:#2A52C4">Validation mesh</span>
+    <span class="grp" style="color:#2A52C4">The prices</span></div>
+  <h3>Validation mesh</h3>
+  <p class="que">Automatic filter in an information system that should detect and reject impossible or erroneous data.</p>
+  <div class="por"><b>Why it matters.</b> If it fails, SISMED accepts price reports containing errors.</div>
+  
+</article><article class="term" id="t-cum" data-g="Los códigos" data-b="cum codigo unico de medicamento el numero de cedula que el invima le asigna a cada medicamento: marca, concentracion, presentacion y laboratorio exactos. dos cajas con el mismo nombre pero distinto tamano tienen cum distinto. por eso el precio se verifica por cum y no por nombre. cum of  cumo">
+  <div class="cab"><span class="sig" style="background:#0E7490">CUM</span>
+    <span class="grp" style="color:#0E7490">The codes</span></div>
+  <h3>Unique Medicine Code (Código Único de Medicamento)</h3>
+  <p class="que">The identification number that INVIMA assigns to each medicine: exact brand, strength, presentation and laboratory.</p>
+  <div class="por"><b>Why it matters.</b> Two boxes with the same name but different sizes have different CUMs. That is why price is verified by CUM and not by name.</div>
+  <div class="alias">Also appears as: <b>CUM Of · CUMO</b></div>
+</article><article class="term" id="t-atc" data-g="Los códigos" data-b="atc clasificacion anatomica, terapeutica y quimica el sistema de la organizacion mundial de la salud que agrupa medicamentos por para que sirven y como actuan. permite mirar una familia entera de una vez. atc4-a10b, por ejemplo, son todos los antidiabeticos no insulinicos. atc4  atc-5">
+  <div class="cab"><span class="sig" style="background:#0E7490">ATC</span>
+    <span class="grp" style="color:#0E7490">The codes</span></div>
+  <h3>Anatomical, Therapeutic, Chemical Classification</h3>
+  <p class="que">The World Health Organization system that groups medicines by what they are used for and how they act.</p>
+  <div class="por"><b>Why it matters.</b> Lets you look at an entire family at once. ATC4-A10B, for example, covers all non-insulin antidiabetics.</div>
+  <div class="alias">Also appears as: <b>ATC4 · ATC-5</b></div>
+</article><article class="term" id="t-armi" data-g="Los códigos" data-b="armi archivo de reserva med-informatica la copia que el observatorio guarda de cada documento oficial en el momento de publicarse. si una entidad cambia o retira un archivo de su pagina, el observatorio conserva la version original. armi">
+  <div class="cab"><span class="sig" style="background:#0E7490">ARMI</span>
+    <span class="grp" style="color:#0E7490">The codes</span></div>
+  <h3>Med-Informática Reserve Archive</h3>
+  <p class="que">The copy the observatory keeps of each official document at the moment it is published.</p>
+  <div class="por"><b>Why it matters.</b> If an entity changes or removes a file from its website, the observatory keeps the original version.</div>
+  <div class="alias">Also appears as: <b>ARmi</b></div>
+</article><article class="term" id="t-cnpmydm" data-g="Las entidades" data-b="cnpmydm comision nacional de precios de medicamentos y dispositivos medicos el organismo del estado que decide cuanto es lo maximo que puede costar un medicamento en colombia. sus circulares son las que el observatorio audita: cuando la comision se equivoca, el error se vuelve ley. ">
+  <div class="cab"><span class="sig" style="background:#B45309">CNPMyDM</span>
+    <span class="grp" style="color:#B45309">The entities</span></div>
+  <h3>National Commission on Medicine and Medical Device Prices (CNPMyDM)</h3>
+  <p class="que">The State body that decides the maximum a medicine can cost in Colombia.</p>
+  <div class="por"><b>Why it matters.</b> Its circulars are the ones the observatory audits: when the Commission makes a mistake, the error becomes law.</div>
+  
+</article><article class="term" id="t-invima" data-g="Las entidades" data-b="invima instituto nacional de vigilancia de medicamentos y alimentos la autoridad que autoriza que medicamentos pueden venderse en el pais y vigila su calidad. asigna los cum y los registros sanitarios. sin su aval, un producto no puede circular legalmente. ">
+  <div class="cab"><span class="sig" style="background:#B45309">INVIMA</span>
+    <span class="grp" style="color:#B45309">The entities</span></div>
+  <h3>National Institute for Drug and Food Surveillance</h3>
+  <p class="que">The authority that approves which medicines may be sold in the country and monitors their quality.</p>
+  <div class="por"><b>Why it matters.</b> Assigns the CUM codes and marketing authorizations (registros sanitarios). Without its approval, a product cannot legally circulate.</div>
+  
+</article><article class="term" id="t-sismed" data-g="Las entidades" data-b="sismed sistema de informacion de precios de medicamentos la base de datos publica donde los laboratorios estan obligados por ley a reportar cuanto y a que precio venden. es la fuente de casi todas las cifras del observatorio. su calidad depende de que alguien la revise. ">
+  <div class="cab"><span class="sig" style="background:#B45309">SISMED</span>
+    <span class="grp" style="color:#B45309">The entities</span></div>
+  <h3>Medicine Price Information System</h3>
+  <p class="que">The public database where laboratories are legally required to report how much they sell and at what price.</p>
+  <div class="por"><b>Why it matters.</b> It is the source of almost all of the observatory's figures. Its quality depends on someone reviewing it.</div>
+  
+</article><article class="term" id="t-ips" data-g="Las entidades" data-b="ips institucion prestadora de servicios de salud clinicas, hospitales y centros medicos: quienes atienden al paciente y le entregan el medicamento. es a quien se le reconoce el margen adicional sobre el precio maximo de referencia. ">
+  <div class="cab"><span class="sig" style="background:#B45309">IPS</span>
+    <span class="grp" style="color:#B45309">The entities</span></div>
+  <h3>Health Services Provider Institution</h3>
+  <p class="que">Clinics, hospitals, and medical centers: those who treat the patient and deliver the medicine.</p>
+  <div class="por"><b>Why it matters.</b> This is the party that is granted the additional margin on top of the maximum reference price.</div>
+  
+</article><article class="term" id="t-eps" data-g="Las entidades" data-b="eps entidad promotora de salud la aseguradora que administra los recursos de salud de sus afiliados y contrata a las ips. es el comprador grande de medicamentos. su capacidad de negociar precios define buena parte del gasto. ">
+  <div class="cab"><span class="sig" style="background:#B45309">EPS</span>
+    <span class="grp" style="color:#B45309">The entities</span></div>
+  <h3>Health Promotion Entity (Entidad Promotora de Salud)</h3>
+  <p class="que">The insurer that manages its members' health funds and contracts with IPS.</p>
+  <div class="por"><b>Why it matters.</b> It is the large buyer of medicines. Its ability to negotiate prices determines a good part of spending.</div>
+  
+</article><article class="term" id="t-mipres" data-g="Las entidades" data-b="mipres plataforma de prescripcion el sistema donde el medico debe registrar las formulas de medicamentos que no estan en el plan de beneficios. cruzar mipres con sismed revela si se esta vendiendo mas de lo que se esta formulando. ">
+  <div class="cab"><span class="sig" style="background:#B45309">MiPres</span>
+    <span class="grp" style="color:#B45309">The entities</span></div>
+  <h3>Prescription platform</h3>
+  <p class="que">The system where physicians must record prescriptions for medicines that are not covered by the benefits plan.</p>
+  <div class="por"><b>Why it matters.</b> Cross-referencing MiPres with SISMED reveals whether more is being sold than is being prescribed.</div>
+  
+</article><article class="term" id="t-adres" data-g="Las entidades" data-b="adres administradora de los recursos del sistema general de seguridad social en salud la entidad del estado que maneja la plata de la salud: recibe los recursos y les paga a las eps, a las clinicas y a los proveedores. por sus manos pasan los recobros, los presupuestos maximos y el giro directo. el doctor le reclama que publique los datos de lo que paga. ">
+  <div class="cab"><span class="sig" style="background:#B45309">ADRES</span>
+    <span class="grp" style="color:#B45309">The entities</span></div>
+  <h3>Administrator of the Resources of the General Social Security Health System</h3>
+  <p class="que">The State entity that manages health funds: it receives the resources and pays the EPS, clinics and providers.</p>
+  <div class="por"><b>Why it matters.</b> Reimbursement claims, maximum budgets and direct payment all pass through its hands. The doctor demands that it publish the data on what it pays.</div>
+  
+</article><article class="term" id="t-minsalud" data-g="Las entidades" data-b="minsalud ministerio de salud y proteccion social el ministerio que dirige la politica de salud del pais y expide las resoluciones sobre medicamentos y precios. es quien abre tramites como la declaratoria de interes publico y responde por los sistemas de informacion sismed y mipres. ministerio de salud">
+  <div class="cab"><span class="sig" style="background:#B45309">MinSalud</span>
+    <span class="grp" style="color:#B45309">The entities</span></div>
+  <h3>Ministry of Health and Social Protection</h3>
+  <p class="que">The ministry that leads the country's health policy and issues the resolutions on medicines and prices.</p>
+  <div class="por"><b>Why it matters.</b> It is the entity that opens procedures such as the declaration of public interest and is responsible for the SISMED and MiPres information systems.</div>
+  <div class="alias">Also appears as: <b>Ministry of Health</b></div>
+</article><article class="term" id="t-upc" data-g="Las entidades" data-b="upc unidad de pago por capitacion la suma fija que el sistema le paga cada ano a la eps por cada afiliado, para cubrir lo que esta en el plan de beneficios. lo que no alcanza a cubrir la upc se paga aparte (recobros o presupuestos maximos), y ahi se han ido grandes sumas. ">
+  <div class="cab"><span class="sig" style="background:#B45309">UPC</span>
+    <span class="grp" style="color:#B45309">The entities</span></div>
+  <h3>Capitation Payment Unit (UPC)</h3>
+  <p class="que">The fixed sum that the system pays the EPS each year for each member, to cover what is included in the benefits plan.</p>
+  <div class="por"><b>Why it matters.</b> What the UPC does not manage to cover is paid separately (reimbursement claims (recobros) or maximum budgets (presupuestos máximos)), and large sums have gone there.</div>
+  
+</article><article class="term" id="t-iets" data-g="Las entidades" data-b="iets instituto de evaluacion tecnologica en salud instituto que evalua si un medicamento o tratamiento nuevo funciona mejor que lo que ya existe y cuanto vale la pena pagar por el. la ley 1753 de 2015 queria que su evaluacion sirviera para fijar el precio de los medicamentos nuevos desde que entran al pais. ">
+  <div class="cab"><span class="sig" style="background:#B45309">IETS</span>
+    <span class="grp" style="color:#B45309">The entities</span></div>
+  <h3>Institute for Health Technology Assessment</h3>
+  <p class="que">An institute that assesses whether a new medicine or treatment works better than what already exists and how much it is worth paying for it.</p>
+  <div class="por"><b>Why it matters.</b> Law 1753 of 2015 intended its assessment to be used to set the price of new medicines from the moment they enter the country.</div>
+  
+</article><article class="term" id="t-otic" data-g="Las entidades" data-b="otic oficina de tecnologia de la informacion y la comunicacion la oficina del ministerio de salud encargada de los sistemas de informacion, entre ellos sismed. el doctor senala que no valida ni analiza los reportes, y por eso sismed muestra cifras imposibles. ">
+  <div class="cab"><span class="sig" style="background:#B45309">OTIC</span>
+    <span class="grp" style="color:#B45309">The entities</span></div>
+  <h3>Information and Communications Technology Office</h3>
+  <p class="que">The Ministry of Health office in charge of information systems, including SISMED.</p>
+  <div class="por"><b>Why it matters.</b> The doctor states that he does not validate or analyze the reports, and that is why SISMED shows impossible figures.</div>
+  
+</article><article class="term" id="t-afidro" data-g="Las entidades" data-b="afidro asociacion de laboratorios farmaceuticos de investigacion y desarrollo el gremio que agrupa a las farmaceuticas multinacionales en colombia. en 2018 le pidio al nuevo gobierno frenar varias regulaciones de precios, y el doctor documenta que esas peticiones se cumplieron. ">
+  <div class="cab"><span class="sig" style="background:#B45309">AFIDRO</span>
+    <span class="grp" style="color:#B45309">The entities</span></div>
+  <h3>Association of Pharmaceutical Research and Development Laboratories</h3>
+  <p class="que">The trade association that groups multinational pharmaceutical companies in Colombia.</p>
+  <div class="por"><b>Why it matters.</b> In 2018 it asked the new Government to halt several price regulations, and the doctor documents that those requests were granted.</div>
+  
+</article><article class="term" id="t-cvcs" data-g="Las entidades" data-b="cvcs comite de veeduria y cooperacion en salud organizacion de la sociedad civil que vigila el sistema de salud y le exige cuentas al gobierno. en 2023 le pidio al ministro de salud corregir las fallas de los sistemas de informacion documentadas por el observatorio. ">
+  <div class="cab"><span class="sig" style="background:#B45309">CVCS</span>
+    <span class="grp" style="color:#B45309">The entities</span></div>
+  <h3>Committee for Citizen Oversight and Health Cooperation</h3>
+  <p class="que">Civil society organization that monitors the health system and holds the government to account.</p>
+  <div class="por"><b>Why it matters.</b> In 2023 it asked the Minister of Health to correct the failures in the information systems documented by the Observatory.</div>
+  
+</article><article class="term" id="t-oms" data-g="Las entidades" data-b="oms organizacion mundial de la salud la agencia de las naciones unidas para la salud. publica guias de tratamiento y la lista de medicamentos esenciales. sus recomendaciones sirven de referencia: por ejemplo, el dolutegravir es su tratamiento preferido para el vih. ops/oms">
+  <div class="cab"><span class="sig" style="background:#B45309">OMS</span>
+    <span class="grp" style="color:#B45309">The entities</span></div>
+  <h3>World Health Organization</h3>
+  <p class="que">The United Nations health agency. It publishes treatment guidelines and the Model List of Essential Medicines.</p>
+  <div class="por"><b>Why it matters.</b> Its recommendations serve as a reference: for example, dolutegravir is its preferred treatment for HIV.</div>
+  <div class="alias">Also appears as: <b>OPS/OMS</b></div>
+</article><article class="term" id="t-sic" data-g="Las entidades" data-b="sic superintendencia de industria y comercio la entidad que vigila la competencia entre empresas y protege al consumidor; tambien maneja las patentes. freno en 2018 la circular que iba a fijar precios de entrada a los medicamentos nuevos. ">
+  <div class="cab"><span class="sig" style="background:#B45309">SIC</span>
+    <span class="grp" style="color:#B45309">The entities</span></div>
+  <h3>Superintendency of Industry and Commerce</h3>
+  <p class="que">The entity that monitors competition among companies and protects consumers; it also handles patents.</p>
+  <div class="por"><b>Why it matters.</b> In 2018 it halted the circular that would have set entry prices for new medicines.</div>
+  
+</article><article class="term" id="t-consejo-de-estado" data-g="Las entidades" data-b="consejo de estado consejo de estado el tribunal mas alto para los casos contra el estado: revisa si los decretos y resoluciones del gobierno se ajustan a la ley. suspendio el decreto 710 de 2018 y en 2026 dicto la sentencia sobre la politica de precios de medicamentos que sigue el observatorio. ">
+  <div class="cab"><span class="sig" style="background:#B45309">Council of State (Consejo de Estado)</span>
+    <span class="grp" style="color:#B45309">The entities</span></div>
+  <h3>Council of State (Consejo de Estado)</h3>
+  <p class="que">The highest court for cases against the State: it reviews whether the Government's decrees and resolutions comply with the law.</p>
+  <div class="por"><b>Why it matters.</b> It suspended Decree 710 of 2018 and in 2026 issued the ruling on medicine price policy that the Observatory follows.</div>
+  
+</article><article class="term" id="t-cuenta-de-alto-costo" data-g="Las entidades" data-b="cuenta de alto costo cuenta de alto costo organismo tecnico del sistema de salud que hace seguimiento a las enfermedades mas costosas, como el vih, el cancer y la enfermedad renal. deberia tener datos de los pacientes con vih, pero el doctor senala que no publica la informacion sobre el dolutegravir. cac">
+  <div class="cab"><span class="sig" style="background:#B45309">High-Cost Account (Cuenta de Alto Costo)</span>
+    <span class="grp" style="color:#B45309">The entities</span></div>
+  <h3>High-Cost Account (Cuenta de Alto Costo)</h3>
+  <p class="que">Technical body of the health system that monitors the costliest diseases, such as HIV, cancer and kidney disease.</p>
+  <div class="por"><b>Why it matters.</b> It should have data on HIV patients, but the doctor notes that it does not publish information on dolutegravir.</div>
+  <div class="alias">Also appears as: <b>CAC</b></div>
+</article><article class="term" id="t-contraloria" data-g="Las entidades" data-b="contraloria contraloria general de la republica entidad del estado que vigila como se gastan y se manejan los recursos publicos. es la que detecto los sobrecobros y las concentraciones de dinero que cuentan estas notas. contralor (su maxima autoridad)">
+  <div class="cab"><span class="sig" style="background:#B45309">Comptroller's Office</span>
+    <span class="grp" style="color:#B45309">The entities</span></div>
+  <h3>Office of the Comptroller General of the Republic (Contraloría General de la República)</h3>
+  <p class="que">State entity that oversees how public resources are spent and managed.</p>
+  <div class="por"><b>Why it matters.</b> This is the unit that detected the overcharges and the concentrations of money described in these notes.</div>
+  <div class="alias">Also appears as: <b>Comptroller (its highest authority)</b></div>
+</article><article class="term" id="t-diari" data-g="Las entidades" data-b="diari direccion de informacion, analisis y reaccion inmediata dependencia de la contraloria que analiza datos para detectar alertas sobre el uso de recursos publicos. fue la dependencia que encontro los presuntos sobrecobros en medicamentos. ">
+  <div class="cab"><span class="sig" style="background:#B45309">DIARI</span>
+    <span class="grp" style="color:#B45309">The entities</span></div>
+  <h3>Directorate of Information, Analysis and Immediate Reaction</h3>
+  <p class="que">Unit of the Comptroller's Office that analyzes data to detect alerts on the use of public resources.</p>
+  <div class="por"><b>Why it matters.</b> This is the unit that found the alleged overcharges in medicines.</div>
+  
+</article><article class="term" id="t-integracion-vertical" data-g="Las entidades" data-b="integracion vertical integracion vertical cuando una eps tiene vinculos empresariales con las ips o proveedores que contrata, y les gira de forma preferente. la ley la limita para evitar concentracion y abusos. la contraloria detecto posibles contravenciones en cuatro eps. ">
+  <div class="cab"><span class="sig" style="background:#B45309">Vertical integration</span>
+    <span class="grp" style="color:#B45309">The entities</span></div>
+  <h3>Vertical integration</h3>
+  <p class="que">When an EPS has business ties with the IPS or providers it contracts and pays them preferentially. The law limits this to prevent concentration and abuse.</p>
+  <div class="por"><b>Why it matters.</b> The Comptroller's Office detected possible violations at four EPS.</div>
+  
+</article><article class="term" id="t-eapb" data-g="Las entidades" data-b="eapb entidades administradoras de planes de beneficios entidades, como las eps, que administran el aseguramiento en salud y reciben dinero del sistema para garantizar la atencion de sus afiliados. solo 11 reportaron en que usaron los presupuestos maximos; las otras 28 aun debian informar. ">
+  <div class="cab"><span class="sig" style="background:#B45309">EAPB</span>
+    <span class="grp" style="color:#B45309">The entities</span></div>
+  <h3>Benefit Plan Administrative Entities (Entidades Administradoras de Planes de Beneficios)</h3>
+  <p class="que">Entities, such as the EPS, that administer health insurance and receive money from the system to guarantee care for their enrollees.</p>
+  <div class="por"><b>Why it matters.</b> Only 11 reported how they used the maximum budgets; the other 28 still had to report.</div>
+  
+</article><article class="term" id="t-vmi-cfn" data-g="Del observatorio" data-b="vmi-cfn vademecum med-informatica y catalogo farmaceutico nacional la base de datos del observatorio: informacion farmacologica, regulatoria y economica de los medicamentos disponibles en colombia. es el unico sistema que junta en una pantalla lo que reporta el laboratorio, lo que regula el estado y lo que cobra la farmacia. ">
+  <div class="cab"><span class="sig" style="background:#6D28D9">VMI-CFN</span>
+    <span class="grp" style="color:#6D28D9">From the observatory</span></div>
+  <h3>Med-Informática Vademecum and National Pharmaceutical Catalog</h3>
+  <p class="que">The observatory's database: pharmacological, regulatory and economic information on the medicines available in Colombia.</p>
+  <div class="por"><b>Why it matters.</b> It is the only system that brings together on one screen what the laboratory reports, what the State regulates, and what the pharmacy charges.</div>
+  
+</article><article class="term" id="t-biscom" data-g="Del observatorio" data-b="biscom boletin informatica y salud y del consumidor de medicamentos la publicacion semanal del observatorio, con issn desde 1991. cada edicion lleva un numero y la semana que cubre. es el archivo donde vive toda esta investigacion. bis">
+  <div class="cab"><span class="sig" style="background:#6D28D9">BisCoM</span>
+    <span class="grp" style="color:#6D28D9">From the observatory</span></div>
+  <h3>Health Informatics and Medicine Consumer Newsletter</h3>
+  <p class="que">The observatory's weekly publication, with an ISSN since 1991.</p>
+  <div class="por"><b>Why it matters.</b> Each edition carries a number and the week it covers. It is the archive where all this research lives.</div>
+  <div class="alias">Also appears as: <b>BIS</b></div>
+</article><article class="term" id="t-sitdis" data-g="Del observatorio" data-b="sitdis sistema integrado transaccional y distribuido de informacion en salud el sistema de informacion que el observatorio propone para cruzar todos los datos del sector. es su tesis central: sin datos que se puedan cruzar entre si, no hay control posible del gasto. ">
+  <div class="cab"><span class="sig" style="background:#6D28D9">SITDIS</span>
+    <span class="grp" style="color:#6D28D9">From the observatory</span></div>
+  <h3>Integrated Transactional and Distributed Health Information System</h3>
+  <p class="que">The information system the observatory proposes for cross-referencing all of the sector's data.</p>
+  <div class="por"><b>Why it matters.</b> It is its central thesis: without data that can be cross-referenced, spending cannot be controlled.</div>
+  
+</article><article class="term" id="t-aspeec" data-g="Del observatorio" data-b="aspeec analisis, sintesis, proyeccion, ejecucion, evaluacion y correctivos la metodologia de las investigaciones especiales del observatorio. no se queda en el diagnostico: propone correctivos y luego evalua si se aplicaron. ">
+  <div class="cab"><span class="sig" style="background:#6D28D9">ASPEEC</span>
+    <span class="grp" style="color:#6D28D9">From the observatory</span></div>
+  <h3>Analysis, Synthesis, Projection, Execution, Evaluation and Corrective Measures</h3>
+  <p class="que">The methodology of the observatory's special investigations.</p>
+  <div class="por"><b>Why it matters.</b> It does not stop at the diagnosis: it proposes corrective measures and then evaluates whether they were applied.</div>
+  
+</article><article class="term" id="t-app-i" data-g="Del observatorio" data-b="app-i analisis de precios primarios por internet la version del sistema vmi-cfn que compara el precio del laboratorio con el de la farmacia. gratis el primer mes. es la herramienta de la operacion transparencia farmaceutica, abierta a profesionales de la salud. ">
+  <div class="cab"><span class="sig" style="background:#6D28D9">APP-I</span>
+    <span class="grp" style="color:#6D28D9">From the observatory</span></div>
+  <h3>Primary Price Analysis via the Internet</h3>
+  <p class="que">The version of the VMI-CFN system that compares the laboratory's price with the pharmacy's. Free for the first month.</p>
+  <div class="por"><b>Why it matters.</b> It is the tool of Operación Transparencia Farmacéutica, open to health professionals.</div>
+  
+</article><article class="term" id="t-observatorio-del-medicamento" data-g="Del observatorio" data-b="observatorio del medicamento observatorio del medicamento de la federacion medica colombiana es un grupo de la federacion medica colombiana, el gremio que reune a organizaciones de medicos del pais. estudia y publica informacion sobre medicamentos, sus precios y su uso en colombia. sus analisis documentaron las inconsistencias en los datos de ventas, precios y recetas de dolutegravir que recoge la carta enviada al ministro. federacion medica colombiana">
+  <div class="cab"><span class="sig" style="background:#6D28D9">Medicines Observatory</span>
+    <span class="grp" style="color:#6D28D9">From the observatory</span></div>
+  <h3>Medicines Observatory of the Colombian Medical Federation</h3>
+  <p class="que">It is a group within the Colombian Medical Federation (Federación Médica Colombiana), the professional association that brings together physicians' organizations across the country. It studies and publishes information on medicines, their prices, and their use in Colombia.</p>
+  <div class="por"><b>Why it matters.</b> Its analyses documented the inconsistencies in dolutegravir sales, price and prescription data that are set out in the letter sent to the minister.</div>
+  <div class="alias">Also appears as: <b>Colombian Medical Federation (Federación Médica Colombiana)</b></div>
+</article><article class="term" id="t-marca-pionera" data-g="Los medicamentos" data-b="marca pionera el original el laboratorio que desarrollo la molecula y la lanzo primero al mercado. suele ser la mas cara aun cuando la patente ya vencio y existen alternativas identicas. ">
+  <div class="cab"><span class="sig" style="background:#047857">Pioneer brand</span>
+    <span class="grp" style="color:#047857">The medicines</span></div>
+  <h3>The original</h3>
+  <p class="que">The laboratory that developed the molecule and was first to launch it on the market.</p>
+  <div class="por"><b>Why it matters.</b> It is usually the most expensive even when the patent has expired and identical alternatives exist.</div>
+  
+</article><article class="term" id="t-generico-genuino" data-g="Los medicamentos" data-b="generico genuino el mismo medicamento sin marca se vende con el nombre del principio activo y cumple los mismos requisitos de calidad del invima. misma molecula, misma dosis, hasta cuatro veces menos precio. esa diferencia es el hallazgo central del observatorio. marca competidora">
+  <div class="cab"><span class="sig" style="background:#047857">Genuine generic</span>
+    <span class="grp" style="color:#047857">The medicines</span></div>
+  <h3>The same medicine without a brand</h3>
+  <p class="que">It is sold under the active ingredient name and meets the same INVIMA quality requirements.</p>
+  <div class="por"><b>Why it matters.</b> Same molecule, same dose, up to four times lower price. That difference is the observatory's central finding.</div>
+  <div class="alias">Also appears as: <b>Competing brand</b></div>
+</article><article class="term" id="t-muestra-medica" data-g="Los medicamentos" data-b="muestra medica producto sin valor comercial el medicamento que el laboratorio entrega gratis al medico para que lo conozca. por definicion no se vende. el observatorio encontro 33 de ellas con precio regulado asignado, algunas millonarias. si no tienen valor comercial, no deberian tener techo de precio. ">
+  <div class="cab"><span class="sig" style="background:#047857">Medical sample</span>
+    <span class="grp" style="color:#047857">The medicines</span></div>
+  <h3>Product with no commercial value</h3>
+  <p class="que">The medicine that the laboratory gives free to the doctor so that they become familiar with it. By definition, it is not sold.</p>
+  <div class="por"><b>Why it matters.</b> The observatory found 33 of them with an assigned regulated price, some of them in the millions. If they have no commercial value, they should not have a price ceiling.</div>
+  
+</article><article class="term" id="t-glp-1" data-g="Los medicamentos" data-b="glp-1 agonistas del peptido similar al glucagon tipo 1 familia de medicamentos para diabetes tipo 2 que tambien reducen el peso. incluye semaglutida y liraglutida. movieron 2,9 billones de pesos en colombia entre 2016 y 2025. glutidas">
+  <div class="cab"><span class="sig" style="background:#047857">GLP-1</span>
+    <span class="grp" style="color:#047857">The medicines</span></div>
+  <h3>Glucagon-like peptide-1 agonists</h3>
+  <p class="que">A family of medicines for type 2 diabetes that also reduce weight. It includes semaglutide and liraglutide.</p>
+  <div class="por"><b>Why it matters.</b> They moved COP 2.9 trillion in Colombia between 2016 and 2025.</div>
+  <div class="alias">Also appears as: <b>Glutidas</b></div>
+</article><article class="term" id="t-sglt2" data-g="Los medicamentos" data-b="sglt2 inhibidores del cotransportador de sodio-glucosa tipo 2 antidiabeticos que hacen eliminar azucar por la orina. dapagliflozina, empagliflozina. es el grupo que mas dinero movio: 3,6 billones de pesos en diez anos. gliflozinas">
+  <div class="cab"><span class="sig" style="background:#047857">SGLT2</span>
+    <span class="grp" style="color:#047857">The medicines</span></div>
+  <h3>Sodium-glucose cotransporter 2 inhibitors</h3>
+  <p class="que">Antidiabetics that cause sugar to be eliminated in the urine. Dapagliflozin, empagliflozin.</p>
+  <div class="por"><b>Why it matters.</b> It is the group that moved the most money: COP 3.6 trillion in ten years.</div>
+  <div class="alias">Also appears as: <b>Gliflozins</b></div>
+</article><article class="term" id="t-dpp-4" data-g="Los medicamentos" data-b="dpp-4 inhibidores de la dipeptidil peptidasa 4 otra familia de antidiabeticos orales. sitagliptina, linagliptina. 1,3 billones de pesos en el periodo analizado. gliptinas">
+  <div class="cab"><span class="sig" style="background:#047857">DPP-4</span>
+    <span class="grp" style="color:#047857">The medicines</span></div>
+  <h3>Dipeptidyl peptidase-4 inhibitors</h3>
+  <p class="que">Another family of oral antidiabetics. Sitagliptin, linagliptin.</p>
+  <div class="por"><b>Why it matters.</b> COP 1.3 trillion over the period analyzed.</div>
+  <div class="alias">Also appears as: <b>Gliptins</b></div>
+</article><article class="term" id="t-dip" data-g="Leyes y trámites" data-b="dip declaratoria de interes publico decision del ministerio de salud que declara que el acceso a un medicamento es de interes publico, normalmente porque es muy caro o escaso. es el primer paso para una licencia obligatoria o para bajar su precio. el dolutegravir esta en ese tramite desde 2023. declaratoria de interes publico">
+  <div class="cab"><span class="sig" style="background:#8B1E3F">DIP</span>
+    <span class="grp" style="color:#8B1E3F">Laws and procedures</span></div>
+  <h3>Declaration of Public Interest</h3>
+  <p class="que">A Ministry of Health decision declaring that access to a medicine is of public interest, usually because it is very expensive or scarce.</p>
+  <div class="por"><b>Why it matters.</b> It is the first step toward a compulsory license or toward lowering its price. Dolutegravir has been in that process since 2023.</div>
+  <div class="alias">Also appears as: <b>declaration of public interest</b></div>
+</article><article class="term" id="t-licencia-obligatoria" data-g="Leyes y trámites" data-b="licencia obligatoria licencia obligatoria permiso que da el estado para que otros fabriquen o importen un medicamento patentado sin autorizacion del dueno de la patente, a cambio de una regalia. abre la puerta a versiones mucho mas baratas. en colombia se ha intentado varias veces sin lograrlo. ">
+  <div class="cab"><span class="sig" style="background:#8B1E3F">Compulsory license</span>
+    <span class="grp" style="color:#8B1E3F">Laws and procedures</span></div>
+  <h3>Compulsory license</h3>
+  <p class="que">Permission granted by the State for others to manufacture or import a patented medicine without the patent owner's authorization, in exchange for a royalty.</p>
+  <div class="por"><b>Why it matters.</b> It opens the door to much cheaper versions. Colombia has tried several times without success.</div>
+  
+</article><article class="term" id="t-licencia-voluntaria" data-g="Leyes y trámites" data-b="licencia voluntaria licencia voluntaria acuerdo en el que la farmaceutica duena de la patente deja que otros fabriquen versiones genericas, casi siempre solo para ciertos paises. viiv healthcare la firmo para el dolutegravir en otros paises, pero colombia no esta incluida. ">
+  <div class="cab"><span class="sig" style="background:#8B1E3F">Voluntary license</span>
+    <span class="grp" style="color:#8B1E3F">Laws and procedures</span></div>
+  <h3>Voluntary license</h3>
+  <p class="que">Agreement in which the pharmaceutical company that owns the patent allows others to manufacture generic versions, almost always only for certain countries.</p>
+  <div class="por"><b>Why it matters.</b> ViiV Healthcare signed it for dolutegravir in other countries, but Colombia is not included.</div>
+  
+</article><article class="term" id="t-patente" data-g="Leyes y trámites" data-b="patente patente derecho exclusivo que tiene una empresa sobre un invento, por lo general durante 20 anos: mientras dure, nadie mas puede vender el mismo medicamento. cuando la patente vence pueden entrar genericos y el precio deberia bajar. ">
+  <div class="cab"><span class="sig" style="background:#8B1E3F">Patent</span>
+    <span class="grp" style="color:#8B1E3F">Laws and procedures</span></div>
+  <h3>Patent</h3>
+  <p class="que">Exclusive right that a company holds over an invention, usually for 20 years: while it lasts, no one else can sell the same medicine.</p>
+  <div class="por"><b>Why it matters.</b> When the patent expires, generics can enter the market and the price should fall.</div>
+  
+</article><article class="term" id="t-recobro" data-g="Leyes y trámites" data-b="recobro recobro lo que la eps le cobra al estado (hoy a la adres) por medicamentos o servicios que no estaban cubiertos por la upc. por los recobros se pagaron precios exorbitantes; el doctor dice que no deben usarse para calcular topes. recobros">
+  <div class="cab"><span class="sig" style="background:#8B1E3F">Recobro (reimbursement claims)</span>
+    <span class="grp" style="color:#8B1E3F">Laws and procedures</span></div>
+  <h3>Recobro (reimbursement claims)</h3>
+  <p class="que">What the EPS bills the State (today ADRES) for medicines or services that were not covered by the UPC.</p>
+  <div class="por"><b>Why it matters.</b> Exorbitant prices were paid through reimbursement claims; the doctor says they should not be used to calculate caps.</div>
+  <div class="alias">Also appears as: <b>reimbursement claims (recobros)</b></div>
+</article><article class="term" id="t-vmr" data-g="Leyes y trámites" data-b="vmr valores maximos de recobro los topes que fijaba el ministerio de salud para lo que las eps podian recobrarle al estado por cada medicamento. algunos quedaron muy por encima del precio real, como el combinado de irbesartan y amlodipino. ">
+  <div class="cab"><span class="sig" style="background:#8B1E3F">VMR</span>
+    <span class="grp" style="color:#8B1E3F">Laws and procedures</span></div>
+  <h3>Maximum Reimbursement Values</h3>
+  <p class="que">The caps that the Ministry of Health set on what EPS could claim back from the State for each medicine.</p>
+  <div class="por"><b>Why it matters.</b> Some ended up far above the real price, such as the irbesartan and amlodipine combination.</div>
+  
+</article><article class="term" id="t-presupuestos-maximos" data-g="Leyes y trámites" data-b="presupuestos maximos presupuestos maximos (techos) una suma que la adres le gira por adelantado cada ano a cada eps para cubrir lo que no paga la upc; la eps asume el riesgo si no le alcanza. los creo la ley 1955 de 2019. el doctor advirtio que serian inviables y que con ellos se perdio el rastro de muchas recetas. techos">
+  <div class="cab"><span class="sig" style="background:#8B1E3F">Maximum Budgets</span>
+    <span class="grp" style="color:#8B1E3F">Laws and procedures</span></div>
+  <h3>Maximum Budgets (ceilings)</h3>
+  <p class="que">A sum that ADRES transfers in advance each year to each EPS to cover what the UPC does not pay; the EPS bears the risk if it falls short.</p>
+  <div class="por"><b>Why it matters.</b> They were created by Law 1955 of 2019. The doctor warned that they would be unworkable and that with them the trail of many prescriptions was lost.</div>
+  <div class="alias">Also appears as: <b>ceilings</b></div>
+</article><article class="term" id="t-plan-de-beneficios" data-g="Leyes y trámites" data-b="plan de beneficios plan de beneficios en salud (pbs) la lista de servicios y medicamentos que la eps tiene que darle a sus afiliados con la plata de la upc. si un medicamento esta en el plan, la farmaceutica suele usarlo como argumento para decir que no hace falta bajar su precio. pbs">
+  <div class="cab"><span class="sig" style="background:#8B1E3F">Benefits Plan</span>
+    <span class="grp" style="color:#8B1E3F">Laws and procedures</span></div>
+  <h3>Health Benefits Plan (PBS)</h3>
+  <p class="que">The list of services and medicines that the EPS must provide to its members with UPC funds.</p>
+  <div class="por"><b>Why it matters.</b> If a medicine is in the plan, the pharmaceutical company usually uses it as an argument that its price does not need to be lowered.</div>
+  <div class="alias">Also appears as: <b>PBS</b></div>
+</article><article class="term" id="t-nopbs" data-g="Leyes y trámites" data-b="nopbs servicios no incluidos en el plan de beneficios los medicamentos y servicios que no estan en el plan de beneficios y se pagan aparte, por recobro o con presupuestos maximos. son los que mas han crecido en gasto. el doctor advierte que los techos podian crear un nuevo grupo &quot;nonopbs&quot; sin quien lo pague. nonopbs">
+  <div class="cab"><span class="sig" style="background:#8B1E3F">NoPBS</span>
+    <span class="grp" style="color:#8B1E3F">Laws and procedures</span></div>
+  <h3>Services not included in the Benefits Plan</h3>
+  <p class="que">The medicines and services that are not in the benefits plan and are paid separately, through reimbursement (recobro) or maximum budgets (presupuestos máximos).</p>
+  <div class="por"><b>Why it matters.</b> They are the ones whose spending has grown the most. The doctor warns that the ceilings could create a new &quot;NoNoPBS&quot; group with no one to pay for it.</div>
+  <div class="alias">Also appears as: <b>NoNoPBS</b></div>
+</article><article class="term" id="t-glosa" data-g="Leyes y trámites" data-b="glosa glosa (y glosa transversal) una objecion a una factura o cuenta de cobro en salud: lo glosado no se paga hasta aclararlo. la &quot;glosa transversal&quot; de 2019 fue un mecanismo para pagar como deuda publica recobros pendientes. con ella se reconocieron cientos de miles de millones como deuda publica. glosa transversal">
+  <div class="cab"><span class="sig" style="background:#8B1E3F">Billing objection (glosa)</span>
+    <span class="grp" style="color:#8B1E3F">Laws and procedures</span></div>
+  <h3>Billing objection (glosa) and Cross-Cutting Billing Objection</h3>
+  <p class="que">An objection to a healthcare invoice or billing statement (glosa): what has been disputed is not paid until it is clarified. The &quot;Glosa Transversal&quot; of 2019 was a mechanism for paying pending reimbursement claims (recobros) as public debt.</p>
+  <div class="por"><b>Why it matters.</b> With it, hundreds of billions of pesos were recognized as public debt.</div>
+  <div class="alias">Also appears as: <b>Cross-Cutting Billing Objection (Glosa Transversal)</b></div>
+</article><article class="term" id="t-giro-directo" data-g="Leyes y trámites" data-b="giro directo giro directo (y giro previo) cuando la adres le paga directamente a la clinica o al proveedor, sin que la plata pase por la eps. busca que el dinero llegue a quien presta el servicio; su nuevo mecanismo de reporte arranca en 2027. giro previo">
+  <div class="cab"><span class="sig" style="background:#8B1E3F">Direct payment (giro directo)</span>
+    <span class="grp" style="color:#8B1E3F">Laws and procedures</span></div>
+  <h3>Direct payment (giro directo) and advance payment</h3>
+  <p class="que">When ADRES pays the clinic or provider directly, without the money passing through the EPS.</p>
+  <div class="por"><b>Why it matters.</b> It aims to ensure that money reaches whoever provides the service; its new reporting mechanism starts in 2027.</div>
+  <div class="alias">Also appears as: <b>prior transfer (giro previo)</b></div>
+</article><article class="term" id="t-pnd" data-g="Leyes y trámites" data-b="pnd plan nacional de desarrollo la ley con el programa de cada gobierno para sus cuatro anos; suele traer articulos sobre salud y medicamentos. la ley 1753 de 2015 y la ley 1955 de 2019 son planes de desarrollo que cambiaron la regulacion de medicamentos. ">
+  <div class="cab"><span class="sig" style="background:#8B1E3F">PND</span>
+    <span class="grp" style="color:#8B1E3F">Laws and procedures</span></div>
+  <h3>National Development Plan</h3>
+  <p class="que">The law containing each government's program for its four-year term; it often includes articles on health and medicines.</p>
+  <div class="por"><b>Why it matters.</b> Law 1753 of 2015 and Law 1955 of 2019 are development plans that changed medicine regulation.</div>
+  
+</article><article class="term" id="t-registro-sanitario" data-g="Leyes y trámites" data-b="registro sanitario registro sanitario el permiso del invima para fabricar, importar y vender un medicamento en colombia. la ley 1753 de 2015 queria evaluar el valor terapeutico durante ese registro, pero un decreto lo separo. ">
+  <div class="cab"><span class="sig" style="background:#8B1E3F">Marketing authorization (registro sanitario)</span>
+    <span class="grp" style="color:#8B1E3F">Laws and procedures</span></div>
+  <h3>Marketing authorization (registro sanitario)</h3>
+  <p class="que">INVIMA's permit to manufacture, import and sell a medicine in Colombia.</p>
+  <div class="por"><b>Why it matters.</b> Law 1753 of 2015 sought to assess therapeutic value during that registration, but a decree separated the two.</div>
+  
+</article><article class="term" id="t-valor-terapeutico" data-g="Leyes y trámites" data-b="valor terapeutico valor terapeutico cuanto mejora de verdad un medicamento nuevo la salud de los pacientes frente a los tratamientos que ya existen. fijar el precio segun el valor terapeutico evita pagar fortunas por medicamentos que no son mejores. ">
+  <div class="cab"><span class="sig" style="background:#8B1E3F">Therapeutic value</span>
+    <span class="grp" style="color:#8B1E3F">Laws and procedures</span></div>
+  <h3>Therapeutic value</h3>
+  <p class="que">How much a new medicine truly improves patients' health compared with the treatments that already exist.</p>
+  <div class="por"><b>Why it matters.</b> Setting the price according to therapeutic value avoids paying fortunes for medicines that are no better.</div>
+  
+</article><article class="term" id="t-exequible" data-g="Leyes y trámites" data-b="exequible exequible cuando la corte constitucional decide que una ley si esta de acuerdo con la constitucion y sigue vigente. la corte declaro exequible el articulo 72 sobre precios por valor terapeutico, pero aun asi no se aplico. ">
+  <div class="cab"><span class="sig" style="background:#8B1E3F">Constitutional (exequible)</span>
+    <span class="grp" style="color:#8B1E3F">Laws and procedures</span></div>
+  <h3>Constitutional (exequible)</h3>
+  <p class="que">When the Constitutional Court decides that a law is consistent with the Constitution and remains in force.</p>
+  <div class="por"><b>Why it matters.</b> The Court declared Article 72 on therapeutic-value pricing constitutional (exequible), yet it was still not applied.</div>
+  
+</article><article class="term" id="t-plan-de-vigilancia-y-control-fiscal" data-g="Leyes y trámites" data-b="plan de vigilancia y control fiscal plan de vigilancia y control fiscal programa de la contraloria que define que entidades y recursos auditara durante el periodo. alli se incluiran auditorias a 28 eps en el segundo semestre. ">
+  <div class="cab"><span class="sig" style="background:#8B1E3F">Fiscal Oversight and Control Plan (Plan de Vigilancia y Control Fiscal)</span>
+    <span class="grp" style="color:#8B1E3F">Laws and procedures</span></div>
+  <h3>Fiscal Oversight and Control Plan (Plan de Vigilancia y Control Fiscal)</h3>
+  <p class="que">Comptroller's Office program that defines which entities and resources it will audit during the period.</p>
+  <div class="por"><b>Why it matters.</b> It will include audits of 28 EPS in the second half of the year.</div>
+  
+</article><article class="term" id="t-regimen-subsidiado" data-g="Leyes y trámites" data-b="regimen subsidiado regimen subsidiado de salud forma de afiliacion a la salud para personas sin capacidad de pago, financiada principalmente con recursos del estado. cinco eps recibieron cerca del 44% del dinero (upc) de este regimen. ">
+  <div class="cab"><span class="sig" style="background:#8B1E3F">Subsidized regime</span>
+    <span class="grp" style="color:#8B1E3F">Laws and procedures</span></div>
+  <h3>Subsidized health regime</h3>
+  <p class="que">Form of health enrollment for people who cannot afford to pay, financed mainly with State resources.</p>
+  <div class="por"><b>Why it matters.</b> Five EPS received about 44% of the money (UPC) of this regime.</div>
+  
+</article><article class="term" id="t-regimen-contributivo" data-g="Leyes y trámites" data-b="regimen contributivo regimen contributivo de salud forma de afiliacion a la salud para quienes tienen empleo o ingresos y cotizan una parte de ellos. sirve de comparacion: recibio $14,73 billones de upc en el mismo periodo. ">
+  <div class="cab"><span class="sig" style="background:#8B1E3F">Contributory regime</span>
+    <span class="grp" style="color:#8B1E3F">Laws and procedures</span></div>
+  <h3>Contributory health regime</h3>
+  <p class="que">Form of health enrollment for people who have employment or income and contribute a portion of it.</p>
+  <div class="por"><b>Why it matters.</b> Serves as a comparison: it received COP 14.73 trillion in UPC over the same period.</div>
+  
+</article><article class="term" id="t-liquidacion-mensual-de-afiliados" data-g="Leyes y trámites" data-b="liquidacion mensual de afiliados liquidacion mensual de afiliados calculo mensual con el que se determina cuanto dinero (upc) recibe cada eps del regimen subsidiado segun sus afiliados. es la fuente de las cifras sobre cuanto recibieron las cinco eps. ">
+  <div class="cab"><span class="sig" style="background:#8B1E3F">Monthly Settlement of Enrollees (Liquidación Mensual de Afiliados)</span>
+    <span class="grp" style="color:#8B1E3F">Laws and procedures</span></div>
+  <h3>Monthly Settlement of Enrollees (Liquidación Mensual de Afiliados)</h3>
+  <p class="que">Monthly calculation that determines how much money (UPC) each EPS in the subsidized regime receives based on its enrollees.</p>
+  <div class="por"><b>Why it matters.</b> This is the source of the figures on how much the five EPS received.</div>
+  
+</article><article class="term" id="t-acuerdo-de-punto-final" data-g="Leyes y trámites" data-b="acuerdo de punto final acuerdo de punto final mecanismo para que el estado pague deudas atrasadas del sistema de salud con eps y prestadores. solo se habia pagado $1,51 billones de los $6,7 billones proyectados. punto final">
+  <div class="cab"><span class="sig" style="background:#8B1E3F">Final Settlement Agreement (Acuerdo de Punto Final)</span>
+    <span class="grp" style="color:#8B1E3F">Laws and procedures</span></div>
+  <h3>Final Settlement Agreement (Acuerdo de Punto Final)</h3>
+  <p class="que">Mechanism for the State to pay overdue debts of the health system to EPS and providers.</p>
+  <div class="por"><b>Why it matters.</b> Only COP 1.51 trillion of the projected COP 6.7 trillion had been paid.</div>
+  <div class="alias">Also appears as: <b>Punto Final (Final Settlement)</b></div>
+</article><article class="term" id="t-gsk" data-g="Empresas y marcas" data-b="gsk glaxosmithkline farmaceutica multinacional britanica. sus medicamentos para el vih los maneja a traves de viiv healthcare. vende el dolutegravir en colombia (tivicay, triumeq, dovato) y el doctor anticipa que se opondra a la licencia obligatoria. ">
+  <div class="cab"><span class="sig" style="background:#6D28D9">GSK</span>
+    <span class="grp" style="color:#6D28D9">Companies and brands</span></div>
+  <h3>GlaxoSmithKline</h3>
+  <p class="que">British multinational pharmaceutical company. It handles its HIV medicines through ViiV Healthcare.</p>
+  <div class="por"><b>Why it matters.</b> It sells dolutegravir in Colombia (TIVICAY, TRIUMEQ, DOVATO) and the doctor anticipates that it will oppose the compulsory license.</div>
+  
+</article><article class="term" id="t-viiv-healthcare" data-g="Empresas y marcas" data-b="viiv healthcare viiv healthcare compania especializada en medicamentos para el vih, de la que gsk es la duena mayoritaria. es la titular del dolutegravir y firmo una licencia voluntaria para otros paises, no para colombia. ">
+  <div class="cab"><span class="sig" style="background:#6D28D9">ViiV Healthcare</span>
+    <span class="grp" style="color:#6D28D9">Companies and brands</span></div>
+  <h3>ViiV Healthcare</h3>
+  <p class="que">Company specializing in HIV medicines, majority-owned by GSK.</p>
+  <div class="por"><b>Why it matters.</b> It is the holder of dolutegravir and signed a voluntary license for other countries, not for Colombia.</div>
+  
+</article><article class="term" id="t-mpp" data-g="Empresas y marcas" data-b="mpp medicines patent pool organizacion respaldada por las naciones unidas que negocia con las farmaceuticas licencias voluntarias para que se fabriquen genericos baratos en paises de ingresos bajos y medios. gracias a ella hay dolutegravir generico en muchos paises, pero colombia quedo por fuera. ">
+  <div class="cab"><span class="sig" style="background:#6D28D9">MPP</span>
+    <span class="grp" style="color:#6D28D9">Companies and brands</span></div>
+  <h3>Medicines Patent Pool</h3>
+  <p class="que">United Nations-backed organization that negotiates voluntary licenses with pharmaceutical companies so that low-cost generics can be manufactured in low- and middle-income countries.</p>
+  <div class="por"><b>Why it matters.</b> Thanks to it, generic dolutegravir is available in many countries, but Colombia was left out.</div>
+  
+</article><article class="term" id="t-tivicay" data-g="Empresas y marcas" data-b="tivicay tivicay (dolutegravir) nombre comercial del dolutegravir de 50 mg, un medicamento para el vih. es el producto numero uno de gsk en colombia por valor vendido, y su precio regulado casi cuadruplica el que reporta el laboratorio. ">
+  <div class="cab"><span class="sig" style="background:#6D28D9">TIVICAY</span>
+    <span class="grp" style="color:#6D28D9">Companies and brands</span></div>
+  <h3>TIVICAY (dolutegravir)</h3>
+  <p class="que">Brand name of dolutegravir 50 mg, an HIV medicine.</p>
+  <div class="por"><b>Why it matters.</b> It is GSK's number one product in Colombia by value sold, and its regulated price is almost four times the one the laboratory reports.</div>
+  
+</article><article class="term" id="t-triumeq" data-g="Empresas y marcas" data-b="triumeq triumeq (dolutegravir + abacavir + lamivudina) nombre comercial de una pastilla que combina tres medicamentos para el vih, uno de ellos el dolutegravir. su precio regulado quedo muy por encima de lo que reporta el laboratorio y de lo que cuesta en farmacias. ">
+  <div class="cab"><span class="sig" style="background:#6D28D9">TRIUMEQ</span>
+    <span class="grp" style="color:#6D28D9">Companies and brands</span></div>
+  <h3>TRIUMEQ (dolutegravir + abacavir + lamivudine)</h3>
+  <p class="que">Brand name of a pill that combines three HIV medicines, one of them dolutegravir.</p>
+  <div class="por"><b>Why it matters.</b> Its regulated price ended up far above what the laboratory reports and what it costs in pharmacies.</div>
+  
+</article><article class="term" id="t-dovato" data-g="Empresas y marcas" data-b="dovato dovato (dolutegravir + lamivudina) nombre comercial de una pastilla que combina dos medicamentos para el vih. entro sin precio regulado. ">
+  <div class="cab"><span class="sig" style="background:#6D28D9">DOVATO</span>
+    <span class="grp" style="color:#6D28D9">Companies and brands</span></div>
+  <h3>DOVATO (dolutegravir + lamivudina)</h3>
+  <p class="que">Brand name of a pill that combines two HIV medicines.</p>
+  <div class="por"><b>Why it matters.</b> It entered without a regulated price.</div>
+  
+</article><article class="term" id="t-kaletra" data-g="Empresas y marcas" data-b="kaletra kaletra (lopinavir + ritonavir) nombre comercial de un medicamento combinado para el vih. para el se pidio una declaratoria de interes publico y fue negada: es el antecedente que pesa sobre el caso del dolutegravir. ">
+  <div class="cab"><span class="sig" style="background:#6D28D9">KALETRA</span>
+    <span class="grp" style="color:#6D28D9">Companies and brands</span></div>
+  <h3>KALETRA (lopinavir + ritonavir)</h3>
+  <p class="que">Brand name of a combination HIV medicine.</p>
+  <div class="por"><b>Why it matters.</b> A declaration of public interest was requested for it and denied: this is the precedent weighing on the dolutegravir case.</div>
+  
+</article><article class="term" id="t-glivec" data-g="Empresas y marcas" data-b="glivec glivec (imatinib) nombre comercial del imatinib, un medicamento para un tipo de leucemia (leucemia mieloide cronica). fue el primer caso de declaratoria de interes publico en colombia: no hubo licencia obligatoria, pero si se le bajo el precio. ">
+  <div class="cab"><span class="sig" style="background:#6D28D9">GLIVEC</span>
+    <span class="grp" style="color:#6D28D9">Companies and brands</span></div>
+  <h3>GLIVEC (imatinib)</h3>
+  <p class="que">Brand name of imatinib, a medicine for a type of leukemia (chronic myeloid leukemia).</p>
+  <div class="por"><b>Why it matters.</b> It was the first case of a declaration of public interest in Colombia: there was no compulsory license, but the price was lowered.</div>
+  
+</article><article class="term" id="t-isentress" data-g="Empresas y marcas" data-b="isentress isentress (raltegravir) nombre comercial del raltegravir, otro medicamento para el vih. su precio maximo triplica lo que reporta el laboratorio: el problema no es solo de un fabricante. ">
+  <div class="cab"><span class="sig" style="background:#6D28D9">ISENTRESS</span>
+    <span class="grp" style="color:#6D28D9">Companies and brands</span></div>
+  <h3>ISENTESS (raltegravir)</h3>
+  <p class="que">Brand name of raltegravir, another HIV medicine.</p>
+  <div class="por"><b>Why it matters.</b> Its maximum price is triple what the laboratory reports: the problem is not limited to a single manufacturer.</div>
+  
+</article><article class="term" id="t-doxopeg" data-g="Empresas y marcas" data-b="doxopeg doxopeg (doxorrubicina liposomada pegilada) medicamento de quimioterapia inyectable que se usa, entre otros, en el cancer de ovario. es el medicamento que se habria recobrado hasta 8.000% por encima del precio maximo. doxopeg (suspension liposomada pegilada inyectable 20 mg/10 ml)">
+  <div class="cab"><span class="sig" style="background:#6D28D9">DOXOPEG</span>
+    <span class="grp" style="color:#6D28D9">Companies and brands</span></div>
+  <h3>Doxopeg (pegylated liposomal doxorubicin)</h3>
+  <p class="que">Injectable chemotherapy medicine used, among other things, for ovarian cancer.</p>
+  <div class="por"><b>Why it matters.</b> This is the medicine that was reportedly reimbursed at up to 8,000% above the maximum price.</div>
+  <div class="alias">Also appears as: <b>DOXOPEG (pegylated liposomal injectable suspension 20 mg/10 mL)</b></div>
+</article><article class="term" id="t-haemate-p" data-g="Empresas y marcas" data-b="haemate p haemate p 500 ui medicamento que aporta factores de coagulacion (factor viii y factor von willebrand) para tratar la enfermedad de von willebrand. se habria recobrado hasta 6.000% por encima del precio maximo permitido. haemate p 500 ui">
+  <div class="cab"><span class="sig" style="background:#6D28D9">HAEMATE P</span>
+    <span class="grp" style="color:#6D28D9">Companies and brands</span></div>
+  <h3>Haemate P 500 UI</h3>
+  <p class="que">Medicine that provides clotting factors (factor VIII and von Willebrand factor) to treat von Willebrand disease.</p>
+  <div class="por"><b>Why it matters.</b> Up to 6,000% above the maximum permitted price would have been claimed for reimbursement.</div>
+  <div class="alias">Also appears as: <b>HAEMATE P 500 UI</b></div>
+</article><article class="term" id="t-immunate" data-g="Empresas y marcas" data-b="immunate immunate medicamento de la empresa baxter que aporta factores de coagulacion para tratar la enfermedad de von willebrand. se habria recobrado hasta 3.000% por encima del precio maximo permitido. immunate 1000">
+  <div class="cab"><span class="sig" style="background:#6D28D9">IMMUNATE</span>
+    <span class="grp" style="color:#6D28D9">Companies and brands</span></div>
+  <h3>Immunate</h3>
+  <p class="que">Baxter medicine that provides clotting factors to treat von Willebrand disease.</p>
+  <div class="por"><b>Why it matters.</b> Up to 3,000% above the maximum permitted price would have been claimed for reimbursement.</div>
+  <div class="alias">Also appears as: <b>IMMUNATE 1000</b></div>
+</article><article class="term" id="t-biotoscana" data-g="Empresas y marcas" data-b="biotoscana biotoscana empresa farmaceutica que comercializa medicamentos en colombia. es la empresa asociada al haemate p, senalado por superar el precio maximo. ">
+  <div class="cab"><span class="sig" style="background:#6D28D9">Biotoscana</span>
+    <span class="grp" style="color:#6D28D9">Companies and brands</span></div>
+  <h3>Biotoscana</h3>
+  <p class="que">Pharmaceutical company that markets medicines in Colombia.</p>
+  <div class="por"><b>Why it matters.</b> This is the company associated with HAEMATE P, which was flagged for exceeding the maximum price.</div>
+  
+</article><article class="term" id="t-baxter" data-g="Empresas y marcas" data-b="baxter baxter empresa multinacional de productos medicos y medicamentos. es la empresa asociada al immunate, senalado por superar el precio maximo. ">
+  <div class="cab"><span class="sig" style="background:#6D28D9">Baxter</span>
+    <span class="grp" style="color:#6D28D9">Companies and brands</span></div>
+  <h3>Baxter</h3>
+  <p class="que">Multinational company of medical products and medicines.</p>
+  <div class="por"><b>Why it matters.</b> This is the company associated with IMMUNATE, which was flagged for exceeding the maximum price.</div>
+  
+</article><article class="term" id="t-sanofi-aventis" data-g="Empresas y marcas" data-b="sanofi-aventis sanofi-aventis empresa farmaceutica multinacional con presencia en colombia. segun el boletin, comparte equipo tecnico con genzyme y genfar, que cometio el mismo error de reporte. sanofi">
+  <div class="cab"><span class="sig" style="background:#6D28D9">Sanofi-Aventis</span>
+    <span class="grp" style="color:#6D28D9">Companies and brands</span></div>
+  <h3>Sanofi-Aventis</h3>
+  <p class="que">Multinational pharmaceutical company with a presence in Colombia.</p>
+  <div class="por"><b>Why it matters.</b> According to the bulletin, it shares a technical team with Genzyme and Genfar, which made the same reporting error.</div>
+  <div class="alias">Also appears as: <b>Sanofi</b></div>
+</article><article class="term" id="t-genzyme" data-g="Empresas y marcas" data-b="genzyme genzyme laboratorio farmaceutico que hace parte del grupo sanofi. sus reportes de ventas a sismed mostraron cifras que parecen errores. ">
+  <div class="cab"><span class="sig" style="background:#6D28D9">Genzyme</span>
+    <span class="grp" style="color:#6D28D9">Companies and brands</span></div>
+  <h3>Genzyme</h3>
+  <p class="que">Pharmaceutical laboratory that is part of the Sanofi group.</p>
+  <div class="por"><b>Why it matters.</b> Their sales reports to SISMED showed figures that look like errors.</div>
+  
+</article><article class="term" id="t-genfar" data-g="Empresas y marcas" data-b="genfar genfar laboratorio que vende medicamentos genericos y hace parte del grupo sanofi. segun el boletin, comparte el equipo tecnico que cometio el error de reporte. ">
+  <div class="cab"><span class="sig" style="background:#6D28D9">Genfar</span>
+    <span class="grp" style="color:#6D28D9">Companies and brands</span></div>
+  <h3>Genfar</h3>
+  <p class="que">Laboratory that sells generic medicines and is part of the Sanofi group.</p>
+  <div class="por"><b>Why it matters.</b> According to the bulletin, it shares the technical team that made the reporting error.</div>
+  
+</article><article class="term" id="t-vih" data-g="Salud y tratamientos" data-b="vih virus de la inmunodeficiencia humana el virus que ataca las defensas del cuerpo. sin tratamiento puede llevar al sida; con tratamiento diario, la persona puede vivir muchos anos. el tratamiento es de por vida, asi que el precio de los antirretrovirales pesa mucho en el gasto del pais. sida, sida">
+  <div class="cab"><span class="sig" style="background:#0F766E">VIH</span>
+    <span class="grp" style="color:#0F766E">Health and treatments</span></div>
+  <h3>Human Immunodeficiency Virus</h3>
+  <p class="que">The virus that attacks the body's defenses. Without treatment it can lead to AIDS; with daily treatment, a person can live many years.</p>
+  <div class="por"><b>Why it matters.</b> Treatment is lifelong, so the price of antiretrovirals weighs heavily on the country's spending.</div>
+  <div class="alias">Also appears as: <b>AIDS, AIDS</b></div>
+</article><article class="term" id="t-antirretroviral" data-g="Salud y tratamientos" data-b="antirretroviral antirretroviral medicamento que frena el vih dentro del cuerpo. se toma todos los dias y casi siempre combinado con otros. es un gasto permanente del sistema; por eso su precio importa tanto. antirretrovirales">
+  <div class="cab"><span class="sig" style="background:#0F766E">Antiretroviral</span>
+    <span class="grp" style="color:#0F766E">Health and treatments</span></div>
+  <h3>Antiretroviral</h3>
+  <p class="que">A medicine that stops HIV inside the body. It is taken every day and almost always combined with others.</p>
+  <div class="por"><b>Why it matters.</b> It is a permanent expense for the system, which is why its price matters so much.</div>
+  <div class="alias">Also appears as: <b>antiretrovirals</b></div>
+</article><article class="term" id="t-dolutegravir" data-g="Salud y tratamientos" data-b="dolutegravir dolutegravir un antirretroviral moderno para el vih, recomendado por la oms como tratamiento preferido desde 2019. entre 2013 y 2022 sumo mas de 287.000 millones de pesos en ventas en colombia, y esta en tramite de declaratoria de interes publico. dtg">
+  <div class="cab"><span class="sig" style="background:#0F766E">Dolutegravir</span>
+    <span class="grp" style="color:#0F766E">Health and treatments</span></div>
+  <h3>Dolutegravir</h3>
+  <p class="que">A modern antiretroviral for HIV, recommended by the WHO as the preferred treatment since 2019.</p>
+  <div class="por"><b>Why it matters.</b> Between 2013 and 2022 it accumulated more than COP 287 billion in sales in Colombia, and a declaration of public interest is in process.</div>
+  <div class="alias">Also appears as: <b>DTG</b></div>
+</article><article class="term" id="t-mabs" data-g="Salud y tratamientos" data-b="mabs anticuerpos monoclonales medicamentos biologicos fabricados en laboratorio que se pegan a un blanco especifico, por ejemplo una celula del cancer. sus nombres terminan en &quot;-mab&quot;, como pembrolizumab. son de los medicamentos mas caros: cuatro de ellos para el cancer gastaron unos 3,2 billones de pesos en diez anos. mabs, anticuerpos monoclonales">
+  <div class="cab"><span class="sig" style="background:#0F766E">MABs</span>
+    <span class="grp" style="color:#0F766E">Health and treatments</span></div>
+  <h3>Monoclonal antibodies</h3>
+  <p class="que">Biologic medicines manufactured in a laboratory that attach to a specific target, for example a cancer cell. Their names end in &quot;-mab&quot;, such as pembrolizumab.</p>
+  <div class="por"><b>Why it matters.</b> They are among the most expensive medicines: four of them, for cancer, spent about COP 3.2 trillion in ten years.</div>
+  <div class="alias">Also appears as: <b>MABS, monoclonal antibodies</b></div>
+</article><article class="term" id="t-biotecnologicos" data-g="Salud y tratamientos" data-b="biotecnologicos medicamentos biotecnologicos (biologicos) medicamentos producidos con celulas vivas, como las vacunas o los anticuerpos monoclonales. son mas complejos y costosos que una pastilla comun. las reglas para que entren sus versiones mas baratas (biosimilares) han sido muy discutidas en colombia. biologicos">
+  <div class="cab"><span class="sig" style="background:#0F766E">Biotechnology products</span>
+    <span class="grp" style="color:#0F766E">Health and treatments</span></div>
+  <h3>Biotechnological (biologic) medicines</h3>
+  <p class="que">Medicines produced with living cells, such as vaccines or monoclonal antibodies. They are more complex and costly than an ordinary pill.</p>
+  <div class="por"><b>Why it matters.</b> The rules for allowing its cheaper versions (biosimilars) onto the market have been widely debated in Colombia.</div>
+  <div class="alias">Also appears as: <b>biologics</b></div>
+</article><article class="term" id="t-alto-costo" data-g="Salud y tratamientos" data-b="alto costo medicamentos de alto costo tratamientos que cuestan millones de pesos por paciente, como los del cancer, las enfermedades raras o la hemofilia. pocos pacientes pueden consumir una parte enorme del presupuesto si su precio no se regula al entrar. ">
+  <div class="cab"><span class="sig" style="background:#0F766E">High cost</span>
+    <span class="grp" style="color:#0F766E">Health and treatments</span></div>
+  <h3>High-cost medicines</h3>
+  <p class="que">Treatments that cost millions of pesos per patient, such as those for cancer, rare diseases or hemophilia.</p>
+  <div class="por"><b>Why it matters.</b> A few patients can consume a huge share of the budget if their price is not regulated at market entry.</div>
+  
+</article><article class="term" id="t-hepatitis-c" data-g="Salud y tratamientos" data-b="hepatitis c hepatitis c infeccion del higado por un virus. hoy se cura con antivirales nuevos, pero esos medicamentos fueron muy caros. colombia tramito una declaratoria de interes publico para bajar el precio de esos antivirales. ">
+  <div class="cab"><span class="sig" style="background:#0F766E">Hepatitis C</span>
+    <span class="grp" style="color:#0F766E">Health and treatments</span></div>
+  <h3>Hepatitis C</h3>
+  <p class="que">Infection of the liver caused by a virus. Today it is cured with new antivirals, but those medicines were very expensive.</p>
+  <div class="por"><b>Why it matters.</b> Colombia processed a declaration of public interest to lower the price of those antivirals.</div>
+  
+</article><article class="term" id="t-principio-activo" data-g="Salud y tratamientos" data-b="principio activo principio activo la sustancia del medicamento que produce el efecto; el resto de la pastilla son ingredientes de relleno. varias marcas pueden tener el mismo principio activo. comparar por principio activo permite ver cuanto cobra cada marca por lo mismo. principios activos">
+  <div class="cab"><span class="sig" style="background:#0F766E">Active ingredient</span>
+    <span class="grp" style="color:#0F766E">Health and treatments</span></div>
+  <h3>Active ingredient</h3>
+  <p class="que">The substance in the medicine that produces the effect; the rest of the pill is filler ingredients. Several brands can have the same active ingredient.</p>
+  <div class="por"><b>Why it matters.</b> Comparing by active ingredient shows how much each brand charges for the same thing.</div>
+  <div class="alias">Also appears as: <b>active ingredients</b></div>
+</article><article class="term" id="t-b24x" data-g="Salud y tratamientos" data-b="b24x codigo b24x el codigo de la clasificacion internacional de enfermedades para &quot;enfermedad por vih sin otra especificacion&quot;. casi todas las recetas de dolutegravir en mipres usan ese codigo generico, lo que dice poco del paciente. ">
+  <div class="cab"><span class="sig" style="background:#0F766E">B24X</span>
+    <span class="grp" style="color:#0F766E">Health and treatments</span></div>
+  <h3>B24X code</h3>
+  <p class="que">The International Classification of Diseases code for &quot;HIV disease, unspecified&quot;.</p>
+  <div class="por"><b>Why it matters.</b> Almost all dolutegravir prescriptions in MiPres use that generic code, which says little about the patient.</div>
+  
+</article><article class="term" id="t-transacciones-primarias-y-secundarias" data-g="Salud y tratamientos" data-b="transacciones primarias y secundarias ventas primarias, secundarias y finales (sismed) en sismed, las primarias son las ventas del laboratorio; las secundarias, las de los intermediarios (mayoristas y distribuidores) a farmacias e instituciones; y las finales, las que llegan al paciente. si las secundarias superan por mucho a las primarias, los intermediarios estarian vendiendo mas de lo que compraron: senal de datos errados. ">
+  <div class="cab"><span class="sig" style="background:#0F766E">Primary and secondary transactions</span>
+    <span class="grp" style="color:#0F766E">Health and treatments</span></div>
+  <h3>Primary, secondary and final sales (SISMED)</h3>
+  <p class="que">In SISMED, primary sales are those of the laboratory; secondary sales are those of intermediaries (wholesalers and distributors) to pharmacies and institutions; and final sales are those that reach the patient.</p>
+  <div class="por"><b>Why it matters.</b> If secondary sales far exceed primary sales, intermediaries would be selling more than they bought: a sign of erroneous data.</div>
+  
+</article><article class="term" id="t-microdatos" data-g="Salud y tratamientos" data-b="microdatos microdatos los datos registro por registro (cada pago, cada receta), no solo los totales. sin ellos nadie puede verificar a quien y por que paga la adres. ">
+  <div class="cab"><span class="sig" style="background:#0F766E">Microdata</span>
+    <span class="grp" style="color:#0F766E">Health and treatments</span></div>
+  <h3>Microdata</h3>
+  <p class="que">The data record by record (each payment, each prescription), not just the totals.</p>
+  <div class="por"><b>Why it matters.</b> Without them, no one can verify whom ADRES pays and why.</div>
+  
+</article><article class="term" id="t-trazabilidad" data-g="Salud y tratamientos" data-b="trazabilidad trazabilidad poder seguir el recorrido de un medicamento o de una receta paso a paso, desde quien lo receta hasta quien lo recibe. con los presupuestos maximos se perdio el rastro de muchas recetas de dolutegravir. ">
+  <div class="cab"><span class="sig" style="background:#0F766E">Traceability</span>
+    <span class="grp" style="color:#0F766E">Health and treatments</span></div>
+  <h3>Traceability</h3>
+  <p class="que">Being able to follow the path of a medicine or a prescription step by step, from the prescriber to the recipient.</p>
+  <div class="por"><b>Why it matters.</b> With maximum budgets (presupuestos máximos), the trail of many dolutegravir prescriptions was lost.</div>
+  
+</article><article class="term" id="t-veeduria-ciudadana" data-g="Salud y tratamientos" data-b="veeduria ciudadana veeduria ciudadana grupo de ciudadanos organizados que vigila como se usan los recursos publicos y le exige cuentas al estado. una veeduria llevo al ministro de salud las fallas de informacion que documenta el observatorio. ">
+  <div class="cab"><span class="sig" style="background:#0F766E">Citizen oversight</span>
+    <span class="grp" style="color:#0F766E">Health and treatments</span></div>
+  <h3>Citizen oversight</h3>
+  <p class="que">A group of organized citizens that monitors how public resources are used and holds the State accountable.</p>
+  <div class="por"><b>Why it matters.</b> An oversight group (veeduría) brought to the Minister of Health the information failures documented by the Observatory.</div>
+  
+</article><article class="term" id="t-suspension-liposomada-pegilada" data-g="Salud y tratamientos" data-b="suspension liposomada pegilada suspension liposomada pegilada inyectable forma de presentar un medicamento: el principio activo va dentro de particulas diminutas de grasa (liposomas) recubiertas para que duren mas en el cuerpo, y se aplica por inyeccion. describe la presentacion del doxopeg, cuyo precio esta regulado. 20 mg/10 ml indica la cantidad de medicamento por frasco">
+  <div class="cab"><span class="sig" style="background:#0F766E">Pegylated liposomal suspension</span>
+    <span class="grp" style="color:#0F766E">Health and treatments</span></div>
+  <h3>Pegylated liposomal injectable suspension</h3>
+  <p class="que">A way of presenting a medicine: the active ingredient is placed inside tiny fat particles (liposomes) coated so they last longer in the body, and it is administered by injection.</p>
+  <div class="por"><b>Why it matters.</b> Describes the DOXOPEG presentation, whose price is regulated.</div>
+  <div class="alias">Also appears as: <b>20 mg/10 mL indicates the amount of medicine per vial</b></div>
+</article><article class="term" id="t-enfermedad-de-von-willebrand" data-g="Salud y tratamientos" data-b="enfermedad de von willebrand enfermedad de von willebrand trastorno de la coagulacion, generalmente hereditario, en el que la sangre no coagula bien y hay sangrados prolongados. es la enfermedad para la que sirven los dos medicamentos con sobrecobros de hasta 6.000% y 3.000%. ">
+  <div class="cab"><span class="sig" style="background:#0F766E">Von Willebrand disease</span>
+    <span class="grp" style="color:#0F766E">Health and treatments</span></div>
+  <h3>Von Willebrand disease</h3>
+  <p class="que">A coagulation disorder, usually hereditary, in which the blood does not clot properly and bleeding is prolonged.</p>
+  <div class="por"><b>Why it matters.</b> This is the disease the two medicines with overcharges of up to 6,000% and 3,000% are used for.</div>
+  
+</article><article class="term" id="t-factor-de-coagulacion" data-g="Salud y tratamientos" data-b="factor de coagulacion factor de coagulacion proteina de la sangre necesaria para frenar un sangrado; cuando falta, se puede dar como medicamento. immunate es un medicamento de este tipo para tratar el von willebrand. ">
+  <div class="cab"><span class="sig" style="background:#0F766E">Clotting factor</span>
+    <span class="grp" style="color:#0F766E">Health and treatments</span></div>
+  <h3>Clotting factor</h3>
+  <p class="que">Blood protein needed to stop bleeding; when it is lacking, it can be given as a medicine.</p>
+  <div class="por"><b>Why it matters.</b> IMMUNATE is a medicine of this type used to treat von Willebrand disease.</div>
+  
+</article></div>
+  <p id="vacio">No terms match the search.</p>
+</main>
+<footer>Fundación Observamed STAR · Medicines Observatory «Samay Tatiana Andia Rey»</footer>
+<script>
+(function(){
+  var q=document.getElementById('q'), chips=[].slice.call(document.querySelectorAll('.ch')),
+      terms=[].slice.call(document.querySelectorAll('.term')), grupo='';
+  function aplica(){
+    var t=(q.value||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase(), v=0;
+    terms.forEach(function(el){
+      var ok=(!grupo||el.dataset.g===grupo)&&(!t||el.dataset.b.indexOf(t)>-1);
+      el.style.display=ok?'':'none'; if(ok)v++;
+    });
+    document.getElementById('vacio').style.display=v?'none':'block';
+  }
+  q.addEventListener('input',aplica);
+  chips.forEach(function(c){c.addEventListener('click',function(){
+    chips.forEach(function(x){x.classList.remove('on')}); c.classList.add('on');
+    grupo=c.dataset.g; aplica();
+  })});
+})();
+</script>
+<script>
+function menuMovil(){
+  var b=document.querySelector('.ham'), m=document.getElementById('mmenu');
+  if(!b||!m) return;
+  var ab=m.classList.toggle('abierto');
+  b.setAttribute('aria-expanded', ab?'true':'false');
+}
+document.addEventListener('click',function(e){
+  var m=document.getElementById('mmenu'), b=document.querySelector('.ham');
+  if(!m||!b||!m.classList.contains('abierto')) return;
+  if(!m.contains(e.target) && !b.contains(e.target)){
+    m.classList.remove('abierto'); b.setAttribute('aria-expanded','false');
+  }
+});
+</script><!--IDIOMA--><style>.obs-idioma{all:initial;position:fixed;right:20px;bottom:104px;z-index:75;display:flex;background:#fff;border:1px solid #CBD2DC;border-radius:999px;overflow:hidden;box-shadow:0 4px 14px rgba(11,18,32,.16);font:700 12px/1 -apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;letter-spacing:.04em}.obs-idioma>a,.obs-idioma>span{all:unset;display:block;padding:9px 12px;color:#374151;font:inherit;letter-spacing:inherit;cursor:pointer}.obs-idioma>a:hover{background:#EEF3FC}.obs-idioma>[aria-current]{background:#2A52C4;color:#fff;cursor:default}@media(max-width:600px){.obs-idioma{right:12px;bottom:92px}}@media print{.obs-idioma{display:none}}a[hreflang=es]:not(:has(img)):not(.obs-idioma a)::after{content:" (in Spanish)";font-size:.78em;font-weight:400;opacity:.7;white-space:nowrap}</style><div class="obs-idioma" role="navigation" aria-label="Idioma / Language"><a href="../glosario.html" hreflang="es" lang="es" title="Leer esta página en español">ES</a><span aria-current="true" lang="en">EN</span></div><!--/IDIOMA-->
+</body></html>

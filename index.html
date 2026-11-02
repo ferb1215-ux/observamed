@@ -431,6 +431,7 @@ body.menu-on{overflow:hidden}
 @media (prefers-reduced-motion:reduce){.tick .cinta{animation:none}*{transition:none!important}}
 .partner-static{cursor:default}
 </style>
+<!--IDIOMA-HEAD--><link rel="alternate" hreflang="es" href="https://jazzy-malasada-956fbc.netlify.app/"/><link rel="alternate" hreflang="en" href="https://jazzy-malasada-956fbc.netlify.app/en/"/><link rel="alternate" hreflang="x-default" href="https://jazzy-malasada-956fbc.netlify.app/"/><!--/IDIOMA-HEAD-->
 </head>
 <body>
 
@@ -750,15 +751,15 @@ try{if(localStorage.getItem('cdl_rebrand')==='1')aplicarLogos(true,false);}catch
 <button class="rev-abrir" type="button" onclick="document.getElementById('rev-velo').classList.add('abierta')">Revista de la semana</button>
 <div class="rev-velo" id="rev-velo" role="dialog" aria-modal="true" aria-labelledby="rev-titulo">
   <div class="rev-caja">
-    <div class="rev-cab"><small>Nueva edición · revista semanal</small><b id="rev-titulo">Semana del 26 de octubre de 2026</b></div>
-    <div class="rev-cuerpo">Descargue en PDF todo lo nuevo de esta semana:<ul><li>MinSalud abre la puerta a una licencia obligatoria para el dolutegravir</li><li>Las DIP anteriores no lograron licencias obligatorias, y GSK peleará esta</li><li>Alerta: SISMED muestra ventas imposibles de dolutegravir</li><li>El precio máximo regulado del dolutegravir no controla nada</li><li>y 3 notas más</li></ul>
-      <div class="rev-btns"><a href="revista/revista-2026-10-26.pdf" download>Descargar PDF</a><button type="button" id="rev-cerrar">Ahora no</button></div>
+    <div class="rev-cab"><small>Nueva edición · revista semanal</small><b id="rev-titulo">Semana del 2 de noviembre de 2026</b></div>
+    <div class="rev-cuerpo">Descargue en PDF todo lo nuevo de esta semana:<ul><li>Un medicamento para cáncer de ovario se recobró hasta 8.000% por encima del precio máximo</li><li>Dos medicamentos para la enfermedad de von Willebrand, recobrados hasta 6.000% y 3.000% sobre el tope</li><li>¿Error o crecimiento? Los reportes de Genzyme a SISMED delatan fallas en la «malla de validación»</li><li>Tres EPS concentraron el 60,46% de los recobros por medicamentos de alto costo</li><li>y 3 notas más</li></ul>
+      <div class="rev-btns"><a href="revista/revista-2026-11-02.pdf" download>Descargar PDF</a><button type="button" id="rev-cerrar">Ahora no</button></div>
       <p style="margin:12px 0 0;font-size:12px"><a href="revista/index.html" style="color:#2A52C4">Ver todas las ediciones</a></p>
     </div>
   </div>
 </div>
 <script>
-(function(){var k="revista-vista-2026-10-26",v=document.getElementById("rev-velo");
+(function(){var k="revista-vista-2026-11-02",v=document.getElementById("rev-velo");
 function cerrar(){v.classList.remove("abierta");try{localStorage.setItem(k,"1")}catch(e){}}
 document.getElementById("rev-cerrar").onclick=cerrar;v.onclick=function(e){if(e.target===v)cerrar()};
 document.addEventListener("keydown",function(e){if(e.key==="Escape")cerrar()});
@@ -766,5 +767,6 @@ var visto=false;try{visto=localStorage.getItem(k)==="1"}catch(e){}
 if(!visto)setTimeout(function(){v.classList.add("abierta")},1500);})();
 </script>
 <!--/REVISTA-->
+<!--IDIOMA--><style>.obs-idioma{all:initial;position:fixed;right:20px;bottom:104px;z-index:75;display:flex;background:#fff;border:1px solid #CBD2DC;border-radius:999px;overflow:hidden;box-shadow:0 4px 14px rgba(11,18,32,.16);font:700 12px/1 -apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;letter-spacing:.04em}.obs-idioma>a,.obs-idioma>span{all:unset;display:block;padding:9px 12px;color:#374151;font:inherit;letter-spacing:inherit;cursor:pointer}.obs-idioma>a:hover{background:#EEF3FC}.obs-idioma>[aria-current]{background:#2A52C4;color:#fff;cursor:default}@media(max-width:600px){.obs-idioma{right:12px;bottom:92px}}@media print{.obs-idioma{display:none}}</style><div class="obs-idioma" role="navigation" aria-label="Idioma / Language"><span aria-current="true" lang="es">ES</span><a href="en/index.html" hreflang="en" lang="en" title="Read this page in English">EN</a></div><!--/IDIOMA-->
 </body>
 </html>

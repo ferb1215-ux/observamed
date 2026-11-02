@@ -299,61 +299,9 @@ footer{text-align:center;color:var(--text-light);font-size:.8rem;padding:26px;bo
 @media (max-width:760px){.alianzas.aliad{--w:47%;--h:62px;gap:8px;padding:10px 8px}}
 .alianzas.aliad.rebrand .giro{transform:rotateY(180deg)}
 .partner-static{cursor:default}
-</style>
-<style>
-.sen{--sen:#8B1E3F;--sen-2:#B42F5A;--sen-suave:#FBF1F4;--oro:#F4BC3F}
-.sen-hero{background:linear-gradient(150deg,#4A0E22 0%,var(--sen) 55%,var(--sen-2) 120%);color:#fff;padding:44px 20px 36px}
-.sen-hero .in{max-width:1080px;margin:0 auto}
-.sen-hero .eye{display:inline-block;background:var(--oro);color:#4A0E22;font-weight:900;font-size:12px;letter-spacing:.1em;text-transform:uppercase;border-radius:4px;padding:4px 8px}
-.sen-hero h1{font-size:clamp(28px,4.2vw,46px);line-height:1.05;margin:14px 0 12px;font-weight:900;max-width:880px}
-.sen-hero p{font-size:clamp(15px,1.6vw,18px);max-width:820px;opacity:.94;margin:0 0 20px}
-.sen-btns{display:flex;flex-wrap:wrap;gap:10px}
-.sen-btns a{display:inline-block;border-radius:8px;padding:11px 16px;font-weight:800;text-decoration:none;font-size:15px}
-.sen-btns .p{background:var(--oro);color:#4A0E22}.sen-btns .s{background:rgba(255,255,255,.14);color:#fff;border:1px solid rgba(255,255,255,.4)}
-.sen-main{max-width:1080px;margin:0 auto;padding:10px 20px 40px}
-.sen h2{font-size:clamp(22px,2.6vw,30px);color:var(--sen);margin:38px 0 12px;font-weight:900}
-.sen h2 small{display:block;font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:#6B7280;font-weight:700;margin-bottom:2px}
-.sen p{line-height:1.6}.sen-main>p,.sen-card p,.sen-nov p{margin:0 0 12px}
-.sen-nov{border-left:4px solid var(--sen);background:var(--sen-suave);border-radius:0 10px 10px 0;padding:14px 16px;margin:10px 0}
-.sen-nov time{font-size:13px;font-weight:800;color:var(--sen);text-transform:uppercase;letter-spacing:.04em}
-.sen-nov h3{margin:4px 0 6px;font-size:18px}
-.sen-nov a{color:var(--sen);font-weight:700}
-.sen-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px}
-.sen-card{background:#fff;border:1px solid #E4E7EC;border-radius:12px;padding:16px}
-.sen-card h3{margin:8px 0 6px;font-size:17px}
-.sen-sello{display:inline-block;font-size:12px;font-weight:900;text-transform:uppercase;letter-spacing:.08em;border-radius:4px;padding:3px 8px;color:#fff;background:var(--sen)}
-.sen-sello.Confirma{background:#065F46}.sen-sello.Adiciona{background:#B45309}.sen-sello.Además{background:#4B5563}
-.sen-puntos{counter-reset:p;list-style:none;padding:0;margin:0;display:grid;gap:8px}
-.sen-puntos li{counter-increment:p;background:#fff;border:1px solid #E4E7EC;border-radius:10px;padding:12px 14px 12px 52px;position:relative}
-.sen-puntos li::before{content:counter(p,lower-roman);position:absolute;left:12px;top:11px;width:28px;height:28px;border-radius:50%;background:var(--sen);color:#fff;font-weight:900;font-size:13px;display:flex;align-items:center;justify-content:center}
-.sen-puntos li.dest{border-color:var(--oro);background:#FFFBEB}
-.sen-cifras{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px}
-.sen-cifras div{background:#fff;border:1px solid #E4E7EC;border-radius:12px;padding:14px}
-.sen-cifras b{display:block;font-size:26px;color:var(--sen);font-weight:900;line-height:1.1;margin-bottom:4px}
-.sen-aviso{font-size:14px;color:#6B7280;margin:6px 0 10px}
-.sen-tl{list-style:none;padding:0;margin:0;border-left:3px solid var(--sen);margin-left:8px}
-.sen-tl li{position:relative;padding:0 0 14px 22px}
-.sen-tl li::before{content:"";position:absolute;left:-9px;top:5px;width:15px;height:15px;border-radius:50%;background:#fff;border:3px solid var(--sen)}
-.sen-tl li.clave::before{background:var(--oro);border-color:var(--sen)}
-.sen-tl time{display:block;font-weight:800;color:var(--sen);font-size:14px}
-.sen table{width:100%;border-collapse:collapse;background:#fff;border:1px solid #E4E7EC;border-radius:10px;overflow:hidden;font-size:15px}
-.sen th{background:var(--sen);color:#fff;text-align:left;padding:10px 12px}
-.sen td{padding:10px 12px;border-top:1px solid #E4E7EC;vertical-align:top}
-.sen td:first-child{font-weight:700;width:30%}
-.sen-hilo{list-style:none;counter-reset:h;padding:0;margin:0;max-width:680px}
-.sen-hilo li{counter-increment:h;position:relative;background:#fff;border:1px solid #E4E7EC;border-radius:14px;padding:14px 16px 14px 58px;margin:0 0 10px}
-.sen-hilo li::before{content:counter(h) "/" attr(data-n);position:absolute;left:12px;top:14px;font-weight:900;color:var(--sen);font-size:14px}
-.sen-hilo li:not(:last-child)::after{content:"";position:absolute;left:26px;bottom:-11px;width:2px;height:10px;background:var(--sen)}
-.sen-fig{margin:6px 0 4px}.sen-fig a{display:block;border:1px solid #E4E7EC;border-radius:12px;overflow:hidden;background:#fff}.sen-fig img{display:block;width:100%;height:auto}
-.sen-fig figcaption{font-size:13px;color:#6B7280;margin-top:8px}
-.sen-desc{display:inline-block;margin-top:8px;font-weight:700;color:var(--sen)}
-.sen-via{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
-.sen-via div{background:#fff;border:1px solid #E4E7EC;border-radius:12px;padding:14px}
-.sen-via b{display:block;font-size:13px;color:#6B7280;text-transform:uppercase;letter-spacing:.04em}
-.sen-via strong{display:block;font-size:22px;color:var(--sen);margin:2px 0 6px}
-.sen-nota{font-size:13px;color:#6B7280;border-top:1px solid #E4E7EC;padding-top:12px;margin-top:34px}
-@media (max-width:640px){.sen td:first-child{width:auto}.sen table,.sen tbody,.sen tr,.sen td{display:block}.sen td{border-top:0;padding:6px 12px}.sen tr{border-top:1px solid #E4E7EC;padding:6px 0}.sen th{display:none}}
-</style>
+.term:target{outline:3px solid #F4BC3F;outline-offset:3px;box-shadow:0 10px 30px rgba(42,82,196,.22)}
+.term{scroll-margin-top:190px}
+</style><!--IDIOMA-HEAD--><link rel="alternate" hreflang="es" href="https://jazzy-malasada-956fbc.netlify.app/sentencia.html"/><link rel="alternate" hreflang="en" href="https://jazzy-malasada-956fbc.netlify.app/en/sentencia.html"/><link rel="alternate" hreflang="x-default" href="https://jazzy-malasada-956fbc.netlify.app/sentencia.html"/><!--/IDIOMA-HEAD-->
 </head><body>
 <nav><div class="marca-nav">
       <a href="index.html"><img src="img/marca.svg" alt="Observamed STAR"/></a>
@@ -425,7 +373,8 @@ document.addEventListener('click',function(e){
     m.classList.remove('abierto'); b.setAttribute('aria-expanded','false');
   }
 });
-</script><!--REVISTA-->
+</script><!--IDIOMA--><style>.obs-idioma{all:initial;position:fixed;right:20px;bottom:104px;z-index:75;display:flex;background:#fff;border:1px solid #CBD2DC;border-radius:999px;overflow:hidden;box-shadow:0 4px 14px rgba(11,18,32,.16);font:700 12px/1 -apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;letter-spacing:.04em}.obs-idioma>a,.obs-idioma>span{all:unset;display:block;padding:9px 12px;color:#374151;font:inherit;letter-spacing:inherit;cursor:pointer}.obs-idioma>a:hover{background:#EEF3FC}.obs-idioma>[aria-current]{background:#2A52C4;color:#fff;cursor:default}@media(max-width:600px){.obs-idioma{right:12px;bottom:92px}}@media print{.obs-idioma{display:none}}</style><div class="obs-idioma" role="navigation" aria-label="Idioma / Language"><span aria-current="true" lang="es">ES</span><a href="en/sentencia.html" hreflang="en" lang="en" title="Read this page in English">EN</a></div><!--/IDIOMA-->
+<!--REVISTA-->
 <style>
 .rev-velo{position:fixed;inset:0;background:rgba(17,24,39,.55);display:none;align-items:center;justify-content:center;z-index:9999;padding:16px}
 .rev-velo.abierta{display:flex}
@@ -444,15 +393,15 @@ document.addEventListener('click',function(e){
 <button class="rev-abrir" type="button" onclick="document.getElementById('rev-velo').classList.add('abierta')">Revista de la semana</button>
 <div class="rev-velo" id="rev-velo" role="dialog" aria-modal="true" aria-labelledby="rev-titulo">
   <div class="rev-caja">
-    <div class="rev-cab"><small>Nueva edición · revista semanal</small><b id="rev-titulo">Semana del 26 de octubre de 2026</b></div>
-    <div class="rev-cuerpo">Descargue en PDF todo lo nuevo de esta semana:<ul><li>MinSalud abre la puerta a una licencia obligatoria para el dolutegravir</li><li>Las DIP anteriores no lograron licencias obligatorias, y GSK peleará esta</li><li>Alerta: SISMED muestra ventas imposibles de dolutegravir</li><li>El precio máximo regulado del dolutegravir no controla nada</li><li>y 3 notas más</li></ul>
-      <div class="rev-btns"><a href="revista/revista-2026-10-26.pdf" download>Descargar PDF</a><button type="button" id="rev-cerrar">Ahora no</button></div>
+    <div class="rev-cab"><small>Nueva edición · revista semanal</small><b id="rev-titulo">Semana del 2 de noviembre de 2026</b></div>
+    <div class="rev-cuerpo">Descargue en PDF todo lo nuevo de esta semana:<ul><li>Un medicamento para cáncer de ovario se recobró hasta 8.000% por encima del precio máximo</li><li>Dos medicamentos para la enfermedad de von Willebrand, recobrados hasta 6.000% y 3.000% sobre el tope</li><li>¿Error o crecimiento? Los reportes de Genzyme a SISMED delatan fallas en la «malla de validación»</li><li>Tres EPS concentraron el 60,46% de los recobros por medicamentos de alto costo</li><li>y 3 notas más</li></ul>
+      <div class="rev-btns"><a href="revista/revista-2026-11-02.pdf" download>Descargar PDF</a><button type="button" id="rev-cerrar">Ahora no</button></div>
       <p style="margin:12px 0 0;font-size:12px"><a href="revista/index.html" style="color:#2A52C4">Ver todas las ediciones</a></p>
     </div>
   </div>
 </div>
 <script>
-(function(){var k="revista-vista-2026-10-26",v=document.getElementById("rev-velo");
+(function(){var k="revista-vista-2026-11-02",v=document.getElementById("rev-velo");
 function cerrar(){v.classList.remove("abierta");try{localStorage.setItem(k,"1")}catch(e){}}
 document.getElementById("rev-cerrar").onclick=cerrar;v.onclick=function(e){if(e.target===v)cerrar()};
 document.addEventListener("keydown",function(e){if(e.key==="Escape")cerrar()});

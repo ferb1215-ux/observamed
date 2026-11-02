@@ -1,0 +1,772 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Observamed STAR — Medicines Observatory</title>
+<meta name="description" content="BisCoM newsletter, medicine prices and health sector analysis in Colombia. Medicines Observatory of Fundación Observamed STAR, since 1991."/>
+<meta name="robots" content="noindex, nofollow"/>
+<meta name="author" content="Fundación Observamed STAR — Med-Informática"/>
+<meta property="og:title" content="Observamed STAR — Medicines Observatory"/>
+<meta property="og:description" content="What medicines really cost in Colombia, explained with the tables from the BisCoM bulletin."/>
+<meta property="og:type" content="website"/>
+<link rel="icon" href="../img/favicon.svg" type="image/svg+xml"/>
+<link rel="icon" href="../img/favicon.png" sizes="any"/>
+<link rel="apple-touch-icon" href="../img/favicon-180.png"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,600;8..60,700&display=swap" rel="stylesheet"/>
+<style>
+:root{
+  --font:-apple-system,BlinkMacSystemFont,"Segoe UI","Helvetica Neue",Arial,sans-serif;
+  --serif:"Source Serif 4",Georgia,"Times New Roman",serif;
+  --azul:#2A52C4; --azul-rey:#3B7AE0; --turq:#00A3C4; --verde:#2BB695;
+  --tinta:#0B1220; --tinta-2:#141C2E; --texto:#111827; --medio:#374151; --suave:#6B7280;
+  --linea:#E4E7EC; --fondo:#F5F7FA; --oro:#F4BC3F; --wa:#25D366;
+  --t-precios:#2A52C4; --t-sismed:#00869F; --t-diabetes:#7C3AED; --t-soberania:#0F8A6A; --t-venas:#C2410C;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:90px}
+body{font-family:var(--font);background:#fff;color:var(--texto);line-height:1.5;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+button{font-family:inherit;cursor:pointer}
+.w{max-width:1440px;margin:0 auto;padding:0 28px}
+svg{flex-shrink:0}
+
+/* ---------- cabecera grande ---------- */
+.cab{border-bottom:1px solid var(--linea)}
+.cab-top{display:flex;align-items:center;justify-content:space-between;gap:20px;padding-top:22px}
+.busca{position:relative;width:min(420px,100%)}
+.busca input{width:100%;font:inherit;font-size:1rem;padding:12px 14px 12px 44px;border:1.5px solid #CBD2DC;border-radius:8px;outline:none;background:#fff}
+.busca input:focus{border-color:var(--azul-rey);box-shadow:0 0 0 3px rgba(59,122,224,.15)}
+.busca>svg{position:absolute;left:14px;top:50%;transform:translateY(-50%);width:20px;height:20px;fill:none;stroke:#6B7280;stroke-width:2}
+.res{position:absolute;left:0;right:0;top:calc(100% + 6px);background:#fff;border:1px solid var(--linea);border-radius:10px;box-shadow:0 12px 40px rgba(11,18,32,.16);z-index:80;display:none;max-height:380px;overflow:auto}
+.res.on{display:block}
+.res a{display:block;padding:11px 14px;border-bottom:1px solid #F0F2F5;font-weight:700;font-size:.92rem;line-height:1.3}
+.res a small{display:block;font-weight:600;color:var(--suave);font-size:.74rem;margin-top:2px}
+.res a:hover,.res a.sel{background:#F2F6FE;color:var(--azul)}
+.res .nada{padding:14px;color:var(--suave);font-size:.9rem}
+.acc{display:flex;align-items:center;gap:12px}
+.b-line{border:1.5px solid var(--azul);color:var(--azul);font-weight:700;padding:10px 20px;border-radius:7px;white-space:nowrap;font-size:.95rem;background:#fff}
+.b-line:hover{background:var(--azul);color:#fff}
+.b-neg{background:var(--tinta);color:#fff;font-weight:800;padding:11px 22px;border-radius:7px;white-space:nowrap;font-size:.95rem;letter-spacing:.01em}
+.b-neg:hover{background:var(--azul)}
+.logo-c{display:flex;justify-content:center;padding:0}
+.logo-c img{height:70px;width:auto}
+.cab-linea{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:24px;padding:14px 0 14px}
+.cab-linea .redes{justify-self:end}
+@media (max-width:1100px){.cab-linea{grid-template-columns:1fr;justify-items:center;gap:12px}.cab-linea .logo-c{order:-1}.cab-linea .redes{justify-self:center}.cab-linea .cred{justify-content:center}}
+.cab-mid{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:6px 0 16px;flex-wrap:wrap}
+.cred{display:flex;gap:0;flex-wrap:wrap}
+.cred span{font-size:.7rem;font-weight:800;color:#3d4a5c;padding:0 14px;border-left:1px solid #D6DCE5;line-height:1.25}
+.cred span:first-child{border-left:0;padding-left:0}
+.cred small{display:block;font-weight:600;color:var(--suave);font-size:.64rem}
+.redes{display:flex;gap:10px}
+.redes a{width:38px;height:38px;border:1.6px solid var(--tinta);border-radius:50%;display:grid;place-items:center;color:var(--tinta);transition:.2s}
+.redes a svg{width:17px;height:17px;fill:currentColor}
+.redes a:hover{background:var(--tinta);color:#fff}
+.redes a.pronto{opacity:.45}
+.redes.color a{border:0;width:40px;height:40px;color:var(--azul)}
+.redes.color a svg{width:30px;height:30px}
+.redes.color a:hover{background:none;color:var(--turq)}
+/* franja superior: Fundación, Boletín y aliados en casillas iguales (pedido del doctor: "armonizando los tamaños
+   y ojalá dejando espacio para otros"). Un aliado nuevo es una casilla más; la fila se reparte sola. */
+.alianzas{--w:min(196px,calc((100vw - 120px)/7));--h:min(86px,calc(var(--w)*.44));display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap;padding:14px 16px;background:#F4F6FA;border-bottom:4px solid var(--azul)}
+.alianzas a,.alianzas>.partner-static{width:var(--w);height:var(--h);flex-shrink:0;display:flex;align-items:center;justify-content:center;background:#fff;border:1px solid var(--linea);border-radius:8px;padding:6px;perspective:700px;overflow:hidden;transition:.2s}
+.alianzas a:hover{border-color:var(--azul-rey);box-shadow:0 4px 14px rgba(42,82,196,.15)}
+.alianzas a.pro{padding:0;border:0}
+.alianzas a.pro{background:transparent}
+.alianzas a.pro img{max-width:100%;max-height:100%;object-fit:contain;border-radius:6px;box-shadow:0 2px 10px rgba(11,18,32,.15)}
+.alianzas img{max-width:100%;max-height:calc(var(--h) - 12px);width:auto;height:auto;display:block;object-fit:contain}
+.alianzas .giro{display:block;position:relative;width:100%;height:100%;transform-style:preserve-3d;transition:transform .65s cubic-bezier(.16,1,.3,1)}
+.alianzas .cara{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;backface-visibility:hidden;-webkit-backface-visibility:hidden}
+.alianzas .cara.b{transform:rotateY(180deg)}
+.alianzas .sep,.alianzas .et{display:none}
+
+@media (max-width:1060px){.alianzas{--w:150px;--h:66px}}
+@media (max-width:760px){.alianzas{--w:47%;--h:62px;gap:8px;padding:10px 8px}}
+.rebrand .giro{transform:rotateY(180deg)}
+/* menú principal */
+.menu{border-top:1px solid var(--linea)}
+.menu .w{display:flex;align-items:center;justify-content:center;gap:4px;flex-wrap:wrap;padding-top:10px;padding-bottom:10px;border-bottom:2px solid var(--tinta)}
+.menu a{font-weight:800;font-size:.95rem;padding:9px 11px;border-radius:6px;color:var(--tinta)}
+.menu a:hover{color:var(--azul)}
+.menu .oro{background:var(--oro);color:var(--tinta);padding:9px 18px;margin-left:8px}
+.menu .w{flex-wrap:nowrap}
+.menu a{white-space:nowrap}
+@media (max-width:1400px){.menu .m3{display:none}}
+@media (max-width:1240px){.menu .m2{display:none}}
+.menu .oro:hover{filter:brightness(1.06);color:var(--tinta)}
+.flip-b{display:inline-flex;align-items:center;gap:6px;border:1.5px solid var(--linea);background:#fff;color:var(--medio);font-size:.8rem;font-weight:800;padding:8px 13px;border-radius:99px;margin-left:6px}
+.flip-b svg{width:14px;height:14px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.flip-b.on{background:linear-gradient(135deg,var(--azul),var(--turq));color:#fff;border-color:transparent}
+
+/* ---------- barra compacta al bajar ---------- */
+.fija{position:fixed;top:0;left:0;right:0;background:#fff;box-shadow:0 2px 18px rgba(11,18,32,.1);z-index:60;transform:translateY(-110%);transition:transform .3s}
+.fija.on{transform:none}
+.fija .w{display:flex;align-items:center;gap:22px;height:76px}
+.hamb{display:inline-flex;align-items:center;gap:9px;background:none;border:0;font-weight:700;font-size:1.05rem;color:var(--tinta);padding:6px}
+.hamb i{display:grid;gap:4px}
+.hamb i b{display:block;width:18px;height:2.2px;background:currentColor;border-radius:2px}
+.fija .lg img{height:46px;width:auto}
+.fija .busca{flex:1;max-width:480px;margin:0 auto}
+.fija .busca input{padding:10px 14px 10px 42px}
+
+/* ---------- ticker ---------- */
+.tick{display:flex;background:var(--tinta);margin:34px 0 0;overflow:hidden}
+.tick .tl{background:var(--azul);color:#fff;font-weight:900;font-size:.88rem;letter-spacing:.04em;padding:16px 22px;white-space:nowrap;position:relative;z-index:2}
+.tick .tl::after{content:"";position:absolute;right:-9px;top:50%;transform:translateY(-50%);border:9px solid transparent;border-left-color:var(--azul);border-right:0}
+.tick .pista{overflow:hidden;flex:1;display:flex;align-items:center}
+.tick .cinta{display:flex;gap:46px;white-space:nowrap;padding-left:30px;animation:corre 70s linear infinite}
+.tick:hover .cinta{animation-play-state:paused}
+.tick .cinta a{color:#fff;font-size:1rem}
+.tick .cinta a:hover{color:var(--oro)}
+@keyframes corre{to{transform:translateX(-50%)}}
+
+/* ---------- portadas de las tarjetas ---------- */
+.post-image{position:relative}
+.post-image>a{display:block}
+.ph{position:relative;aspect-ratio:16/9;overflow:hidden;background:#E8EDF5}
+.ph.img{aspect-ratio:16/9;background:#F8FAFC;border:1px solid var(--linea);display:grid;place-items:center}
+.dest .ph.img{aspect-ratio:16/9;background:#fff;border-color:rgba(255,255,255,.16)}
+.mini .ph.img{aspect-ratio:16/9}
+.ph.img img:first-child{width:100%;height:100%;object-fit:contain;object-position:center;transition:transform .5s}
+.ph .iso{position:absolute;top:10px;right:10px;width:26px;height:26px;background:#fff;border-radius:50%;display:grid;place-items:center;box-shadow:0 2px 8px rgba(0,0,0,.18)}
+.ph .iso img{width:17px;height:17px}
+.cover-expand{position:static;display:flex;width:max-content;max-width:100%;margin:6px 0 0 auto;align-items:center;gap:5px;border:1px solid rgba(11,18,32,.16);border-radius:4px;background:rgba(255,255,255,.96);color:var(--tinta);font-size:.72rem;font-weight:900;text-transform:uppercase;letter-spacing:0;padding:7px 9px;box-shadow:0 2px 8px rgba(0,0,0,.16)}
+.cover-expand svg{width:15px;height:15px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.cover-expand:hover,.cover-expand:focus-visible{color:var(--azul);border-color:var(--azul)}
+.cov{display:flex;flex-direction:column;justify-content:flex-end;padding:16px 18px;color:#fff;
+  background-image:radial-gradient(circle at 85% 15%,rgba(255,255,255,.18),transparent 45%),
+   linear-gradient(rgba(255,255,255,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.06) 1px,transparent 1px),
+   linear-gradient(135deg,var(--c1),var(--c2));background-size:auto,22px 22px,22px 22px,auto}
+.cov .ct{font-size:.66rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;opacity:.85}
+.cov b{white-space:nowrap;font-size:clamp(1.5rem,2.2vw,2.1rem);font-weight:900;letter-spacing:-.03em;line-height:1.02;margin:4px 0 4px}
+.cov small{font-size:.78rem;font-weight:700;opacity:.9}
+.cov.xl b{font-size:clamp(2.2rem,3.6vw,3.4rem)}
+.t-precios.cov{--c1:#1E3A8A;--c2:#3B7AE0}
+.t-sismed.cov{--c1:#075E6E;--c2:#00A3C4}
+.t-diabetes.cov{--c1:#4C1D95;--c2:#8B5CF6}
+.t-soberania.cov{--c1:#065F46;--c2:#2BB695}
+.t-venas.cov{--c1:#7C2D12;--c2:#EA580C}
+.post-image>a:hover .ph.img img:first-child{transform:none}
+
+/* ---------- bloque principal ---------- */
+.prin{display:grid;grid-template-columns:2fr 1.75fr 1fr 1fr;gap:28px;margin-top:44px}
+.h-sec{font-size:2.5rem;font-weight:900;letter-spacing:-.03em;line-height:1}
+.h-sub{font-size:.88rem;font-weight:800;letter-spacing:.03em;text-transform:uppercase;margin:6px 0 22px}
+.h-mini{font-size:1.6rem;font-weight:900;letter-spacing:-.02em;margin-bottom:16px}
+.grid2{display:grid;grid-template-columns:minmax(0,1fr);gap:30px 28px}
+.card{display:block}
+.card-copy{display:block}
+.edition-label{font-size:.75rem;font-weight:800;color:var(--medio)}
+.prin>div,.grid2>article,.dests>article{min-width:0}
+.prin h2,.prin h3{overflow-wrap:anywhere}
+.card .meta{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:14px 0 6px}
+.tag{font-size:.78rem;font-weight:800;text-transform:uppercase;letter-spacing:.04em}
+.ol.t-precios,.tag.t-precios{color:var(--t-precios)}.ol.t-sismed,.tag.t-sismed{color:var(--t-sismed)}.ol.t-diabetes,.tag.t-diabetes{color:var(--t-diabetes)}.ol.t-soberania,.tag.t-soberania{color:var(--t-soberania)}.ol.t-venas,.tag.t-venas{color:var(--t-venas)}
+.card time{font-size:.8rem;font-weight:700;color:var(--medio)}
+.card h3{font-family:var(--serif);font-size:1.3rem;line-height:1.28;font-weight:700}
+.card:hover h3{color:var(--azul)}
+.dests{display:grid;gap:28px;align-content:start}
+.dest{display:block;background:var(--tinta);color:#fff;box-shadow:0 10px 34px rgba(11,18,32,.22)}
+.dest-tx{display:block;padding:24px 30px 28px}
+.lbl{display:inline-block;background:var(--azul);color:#fff;font-weight:900;font-size:.95rem;letter-spacing:.02em;padding:6px 12px;text-transform:uppercase}
+.dest h2{font-size:1.9rem;line-height:1.16;font-weight:900;letter-spacing:-.02em;margin:16px 0 10px}
+.dest:hover h2{color:#BFD3FF}
+.dest p{color:#C9D2E3;font-size:.98rem;line-height:1.5}
+.by{display:flex;align-items:center;gap:10px;margin-top:18px;font-weight:700;font-size:.86rem}
+.by img{width:34px;height:34px;border-radius:50%;object-fit:cover;object-position:top;background:#fff}
+.by i{font-style:normal;opacity:.6}
+.by time{border-bottom:2px solid var(--azul-rey)}
+.mini{display:block;margin-bottom:26px}
+.mini h3{font-family:var(--serif);font-size:1.18rem;line-height:1.27;font-weight:700;margin-top:12px}
+.mini:hover h3{color:var(--azul)}
+.esp{position:relative;display:block;background:var(--tinta);color:#fff;text-align:center;padding:66px 22px 28px;margin-top:22px;
+  background-image:linear-gradient(160deg,rgba(31,63,158,.88),rgba(11,18,32,.97)),url(../img/infog-conpes.jpg);background-size:cover;background-position:center}
+.esp .lbl{position:absolute;top:-22px;left:50%;transform:translateX(-50%);font-size:1.15rem;padding:12px 24px;white-space:nowrap}
+.esp .foto{width:118px;height:118px;border-radius:50%;margin:0 auto 14px;border:4px solid #fff;object-fit:cover;object-position:top;background:#fff}
+.esp h4{font-size:1.25rem;font-weight:900;line-height:1.15}
+.esp small{display:block;font-weight:700;opacity:.85;margin:6px 0 12px}
+.esp p{font-weight:800;font-size:1.02rem;line-height:1.3}
+.esp:hover p{color:#BFD3FF}
+.op{display:block;padding:18px 0 4px}
+.op .ol{display:block;font-weight:800;font-size:.76rem;text-transform:uppercase;letter-spacing:.05em;margin-bottom:6px}
+.op b{display:block;font-size:1.08rem;line-height:1.3;font-weight:800}
+.op:hover b{color:var(--azul)}
+.op .by{margin-top:10px;font-size:.84rem;color:var(--medio)}
+.b-azul{display:block;text-align:center;background:var(--azul);color:#fff;font-weight:900;font-size:1rem;letter-spacing:.03em;text-transform:uppercase;padding:15px;margin-top:22px}
+.b-azul:hover{background:var(--tinta)}
+
+
+.image-peek{position:fixed;z-index:90;pointer-events:none;padding:10px;border:1px solid #CCD6E2;border-radius:6px;background:#fff;box-shadow:0 12px 40px rgba(11,18,32,.24);opacity:0;transition:opacity .12s}
+.image-peek.on{opacity:1}
+.image-peek img{display:block;width:100%;height:100%;object-fit:contain}
+.image-modal{width:calc(100% - 32px);max-width:1800px;height:calc(100dvh - 32px);max-height:none;margin:auto;padding:0;border:0;border-radius:8px;background:#fff;color:var(--tinta)}
+.image-modal::backdrop{background:rgba(11,18,32,.88)}
+.image-toolbar{height:56px;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:10px 14px;border-bottom:1px solid var(--linea)}
+.image-toolbar h2{min-width:0;font-size:1rem;line-height:1.2;font-weight:900;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin:0}
+.image-toolbar button{width:36px;height:36px;flex-shrink:0;border:1px solid var(--linea);background:#fff;color:var(--tinta);display:grid;place-items:center;border-radius:4px;font-size:1.5rem;cursor:pointer}
+.image-toolbar button:hover{color:var(--azul);border-color:var(--azul)}
+.image-toolbar svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.image-stage{height:calc(100% - 56px);overflow:auto;display:grid;place-items:start center;background:#F8FAFC;padding:18px}
+.image-stage img{max-width:100%;height:auto;display:block}
+@media(prefers-reduced-motion:reduce){.image-peek,.catalogue-row{transition:none}}
+
+
+
+/* ---------- podcast ---------- */
+.pod{padding:70px 0}
+.pod-box{display:grid;grid-template-columns:2.4fr 1fr;background:#262626;min-height:340px}
+.player{background:#1D1D1D;margin:24px;border-radius:12px;padding:22px;display:grid;grid-template-columns:230px 1fr;gap:26px;align-items:center;color:#fff}
+.portada-pod{aspect-ratio:1;border-radius:8px;background:linear-gradient(140deg,var(--azul),var(--turq));display:flex;flex-direction:column;justify-content:space-between;padding:18px;position:relative;overflow:hidden}
+.portada-pod::after{content:"";position:absolute;right:-40px;bottom:-40px;width:170px;height:170px;border-radius:50%;border:26px solid rgba(255,255,255,.12)}
+.portada-pod img{width:46px;height:46px;background:#fff;border-radius:50%;padding:7px}
+.portada-pod b{font-size:1.45rem;font-weight:900;line-height:1.05;letter-spacing:-.02em}
+.portada-pod small{display:block;margin-bottom:6px;font-size:.7rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;opacity:.9}
+.p-tit{font-size:1.7rem;font-weight:800;line-height:1.2;letter-spacing:-.02em}
+.p-sub{color:#A7A7A7;margin:8px 0 18px}
+.player audio{width:100%;height:44px;border-radius:30px}
+.eps{display:grid;gap:6px;margin-top:16px}
+.ep{display:flex;align-items:center;gap:12px;background:none;border:0;color:#D4D4D4;text-align:left;padding:8px 10px;border-radius:8px;font-size:.94rem;font-weight:700}
+.ep i{font-style:normal;font-weight:900;color:#7d7d7d;width:22px}
+.ep small{display:block;color:#8a8a8a;font-weight:600;font-size:.76rem}
+.ep:hover{background:#2A2A2A}
+.ep.on{background:#2D3B5F;color:#fff}
+.ep.on i{color:var(--oro)}
+.pod-lado{background:var(--azul);color:#fff;display:flex;flex-direction:column;justify-content:center;align-items:flex-end;text-align:right;padding:34px 46px}
+.pod-lado h2{font-size:2.6rem;font-weight:900;line-height:1.02;letter-spacing:-.02em}
+.pod-lado p{margin-top:12px;font-weight:600;opacity:.9;max-width:260px}
+
+/* ---------- redes y videos ---------- */
+.red-h{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:20px;padding:40px 0 34px;border-top:1px solid var(--linea)}
+.red-h .k{font-weight:800;font-size:.95rem;letter-spacing:.03em;text-transform:uppercase}
+.red-h h2{font-family:var(--serif);font-size:2rem;font-weight:700;text-align:center}
+.red-h .redes{justify-self:end}
+.reels{display:grid;grid-template-columns:repeat(4,1fr);gap:34px}
+.reel{position:relative;aspect-ratio:9/15;overflow:hidden;background:var(--tinta);color:#fff}
+.reel>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transform:scale(1.36)}
+.reel::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.88) 10%,rgba(0,0,0,.15) 55%,rgba(0,0,0,.25));pointer-events:none}
+.reel .iso{position:absolute;top:22px;left:22px;width:46px;height:46px;border-radius:50%;background:#fff;display:grid;place-items:center;z-index:2}
+.reel .iso img{width:30px;height:30px}
+.reel .play{position:absolute;left:50%;top:45%;transform:translate(-50%,-50%);width:64px;height:64px;border-radius:50%;border:0;background:var(--azul);z-index:3;box-shadow:0 6px 24px rgba(0,0,0,.4)}
+.reel .play::after{content:"";position:absolute;left:26px;top:20px;border:12px solid transparent;border-left:18px solid #fff;border-right:0}
+.reel .play:hover{background:var(--turq)}
+.reel .rt{position:absolute;left:0;right:0;bottom:0;padding:24px 22px;z-index:2}
+.reel .rt span{display:inline-block;background:var(--azul);font-size:.68rem;font-weight:900;letter-spacing:.1em;text-transform:uppercase;padding:3px 10px;margin-bottom:10px}
+.reel .rt b{display:block;font-size:1.55rem;font-weight:900;line-height:1.1;letter-spacing:-.01em}
+.reel .rt small{display:block;font-size:1rem;margin-top:8px;opacity:.92;line-height:1.3}
+.reel iframe{position:absolute;inset:0;width:100%;height:100%;border:0;z-index:5}
+.reel.pron{background:linear-gradient(160deg,var(--azul),var(--tinta))}
+.pronto-n{text-align:center;color:var(--suave);font-size:.9rem;margin-top:22px}
+
+/* ---------- el doctor y las instituciones ---------- */
+.mepa{background:#1F3F9E;color:#fff;padding:52px 0 64px;margin-top:70px}
+.mepa-h{display:flex;justify-content:space-between;align-items:flex-end;gap:20px;flex-wrap:wrap;border-bottom:2px solid rgba(255,255,255,.85);padding-bottom:20px;margin-bottom:34px}
+.mepa-h h2{font-size:2.6rem;font-weight:900;letter-spacing:-.02em;line-height:1}
+.mepa-h p{font-weight:800;font-size:1.25rem;margin-top:6px}
+.mepa-h a{font-weight:900;letter-spacing:.03em;text-transform:uppercase;display:inline-flex;gap:8px}
+.mepa-h a:hover{color:var(--oro)}
+.mepa-g{display:grid;grid-template-columns:1fr 3fr;gap:34px}
+.doc{background:#fff;color:var(--texto);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:40px 26px}
+.doc img{width:190px;height:190px;border-radius:50%;object-fit:cover;object-position:top;box-shadow:0 10px 30px rgba(0,0,0,.18)}
+.doc h3{font-family:var(--serif);font-size:1.6rem;font-weight:700;margin-top:24px;line-height:1.2}
+.doc .rol{text-transform:uppercase;letter-spacing:.05em;font-size:.86rem;font-weight:600;margin-top:6px;color:var(--medio)}
+.doc p{font-size:.95rem;color:var(--medio);margin-top:14px;line-height:1.5}
+.doc .b-cir{margin-top:22px;border:2.5px solid var(--azul);color:var(--azul);border-radius:99px;padding:11px 26px;font-weight:800;text-transform:uppercase;letter-spacing:.03em;font-size:.95rem}
+.doc .b-cir:hover{background:var(--azul);color:#fff}
+.insts{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
+.inst{display:flex;flex-direction:column;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.18);padding:24px 26px;transition:.25s}
+.inst:not(.partner-static):hover{background:rgba(255,255,255,.14);transform:translateY(-2px)}
+.inst .il{background:#fff;border-radius:8px;height:86px;display:grid;place-items:center;padding:10px;perspective:700px;margin-bottom:16px}
+.inst .giro{display:block;position:relative;height:56px;width:100%;transform-style:preserve-3d;transition:transform .65s cubic-bezier(.16,1,.3,1)}
+.inst .cara{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;backface-visibility:hidden;-webkit-backface-visibility:hidden}
+.inst .cara.b{transform:rotateY(180deg)}
+.inst .cara img{max-height:56px;max-width:100%;width:auto}
+.inst .il.cuad .giro{height:66px}.inst .il.cuad .cara img{max-height:66px}
+.inst b{font-family:var(--serif);font-size:1.3rem;font-weight:700;line-height:1.2}
+.inst p{font-size:.94rem;line-height:1.5;margin-top:8px;color:#E3EAFB}
+.inst .pq span{display:block;font-size:.7rem;font-weight:900;letter-spacing:.12em;text-transform:uppercase;color:var(--oro);margin-bottom:2px}
+.inst .ir{margin-top:auto;padding-top:14px;font-weight:800;font-size:.9rem;color:#fff}
+.inst:not(.partner-static):hover .ir{color:var(--oro)}
+.otras{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:16px;margin-top:28px}
+.otras .et{grid-column:1/-1;font-size:.7rem;font-weight:900;letter-spacing:.12em;text-transform:uppercase;opacity:.85}
+.otras a{display:flex;flex-direction:column;gap:8px;color:#fff;text-decoration:none;perspective:600px}
+.otras .lg{background:#fff;border-radius:8px;height:86px;display:grid;place-items:center;padding:10px}
+.otras .giro{display:block;position:relative;height:60px;width:100%;transform-style:preserve-3d;transition:transform .65s}
+.otras .cara{display:flex;align-items:center;justify-content:center;height:60px;backface-visibility:hidden;-webkit-backface-visibility:hidden}
+.otras .cara.b{position:absolute;inset:0;transform:rotateY(180deg)}
+.otras .cara img{max-height:60px;max-width:100%;width:auto}
+.otras .nm{font-weight:800;font-size:.9rem;line-height:1.25}
+.inst .il.doble{display:flex;align-items:center;justify-content:center;gap:18px}
+.inst .il.doble .giro{width:80px;flex-shrink:0}
+.inst .il.doble .sad{max-height:62px;max-width:55%;width:auto;border-radius:4px}
+
+/* ---------- herramientas ---------- */
+.herr{padding:76px 0 30px}
+.herr-h{max-width:780px;margin-bottom:34px}
+.herr-h .k{font-size:.8rem;font-weight:900;letter-spacing:.14em;text-transform:uppercase;color:var(--azul)}
+.herr-h h2{font-size:2.5rem;font-weight:900;letter-spacing:-.03em;line-height:1.05;margin:8px 0 12px}
+.herr-h p{font-size:1.1rem;color:var(--medio)}
+.tres{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border:1.5px solid var(--tinta)}
+.precio{padding:30px 30px 34px;position:relative}
+.precio+.precio{border-left:1.5px solid var(--tinta)}
+.precio .n{font-size:3.4rem;font-weight:900;line-height:1;letter-spacing:-.04em;color:#D7DEEA}
+.precio .q{font-size:.76rem;font-weight:900;letter-spacing:.12em;text-transform:uppercase;margin-top:14px}
+.precio h3{font-size:1.55rem;font-weight:900;letter-spacing:-.02em;line-height:1.15;margin:6px 0 10px}
+.precio p{color:var(--medio);font-size:.98rem}
+.precio .sig{display:inline-block;margin-top:14px;font-size:.78rem;font-weight:800;padding:4px 10px;border-radius:99px;background:#EEF3FE;color:var(--azul)}
+.precio.p1 .q{color:var(--t-sismed)}.precio.p2 .q{color:var(--t-venas)}.precio.p3 .q{color:var(--t-soberania)}
+.precio.p3{background:#F2FBF7}
+.precio.p3 .n{color:#BFE6D6}
+.flecha{display:flex;align-items:center;gap:14px;margin:18px 0 0;font-size:.95rem;color:var(--medio);font-weight:600}
+.flecha b{color:var(--tinta)}
+.otras-h{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;margin-top:40px}
+.hz{display:flex;flex-direction:column;border:1px solid var(--linea);padding:22px;border-radius:4px;transition:.25s}
+.hz:hover{border-color:var(--azul);box-shadow:0 10px 28px rgba(42,82,196,.12);transform:translateY(-2px)}
+.hz .ic{width:42px;height:42px;border-radius:10px;background:#EEF3FE;display:grid;place-items:center;color:var(--azul)}
+.hz .ic svg{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
+.hz b{font-size:1.12rem;font-weight:900;margin-top:14px}
+.hz p{font-size:.92rem;color:var(--medio);margin-top:6px;flex:1}
+.hz span{margin-top:14px;font-weight:800;font-size:.88rem;color:var(--azul)}
+.wa-cta{display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;background:var(--tinta);color:#fff;padding:30px 34px;margin-top:44px}
+.wa-cta h3{font-size:1.6rem;font-weight:900;letter-spacing:-.02em}
+.wa-cta p{color:#B9C3D6;margin-top:4px}
+.b-wa{display:inline-flex;align-items:center;gap:10px;background:var(--wa);color:#073B1E;font-weight:900;font-size:1.05rem;padding:15px 26px;border-radius:8px}
+.b-wa svg{width:24px;height:24px;fill:currentColor}
+.b-wa:hover{filter:brightness(1.07)}
+
+/* ---------- pie ---------- */
+footer{background:var(--tinta);color:#C9D2E3;margin-top:70px;padding:52px 0 34px;font-size:.92rem}
+.pie{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:34px}
+.pie img{height:56px;width:auto;margin-bottom:14px}
+.pie h4{color:#fff;font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;margin-bottom:12px}
+.pie a{display:block;padding:3px 0}
+.pie a:hover{color:#fff}
+.legal{border-top:1px solid #243048;margin-top:34px;padding-top:22px;font-size:.8rem;color:#8C98AE;line-height:1.6}
+.dedic{margin-top:12px;color:#C9D2E3;font-weight:700}
+
+/* ---------- WhatsApp flotante ---------- */
+.wa{position:fixed;right:24px;bottom:24px;width:66px;height:66px;border-radius:12px;background:var(--wa);display:grid;place-items:center;z-index:70;box-shadow:0 8px 26px rgba(0,0,0,.25);transition:.2s}
+.wa svg{width:38px;height:38px;fill:#fff}
+.wa:hover{transform:scale(1.06)}
+
+/* ---------- menú lateral (hamburguesa) ---------- */
+.velo{position:fixed;inset:0;background:rgba(11,18,32,.45);z-index:90;opacity:0;pointer-events:none;transition:.3s}
+.cajon{position:fixed;top:0;left:0;bottom:0;width:min(420px,88vw);background:#fff;z-index:95;transform:translateX(-102%);transition:transform .35s cubic-bezier(.16,1,.3,1);overflow-y:auto;padding:24px 34px 40px}
+body.menu-on .velo{opacity:1;pointer-events:auto}
+body.menu-on .cajon{transform:none}
+body.menu-on{overflow:hidden}
+.cajon .x{position:absolute;top:14px;right:16px;width:40px;height:40px;border:0;background:none;font-size:2rem;line-height:1;color:var(--medio)}
+.cajon .lema{text-align:center;font-size:1.02rem;margin:30px 0 10px}
+.cajon .lema b{font-weight:900}
+.cj{display:flex;align-items:center;justify-content:center;gap:10px;width:100%;border:1.5px solid #D6DCE5;border-radius:10px;padding:14px;font-weight:700;font-size:1rem;letter-spacing:.06em;text-transform:uppercase;margin-top:12px;background:#fff;color:var(--tinta)}
+.cj:hover{border-color:var(--azul);color:var(--azul)}
+.cj.oro{background:var(--oro);border-color:var(--oro);font-weight:900}
+.cj.azul{background:var(--azul);border-color:var(--azul);color:#fff;font-weight:900;letter-spacing:.02em;text-transform:none;font-size:1.15rem}
+.cj.neg{background:var(--tinta);border-color:var(--tinta);color:#fff;font-weight:900;letter-spacing:.02em;text-transform:none;font-size:1.15rem}
+.cj.azul:hover,.cj.neg:hover,.cj.oro:hover{color:inherit;filter:brightness(1.1)}
+.cj.azul:hover,.cj.neg:hover{color:#fff}
+.cj.sin{border:0;text-transform:none;letter-spacing:0;font-size:1.08rem}
+.cj svg{width:22px;height:22px;fill:currentColor}
+.cajon hr{border:0;border-top:1px solid var(--linea);margin:22px 0 10px}
+.cajon .busca{width:100%;margin-top:14px}
+.redes.menu{justify-content:center;margin-top:18px;gap:14px}
+.redes.menu a{width:50px;height:50px}
+
+/* ---------- responsive ---------- */
+@media (max-width:1280px){
+  .prin{grid-template-columns:1.6fr 1.4fr 1fr}
+  .col-op{grid-column:1/-1;display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:22px;align-items:start}
+  .col-op .h-mini{grid-column:1/-1;margin:0}
+  .col-op .esp{margin-top:22px}
+  .col-op .b-azul{grid-column:1/-1}
+  .grid2{grid-template-columns:1fr}
+  .menu a{font-size:.9rem;padding:8px 10px}
+}
+@media (max-width:1060px){
+  .prin{grid-template-columns:1fr 1fr}
+  .col-dest{grid-column:1/-1;order:-1}
+  .dests{grid-template-columns:1fr 1fr}
+  .grid2{grid-template-columns:1fr 1fr}
+  .col-top{grid-column:1/-1}
+  .col-op{grid-template-columns:1fr 1fr}
+  .reels{grid-template-columns:repeat(2,1fr)}
+  .pod-box{grid-template-columns:1fr}
+  .pod-lado{order:-1;align-items:flex-start;text-align:left;padding:26px 30px}
+  .mepa-g{grid-template-columns:1fr}
+  .otras-h{grid-template-columns:repeat(2,1fr)}
+  .pie{grid-template-columns:1fr 1fr}
+  .menu .w{display:none}
+  .red-h{grid-template-columns:1fr;text-align:center;justify-items:center}
+  .red-h .redes{justify-self:center}
+}
+@media (max-width:760px){
+  .w{padding:0 16px}
+  .cab-top .busca,.cab-top .acc .b-line{display:none}
+  .cab-top{justify-content:space-between;padding-top:14px}
+  .logo-c img{height:62px}
+  .cab-mid{justify-content:center}
+  .cred{justify-content:center}
+  .alianzas{gap:18px;padding:10px 16px}
+  .fija .busca,.fija .b-line{display:none}
+  .fija .w{gap:12px;height:64px;justify-content:space-between}
+  .fija .lg img{height:38px}
+  .prin,.dests,.grid2,.col-op,.insts,.otras-h,.tres,.pie{grid-template-columns:1fr}
+  .reels{grid-template-columns:1fr 1fr;gap:12px}
+  .reel .rt{padding:14px}.reel .rt b{font-size:1.05rem}.reel .rt small{font-size:.8rem}
+  .reel .iso{top:12px;left:12px;width:34px;height:34px}.reel .iso img{width:22px;height:22px}
+  .reel .play{width:52px;height:52px}.reel .play::after{left:21px;top:16px;border-width:10px;border-left-width:15px}
+  .precio+.precio{border-left:0;border-top:1.5px solid var(--tinta)}
+  .h-sec{font-size:2rem}.dest h2{font-size:1.5rem}.dest-tx{padding:20px}
+  .player{grid-template-columns:1fr;margin:14px;padding:16px}
+  .portada-pod{max-width:200px}
+  .pod-lado h2,.mepa-h h2,.herr-h h2{font-size:1.9rem}
+  .red-h h2{font-size:1.5rem}
+  .tick .tl{padding:14px 14px;font-size:.78rem}
+  .wa{right:14px;bottom:14px;width:58px;height:58px}
+  .wa-cta{padding:24px 20px}
+}
+@media (prefers-reduced-motion:reduce){.tick .cinta{animation:none}*{transition:none!important}}
+.partner-static{cursor:default}
+</style>
+<!--IDIOMA-HEAD--><link rel="alternate" hreflang="es" href="https://jazzy-malasada-956fbc.netlify.app/"/><link rel="alternate" hreflang="en" href="https://jazzy-malasada-956fbc.netlify.app/en/"/><link rel="alternate" hreflang="x-default" href="https://jazzy-malasada-956fbc.netlify.app/"/><!--/IDIOMA-HEAD-->
+</head>
+<body>
+
+<!-- barra compacta que aparece al bajar -->
+<div class="fija" id="fija">
+  <div class="w">
+    <button class="hamb" type="button" onclick="menu(true)" aria-label="Open menu"><i><b></b><b></b><b></b></i>Menu</button>
+    <a class="lg" href="index.html"><img src="../img/marca.svg" alt="Observamed STAR"/></a>
+    <div class="busca"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5L21 21"/></svg><input type="search" placeholder="Search content…" aria-label="Search"/><div class="res"></div></div>
+    <div class="acc"><a class="b-line" href="https://mivademecum.info/" target="_blank" rel="noopener">Log in</a><a class="b-neg" href="https://mivademecum.info/" target="_blank" rel="noopener">SUBSCRIBE</a></div>
+  </div>
+</div>
+
+<header class="cab">
+  <div class="alianzas flipz"><a class="pro" href="https://www.observamed.org/" target="_blank" rel="noopener" title="Fundación Observamed STAR"><img src="../img/logo-fundacion.jpg" alt="Observamed · Medicines Observatory · Fundación Observamed STAR · Samay Tatiana Andia Rey"/></a><a class="pro" href="boletines/index.html" title="BisCoM Newsletter"><img src="../img/logo-biscom.jpg" alt="Health Informatics Newsletter · BisCoM Newsletter and Medicine Consumer Newsletter"/></a><span class="sep"></span><span class="et">In partnership with</span><a class="sad-banner" href="https://www.colmedcundibogota.com/boletin-salud-al-dia-no-36/" target="_blank" rel="noopener" title="Salud al Día Newsletter · Colegio Médico de Cundinamarca y Bogotá"><img src="../img/salud-al-dia-banner.jpg" alt="Salud al Día Newsletter No. 36 · Colegio Médico de Cundinamarca y Bogotá · Federación Médica Colombiana"/></a><a href="https://fundacionelmonitordelasalud.org/" target="_blank" rel="noopener" title="Fundación El Monitor de la Salud"><span class="giro"><span class="cara a"><img src="../img/monitor.png" alt="Fundación El Monitor de la Salud"/></span><span class="cara b"><img src="../img/rebrand/monitor.svg" alt="Fundación El Monitor de la Salud — proposal"/></span></span></a><span class="partner-static" title="ASMEDAS"><span class="giro"><span class="cara a"><img src="../img/asmedas-limpio.jpg" alt="ASMEDAS"/></span><span class="cara b"><img src="../img/rebrand/asmedas.svg" alt="ASMEDAS — proposal"/></span></span></span><a href="https://x.com/vcacelapss" target="_blank" rel="noopener" title="Citizen Oversight Group VCACELAPSS"><span class="giro"><span class="cara a"><img src="../img/vcacelapss.jpg" alt="Citizen Oversight Group VCACELAPSS"/></span><span class="cara b"><img src="../img/rebrand/vcacelapss.svg" alt="Citizen Oversight Group VCACELAPSS — proposal"/></span></span></a></div>
+  <div class="w">
+    <div class="cab-top">
+      <button class="hamb" type="button" onclick="menu(true)" aria-label="Open menu"><i><b></b><b></b><b></b></i>Menu</button>
+      <div class="busca"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5L21 21"/></svg><input type="search" placeholder="Search content…" aria-label="Search"/><div class="res"></div></div>
+      <div class="acc"><a class="b-line" href="https://mivademecum.info/" target="_blank" rel="noopener">Log in</a><a class="b-neg" href="https://mivademecum.info/" target="_blank" rel="noopener">SUBSCRIBE</a></div>
+    </div>
+    <!-- logo, registros y redes en UNA sola línea (pedido del doctor, 8 oct 2026: "así ganamos un espacio") -->
+    <div class="cab-linea">
+      <div class="cred"><span>ISSN 0121-4675<small>Registration</small></span><span>Year 36 · 1991–2026<small>Medicines Observatory</small></span><span>Ministry of Government Res. 0036/91<small>Health Informatics Newsletter</small></span></div>
+      <a class="logo-c" href="index.html"><img src="../img/marca.svg" alt="Observamed STAR — Medicines Observatory"/></a>
+      <div class="redes"><a href="https://www.instagram.com/observamedstar2026/" target="_blank" rel="noopener" title="Instagram" aria-label="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4.2" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.4" cy="6.6" r="1.2"/></svg></a><a href="https://www.youtube.com/@observatoriodelmedicamento1539" target="_blank" rel="noopener" title="YouTube" aria-label="YouTube"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21.6 7.2a2.6 2.6 0 0 0-1.8-1.8C18.2 5 12 5 12 5s-6.2 0-7.8.4A2.6 2.6 0 0 0 2.4 7.2 27 27 0 0 0 2 12a27 27 0 0 0 .4 4.8 2.6 2.6 0 0 0 1.8 1.8C5.8 19 12 19 12 19s6.2 0 7.8-.4a2.6 2.6 0 0 0 1.8-1.8A27 27 0 0 0 22 12a27 27 0 0 0-.4-4.8zM10 15V9l5.2 3z"/></svg></a><a class="pronto" href="javascript:void(0)" title="Facebook — coming soon" aria-label="Facebook (coming soon)"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 8.5V6.8c0-.8.2-1.3 1.4-1.3H17V2.6c-.3 0-1.3-.1-2.4-.1-2.4 0-4 1.4-4 4.1v1.9H8v3.2h2.6v8.3H14v-8.3h2.6l.4-3.2z"/></svg></a><a class="pronto" href="javascript:void(0)" title="LinkedIn — coming soon" aria-label="LinkedIn (coming soon)"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.5 9h3v10.5h-3zM6 4.2a1.75 1.75 0 1 1 0 3.5 1.75 1.75 0 0 1 0-3.5zM10 9h2.9v1.5c.4-.8 1.5-1.7 3.1-1.7 3.2 0 3.8 2.1 3.8 4.8v5.9h-3v-5.2c0-1.3 0-2.9-1.8-2.9s-2 1.4-2 2.8v5.3H10z"/></svg></a><a class="pronto" href="javascript:void(0)" title="X — coming soon" aria-label="X (coming soon)"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.5 3h3.1l-6.8 7.8 8 10.2h-6.3l-4.9-6.4L5 21H1.9l7.3-8.3L1.6 3h6.4l4.4 5.9zm-1.1 16.2h1.7L7.1 4.7H5.3z"/></svg></a></div>
+    </div>
+  </div>
+  <nav class="menu" aria-label="Main">
+    <div class="w">
+      <a href="boletines/index.html">Bulletins</a>
+      <a href="boletin-22.html">Special reports</a>
+      <a href="sentencia.html" style="color:#8B1E3F">The ruling</a>
+      <a href="buscador.html">Price finder</a>
+      <a href="sistema.html">VMI-CFN System</a>
+      <a href="#podcast">Podcast</a>
+      <a class="m2" href="#videos">Videos</a>
+      <a class="m2" href="#quienes">About us</a>
+      <a class="m3" href="glosario.html">Glossary</a>
+      <a class="m3" href="#contacto">Contact</a>
+      <button class="flip-b" type="button" onclick="alternarLogos()" title="View current logos / rebranding proposal"><svg viewBox="0 0 24 24"><path d="M3.5 9a8.5 8.5 0 0 1 14.9-3.4L21 8"/><path d="M21 3v5h-5"/><path d="M20.5 15a8.5 8.5 0 0 1-14.9 3.4L3 16"/><path d="M3 21v-5h5"/></svg><span>Rebranding</span></button>
+      <a class="oro" href="https://mivademecum.info/" target="_blank" rel="noopener">PLATFORM</a>
+    </div>
+  </nav>
+</header>
+
+<main>
+<div class="w">
+  <a class="sen-cinta" href="sentencia.html" style="display:flex;flex-wrap:wrap;align-items:center;gap:8px 14px;margin:14px 0 0;padding:12px 16px;border-radius:8px;background:linear-gradient(120deg,#4A0E22,#8B1E3F);color:#fff;text-decoration:none"><b style="background:#F4BC3F;color:#4A0E22;font-size:12px;letter-spacing:.08em;padding:3px 8px;border-radius:4px">JUDICIAL FOLLOW-UP</b><span style="font-weight:800">The Council of State (Consejo de Estado) ruling on medicine prices: what it orders and how it is progressing</span><span style="margin-left:auto;font-weight:800;color:#F4BC3F">View →</span></a>
+  <div class="tick"><span class="tl">LATEST BULLETINS</span><div class="pista"><div class="cinta"><a href="../boletines/biscom38de2026-14a20sep26.html" hreflang="es">From Circular 22 of 2026 to a CNPMyDM list with errors worth billions</a><a href="../boletines/biscom36de2026-31ago06sep26.html" hreflang="es">MinSalud emergency plan: follow-up reaches day 30</a><a href="../boletines/biscom35de2026-24a30ago26.html" hreflang="es">Prices under review and pharmaceutical sovereignty yet to be built</a><a href="../boletines/biscom32de2026-03a09ago26.html" hreflang="es">Circular 22/2026: maximum sale prices under the direct price control regime</a><a href="../boletines/biscom31de2026-27jul02ago26.html" hreflang="es">Monoclonal antibodies: one of the open veins that explain the crisis</a><a href="../boletines/biscom29de2026-13a19jul26.html" hreflang="es">Law 2386 and CONPES 4170: the roadmap to pharmaceutical sovereignty</a><a href="../boletines/biscom25de2026-15a21jun26.html" hreflang="es">Circular 22/2026: the maximum sale price of regulated medicines is updated</a><a href="../boletines/biscom24de2026-08a14jun26.html" hreflang="es">Circular 21 of 2026: the new rules for reporting prices to SISMED</a><a href="../boletines/biscom38de2026-14a20sep26.html" hreflang="es">From Circular 22 of 2026 to a CNPMyDM list with errors worth billions</a><a href="../boletines/biscom36de2026-31ago06sep26.html" hreflang="es">MinSalud emergency plan: follow-up reaches day 30</a><a href="../boletines/biscom35de2026-24a30ago26.html" hreflang="es">Prices under review and pharmaceutical sovereignty yet to be built</a><a href="../boletines/biscom32de2026-03a09ago26.html" hreflang="es">Circular 22/2026: maximum sale prices under the direct price control regime</a><a href="../boletines/biscom31de2026-27jul02ago26.html" hreflang="es">Monoclonal antibodies: one of the open veins that explain the crisis</a><a href="../boletines/biscom29de2026-13a19jul26.html" hreflang="es">Law 2386 and CONPES 4170: the roadmap to pharmaceutical sovereignty</a><a href="../boletines/biscom25de2026-15a21jun26.html" hreflang="es">Circular 22/2026: the maximum sale price of regulated medicines is updated</a><a href="../boletines/biscom24de2026-08a14jun26.html" hreflang="es">Circular 21 of 2026: the new rules for reporting prices to SISMED</a></div></div></div>
+
+  <section class="prin" id="boletines">
+    <div class="col-top">
+      <h2 class="h-sec">Recent selection</h2>
+      <p class="h-sub">Featured newsletters and analyses</p>
+      <div class="grid2"><article class="card"><div class="post-image"><a href="../boletines/biscom36de2026-31ago06sep26.html" aria-label="Open newsletter: MinSalud's emergency plan: monitoring reaches day 30" hreflang="es"><div class="ph img"><img src="../boletines/img/portadas/biscom36de2026-31ago06sep26.webp" alt="Infographic: MinSalud's shock plan: follow-up reaches day 30" loading="lazy" decoding="async"/></div></a><button class="cover-expand" type="button" data-image="../boletines/img/portadas/biscom36de2026-31ago06sep26.webp" data-title="MinSalud emergency plan: follow-up reaches day 30" aria-label="Enlarge image: MinSalud's shock plan: monitoring reaches day 30" title="Enlarge image"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 3h6v6M21 3l-7 7M3 15v6h6M3 21l7-7"/></svg><span>Enlarge</span></button></div><a class="card-copy" href="../boletines/biscom36de2026-31ago06sep26.html" hreflang="es"><div class="meta"><span class="edition-label">BisCoM 36 of 2026</span><span class="tag t-venas">Open Veins</span><time>August 31–September 6, 2026</time></div><h3>MinSalud emergency plan: follow-up reaches day 30</h3></a></article><article class="card"><div class="post-image"><a href="../boletines/biscom35de2026-24a30ago26.html" aria-label="Open newsletter: Prices under review and pharmaceutical sovereignty yet to be built" hreflang="es"><div class="ph img"><img src="../boletines/img/portadas/biscom35de2026-24a30ago26.webp" alt="Infographic: Prices under review and pharmaceutical sovereignty yet to be built" loading="lazy" decoding="async"/></div></a><button class="cover-expand" type="button" data-image="../boletines/img/portadas/biscom35de2026-24a30ago26.webp" data-title="Prices under review and pharmaceutical sovereignty yet to be built" aria-label="Enlarge image: Prices under review and pharmaceutical sovereignty yet to be built" title="Enlarge image"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 3h6v6M21 3l-7 7M3 15v6h6M3 21l7-7"/></svg><span>Enlarge</span></button></div><a class="card-copy" href="../boletines/biscom35de2026-24a30ago26.html" hreflang="es"><div class="meta"><span class="edition-label">BisCoM 35 of 2026</span><span class="tag t-soberania">Pharmaceutical sovereignty</span><time>August 24–30, 2026</time></div><h3>Prices under review and pharmaceutical sovereignty yet to be built</h3></a></article><article class="card"><div class="post-image"><a href="../boletines/biscom32de2026-03a09ago26.html" aria-label="Open newsletter: Circular 22/2026: the maximum sale prices under the direct price control regime" hreflang="es"><div class="ph img"><img src="../boletines/img/portadas/biscom32de2026-03a09ago26.webp" alt="Infographic: Circular 22/2026: the maximum sale prices under the direct price control regime" loading="lazy" decoding="async"/></div></a><button class="cover-expand" type="button" data-image="../boletines/img/portadas/biscom32de2026-03a09ago26.webp" data-title="Circular 22/2026: maximum sale prices under the direct price control regime" aria-label="Enlarge image: Circular 22/2026: the maximum sale prices under the direct price control regime" title="Enlarge image"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 3h6v6M21 3l-7 7M3 15v6h6M3 21l7-7"/></svg><span>Enlarge</span></button></div><a class="card-copy" href="../boletines/biscom32de2026-03a09ago26.html" hreflang="es"><div class="meta"><span class="edition-label">BisCoM 32 of 2026</span><span class="tag t-precios">Regulated prices</span><time>August 3–9, 2026</time></div><h3>Circular 22/2026: maximum sale prices under the direct price control regime</h3></a></article></div>
+    </div>
+    <div class="col-dest"><div class="dests"><article class="dest"><div class="post-image"><a href="../boletines/biscom38de2026-14a20sep26.html" aria-label="Open newsletter: From Circular 22/2026 to a CNPMyDM list with multibillion-peso errors" hreflang="es"><div class="ph img"><img src="../boletines/img/portadas/biscom38de2026-14a20sep26.webp" alt="Infographic: From Circular 22/2026 to a CNPMyDM list with multimillion-dollar errors" loading="lazy" decoding="async"/></div></a><button class="cover-expand" type="button" data-image="../boletines/img/portadas/biscom38de2026-14a20sep26.webp" data-title="From Circular 22 of 2026 to a CNPMyDM list with errors worth billions" aria-label="Enlarge image: From Circular 22/2026 to a CNPMyDM list with multibillion-peso errors" title="Enlarge image"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 3h6v6M21 3l-7 7M3 15v6h6M3 21l7-7"/></svg><span>Enlarge</span></button></div><a class="dest-tx" href="../boletines/biscom38de2026-14a20sep26.html" hreflang="es"><span class="lbl">Featured</span><h2>From Circular 22 of 2026 to a CNPMyDM list with errors worth billions</h2><p>A review of the regulated price list: incomplete identifiers, medical samples with a price, and values that require verification.</p><div class="by"><img src="../img/andia.jpg" alt=""/><span>Dr. Óscar Andía</span><i>—</i><time>BisCoM 38 of 2026</time></div></a></article><article class="dest"><div class="post-image"><a href="boletin-22.html" aria-label="Open newsletter: COP 9.6 trillion in antidiabetics: the sales that don't add up"><div class="ph img"><img src="../boletines/img/portadas/biscom22de2026.webp" alt="Infographic: COP 9.6 trillion in antidiabetics: the sales that don't add up" loading="lazy" decoding="async"/></div></a><button class="cover-expand" type="button" data-image="../boletines/img/portadas/biscom22de2026.webp" data-title="COP 9.6 trillion on antidiabetics: the sales that don't add up" aria-label="Enlarge image: COP 9.6 trillion on antidiabetics: the sales that don't add up" title="Enlarge image"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 3h6v6M21 3l-7 7M3 15v6h6M3 21l7-7"/></svg><span>Enlarge</span></button></div><a class="dest-tx" href="boletin-22.html"><span class="lbl">Featured</span><h2>COP 9.6 trillion on antidiabetics: the sales that don't add up</h2><p>What was reported to SISMED versus what was delivered through MiPres between 2016 and 2025. Two official sources that do not match...</p><div class="by"><img src="../img/andia.jpg" alt=""/><span>Dr. Óscar Andía</span><i>—</i><time>BisCoM 22 · Special Report</time></div></a></article></div></div>
+    <div class="col-mas">
+      <h2 class="h-mini">Most featured</h2>
+      <article class="mini"><div class="post-image"><a href="../boletines/biscom24de2026-08a14jun26.html" aria-label="Open newsletter: Circular 21 of 2026: the new rules for reporting prices to SISMED" hreflang="es"><div class="ph img"><img src="../boletines/img/portadas/biscom24de2026-08a14jun26.webp" alt="Infographic: Circular 21 of 2026: the new rules for reporting prices to SISMED" loading="lazy" decoding="async"/></div></a><button class="cover-expand" type="button" data-image="../boletines/img/portadas/biscom24de2026-08a14jun26.webp" data-title="Circular 21 of 2026: the new rules for reporting prices to SISMED" aria-label="Enlarge image: Circular 21 of 2026: the new rules for reporting prices to SISMED" title="Enlarge image"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 3h6v6M21 3l-7 7M3 15v6h6M3 21l7-7"/></svg><span>Enlarge</span></button></div><h3><a href="../boletines/biscom24de2026-08a14jun26.html" hreflang="es">Circular 21 of 2026: the new rules for reporting prices to SISMED</a></h3></article><article class="mini"><div class="post-image"><a href="../boletines/biscom22de2026-25a31may26.html" aria-label="Open newsletter: Antidiabetics and anti-obesity drugs: multibillion-peso spending with no control" hreflang="es"><div class="ph img"><img src="../boletines/img/portadas/biscom22de2026-25a31may26.webp" alt="Infographic: Antidiabetics and anti-obesity drugs: multimillion-dollar spending with no control" loading="lazy" decoding="async"/></div></a><button class="cover-expand" type="button" data-image="../boletines/img/portadas/biscom22de2026-25a31may26.webp" data-title="Antidiabetics and anti-obesity drugs: multibillion-peso spending with no control" aria-label="Enlarge image: Antidiabetics and anti-obesity drugs: multibillion-peso spending with no control" title="Enlarge image"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 3h6v6M21 3l-7 7M3 15v6h6M3 21l7-7"/></svg><span>Enlarge</span></button></div><h3><a href="../boletines/biscom22de2026-25a31may26.html" hreflang="es">Antidiabetics and anti-obesity drugs: multibillion-peso spending with no control</a></h3></article><article class="mini"><div class="post-image"><a href="boletin.html" aria-label="Open newsletter: Pharmaceutical sovereignty: a good diagnosis, a half-finished implementation"><div class="ph img"><img src="../boletines/img/portadas/biscom21de2026.webp" alt="Infographic: Pharmaceutical sovereignty: good diagnosis, half-way implementation" loading="lazy" decoding="async"/></div></a><button class="cover-expand" type="button" data-image="../boletines/img/portadas/biscom21de2026.webp" data-title="Pharmaceutical sovereignty: good diagnosis, partial implementation" aria-label="Enlarge image: Pharmaceutical sovereignty: a good diagnosis, partial implementation" title="Enlarge image"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 3h6v6M21 3l-7 7M3 15v6h6M3 21l7-7"/></svg><span>Enlarge</span></button></div><h3><a href="boletin.html">Pharmaceutical sovereignty: good diagnosis, partial implementation</a></h3></article>
+    </div>
+    <div class="col-op">
+      <h2 class="h-mini">Reports and series</h2>
+      <a class="esp" href="boletin-22.html">
+        <span class="lbl">Special report</span>
+        <img class="foto" src="../img/andia.jpg" alt="Dr. Óscar Iván Andía Salazar"/>
+        <h4>Dr. Óscar Iván Andía Salazar</h4>
+        <small>BisCoM 22 · 2016–2025</small>
+        <p>COP 9.6 trillion on antidiabetics: the sales that don't add up</p>
+      </a>
+      <a class="op" href="../boletines/biscom35de2025-25a31ago25.html" hreflang="es"><span class="ol t-venas">Open Veins</span><b>Medicine shortages: the structural and the circumstantial in the crisis</b><span class="by"><img src="../img/andia.jpg" alt=""/>BisCoM 35 of 2025</span></a><a class="op" href="../boletines/biscom24de2025-09a15jun25.html" hreflang="es"><span class="ol t-diabetes">Antidiabetics</span><b>Antidiabetics and weight-loss drugs: from therapeutic success to economic disaster</b><span class="by"><img src="../img/andia.jpg" alt=""/>BisCoM 24 of 2025</span></a><a class="op" href="../boletines/biscom23de2025-02a08jun25.html" hreflang="es"><span class="ol t-venas">Open Veins</span><b>Monoclonal antibodies: best sellers according to SISMED, 2015 to 2024</b><span class="by"><img src="../img/andia.jpg" alt=""/>BisCoM 23 of 2025</span></a>
+      <a class="b-azul" href="boletines/index.html">View all bulletins</a>
+    </div>
+  </section>
+</div>
+
+
+
+<section class="pod" id="podcast">
+  <div class="w">
+    <div class="pod-box">
+      <div class="player">
+        <div class="portada-pod"><img src="../img/marca-iso.svg" alt=""/><div><small>The voice of Observamed</small><b>Summary<br/>in audio</b></div></div>
+        <div>
+          <div class="p-tit" id="p-tit">Analysis of medicine prices in Colombia</div>
+          <div class="p-sub" id="p-sub">Apr 30, 2026 · La voz de OBSERVAMED</div>
+          <audio id="audio" controls preload="none" src="https://www.med-informatica.com/4_AnalisisPreciosFarmaColombia_Audio_30abr26.mp4"></audio>
+          <div class="eps"><button class="ep on" type="button" data-src="https://www.med-informatica.com/4_AnalisisPreciosFarmaColombia_Audio_30abr26.mp4" data-t="Analysis of medicine prices in Colombia" data-f="30 abr 2026"><i>01</i><span>Analysis of medicine prices in Colombia<small>Apr 30, 2026</small></span></button><button class="ep" type="button" data-src="https://www.observamed.org/PLUS/Transparencia_Activa/ASPEEC/RegulacionPreciosFarma/CNPM_Circular21_ReportesSismed_09jun26/CNPM_Circular21_ReportesSismedAudio_09jun26.mp4" data-t="Circular 21 of 2026: SISMED reports" data-f="9 jun 2026"><i>02</i><span>Circular 21 of 2026: SISMED reports<small>Jun 9, 2026</small></span></button><button class="ep" type="button" data-src="https://www.observamed.org/PLUS/Transparencia_Activa/ASPEEC/SoberaniaFarmaceuticaCol/DNP_CONPES4170de2025_SoberaniaSanitaria_Audio30oct25.mp4" data-t="CONPES 4170: health sovereignty" data-f="30 oct 2025"><i>03</i><span>CONPES 4170: health sovereignty<small>Oct 30, 2025</small></span></button></div>
+        </div>
+      </div>
+      <div class="pod-lado"><h2>PODCAST<br/>OBSERVAMED</h2><p>The doctor's bulletins, in audio, to listen to in the car or at the clinic.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="videos">
+  <div class="w">
+    <div class="red-h"><span class="k">Follow us on social media</span><h2>And get much more content!</h2><div class="redes color"><a href="https://www.instagram.com/observamedstar2026/" target="_blank" rel="noopener" title="Instagram" aria-label="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4.2" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.4" cy="6.6" r="1.2"/></svg></a><a href="https://www.youtube.com/@observatoriodelmedicamento1539" target="_blank" rel="noopener" title="YouTube" aria-label="YouTube"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21.6 7.2a2.6 2.6 0 0 0-1.8-1.8C18.2 5 12 5 12 5s-6.2 0-7.8.4A2.6 2.6 0 0 0 2.4 7.2 27 27 0 0 0 2 12a27 27 0 0 0 .4 4.8 2.6 2.6 0 0 0 1.8 1.8C5.8 19 12 19 12 19s6.2 0 7.8-.4a2.6 2.6 0 0 0 1.8-1.8A27 27 0 0 0 22 12a27 27 0 0 0-.4-4.8zM10 15V9l5.2 3z"/></svg></a><a class="pronto" href="javascript:void(0)" title="Facebook — coming soon" aria-label="Facebook (coming soon)"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 8.5V6.8c0-.8.2-1.3 1.4-1.3H17V2.6c-.3 0-1.3-.1-2.4-.1-2.4 0-4 1.4-4 4.1v1.9H8v3.2h2.6v8.3H14v-8.3h2.6l.4-3.2z"/></svg></a><a class="pronto" href="javascript:void(0)" title="LinkedIn — coming soon" aria-label="LinkedIn (coming soon)"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.5 9h3v10.5h-3zM6 4.2a1.75 1.75 0 1 1 0 3.5 1.75 1.75 0 0 1 0-3.5zM10 9h2.9v1.5c.4-.8 1.5-1.7 3.1-1.7 3.2 0 3.8 2.1 3.8 4.8v5.9h-3v-5.2c0-1.3 0-2.9-1.8-2.9s-2 1.4-2 2.8v5.3H10z"/></svg></a><a class="pronto" href="javascript:void(0)" title="X — coming soon" aria-label="X (coming soon)"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.5 3h3.1l-6.8 7.8 8 10.2h-6.3l-4.9-6.4L5 21H1.9l7.3-8.3L1.6 3h6.4l4.4 5.9zm-1.1 16.2h1.7L7.1 4.7H5.3z"/></svg></a></div></div>
+    <div class="reels"><div class="reel" data-yt="zKqAQHm0S_w"><img src="https://i.ytimg.com/vi/zKqAQHm0S_w/hqdefault.jpg" alt="" loading="lazy"/><span class="iso"><img src="../img/marca-iso.svg" alt=""/></span><button type="button" class="play" aria-label="Play: Uncomfortable Truths at the Universidad Nacional"></button><div class="rt"><span>Video</span><b>Uncomfortable truths at the Universidad Nacional</b><small>The role of civil society in monitoring medicine prices</small></div></div><div class="reel" data-yt="zqPFR3w4c64"><img src="https://i.ytimg.com/vi/zqPFR3w4c64/hqdefault.jpg" alt="" loading="lazy"/><span class="iso"><img src="../img/marca-iso.svg" alt=""/></span><button type="button" class="play" aria-label="Play: FEDESALUD Award"></button><div class="rt"><span>Video</span><b>FEDESALUD Award</b><small>Recognition of Observamed</small></div></div><div class="reel" data-yt="OGXDcB6jkfc"><img src="https://i.ytimg.com/vi/OGXDcB6jkfc/hqdefault.jpg" alt="" loading="lazy"/><span class="iso"><img src="../img/marca-iso.svg" alt=""/></span><button type="button" class="play" aria-label="Play: César Uribe Piedrahita Medal"></button><div class="rt"><span>Video</span><b>César Uribe Piedrahita Medal</b><small>Colegio Médico de Cundinamarca y Bogotá</small></div></div><div class="reel" data-yt="7NknetpLGt8"><img src="https://i.ytimg.com/vi/7NknetpLGt8/hqdefault.jpg" alt="" loading="lazy"/><span class="iso"><img src="../img/marca-iso.svg" alt=""/></span><button type="button" class="play" aria-label="Play: Interview with Dr. Germán Fernández"></button><div class="rt"><span>Video</span><b>Interview with Dr. Germán Fernández</b><small>Colegio Médico de Cundinamarca y Bogotá</small></div></div></div>
+    <p class="pronto-n">We are now on <a href="https://www.instagram.com/observamedstar2026/" target="_blank" rel="noopener" style="color:var(--azul);font-weight:800">Instagram (@observamedstar2026)</a> and on <a href="https://www.youtube.com/@observatoriodelmedicamento1539" target="_blank" rel="noopener" style="color:var(--azul);font-weight:800">YouTube</a>. Coming soon to Facebook, LinkedIn and X.</p>
+  </div>
+</section>
+
+<section class="mepa" id="quienes">
+  <div class="w">
+    <div class="mepa-h">
+      <div><h2>Who supports it</h2><p>Dr. Andía and the institutions that support the observatory</p></div>
+      <a href="sistema.html">Learn about the VMI-CFN System →</a>
+    </div>
+    <div class="mepa-g">
+      <div class="doc">
+        <img src="../img/andia.jpg" alt="Dr. Óscar Iván Andía Salazar"/>
+        <h3>Dr. Óscar Iván Andía Salazar</h3>
+        <div class="rol">Observamed STAR · Med-Informática</div>
+        <p>36 years publishing the BisCoM bulletin and monitoring medicine prices in Colombia.</p>
+        <a class="b-cir" href="boletines/index.html">View publications</a>
+      </div>
+      <div>
+        <div class="insts flipz"><a class="inst" data-partner="aliado" href="https://www.colmedcundibogota.com/boletin-salud-al-dia-no-36/" target="_blank" rel="noopener"><div class="il cuad doble"><span class="giro"><span class="cara a"><img src="../img/cmcb.png" alt="Colegio Médico de Cundinamarca y Bogotá"/></span><span class="cara b"><img src="../img/rebrand/cmcb.svg" alt="Colegio Médico de Cundinamarca y Bogotá — proposal"/></span></span><img class="sad" src="../img/salud-al-dia.jpg" alt="Salud al Día Newsletter"/></div><b>Colegio Médico de Cundinamarca y Bogotá</b><p>Trade association of physicians in Bogotá and Cundinamarca. It keeps its members informed about developments in the health sector and defends the practice of medicine.</p><p class="pq"><span>Why it matters</span>Having the region's medical association support this observatory gives professional backing to what is published here.</p><span class="ir">Visit site →</span></a><a class="inst" data-partner="aliado" href="https://fundacionelmonitordelasalud.org/" target="_blank" rel="noopener"><div class="il"><span class="giro"><span class="cara a"><img src="../img/monitor.png" alt="Fundación El Monitor de la Salud"/></span><span class="cara b"><img src="../img/rebrand/monitor.svg" alt="Fundación El Monitor de la Salud — proposal"/></span></span></div><b>Fundación El Monitor de la Salud</b><p>A foundation dedicated to health journalism and the dissemination of knowledge. Its motto: "inform with rigor to transform with knowledge."</p><p class="pq"><span>Why it matters</span>Takes the observatory's findings to more readers, with the same rigor.</p><span class="ir">Visit site →</span></a><div class="inst partner-static" data-partner="asmedas"><div class="il"><span class="giro"><span class="cara a"><img src="../img/asmedas-limpio.jpg" alt="ASMEDAS"/></span><span class="cara b"><img src="../img/rebrand/asmedas.svg" alt="ASMEDAS — proposal"/></span></span></div><b>ASMEDAS</b><p>Asociación Médica Sindical Colombiana: the trade union organization that groups and represents the country's physicians.</p><p class="pq"><span>Why it matters</span>Adds the voice of the doctors who experience the consequences of prices and shortages every day.</p></div><a class="inst" data-partner="aliado" href="https://x.com/vcacelapss" target="_blank" rel="noopener"><div class="il"><span class="giro"><span class="cara a"><img src="../img/vcacelapss.jpg" alt="Citizen Oversight Group VCACELAPSS"/></span><span class="cara b"><img src="../img/rebrand/vcacelapss.svg" alt="Citizen Oversight Group VCACELAPSS — proposal"/></span></span></div><b>Citizen Oversight Group VCACELAPSS</b><p>Citizen oversight in health: social control by civil society over how the system's public resources are managed.</p><p class="pq"><span>Why it matters</span>Price transparency needs citizen eyes, not just technical ones.</p><span class="ir">Visit site →</span></a></div>
+        <div class="otras flipz"><span class="et">Also supporting us</span><a href="https://www.med-informatica.net/ASOPASIME/Inicio.htm" target="_blank" rel="noopener" title="ASOPASIME"><span class="lg"><span class="giro"><span class="cara a"><img src="../img/asopasime.jpg" alt="ASOPASIME"/></span><span class="cara b"><img src="../img/rebrand/asopasime.svg" alt="ASOPASIME — proposal"/></span></span></span><span class="nm">ASOPASIME</span></a><a href="https://www.med-informatica.net/COMAPRE/Inicio.htm" target="_blank" rel="noopener" title="COMAPRE"><span class="lg"><span class="giro"><span class="cara a"><img src="../img/comapre.jpg" alt="COMAPRE"/></span><span class="cara b"><img src="../img/rebrand/comapre.svg" alt="COMAPRE — proposal"/></span></span></span><span class="nm">COMAPRE</span></a><a href="https://www.somosveedoresensalud.org/" target="_blank" rel="noopener" title="CVCS — Citizen Oversight and Health Cooperation"><span class="lg"><span class="giro"><span class="cara a"><img src="../img/cvcs.jpg" alt="CVCS — Citizen Oversight and Health Cooperation"/></span><span class="cara b"><img src="../img/rebrand/cvcs.svg" alt="CVCS — Citizen Oversight and Health Cooperation — proposal"/></span></span></span><span class="nm">CVCS — Citizen Oversight and Health Cooperation</span></a><a href="https://colhemofilicos.org.co/" target="_blank" rel="noopener" title="Colhemofílicos"><span class="lg"><span class="giro"><span class="cara a"><img src="../img/colhemofilicos.jpg" alt="Colhemofílicos"/></span><span class="cara b"><img src="../img/rebrand/colhemofilicos.svg" alt="Colhemofílicos — proposal"/></span></span></span><span class="nm">Colhemofílicos</span></a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="herr" id="herramientas">
+  <div class="w">
+    <div class="herr-h">
+      <span class="k">The tools</span>
+      <h2>Three prices for the same medicine</h2>
+      <p>The same box, seen at three moments: when it leaves the laboratory, when it reaches the pharmacy, and what you should pay.</p>
+    </div>
+    <div class="tres">
+      <div class="precio p1"><div class="n">01</div><div class="q">Laboratory cost</div><h3>What the manufacturer charges</h3>
+        <p>The price that laboratories and importers report to SISMED, the Ministry of Health's official system. It is the starting point of the entire chain.</p><span class="sig">PPPS · official source</span></div>
+      <div class="precio p2"><div class="n">02</div><div class="q">Pharmacy average</div><h3>What you are charged at the counter</h3>
+        <p>The average price Bogotá pharmacies charge for the same presentation. It shows how many times the price is multiplied from the plant onward.</p><span class="sig">PPPEFI · surveyed price</span></div>
+      <div class="precio p3"><div class="n">03</div><div class="q">Observamed Price</div><h3>What the doctor proposes to pay</h3>
+        <p>The reference price proposed by Dr. Andía: always less than half the pharmacy price. It is updated every quarter.</p><span class="sig">New · quarterly update</span></div>
+    </div>
+    <div class="flecha"><b>Laboratory</b> → <b>Pharmacy</b> → <b>Fair price</b> · the idea is to see them side by side.</div>
+
+    <div class="otras-h">
+      <a class="hz" href="buscador.html"><span class="ic"><svg viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5L21 21"/></svg></span><b>Price search</b><p>Five ways to search: active ingredient, brand, laboratory, CUM, or ATC group.</p><span>Search for a medicine →</span></a>
+      <a class="hz" href="boletines/index.html"><span class="ic"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M9 9v11"/></svg></span><b>Bulletin tables</b><p>The BisCoM tables, which used to be images, can now be read, searched and copied.</p><span>View the bulletins →</span></a>
+      <a class="hz" href="sistema.html"><span class="ic"><svg viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h10"/></svg></span><b>VMI-CFN System</b><p>The complete formulary: a profile for each medicine, the ATC cascade, and all 9 versions.</p><span>Learn about the system →</span></a>
+      <a class="hz" href="glosario.html"><span class="ic"><svg viewBox="0 0 24 24"><path d="M5 4h11a3 3 0 0 1 3 3v13H8a3 3 0 0 1-3-3z"/><path d="M5 17a3 3 0 0 1 3-3h11"/></svg></span><b>Glossary</b><p>What SISMED, CUM, PMV, PPPS and the other terms in the bulletin mean.</p><span>Open the glossary →</span></a>
+    </div>
+
+    <div class="wa-cta">
+      <div><h3>Do you have a question about a medicine's price?</h3><p>Write directly to Dr. Andía's team via WhatsApp.</p></div>
+      <a class="b-wa" href="https://wa.me/573044038009?text=Hola%20Dr.%20And%C3%ADa%2C%20le%20escribo%20desde%20la%20p%C3%A1gina%20de%20Observamed%20STAR." target="_blank" rel="noopener"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 3a13 13 0 0 0-11.2 19.6L3 29l6.6-1.7A13 13 0 1 0 16 3zm0 23.7c-2 0-4-.6-5.7-1.6l-.4-.2-3.9 1 1-3.8-.3-.4A10.7 10.7 0 1 1 16 26.7zm5.9-8c-.3-.2-1.9-1-2.2-1s-.5-.2-.7.2-.8 1-1 1.2-.4.2-.7 0a8.8 8.8 0 0 1-4.4-3.8c-.3-.6.3-.5 1-1.7.1-.2 0-.4 0-.6l-1-2.4c-.3-.6-.5-.5-.7-.5h-.6a1.2 1.2 0 0 0-.9.4 3.7 3.7 0 0 0-1.1 2.7 6.4 6.4 0 0 0 1.3 3.4c.2.2 2.2 3.4 5.4 4.8 2 .9 2.8.9 3.8.8.6-.1 1.9-.8 2.2-1.5s.3-1.4.2-1.5-.3-.2-.6-.4z"/></svg>Write via WhatsApp</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer id="contacto">
+  <div class="w">
+    <div class="pie">
+      <div><img src="../img/marca-blanco.svg" alt="Observamed STAR"/><p>Medicines Observatory<br/>ISSN 0121-4675 · Res. Min. Gobierno 0036/91<br/>Year 36 · 1991–2026</p></div>
+      <div><h4>Contents</h4><a href="boletines/index.html">Newsletters</a><a href="boletin-22.html">Special reports</a><a href="#podcast">Podcast</a><a href="#videos">Videos</a><a href="glosario.html">Glossary</a></div>
+      <div><h4>Tools</h4><a href="buscador.html">Price search</a><a href="sistema.html">VMI-CFN System</a><a href="https://mivademecum.info/" target="_blank" rel="noopener">Platform login</a><a href="https://mivademecum.info/" target="_blank" rel="noopener">Free subscription</a></div>
+      <div><h4>Contact</h4><p>Cra. 47A No. 114A-39, Bogotá<br/>Tel. 601 213 2421<br/>Cell 304 403 8009</p><a href="https://wa.me/573044038009?text=Hola%20Dr.%20And%C3%ADa%2C%20le%20escribo%20desde%20la%20p%C3%A1gina%20de%20Observamed%20STAR." target="_blank" rel="noopener" style="color:var(--wa);font-weight:800;margin-top:6px">WhatsApp →</a></div>
+    </div>
+    <div class="legal">
+      <b>Disclaimer.</b> The information published here is offered as a service to health professionals and their patients. It is in no way intended to suggest treatments or to replace the doctor-patient relationship. No official of Fundación Observamed STAR, Med-Informática Editores S.A.S. or Medicentro AR S.A.S. can assume any responsibility for the improper use of the information published on these pages.
+      <div class="dedic">Medicines Observatory “Samay Tatiana Andia Rey”</div>
+    </div>
+  </div>
+</footer>
+
+<a class="wa" href="https://wa.me/573044038009?text=Hola%20Dr.%20And%C3%ADa%2C%20le%20escribo%20desde%20la%20p%C3%A1gina%20de%20Observamed%20STAR." target="_blank" rel="noopener" aria-label="Write via WhatsApp" title="Write to us on WhatsApp"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 3a13 13 0 0 0-11.2 19.6L3 29l6.6-1.7A13 13 0 1 0 16 3zm0 23.7c-2 0-4-.6-5.7-1.6l-.4-.2-3.9 1 1-3.8-.3-.4A10.7 10.7 0 1 1 16 26.7zm5.9-8c-.3-.2-1.9-1-2.2-1s-.5-.2-.7.2-.8 1-1 1.2-.4.2-.7 0a8.8 8.8 0 0 1-4.4-3.8c-.3-.6.3-.5 1-1.7.1-.2 0-.4 0-.6l-1-2.4c-.3-.6-.5-.5-.7-.5h-.6a1.2 1.2 0 0 0-.9.4 3.7 3.7 0 0 0-1.1 2.7 6.4 6.4 0 0 0 1.3 3.4c.2.2 2.2 3.4 5.4 4.8 2 .9 2.8.9 3.8.8.6-.1 1.9-.8 2.2-1.5s.3-1.4.2-1.5-.3-.2-.6-.4z"/></svg></a>
+
+<!-- menú lateral -->
+<div class="velo" onclick="menu(false)"></div>
+<aside class="cajon" aria-label="Menu" id="cajon">
+  <button class="x" type="button" onclick="menu(false)" aria-label="Close menu">×</button>
+  <p class="lema">Transparency in medicines <b>since 1991</b></p>
+  <a class="cj oro" href="https://mivademecum.info/" target="_blank" rel="noopener">Subscribe for free!</a>
+  <hr/>
+  <div class="busca"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5L21 21"/></svg><input type="search" placeholder="Search newsletters…" aria-label="Search"/><div class="res"></div></div>
+  <a class="cj" href="boletines/index.html">BisCoM Bulletins</a>
+  <a class="cj" href="boletin-22.html">Special reports</a>
+  <a class="cj" href="sentencia.html" style="color:#8B1E3F">The Council of State (Consejo de Estado) ruling</a>
+  <a class="cj" href="buscador.html">Price finder</a>
+  <a class="cj" href="#podcast" onclick="menu(false)">Podcast</a>
+  <a class="cj" href="#videos" onclick="menu(false)">Videos</a>
+  <a class="cj oro" href="https://mivademecum.info/" target="_blank" rel="noopener">Platform login</a>
+  <hr/>
+  <a class="cj azul" href="https://mivademecum.info/" target="_blank" rel="noopener">Free subscription</a>
+  <a class="cj neg" href="boletines/index.html">Email newsletter</a>
+  <a class="cj" href="sistema.html">VMI-CFN System</a>
+  <a class="cj" href="glosario.html">Glossary</a>
+  <a class="cj sin" href="https://wa.me/573044038009?text=Hola%20Dr.%20And%C3%ADa%2C%20le%20escribo%20desde%20la%20p%C3%A1gina%20de%20Observamed%20STAR." target="_blank" rel="noopener"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 3a13 13 0 0 0-11.2 19.6L3 29l6.6-1.7A13 13 0 1 0 16 3zm0 23.7c-2 0-4-.6-5.7-1.6l-.4-.2-3.9 1 1-3.8-.3-.4A10.7 10.7 0 1 1 16 26.7zm5.9-8c-.3-.2-1.9-1-2.2-1s-.5-.2-.7.2-.8 1-1 1.2-.4.2-.7 0a8.8 8.8 0 0 1-4.4-3.8c-.3-.6.3-.5 1-1.7.1-.2 0-.4 0-.6l-1-2.4c-.3-.6-.5-.5-.7-.5h-.6a1.2 1.2 0 0 0-.9.4 3.7 3.7 0 0 0-1.1 2.7 6.4 6.4 0 0 0 1.3 3.4c.2.2 2.2 3.4 5.4 4.8 2 .9 2.8.9 3.8.8.6-.1 1.9-.8 2.2-1.5s.3-1.4.2-1.5-.3-.2-.6-.4z"/></svg>Customer service</a>
+  <button class="cj sin" type="button" onclick="alternarLogos()">View rebranding proposal</button>
+  <hr/>
+  <div class="redes menu"><a href="https://www.instagram.com/observamedstar2026/" target="_blank" rel="noopener" title="Instagram" aria-label="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4.2" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.4" cy="6.6" r="1.2"/></svg></a><a href="https://www.youtube.com/@observatoriodelmedicamento1539" target="_blank" rel="noopener" title="YouTube" aria-label="YouTube"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21.6 7.2a2.6 2.6 0 0 0-1.8-1.8C18.2 5 12 5 12 5s-6.2 0-7.8.4A2.6 2.6 0 0 0 2.4 7.2 27 27 0 0 0 2 12a27 27 0 0 0 .4 4.8 2.6 2.6 0 0 0 1.8 1.8C5.8 19 12 19 12 19s6.2 0 7.8-.4a2.6 2.6 0 0 0 1.8-1.8A27 27 0 0 0 22 12a27 27 0 0 0-.4-4.8zM10 15V9l5.2 3z"/></svg></a><a class="pronto" href="javascript:void(0)" title="Facebook — coming soon" aria-label="Facebook (coming soon)"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 8.5V6.8c0-.8.2-1.3 1.4-1.3H17V2.6c-.3 0-1.3-.1-2.4-.1-2.4 0-4 1.4-4 4.1v1.9H8v3.2h2.6v8.3H14v-8.3h2.6l.4-3.2z"/></svg></a><a class="pronto" href="javascript:void(0)" title="LinkedIn — coming soon" aria-label="LinkedIn (coming soon)"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.5 9h3v10.5h-3zM6 4.2a1.75 1.75 0 1 1 0 3.5 1.75 1.75 0 0 1 0-3.5zM10 9h2.9v1.5c.4-.8 1.5-1.7 3.1-1.7 3.2 0 3.8 2.1 3.8 4.8v5.9h-3v-5.2c0-1.3 0-2.9-1.8-2.9s-2 1.4-2 2.8v5.3H10z"/></svg></a><a class="pronto" href="javascript:void(0)" title="X — coming soon" aria-label="X (coming soon)"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.5 3h3.1l-6.8 7.8 8 10.2h-6.3l-4.9-6.4L5 21H1.9l7.3-8.3L1.6 3h6.4l4.4 5.9zm-1.1 16.2h1.7L7.1 4.7H5.3z"/></svg></a></div>
+</aside>
+
+
+<div class="image-peek" id="image-peek" hidden aria-hidden="true"><img alt=""/></div>
+<dialog class="image-modal" id="image-modal" aria-labelledby="image-title">
+<div class="image-toolbar"><h2 id="image-title">Image</h2>
+<button type="button" id="image-close" aria-label="Close image" title="Close">×</button></div>
+<div class="image-stage"><img id="image-full" alt=""/></div></dialog>
+
+
+<script>
+var BUSCA=[{"t": "From Circular 22 of 2026 to a CNPMyDM list with errors worth billions", "s": "BisCoM 38 of 2026 · September 14–20, 2026", "u": "../boletines/biscom38de2026-14a20sep26.html"}, {"t": "MinSalud emergency plan: follow-up reaches day 30", "s": "BisCoM 36 of 2026 · August 31–September 6, 2026", "u": "../boletines/biscom36de2026-31ago06sep26.html"}, {"t": "Prices under review and pharmaceutical sovereignty yet to be built", "s": "BisCoM 35 of 2026 · August 24–30, 2026", "u": "../boletines/biscom35de2026-24a30ago26.html"}, {"t": "Circular 22/2026: maximum sale prices under the direct price control regime", "s": "BisCoM 32 of 2026 · August 3–9, 2026", "u": "../boletines/biscom32de2026-03a09ago26.html"}, {"t": "Monoclonal antibodies: one of the open veins that explain the crisis", "s": "BisCoM 31 of 2026 · July 27–August 2, 2026", "u": "../boletines/biscom31de2026-27jul02ago26.html"}, {"t": "Law 2386 and CONPES 4170: the roadmap to pharmaceutical sovereignty", "s": "BisCoM 29 of 2026 · July 13–19, 2026", "u": "../boletines/biscom29de2026-13a19jul26.html"}, {"t": "Circular 22/2026: the maximum sale price of regulated medicines is updated", "s": "BisCoM 25 of 2026 · June 15–21, 2026", "u": "../boletines/biscom25de2026-15a21jun26.html"}, {"t": "Circular 21 of 2026: the new rules for reporting prices to SISMED", "s": "BisCoM 24 of 2026 · June 8–14, 2026", "u": "../boletines/biscom24de2026-08a14jun26.html"}, {"t": "Antidiabetics and anti-obesity drugs: poor or questionable health outcomes", "s": "BisCoM 23 of 2026 · June 1–7, 2026", "u": "../boletines/biscom23de2026-01a07jun26.html"}, {"t": "Antidiabetics and anti-obesity drugs: multibillion-peso spending with no control", "s": "BisCoM 22 of 2026 · May 25–31, 2026", "u": "../boletines/biscom22de2026-25a31may26.html"}, {"t": "COP 9.6 trillion on antidiabetics: the sales that don't add up", "s": "BisCoM 22 · Special Report · 2026", "u": "boletin-22.html"}, {"t": "Law 2386 and CONPES 4170: the tables of pharmaceutical sovereignty", "s": "BisCoM 21 of 2026 · May 18–24, 2026", "u": "../boletines/biscom21de2026-18a24may26.html"}, {"t": "Pharmaceutical sovereignty: good diagnosis, partial implementation", "s": "BisCoM 21 of 2026 · May 18–24, 2026", "u": "boletin.html"}, {"t": "Medicine shortages: the structural and the circumstantial in the crisis", "s": "BisCoM 35 of 2025 · August 25–31, 2025", "u": "../boletines/biscom35de2025-25a31ago25.html"}, {"t": "Antidiabetics and weight-loss drugs: from therapeutic success to economic disaster", "s": "BisCoM 24 of 2025 · June 9–15, 2025", "u": "../boletines/biscom24de2025-09a15jun25.html"}, {"t": "Monoclonal antibodies: best sellers according to SISMED, 2015 to 2024", "s": "BisCoM 23 of 2025 · June 2–8, 2025", "u": "../boletines/biscom23de2025-02a08jun25.html"}, {"t": "Sales and prices reported to SISMED in 2024: is the crisis evident?", "s": "BisCoM 22 of 2025 · May 26–June 1, 2025", "u": "../boletines/biscom22de2025-26may01jun25.html"}, {"t": "Medicine price search", "s": "Tool", "u": "buscador.html"}, {"t": "VMI-CFN System: the 9 versions", "s": "Tool", "u": "sistema.html"}, {"t": "Newsletter glossary", "s": "Tool", "u": "glosario.html"}, {"t": "Podcast Observamed", "s": "Audio", "u": "#podcast"}];
+function menu(on){document.body.classList.toggle('menu-on',on);}
+addEventListener('keydown',function(e){if(e.key==='Escape')menu(false);});
+
+
+
+(function(){
+ var dialog=document.getElementById('image-modal'),image=document.getElementById('image-full');
+ var peek=document.getElementById('image-peek');
+ if(!dialog||!image||!peek)return;
+ var preview=peek.querySelector('img'),opener=null,previousOverflow='',active=null,skipFocus=false;
+ function hidePreview(){active=null;peek.hidden=true;peek.classList.remove('on');preview.removeAttribute('src');}
+ function placePreview(){
+  if(!active)return;
+  var rect=active.getBoundingClientRect(),topLimit=96,pad=22;
+  var maxHeight=innerHeight-topLimit-16,maxWidth=Math.min(760,innerWidth-32);
+  if(maxHeight<120||maxWidth<120){hidePreview();return;}
+  var ratio=(preview.naturalWidth&&preview.naturalHeight)?preview.naturalWidth/preview.naturalHeight:16/9;
+  var width=Math.min(maxWidth,(maxHeight-pad)*ratio+pad),height=(width-pad)/ratio+pad;
+  var left=Math.max(16,Math.min(innerWidth-width-16,rect.left+(rect.width-width)/2));
+  var top=Math.max(topLimit,Math.min(innerHeight-height-16,rect.top+(rect.height-height)/2));
+  peek.style.width=width+'px';peek.style.height=height+'px';peek.style.left=left+'px';peek.style.top=top+'px';
+ }
+ function showPreview(media){
+  if(dialog.open)return;
+  var button=media.querySelector('.cover-expand');if(!button)return;
+  active=media;preview.src=button.dataset.image;peek.hidden=false;placePreview();
+  if(active)peek.classList.add('on');
+ }
+ preview.addEventListener('load',placePreview);
+ document.querySelectorAll('.post-image').forEach(function(media){
+  media.addEventListener('pointerenter',function(e){if(e.pointerType==='mouse'&&matchMedia('(hover:hover) and (pointer:fine)').matches)showPreview(media);});
+  media.addEventListener('pointerleave',hidePreview);
+  media.addEventListener('focusin',function(){if(skipFocus){skipFocus=false;return;}if(matchMedia('(hover:hover) and (pointer:fine)').matches)showPreview(media);});
+  media.addEventListener('focusout',function(e){if(!media.contains(e.relatedTarget))hidePreview();});
+ });
+ document.querySelectorAll('.cover-expand').forEach(function(button){button.addEventListener('click',function(){
+  hidePreview();opener=button;image.src=button.dataset.image;image.alt=button.dataset.title;
+  document.getElementById('image-title').textContent=button.dataset.title;
+  previousOverflow=document.body.style.overflow;dialog.showModal();document.body.style.overflow='hidden';
+ });});
+ document.getElementById('image-close').addEventListener('click',function(){dialog.close();});
+ dialog.addEventListener('click',function(e){if(e.target===dialog)dialog.close();});
+ dialog.addEventListener('close',function(){document.body.style.overflow=previousOverflow;image.removeAttribute('src');if(opener){skipFocus=true;opener.focus();skipFocus=false;}});
+ addEventListener('keydown',function(e){if(e.key==='Escape'){hidePreview();if(dialog.open){e.preventDefault();dialog.close();}}});
+ addEventListener('scroll',hidePreview,{passive:true});addEventListener('resize',hidePreview);
+})();
+
+
+/* barra compacta */
+(function(){var f=document.getElementById('fija'),c=document.querySelector('.cab');
+ function s(){f.classList.toggle('on',scrollY>c.offsetHeight-40);}addEventListener('scroll',s,{passive:true});s();})();
+
+/* buscador: filtra boletines y herramientas */
+function sinTilde(s){return s.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'');}
+document.querySelectorAll('.busca').forEach(function(b){
+  var inp=b.querySelector('input'),res=b.querySelector('.res'),sel=-1;
+  function pinta(){var q=sinTilde(inp.value.trim());sel=-1;
+    if(!q){res.classList.remove('on');return;}
+    var ws=q.split(/\s+/),hits=BUSCA.filter(function(x){var t=sinTilde(x.t+' '+x.s);return ws.every(function(w){return t.indexOf(w)>-1;});}).slice(0,8);
+    res.innerHTML=hits.length?hits.map(function(x){return '<a href="'+x.u+'">'+x.t+'<small>'+x.s+'</small></a>';}).join(''):'<div class="nada">No encontramos «'+inp.value.replace(/</g,'')+'». Pruebe con un medicamento o una circular.</div>';
+    res.classList.add('on');}
+  inp.addEventListener('input',pinta);inp.addEventListener('focus',pinta);
+  inp.addEventListener('keydown',function(e){var as=res.querySelectorAll('a');if(!as.length)return;
+    if(e.key==='ArrowDown'||e.key==='ArrowUp'){e.preventDefault();sel=(sel+(e.key==='ArrowDown'?1:-1)+as.length)%as.length;as.forEach(function(a,i){a.classList.toggle('sel',i===sel);});}
+    if(e.key==='Enter'){location.href=as[Math.max(sel,0)].getAttribute('href');menu(false);}});
+  document.addEventListener('click',function(e){if(!b.contains(e.target))res.classList.remove('on');});
+});
+
+/* podcast */
+(function(){var a=document.getElementById('audio');
+ document.querySelectorAll('.ep').forEach(function(b){b.addEventListener('click',function(){
+  document.querySelectorAll('.ep').forEach(function(x){x.classList.remove('on');});b.classList.add('on');
+  a.src=b.dataset.src;document.getElementById('p-tit').textContent=b.dataset.t;
+  document.getElementById('p-sub').textContent=b.dataset.f+' · La voz de OBSERVAMED';a.play();});});})();
+
+/* videos: se carga YouTube solo al dar play */
+document.querySelectorAll('.reel').forEach(function(r){r.querySelector('.play').addEventListener('click',function(){
+  var f=document.createElement('iframe');f.src='https://www.youtube-nocookie.com/embed/'+r.dataset.yt+'?autoplay=1&rel=0';
+  f.allow='autoplay; encrypted-media; picture-in-picture';f.allowFullscreen=true;f.title='Video';r.appendChild(f);});});
+
+/* rebranding: voltea todos los logos y se recuerda (misma clave que el resto del sitio) */
+function alternarLogos(){var on=!document.querySelector('.flipz').classList.contains('rebrand');aplicarLogos(on,true);
+  try{localStorage.setItem('cdl_rebrand',on?'1':'0');}catch(e){}}
+function aplicarLogos(on,animar){
+  document.querySelectorAll('.flipz .giro').forEach(function(g,i){g.style.transition=animar?'':'none';g.style.transitionDelay=animar?(i*40)+'ms':'0ms';});
+  document.querySelectorAll('.flipz').forEach(function(z){z.classList.toggle('rebrand',on);});
+  document.querySelectorAll('.flip-b').forEach(function(b){b.classList.toggle('on',on);});}
+try{if(localStorage.getItem('cdl_rebrand')==='1')aplicarLogos(true,false);}catch(e){}
+</script>
+<!--REVISTA-->
+<style>
+.rev-velo{position:fixed;inset:0;background:rgba(17,24,39,.55);display:none;align-items:center;justify-content:center;z-index:9999;padding:16px}
+.rev-velo.abierta{display:flex}
+.rev-caja{background:#fff;border-radius:14px;max-width:420px;width:100%;overflow:hidden;box-shadow:0 20px 50px rgba(0,0,0,.3);font-family:inherit}
+.rev-cab{background:linear-gradient(160deg,#1E3A8A,#2A52C4 60%,#00A3C4);color:#fff;padding:18px 20px}
+.rev-cab small{display:block;letter-spacing:.08em;text-transform:uppercase;font-size:11px;opacity:.85}
+.rev-cab b{display:block;font-size:22px;line-height:1.15;margin-top:4px}
+.rev-cuerpo{padding:16px 20px 20px;color:#374151;font-size:14px;line-height:1.5}
+.rev-cuerpo ul{margin:8px 0 14px 18px;padding:0}
+.rev-btns{display:flex;gap:8px;flex-wrap:wrap}
+.rev-btns a,.rev-btns button{flex:1;min-width:130px;text-align:center;border-radius:8px;padding:10px 12px;font-weight:700;font-size:14px;cursor:pointer;text-decoration:none;border:0}
+.rev-btns a{background:#2A52C4;color:#fff}
+.rev-btns button{background:#F3F4F6;color:#374151}
+.rev-abrir{position:fixed;left:14px;bottom:14px;z-index:9998;background:#1E3A8A;color:#fff;border:0;border-radius:999px;padding:10px 14px;font-weight:700;font-size:13px;box-shadow:0 6px 18px rgba(0,0,0,.2);cursor:pointer}
+</style>
+<button class="rev-abrir" type="button" onclick="document.getElementById('rev-velo').classList.add('abierta')">Magazine of the week</button>
+<div class="rev-velo" id="rev-velo" role="dialog" aria-modal="true" aria-labelledby="rev-titulo">
+  <div class="rev-caja">
+    <div class="rev-cab"><small>New edition · weekly magazine</small><b id="rev-titulo">Week of November 2, 2026</b></div>
+    <div class="rev-cuerpo">Download everything new this week as a PDF:<ul><li>An ovarian cancer drug was claimed for reimbursement at up to 8,000% above the maximum price</li><li>Two medicines for von Willebrand disease, reimbursed at up to 6,000% and 3,000% above the cap</li><li>Error or growth? Genzyme's reports to SISMED reveal flaws in the “validation mesh”</li><li>Three EPS accounted for 60.46% of reimbursement claims for high-cost medicines</li><li>and 3 more notes</li></ul>
+      <div class="rev-btns"><a href="../revista/revista-2026-11-02.pdf" download>Download PDF</a><button type="button" id="rev-cerrar">Not now</button></div>
+      <p style="margin:12px 0 0;font-size:12px"><a href="revista/index.html" style="color:#2A52C4">View all editions</a></p>
+    </div>
+  </div>
+</div>
+<script>
+(function(){var k="revista-vista-2026-11-02",v=document.getElementById("rev-velo");
+function cerrar(){v.classList.remove("abierta");try{localStorage.setItem(k,"1")}catch(e){}}
+document.getElementById("rev-cerrar").onclick=cerrar;v.onclick=function(e){if(e.target===v)cerrar()};
+document.addEventListener("keydown",function(e){if(e.key==="Escape")cerrar()});
+var visto=false;try{visto=localStorage.getItem(k)==="1"}catch(e){}
+if(!visto)setTimeout(function(){v.classList.add("abierta")},1500);})();
+</script>
+<!--/REVISTA-->
+<!--IDIOMA--><style>.obs-idioma{all:initial;position:fixed;right:20px;bottom:104px;z-index:75;display:flex;background:#fff;border:1px solid #CBD2DC;border-radius:999px;overflow:hidden;box-shadow:0 4px 14px rgba(11,18,32,.16);font:700 12px/1 -apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;letter-spacing:.04em}.obs-idioma>a,.obs-idioma>span{all:unset;display:block;padding:9px 12px;color:#374151;font:inherit;letter-spacing:inherit;cursor:pointer}.obs-idioma>a:hover{background:#EEF3FC}.obs-idioma>[aria-current]{background:#2A52C4;color:#fff;cursor:default}@media(max-width:600px){.obs-idioma{right:12px;bottom:92px}}@media print{.obs-idioma{display:none}}a[hreflang=es]:not(:has(img)):not(.obs-idioma a)::after{content:" (in Spanish)";font-size:.78em;font-weight:400;opacity:.7;white-space:nowrap}</style><div class="obs-idioma" role="navigation" aria-label="Idioma / Language"><a href="../index.html" hreflang="es" lang="es" title="Leer esta página en español">ES</a><span aria-current="true" lang="en">EN</span></div><!--/IDIOMA-->
+</body>
+</html>
