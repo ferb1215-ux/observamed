@@ -751,15 +751,15 @@ try{if(localStorage.getItem('cdl_rebrand')==='1')aplicarLogos(true,false);}catch
 <button class="rev-abrir" type="button" onclick="document.getElementById('rev-velo').classList.add('abierta')">Revista de la semana</button>
 <div class="rev-velo" id="rev-velo" role="dialog" aria-modal="true" aria-labelledby="rev-titulo">
   <div class="rev-caja">
-    <div class="rev-cab"><small>Nueva edición · revista semanal</small><b id="rev-titulo">Semana del 2 de noviembre de 2026</b></div>
-    <div class="rev-cuerpo">Descargue en PDF todo lo nuevo de esta semana:<ul><li>Un medicamento para cáncer de ovario se recobró hasta 8.000% por encima del precio máximo</li><li>Dos medicamentos para la enfermedad de von Willebrand, recobrados hasta 6.000% y 3.000% sobre el tope</li><li>¿Error o crecimiento? Los reportes de Genzyme a SISMED delatan fallas en la «malla de validación»</li><li>Tres EPS concentraron el 60,46% de los recobros por medicamentos de alto costo</li><li>y 3 notas más</li></ul>
-      <div class="rev-btns"><a href="revista/revista-2026-11-02.pdf" download>Descargar PDF</a><button type="button" id="rev-cerrar">Ahora no</button></div>
+    <div class="rev-cab"><small>Nueva edición · revista semanal</small><b id="rev-titulo">Semana del 9 de noviembre de 2026</b></div>
+    <div class="rev-cuerpo">Descargue en PDF todo lo nuevo de esta semana:<ul><li>Una combinación de dos medicamentos con tope de $237.048, cuando debería costar $54.288</li><li>El Ministerio dejó por fuera los precios a la entrada y por valor terapéutico</li><li>Más de $1.123 millones recobrados por solo 3 viales para una paciente</li><li>Los Techos de Recobro serían inviables si fragmentan la demanda</li><li>y 3 notas más</li></ul>
+      <div class="rev-btns"><a href="revista/revista-2026-11-09.pdf" download>Descargar PDF</a><button type="button" id="rev-cerrar">Ahora no</button></div>
       <p style="margin:12px 0 0;font-size:12px"><a href="revista/index.html" style="color:#2A52C4">Ver todas las ediciones</a></p>
     </div>
   </div>
 </div>
 <script>
-(function(){var k="revista-vista-2026-11-02",v=document.getElementById("rev-velo");
+(function(){var k="revista-vista-2026-11-09",v=document.getElementById("rev-velo");
 function cerrar(){v.classList.remove("abierta");try{localStorage.setItem(k,"1")}catch(e){}}
 document.getElementById("rev-cerrar").onclick=cerrar;v.onclick=function(e){if(e.target===v)cerrar()};
 document.addEventListener("keydown",function(e){if(e.key==="Escape")cerrar()});

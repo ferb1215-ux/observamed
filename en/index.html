@@ -751,15 +751,15 @@ try{if(localStorage.getItem('cdl_rebrand')==='1')aplicarLogos(true,false);}catch
 <button class="rev-abrir" type="button" onclick="document.getElementById('rev-velo').classList.add('abierta')">Magazine of the week</button>
 <div class="rev-velo" id="rev-velo" role="dialog" aria-modal="true" aria-labelledby="rev-titulo">
   <div class="rev-caja">
-    <div class="rev-cab"><small>New edition · weekly magazine</small><b id="rev-titulo">Week of November 2, 2026</b></div>
-    <div class="rev-cuerpo">Download everything new this week as a PDF:<ul><li>An ovarian cancer drug was claimed for reimbursement at up to 8,000% above the maximum price</li><li>Two medicines for von Willebrand disease, reimbursed at up to 6,000% and 3,000% above the cap</li><li>Error or growth? Genzyme's reports to SISMED reveal flaws in the “validation mesh”</li><li>Three EPS accounted for 60.46% of reimbursement claims for high-cost medicines</li><li>and 3 more notes</li></ul>
-      <div class="rev-btns"><a href="../revista/revista-2026-11-02.pdf" download>Download PDF</a><button type="button" id="rev-cerrar">Not now</button></div>
+    <div class="rev-cab"><small>New edition · weekly magazine</small><b id="rev-titulo">Week of November 9, 2026</b></div>
+    <div class="rev-cuerpo">Download everything new this week as a PDF:<ul><li>A two-drug combination with a cap of COP 237,048, when it should cost COP 54,288</li><li>The Ministry left out entry pricing and pricing by therapeutic value</li><li>More than COP 1,123 million reimbursed for just 3 vials for one patient</li><li>Reimbursement Ceilings would be unviable if they fragment demand</li><li>and 3 more notes</li></ul>
+      <div class="rev-btns"><a href="../revista/revista-2026-11-09.pdf" download>Download PDF</a><button type="button" id="rev-cerrar">Not now</button></div>
       <p style="margin:12px 0 0;font-size:12px"><a href="revista/index.html" style="color:#2A52C4">View all editions</a></p>
     </div>
   </div>
 </div>
 <script>
-(function(){var k="revista-vista-2026-11-02",v=document.getElementById("rev-velo");
+(function(){var k="revista-vista-2026-11-09",v=document.getElementById("rev-velo");
 function cerrar(){v.classList.remove("abierta");try{localStorage.setItem(k,"1")}catch(e){}}
 document.getElementById("rev-cerrar").onclick=cerrar;v.onclick=function(e){if(e.target===v)cerrar()};
 document.addEventListener("keydown",function(e){if(e.key==="Escape")cerrar()});
