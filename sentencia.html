@@ -390,18 +390,18 @@ document.addEventListener('click',function(e){
 .rev-btns button{background:#F3F4F6;color:#374151}
 .rev-abrir{position:fixed;left:14px;bottom:14px;z-index:9998;background:#1E3A8A;color:#fff;border:0;border-radius:999px;padding:10px 14px;font-weight:700;font-size:13px;box-shadow:0 6px 18px rgba(0,0,0,.2);cursor:pointer}
 </style>
-<button class="rev-abrir" type="button" onclick="document.getElementById('rev-velo').classList.add('abierta')">Revista de la semana</button>
+<button class="rev-abrir" type="button" onclick="document.getElementById('rev-velo').classList.add('abierta')">Revista: edición especial</button>
 <div class="rev-velo" id="rev-velo" role="dialog" aria-modal="true" aria-labelledby="rev-titulo">
   <div class="rev-caja">
-    <div class="rev-cab"><small>Nueva edición · revista semanal</small><b id="rev-titulo">Semana del 16 de noviembre de 2026</b></div>
-    <div class="rev-cuerpo">Descargue en PDF todo lo nuevo de esta semana:<ul><li>El mercado de medicamentos creció en plata, no en pastillas</li><li>Los NoPOS: 37 % de las unidades, 68 % del dinero</li><li>Cada vez se fabrican menos medicamentos en Colombia</li><li>Pregabalina: mismo medicamento, precios de 267 a 1.248 pesos</li><li>y 3 notas más</li></ul>
-      <div class="rev-btns"><a href="revista/revista-2026-11-16.pdf" download>Descargar PDF</a><button type="button" id="rev-cerrar">Ahora no</button></div>
+    <div class="rev-cab"><small>Edición especial · revista</small><b id="rev-titulo">Edición especial · La sentencia y las resoluciones 2445 y 1809</b></div>
+    <div class="rev-cuerpo">Descargue en PDF esta edición especial:<ul><li>El Consejo de Estado confirma: el Estado falló en el control de precios de medicamentos</li><li>Una nueva política farmacéutica nacional, con mesa de trabajo y comité de verificación</li><li>Lo que pidió la Procuraduría y las órdenes que siguen en firme</li><li>Resolución 2445 de 2026: un crédito de la ADRES para pagar las atenciones pendientes</li><li>y 3 notas más</li></ul>
+      <div class="rev-btns"><a href="revista/revista-especial-2026-10-26.pdf" download>Descargar PDF</a><button type="button" id="rev-cerrar">Ahora no</button></div>
       <p style="margin:12px 0 0;font-size:12px"><a href="revista/index.html" style="color:#2A52C4">Ver todas las ediciones</a></p>
     </div>
   </div>
 </div>
 <script>
-(function(){var k="revista-vista-2026-11-16",v=document.getElementById("rev-velo");
+(function(){var k="revista-vista-especial-2026-10-26",v=document.getElementById("rev-velo");
 function cerrar(){v.classList.remove("abierta");try{localStorage.setItem(k,"1")}catch(e){}}
 document.getElementById("rev-cerrar").onclick=cerrar;v.onclick=function(e){if(e.target===v)cerrar()};
 document.addEventListener("keydown",function(e){if(e.key==="Escape")cerrar()});
