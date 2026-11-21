@@ -1,0 +1,98 @@
+/* Editorial layer for the bulletin pages (boletines/*.html).
+   Same structure and content as before; only typography, rules and spacing change,
+   to match the newspaper style of the portada and the topic pages.
+   Linked from every page by portada/estilo-editorial.py (between <!--EDITORIAL--> markers). */
+:root{--papel:#FBFAF7;--tinta-e:#16181D;--gris-e:#5B6170;--claro-e:#8A909C;--regla-e:#DCD8CF;--azul-e:#1E3A8A;--azul2-e:#2A52C4;
+ --serif-e:"Source Serif 4",Georgia,"Times New Roman",serif}
+body{background:var(--papel)}
+
+/* top bar */
+body>nav{background:#fff;border-bottom:1px solid var(--regla-e);box-shadow:none}
+body>nav a{font-weight:700;letter-spacing:.01em}
+
+/* reading column */
+main:not(.archive-main){max-width:760px;padding-left:20px;padding-right:20px}
+/* wide blocks (tables, charts, covers) break out of the reading column, centred */
+main:not(.archive-main) :is(.caja,.grafs,.graf,.ed-cover){width:min(1040px,calc(100vw - 32px));margin-left:calc(50% - min(520px,calc(50vw - 16px)))}
+.volver{border-radius:0;box-shadow:none;border:0;border-bottom:1px solid var(--regla-e);background:transparent;padding:6px 0;font-size:.8rem;letter-spacing:.04em}
+.volver:hover{transform:none;box-shadow:none;color:var(--azul2-e)}
+.mig{font-size:.72rem;letter-spacing:.16em;color:var(--azul2-e);margin-top:18px}
+main h1{font-family:var(--serif-e);font-weight:700;letter-spacing:-.01em;line-height:1.15;font-size:clamp(1.6rem,3vw,2.35rem);max-width:none;margin-bottom:16px}
+/* titles that are really whole paragraphs (set by estilo-editorial.py from their length) */
+main h1[data-largo="l"]{font-size:clamp(1.35rem,2.2vw,1.7rem);line-height:1.25}
+main h1[data-largo="xl"]{font-size:clamp(1.15rem,1.8vw,1.4rem);line-height:1.35;font-weight:600}
+main h1{text-wrap:balance}
+.autor{padding:12px 0;border-top:1px solid var(--tinta-e);border-bottom:1px solid var(--regla-e);margin-bottom:30px;font-size:.8rem}
+.lead{font-family:var(--serif-e);font-size:1.13rem;line-height:1.72;text-align:left;hyphens:manual;max-width:none;color:#23262D}
+main p{font-family:var(--serif-e)}
+
+/* "what this table shows" -> editorial note, no card */
+.demuestra{background:transparent;border:0;border-top:3px solid var(--tinta-e);border-radius:0;box-shadow:none;padding:12px 0 6px;margin:8px 0 26px}
+.demuestra .dt{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;font-size:.72rem;letter-spacing:.16em;color:var(--azul2-e)}
+.demuestra p{font-family:var(--serif-e);font-size:1.08rem;line-height:1.7;text-align:left;hyphens:manual;color:#23262D;max-width:none}
+
+/* images: like newspaper photos */
+.graf img,figure img,.ed-cover img{border-radius:0!important;box-shadow:none!important}
+figure figcaption{font-size:.78rem;color:var(--gris-e)}
+
+/* data tables */
+.caja{border-radius:0;box-shadow:none;border:0;border-top:3px solid var(--tinta-e);background:#fff}
+.cab{background:#fff;border-bottom:1px solid var(--regla-e);padding:14px 4px}
+.cab b{font-family:var(--serif-e);font-size:1.02rem}
+.cuenta,.val{border-radius:0}
+.buscaT{padding:12px 4px}
+.buscaT input{border-radius:0;border:1px solid var(--regla-e)}
+th{background:#fff!important;color:var(--gris-e)!important;border-bottom:2px solid var(--tinta-e);font-size:.66rem;letter-spacing:.12em}
+td{border-bottom:1px solid #ECE9E2}
+tr:hover td{background:#F6F4EF}
+
+/* previous / next */
+.navT a{border-radius:0;box-shadow:none;border:0;border-top:1px solid var(--tinta-e);background:transparent;padding:12px 0}
+.navT a:hover{transform:none;box-shadow:none}
+.navT b{font-family:var(--serif-e);font-weight:700;font-size:1rem}
+.navT small{letter-spacing:.14em}
+
+/* table index on an edition page */
+.tarjT{border-radius:0;box-shadow:none;border:0;border-top:1px solid var(--regla-e);background:transparent;padding:18px 0;margin:0}
+.tarjT:hover{transform:none;box-shadow:none}
+.tarjT:hover h3{color:var(--azul2-e)}
+.tarjT h3{font-family:var(--serif-e);font-weight:700;font-size:1.2rem}
+.tarjT p{font-family:var(--serif-e);font-size:1rem;text-align:left;hyphens:manual}
+.tarjT .meta span{border-radius:0;background:transparent;padding:0;color:var(--gris-e)}
+.tarjT .meta .aler{background:transparent}
+main h2{font-family:var(--serif-e);font-weight:700;letter-spacing:-.01em}
+
+/* special reports (analisis-*) */
+.tipo{border-radius:0;border:0;background:transparent;padding:0;letter-spacing:.16em;color:#8B1E3F}
+.fecha{border-top:1px solid var(--tinta-e);padding-top:12px;font-size:.8rem}
+.acciones a{border-radius:0}
+
+/* archive (boletines/index.html) */
+.archive-feature h2,.archive-feature h3,.catalogue-copy strong,.catalogue-year-heading h3,.archive-heading h2{font-family:var(--serif-e);font-weight:700;letter-spacing:-.01em}
+.catalogue-row{background:transparent}
+.archive-tools input,.archive-tools select{border-radius:0}
+
+footer{background:transparent;border-top:1px solid var(--regla-e)}
+
+/* "Lo más importante, en gráficas" */
+.grafs h2{border-top:3px solid var(--tinta-e);padding-top:12px}
+.grafs figure{border-radius:0;border:0;border-top:1px solid var(--regla-e);background:#fff}
+.grafs figcaption{font-size:.78rem;border-top:1px solid var(--regla-e)}
+.cta,.cta a{border-radius:0}
+
+/* long codes and unbroken words never push the page sideways on phones */
+main h1,.cab b,.cab span,.mig{overflow-wrap:anywhere}
+
+/* edition intro split into paragraphs + "Temario" list (estilo-editorial.py) */
+.lead-ed p{font-size:1.13rem;line-height:1.72;margin:0 0 18px;color:#23262D}
+.temario{border-top:3px solid var(--tinta-e);padding-top:12px;margin:6px 0 30px}
+.temario span{display:block;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;font-size:.72rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--azul2-e);margin-bottom:6px}
+.temario ol{margin:0;padding:0;list-style:none;counter-reset:t}
+.temario li{counter-increment:t;display:grid;grid-template-columns:34px 1fr;gap:6px;padding:9px 0;border-bottom:1px solid var(--regla-e);font-family:var(--serif-e);font-size:1.04rem;line-height:1.45}
+.temario li::before{content:counter(t,decimal-leading-zero);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;font-size:.78rem;font-weight:800;color:var(--azul2-e);padding-top:3px}
+
+/* wide tables: soft shadows at the edges tell the reader the table scrolls sideways */
+.scroll{background:linear-gradient(90deg,#fff 30%,rgba(255,255,255,0)) 0 0,linear-gradient(90deg,rgba(255,255,255,0),#fff 70%) 100% 0,
+ radial-gradient(farthest-side at 0 50%,rgba(22,24,29,.16),transparent) 0 0,radial-gradient(farthest-side at 100% 50%,rgba(22,24,29,.16),transparent) 100% 0;
+ background-repeat:no-repeat;background-size:40px 100%,40px 100%,14px 100%,14px 100%;background-attachment:local,local,scroll,scroll}
+.cab span{font-size:.8rem;line-height:1.55}

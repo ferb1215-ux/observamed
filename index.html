@@ -15,7 +15,7 @@
 <link rel="apple-touch-icon" href="img/favicon-180.png"/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,600;8..60,700&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&display=swap" rel="stylesheet"/>
 <style>
 :root{
   --font:-apple-system,BlinkMacSystemFont,"Segoe UI","Helvetica Neue",Arial,sans-serif;
@@ -157,6 +157,27 @@ svg{flex-shrink:0}
 .h-sec{font-size:2.5rem;font-weight:900;letter-spacing:-.03em;line-height:1}
 .h-sub{font-size:.88rem;font-weight:800;letter-spacing:.03em;text-transform:uppercase;margin:6px 0 22px}
 .h-mini{font-size:1.6rem;font-weight:900;letter-spacing:-.02em;margin-bottom:16px}
+.ts{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.2fr);gap:26px 40px;margin:30px 0 8px;padding:16px 0 26px;border-top:3px solid var(--tinta);border-bottom:1px solid var(--regla)}
+.ts>*{min-width:0}
+.ts-k{display:block;font-size:.74rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--azul)}
+.ts-ante{display:block;margin:4px 0 0;color:var(--suave);font-size:.8rem;font-weight:600}
+.ts h2{font-family:var(--serif);margin:14px 0 14px;font-size:clamp(1.7rem,2.8vw,2.45rem);line-height:1.1;font-weight:700;letter-spacing:-.01em}
+.ts h2 a{color:var(--tinta)}.ts h2 a:hover{color:var(--azul)}
+.ts p{font-family:var(--serif);margin:0 0 18px;color:#3A3F4A;font-size:1.08rem;line-height:1.6}
+.ts-cif{display:grid;grid-template-columns:1fr 1fr;gap:0 26px;margin:0 0 20px}
+.ts-c{padding:12px 0;border-top:1px solid var(--regla)}
+.ts-c b{display:block;font-family:var(--serif);color:var(--azul);font-size:1.7rem;font-weight:700;line-height:1.1}
+.ts-c span{display:block;color:var(--medio);font-size:.82rem;line-height:1.4;margin-top:3px}
+.ts-btn{display:inline-block;background:var(--tinta);color:#fff;font-weight:800;font-size:.92rem;padding:12px 20px}
+.ts-btn:hover{background:var(--azul)}
+.ts-fig{margin:0}.ts-fig img{display:block;width:100%;height:auto}
+.ts-fig figcaption{margin-top:8px;padding-top:8px;border-top:1px solid var(--regla);color:var(--suave);font-size:.78rem}
+.ts-ref{grid-column:1/-1;font-size:.82rem;color:var(--medio)}
+.ts-ref summary{cursor:pointer;font-size:.72rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--medio)}
+.ts-ref ol{margin:10px 0 0;padding-left:20px}.ts-ref li{margin:6px 0;line-height:1.5}
+.ts-ref a{color:var(--azul);word-break:break-all}
+@media(max-width:860px){.ts{grid-template-columns:1fr}.ts-fig{order:-1}}
+@media(max-width:420px){.ts-cif{grid-template-columns:1fr}}
 .grid2{display:grid;grid-template-columns:minmax(0,1fr);gap:30px 28px}
 .card{display:block}
 .card-copy{display:block}
@@ -430,8 +451,51 @@ body.menu-on{overflow:hidden}
 }
 @media (prefers-reduced-motion:reduce){.tick .cinta{animation:none}*{transition:none!important}}
 .partner-static{cursor:default}
+
+/* ---------- capa editorial (20 nov 2026): tipografía y líneas de periódico, misma estructura ---------- */
+:root{--regla:#DCD8CF;--papel:#FBFAF7}
+body{background:var(--papel)}
+.cab,.menu,.fija,.res,.cajon{background:#fff}
+.h-sec,.h-mini,.dest h2,.op b,.esp h4,.p-tit,.pod-lado h2,.mepa-h h2,.herr-h h2,.precio h3,.wa-cta h3,.reel .rt b,.red-h h2,.doc h3,.inst b{font-family:var(--serif);font-weight:700;letter-spacing:-.01em}
+.h-sec{font-size:2.3rem;border-top:3px solid var(--tinta);padding-top:12px}
+.h-sub{font-size:.72rem;letter-spacing:.16em;color:var(--azul);margin:8px 0 22px}
+.h-mini{font-size:1.45rem;border-top:3px solid var(--tinta);padding-top:12px;margin-bottom:18px}
+.col-dest{padding-top:15px}
+.dest{box-shadow:none}
+.dest p{font-family:var(--serif);font-size:1.02rem;line-height:1.55}
+.lbl{font-size:.74rem;letter-spacing:.14em;font-weight:800;padding:5px 10px}
+.card .meta{margin:12px 0 4px}
+.card h3{font-size:1.32rem;line-height:1.25}
+.grid2>article{padding-bottom:24px;border-bottom:1px solid var(--regla)}
+.mini{padding-bottom:20px;border-bottom:1px solid var(--regla)}
+.mini h3{font-size:1.15rem}
+.op{border-bottom:1px solid var(--regla);padding-bottom:16px}
+.op b{font-size:1.12rem;font-weight:600;line-height:1.32}
+.tag,.op .ol{font-size:.7rem;letter-spacing:.12em}
+.tick{margin-top:30px}
+.tick .tl{font-size:.72rem;letter-spacing:.16em;padding:13px 20px}
+.tick .cinta a{font-family:var(--serif);font-size:1.02rem}
+.cover-expand{border-radius:0;font-size:.66rem;letter-spacing:.08em}
+.b-azul{background:var(--tinta);font-size:.82rem;letter-spacing:.14em}
+.b-azul:hover{background:var(--azul)}
+.red-h{border-top:3px solid var(--tinta);padding-top:22px}
+.mepa-h h2,.herr-h h2,.pod-lado h2{font-size:2.3rem}
+.herr-h{border-top:3px solid var(--tinta);padding-top:14px;max-width:none}
+.herr-h p{font-family:var(--serif);font-size:1.12rem}
+.herr-h .k{font-size:.72rem;letter-spacing:.16em}
+.hz{border-radius:0;border-color:var(--regla);background:#fff}
+.hz:hover{transform:none;box-shadow:none;border-color:var(--tinta)}
+.hz .ic{border-radius:0}
+.inst:not(.partner-static):hover{transform:none}
+.precio p,.doc p,.inst p,.wa-cta p{font-family:var(--serif)}
+.wa-cta{border-radius:0}
+.b-wa{border-radius:0}
+.menu a{font-size:.88rem;padding:8px 9px;letter-spacing:.01em}
+.menu .oro{padding:8px 14px;margin-left:6px;letter-spacing:.08em}
+.flip-b{border-radius:0}
+@media (max-width:1500px){.menu .m3{display:none}}
+@media (max-width:1300px){.menu .m2{display:none}}
 </style>
-<!--IDIOMA-HEAD--><link rel="alternate" hreflang="es" href="https://jazzy-malasada-956fbc.netlify.app/"/><link rel="alternate" hreflang="en" href="https://jazzy-malasada-956fbc.netlify.app/en/"/><link rel="alternate" hreflang="x-default" href="https://jazzy-malasada-956fbc.netlify.app/"/><!--/IDIOMA-HEAD-->
 </head>
 <body>
 
@@ -481,6 +545,7 @@ body.menu-on{overflow:hidden}
 <main>
 <div class="w">
   <a class="sen-cinta" href="sentencia.html" style="display:flex;flex-wrap:wrap;align-items:center;gap:8px 14px;margin:14px 0 0;padding:12px 16px;border-radius:8px;background:linear-gradient(120deg,#4A0E22,#8B1E3F);color:#fff;text-decoration:none"><b style="background:#F4BC3F;color:#4A0E22;font-size:12px;letter-spacing:.08em;padding:3px 8px;border-radius:4px">SEGUIMIENTO JUDICIAL</b><span style="font-weight:800">La sentencia del Consejo de Estado sobre precios de medicamentos: qué ordena y cómo avanza</span><span style="margin-left:auto;font-weight:800;color:#F4BC3F">Ver →</span></a>
+  
   <div class="tick"><span class="tl">ÚLTIMOS BOLETINES</span><div class="pista"><div class="cinta"><a href="boletines/biscom38de2026-14a20sep26.html">De la Circular 22/2026 a un listado de la CNPMyDM con errores multimillonarios</a><a href="boletines/biscom36de2026-31ago06sep26.html">Plan de choque de MinSalud: el seguimiento llega al día 30</a><a href="boletines/biscom35de2026-24a30ago26.html">Precios bajo revisión y soberanía farmacéutica por construir</a><a href="boletines/biscom32de2026-03a09ago26.html">Circular 22/2026: los precios máximos de venta del régimen de control directo</a><a href="boletines/biscom31de2026-27jul02ago26.html">Anticuerpos monoclonales: una de las venas abiertas que explican la crisis</a><a href="boletines/biscom29de2026-13a19jul26.html">Ley 2386 y CONPES 4170: la hoja de ruta de la soberanía farmacéutica</a><a href="boletines/biscom25de2026-15a21jun26.html">Circular 22/2026: se actualiza el precio máximo de venta de los medicamentos regulados</a><a href="boletines/biscom24de2026-08a14jun26.html">Circular 21 de 2026: las nuevas reglas para reportar precios a SISMED</a><a href="boletines/biscom38de2026-14a20sep26.html">De la Circular 22/2026 a un listado de la CNPMyDM con errores multimillonarios</a><a href="boletines/biscom36de2026-31ago06sep26.html">Plan de choque de MinSalud: el seguimiento llega al día 30</a><a href="boletines/biscom35de2026-24a30ago26.html">Precios bajo revisión y soberanía farmacéutica por construir</a><a href="boletines/biscom32de2026-03a09ago26.html">Circular 22/2026: los precios máximos de venta del régimen de control directo</a><a href="boletines/biscom31de2026-27jul02ago26.html">Anticuerpos monoclonales: una de las venas abiertas que explican la crisis</a><a href="boletines/biscom29de2026-13a19jul26.html">Ley 2386 y CONPES 4170: la hoja de ruta de la soberanía farmacéutica</a><a href="boletines/biscom25de2026-15a21jun26.html">Circular 22/2026: se actualiza el precio máximo de venta de los medicamentos regulados</a><a href="boletines/biscom24de2026-08a14jun26.html">Circular 21 de 2026: las nuevas reglas para reportar precios a SISMED</a></div></div></div>
 
   <section class="prin" id="boletines">
@@ -732,41 +797,5 @@ function aplicarLogos(on,animar){
   document.querySelectorAll('.flip-b').forEach(function(b){b.classList.toggle('on',on);});}
 try{if(localStorage.getItem('cdl_rebrand')==='1')aplicarLogos(true,false);}catch(e){}
 </script>
-<!--IDIOMA--><style>.obs-idioma{all:initial;position:fixed;right:20px;bottom:104px;z-index:75;display:flex;background:#fff;border:1px solid #CBD2DC;border-radius:999px;overflow:hidden;box-shadow:0 4px 14px rgba(11,18,32,.16);font:700 12px/1 -apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;letter-spacing:.04em}.obs-idioma>a,.obs-idioma>span{all:unset;display:block;padding:9px 12px;color:#374151;font:inherit;letter-spacing:inherit;cursor:pointer}.obs-idioma>a:hover{background:#EEF3FC}.obs-idioma>[aria-current]{background:#2A52C4;color:#fff;cursor:default}@media(max-width:600px){.obs-idioma{right:12px;bottom:92px}}@media print{.obs-idioma{display:none}}</style><div class="obs-idioma" role="navigation" aria-label="Idioma / Language"><span aria-current="true" lang="es">ES</span><a href="en/index.html" hreflang="en" lang="en" title="Read this page in English">EN</a></div><!--/IDIOMA-->
-<!--REVISTA-->
-<style>
-.rev-velo{position:fixed;inset:0;background:rgba(17,24,39,.55);display:none;align-items:center;justify-content:center;z-index:9999;padding:16px}
-.rev-velo.abierta{display:flex}
-.rev-caja{background:#fff;border-radius:14px;max-width:420px;width:100%;overflow:hidden;box-shadow:0 20px 50px rgba(0,0,0,.3);font-family:inherit}
-.rev-cab{background:linear-gradient(160deg,#1E3A8A,#2A52C4 60%,#00A3C4);color:#fff;padding:18px 20px}
-.rev-cab small{display:block;letter-spacing:.08em;text-transform:uppercase;font-size:11px;opacity:.85}
-.rev-cab b{display:block;font-size:22px;line-height:1.15;margin-top:4px}
-.rev-cuerpo{padding:16px 20px 20px;color:#374151;font-size:14px;line-height:1.5}
-.rev-cuerpo ul{margin:8px 0 14px 18px;padding:0}
-.rev-btns{display:flex;gap:8px;flex-wrap:wrap}
-.rev-btns a,.rev-btns button{flex:1;min-width:130px;text-align:center;border-radius:8px;padding:10px 12px;font-weight:700;font-size:14px;cursor:pointer;text-decoration:none;border:0}
-.rev-btns a{background:#2A52C4;color:#fff}
-.rev-btns button{background:#F3F4F6;color:#374151}
-.rev-abrir{position:fixed;left:14px;bottom:14px;z-index:9998;background:#1E3A8A;color:#fff;border:0;border-radius:999px;padding:10px 14px;font-weight:700;font-size:13px;box-shadow:0 6px 18px rgba(0,0,0,.2);cursor:pointer}
-</style>
-<button class="rev-abrir" type="button" onclick="document.getElementById('rev-velo').classList.add('abierta')">Revista de la semana</button>
-<div class="rev-velo" id="rev-velo" role="dialog" aria-modal="true" aria-labelledby="rev-titulo">
-  <div class="rev-caja">
-    <div class="rev-cab"><small>Nueva edición · revista semanal</small><b id="rev-titulo">Semana del 19 de octubre de 2026</b></div>
-    <div class="rev-cuerpo">Descargue en PDF todo lo nuevo de esta semana:<ul><li>Un combinado de dos pastillas con precio de recobro cuatro veces mayor</li><li>Dolutegravir: el precio regulado queda muy por encima del real</li><li>Medicamentos de alto costo que entraron al país sin control de precio</li><li>Techos o Presupuestos Máximos: las advertencias que nadie escuchó</li><li>y 3 notas más</li></ul>
-      <div class="rev-btns"><a href="revista/revista-2026-10-19.pdf" download>Descargar PDF</a><button type="button" id="rev-cerrar">Ahora no</button></div>
-      <p style="margin:12px 0 0;font-size:12px"><a href="revista/index.html" style="color:#2A52C4">Ver todas las ediciones</a></p>
-    </div>
-  </div>
-</div>
-<script>
-(function(){var k="revista-vista-2026-10-19",v=document.getElementById("rev-velo");
-function cerrar(){v.classList.remove("abierta");try{localStorage.setItem(k,"1")}catch(e){}}
-document.getElementById("rev-cerrar").onclick=cerrar;v.onclick=function(e){if(e.target===v)cerrar()};
-document.addEventListener("keydown",function(e){if(e.key==="Escape")cerrar()});
-var visto=false;try{visto=localStorage.getItem(k)==="1"}catch(e){}
-if(!visto)setTimeout(function(){v.classList.add("abierta")},1500);})();
-</script>
-<!--/REVISTA-->
 </body>
 </html>
