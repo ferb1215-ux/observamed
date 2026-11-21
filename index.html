@@ -732,6 +732,7 @@ function aplicarLogos(on,animar){
   document.querySelectorAll('.flip-b').forEach(function(b){b.classList.toggle('on',on);});}
 try{if(localStorage.getItem('cdl_rebrand')==='1')aplicarLogos(true,false);}catch(e){}
 </script>
+<!--IDIOMA--><style>.obs-idioma{all:initial;position:fixed;right:20px;bottom:104px;z-index:75;display:flex;background:#fff;border:1px solid #CBD2DC;border-radius:999px;overflow:hidden;box-shadow:0 4px 14px rgba(11,18,32,.16);font:700 12px/1 -apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;letter-spacing:.04em}.obs-idioma>a,.obs-idioma>span{all:unset;display:block;padding:9px 12px;color:#374151;font:inherit;letter-spacing:inherit;cursor:pointer}.obs-idioma>a:hover{background:#EEF3FC}.obs-idioma>[aria-current]{background:#2A52C4;color:#fff;cursor:default}@media(max-width:600px){.obs-idioma{right:12px;bottom:92px}}@media print{.obs-idioma{display:none}}</style><div class="obs-idioma" role="navigation" aria-label="Idioma / Language"><span aria-current="true" lang="es">ES</span><a href="en/index.html" hreflang="en" lang="en" title="Read this page in English">EN</a></div><!--/IDIOMA-->
 <!--REVISTA-->
 <style>
 .rev-velo{position:fixed;inset:0;background:rgba(17,24,39,.55);display:none;align-items:center;justify-content:center;z-index:9999;padding:16px}
@@ -748,18 +749,18 @@ try{if(localStorage.getItem('cdl_rebrand')==='1')aplicarLogos(true,false);}catch
 .rev-btns button{background:#F3F4F6;color:#374151}
 .rev-abrir{position:fixed;left:14px;bottom:14px;z-index:9998;background:#1E3A8A;color:#fff;border:0;border-radius:999px;padding:10px 14px;font-weight:700;font-size:13px;box-shadow:0 6px 18px rgba(0,0,0,.2);cursor:pointer}
 </style>
-<button class="rev-abrir" type="button" onclick="document.getElementById('rev-velo').classList.add('abierta')">Revista: edición especial</button>
+<button class="rev-abrir" type="button" onclick="document.getElementById('rev-velo').classList.add('abierta')">Revista de la semana</button>
 <div class="rev-velo" id="rev-velo" role="dialog" aria-modal="true" aria-labelledby="rev-titulo">
   <div class="rev-caja">
-    <div class="rev-cab"><small>Edición especial · revista</small><b id="rev-titulo">Edición especial · La sentencia y las resoluciones 2445 y 1809</b></div>
-    <div class="rev-cuerpo">Descargue en PDF esta edición especial:<ul><li>El Consejo de Estado confirma: el Estado falló en el control de precios de medicamentos</li><li>Una nueva política farmacéutica nacional, con mesa de trabajo y comité de verificación</li><li>Lo que pidió la Procuraduría y las órdenes que siguen en firme</li><li>Resolución 2445 de 2026: un crédito de la ADRES para pagar las atenciones pendientes</li><li>y 3 notas más</li></ul>
-      <div class="rev-btns"><a href="revista/revista-especial-2026-10-26.pdf" download>Descargar PDF</a><button type="button" id="rev-cerrar">Ahora no</button></div>
+    <div class="rev-cab"><small>Nueva edición · revista semanal</small><b id="rev-titulo">Semana del 19 de octubre de 2026</b></div>
+    <div class="rev-cuerpo">Descargue en PDF todo lo nuevo de esta semana:<ul><li>Un combinado de dos pastillas con precio de recobro cuatro veces mayor</li><li>Dolutegravir: el precio regulado queda muy por encima del real</li><li>Medicamentos de alto costo que entraron al país sin control de precio</li><li>Techos o Presupuestos Máximos: las advertencias que nadie escuchó</li><li>y 3 notas más</li></ul>
+      <div class="rev-btns"><a href="revista/revista-2026-10-19.pdf" download>Descargar PDF</a><button type="button" id="rev-cerrar">Ahora no</button></div>
       <p style="margin:12px 0 0;font-size:12px"><a href="revista/index.html" style="color:#2A52C4">Ver todas las ediciones</a></p>
     </div>
   </div>
 </div>
 <script>
-(function(){var k="revista-vista-especial-2026-10-26",v=document.getElementById("rev-velo");
+(function(){var k="revista-vista-2026-10-19",v=document.getElementById("rev-velo");
 function cerrar(){v.classList.remove("abierta");try{localStorage.setItem(k,"1")}catch(e){}}
 document.getElementById("rev-cerrar").onclick=cerrar;v.onclick=function(e){if(e.target===v)cerrar()};
 document.addEventListener("keydown",function(e){if(e.key==="Escape")cerrar()});
@@ -767,6 +768,5 @@ var visto=false;try{visto=localStorage.getItem(k)==="1"}catch(e){}
 if(!visto)setTimeout(function(){v.classList.add("abierta")},1500);})();
 </script>
 <!--/REVISTA-->
-<!--IDIOMA--><style>.obs-idioma{all:initial;position:fixed;right:20px;bottom:104px;z-index:75;display:flex;background:#fff;border:1px solid #CBD2DC;border-radius:999px;overflow:hidden;box-shadow:0 4px 14px rgba(11,18,32,.16);font:700 12px/1 -apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;letter-spacing:.04em}.obs-idioma>a,.obs-idioma>span{all:unset;display:block;padding:9px 12px;color:#374151;font:inherit;letter-spacing:inherit;cursor:pointer}.obs-idioma>a:hover{background:#EEF3FC}.obs-idioma>[aria-current]{background:#2A52C4;color:#fff;cursor:default}@media(max-width:600px){.obs-idioma{right:12px;bottom:92px}}@media print{.obs-idioma{display:none}}</style><div class="obs-idioma" role="navigation" aria-label="Idioma / Language"><span aria-current="true" lang="es">ES</span><a href="en/index.html" hreflang="en" lang="en" title="Read this page in English">EN</a></div><!--/IDIOMA-->
 </body>
 </html>
