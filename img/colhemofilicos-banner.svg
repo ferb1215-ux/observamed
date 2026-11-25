@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 160" role="img" aria-label="ColHemofílicos">
+  <g transform="translate(8 8) scale(.66)">
+    <path d="M0 0H136A64 64 0 0 1 200 64V218H64A64 64 0 0 1 0 154Z" fill="#E5233D"/>
+    <circle cx="100" cy="109" r="70" fill="#fff"/>
+    <rect x="84" y="57" width="32" height="104" rx="16" fill="#A3A3A3"/>
+    <rect x="48" y="93" width="104" height="32" rx="16" fill="#A3A3A3"/>
+    <path transform="rotate(-40 100 113)" d="M100 91C91 103 86 111 86 118a14 14 0 0 0 28 0c0-7-5-15-14-27Z" fill="#E5233D"/>
+  </g>
+  <text x="152" y="96" font-family="Helvetica Neue,Arial,sans-serif" font-weight="700" font-size="50" fill="#E5233D" letter-spacing="-.5">ColHemofílicos</text>
+</svg>
