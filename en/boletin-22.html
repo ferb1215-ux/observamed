@@ -662,17 +662,13 @@ footer{background:#0F172A;color:#94A3B8;padding:42px 24px 30px;font-size:0.88rem
     <a href="buscador.html">Finder</a>
     <a href="boletines/index.html">Bulletins</a>
     <a href="boletines/index.html#especial" class="activo sec">Special reports</a>
-    <button class="btn-flip-mini" type="button" onclick="alternarLogos()" title="View current logos / rebranding proposal">
-      <svg viewBox="0 0 24 24"><path d="M3.5 9a8.5 8.5 0 0 1 14.9-3.4L21 8"/><path d="M21 3v5h-5"/><path d="M20.5 15a8.5 8.5 0 0 1-14.9 3.4L3 16"/><path d="M3 21v-5h5"/></svg>
-      <span>Rebranding</span>
-    </button>
     <a href="glosario.html">Glossary</a>
     <a href="https://med-informatica.com/" target="_blank" rel="noopener" class="btn btn-primary"><span class="lbl">Platform<span class="ap"> Login</span></span></a>
   </div>
 
 <button class="ham" type="button" aria-label="Menu" aria-expanded="false" aria-controls="mmenu" onclick="menuMovil()"><span></span><span></span><span></span></button>
 
-<div class="mmenu" id="mmenu"><a href="sistema.html">The system<small>VMI-CFN System</small></a><a href="buscador.html">Search tool<small>Prices by medicine</small></a><a href="boletines/index.html">Newsletters<small>15 editions · 203 tables</small></a><a href="boletines/index.html#especial">Special reports<small>In-depth analysis</small></a><a href="glosario.html">Glossary<small>25 bulletin terms</small></a><a class="flip" href="javascript:void(0)" onclick="alternarLogos();menuMovil()">View rebranding proposal</a><a class="cta" href="https://med-informatica.com/" target="_blank" rel="noopener">Platform login</a></div>
+<div class="mmenu" id="mmenu"><a href="sistema.html">The system<small>VMI-CFN System</small></a><a href="buscador.html">Search tool<small>Prices by medicine</small></a><a href="boletines/index.html">Newsletters<small>15 editions · 203 tables</small></a><a href="boletines/index.html#especial">Special reports<small>In-depth analysis</small></a><a href="glosario.html">Glossary<small>25 bulletin terms</small></a><a class="cta" href="https://med-informatica.com/" target="_blank" rel="noopener">Platform login</a></div>
 </nav>
 <div class="alianzas aliad"><a class="pro" href="https://www.observamed.org/" target="_blank" rel="noopener" title="Fundación Observamed STAR"><img src="../img/logo-fundacion.jpg" alt="Observamed · Medicines Observatory · Fundación Observamed STAR · Samay Tatiana Andia Rey"/></a><a class="pro" href="boletines/index.html" title="BisCoM Newsletter"><img src="../img/logo-biscom.jpg" alt="Health Informatics Newsletter · BisCoM Newsletter and Medicine Consumer Newsletter"/></a><span class="sep"></span><span class="et">In partnership with</span><a href="https://www.colmedcundibogota.com/boletin-salud-al-dia-no-36/" target="_blank" rel="noopener" title="Salud al Día Newsletter · Colegio Médico de Cundinamarca y Bogotá"><img src="../img/salud-al-dia-banner.jpg" alt="Salud al Día Newsletter No. 36 · Colegio Médico de Cundinamarca y Bogotá · Federación Médica Colombiana"/></a><a href="https://fundacionelmonitordelasalud.org/" target="_blank" rel="noopener" title="Fundación El Monitor de la Salud"><span class="giro"><span class="cara a"><img src="../img/monitor.png" alt="Fundación El Monitor de la Salud"/></span><span class="cara b"><img src="../img/rebrand/monitor.svg" alt="Fundación El Monitor de la Salud — proposal"/></span></span></a><a href="https://www.med-informatica.net/ASMEDASnacional/1PedroAContrerasRivera_SistemaDeSaludCo.html" target="_blank" rel="noopener" title="ASMEDAS"><span class="giro"><span class="cara a"><img src="../img/asmedas.jpg" alt="ASMEDAS"/></span><span class="cara b"><img src="../img/rebrand/asmedas.svg" alt="ASMEDAS — proposal"/></span></span></a><a href="https://www.med-informatica.net/VCACELAPSS/Inicio.htm" target="_blank" rel="noopener" title="Citizen Oversight Group VCACELAPSS"><span class="giro"><span class="cara a"><img src="../img/vcacelapss.jpg" alt="Citizen Oversight Group VCACELAPSS"/></span><span class="cara b"><img src="../img/rebrand/vcacelapss.svg" alt="Citizen Oversight Group VCACELAPSS — proposal"/></span></span></a></div>
 <div class="cred">
@@ -984,13 +980,6 @@ footer{background:#0F172A;color:#94A3B8;padding:42px 24px 30px;font-size:0.88rem
     <span class="eyebrow">The foundation's systems</span>
     <h2 style="margin-bottom:8px">This is all Observamed STAR</h2>
     <p class="sub">Four portals and the systems that support them. More than thirty years of work.</p>
-    <div class="flip-ctl">
-      <button class="btn-flip" type="button" onclick="alternarLogos(this)">
-        <svg viewBox="0 0 24 24"><path d="M3.5 9a8.5 8.5 0 0 1 14.9-3.4L21 8"/><path d="M21 3v5h-5"/><path d="M20.5 15a8.5 8.5 0 0 1-14.9 3.4L3 16"/><path d="M3 21v-5h5"/></svg>
-        View rebranding proposal
-      </button>
-      <span class="flip-nota">Design proposal. The current logos remain the official ones.</span>
-    </div>
 
     <div class="muro">
       <a class="lg" href="index.html" title="VMI-CFN System"><span class="giro"><span class="cara a"><img src="../img/vmi-cfn.jpg" alt="VMI-CFN System — Med-Informática Vademecum, National Pharmaceutical Catalog"/></span><span class="cara b"><img src="../img/rebrand/vmi-cfn.svg" alt="VMI-CFN System — Med-Informática Vademecum, National Pharmaceutical Catalog — rebranding proposal"/></span></span></a>
@@ -1144,7 +1133,7 @@ function aplicarLogos(activo, animar){
 }
 /* recordar la elección al cambiar de página */
 (function(){
-  try{ if (localStorage.getItem('cdl_rebrand') === '1') aplicarLogos(true, false); }catch(e){}
+  try{ localStorage.removeItem('cdl_rebrand'); }catch(e){}
 })();
 </script>
 <script>

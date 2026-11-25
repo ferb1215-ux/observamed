@@ -1090,13 +1090,6 @@ footer{background:#0F172A;color:#94A3B8;padding:42px 24px 30px;font-size:0.88rem
     <span class="eyebrow">Los sistemas de la fundación</span>
     <h2 style="margin-bottom:8px">Todo esto es Observamed STAR</h2>
     <p class="sub">Cuatro portales y los sistemas que los sostienen. Un trabajo de más de treinta años.</p>
-    <div class="flip-ctl">
-      <button class="btn-flip" type="button" onclick="alternarLogos(this)">
-        <svg viewBox="0 0 24 24"><path d="M3.5 9a8.5 8.5 0 0 1 14.9-3.4L21 8"/><path d="M21 3v5h-5"/><path d="M20.5 15a8.5 8.5 0 0 1-14.9 3.4L3 16"/><path d="M3 21v-5h5"/></svg>
-        Ver propuesta de rebranding
-      </button>
-      <span class="flip-nota">Propuesta de diseño. Los logos actuales siguen siendo los oficiales.</span>
-    </div>
 
     <div class="muro">
       <a class="lg" href="index.html" title="Sistema VMI-CFN"><span class="giro"><span class="cara a"><img src="img/vmi-cfn.jpg" alt="Sistema VMI-CFN — Vademécum Med-Informática, Catálogo Farmacéutico Nacional"/></span><span class="cara b"><img src="img/rebrand/vmi-cfn.svg" alt="Sistema VMI-CFN — Vademécum Med-Informática, Catálogo Farmacéutico Nacional — propuesta de rebranding"/></span></span></a>
@@ -1297,7 +1290,7 @@ function aplicarLogos(activo, animar){
 }
 /* recordar la elección al cambiar de página */
 (function(){
-  try{ if (localStorage.getItem('cdl_rebrand') === '1') aplicarLogos(true, false); }catch(e){}
+  try{ localStorage.removeItem('cdl_rebrand'); }catch(e){}
 })();
 </script>
 <script>
